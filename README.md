@@ -47,7 +47,16 @@ Il codice di `studio/` può trovarsi nel repository, **ma non inserirvi backup, 
 
 Apri una sessione, incolla la trascrizione nel campo riservato oppure importa un file TXT/SRT/VTT e usa **Copia prompt per il resoconto**. Incolla il prompt in ChatGPT: richiede stile sobrio e cronologico, senza invenzioni, con poche citazioni letterali e timestamp se disponibili. Copia le sezioni prodotte nel resoconto, cronologia e citazioni; correggi e approva prima della pubblicazione.
 
-Questa versione **non trascrive audio automaticamente** e **non invia trascrizioni ad alcun servizio esterno**. La generazione AI avviene solo quando incolli manualmente il prompt in ChatGPT.
+### Trascrizione automatica locale (opzionale)
+
+1. Sul computer del Master installa Python 3.10–3.12 e avvia nel progetto: `python -m pip install -r transcription/requirements.txt` (su Windows funziona anche `py -m pip install -r transcription/requirements.txt`).
+2. Apri `start-local.bat` (oppure `./start-local.sh` su Linux/Mac) e vai in **Studio → Sessioni → Nuova sessione**.
+3. Premi **Trascrivi audio locale**, seleziona un audio WAV/MP3/M4A/FLAC/OGG/OPUS/WEBM/MP4/AAC o più tracce Craig sincronizzate. Il nome file di ciascuna traccia separata viene usato come etichetta del parlante. Un audio unico e misto **non permette di sapere chi parla**: il trascrittore non attribuisce i parlanti.
+4. Attendi la trascrizione con timestamp e premi **Salva sessione**. Poi usa **Copia prompt per il resoconto** per ottenere il resoconto in ChatGPT, controllarlo e pubblicarlo se opportuno.
+
+Il processo Whisper usa **CPU locale**; con il primo utilizzo scarica i pesi del modello da Internet (senza inviare l'audio). Gli audio sono elaborati in una cartella temporanea e cancellati al termine; rimane la trascrizione solo se salvi la sessione nel browser. Modelli selezionabili: base, small, medium (medium richiede maggiore memoria e tempo). Il server ascolta solo su `127.0.0.1:8765` e non è un servizio web pubblico. Limiti: 8 tracce, 160 MiB per file, 400 MiB totali.
+
+Se non installi le dipendenze, lo Studio continua a funzionare come prima, ma il bottone audio mostra che il server di trascrizione non è disponibile. **La generazione AI del resoconto resta manuale**: per ora il sito non invia trascrizioni a provider esterni e non crea automaticamente un testo narrativo.
 
 Formato eventi: `12:30 | Il gruppo entra nella sala`. Formato citazioni: `Nome | 34:02 | Frase esatta`.
 
