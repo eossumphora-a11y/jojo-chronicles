@@ -52,6 +52,8 @@ def speaker_label(filename: str) -> str:
 
 if FastAPI is not None:
     app = FastAPI(title="JoJo Chronicles Local Studio")
+    from recap_api import router as recap_router
+    app.include_router(recap_router)
 
     @app.middleware("http")
     async def check_local_host(request: Request, call_next):

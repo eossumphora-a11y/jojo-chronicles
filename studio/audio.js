@@ -71,6 +71,7 @@
       }
       textarea.value = result.transcript;
       textarea.dispatchEvent(new Event("input", { bubbles: true }));
+      window.dispatchEvent(new CustomEvent("jojo:transcript-ready"));
       status.textContent = "Completato: " + result.segments.length + " segmenti da " + result.track_count
         + " traccia/e. Premi «Salva sessione» per conservare il testo, poi «Copia prompt per il resoconto».";
     } catch (err) {

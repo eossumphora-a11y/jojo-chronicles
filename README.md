@@ -84,3 +84,30 @@ Nessuna password o token GitHub è incorporato in JavaScript. Il sito pubblico r
 - `node --check studio/app.js` e `node --check docs/assets/public.js`: controllo sintattico JavaScript.
 - `node tests/check_public_export.js`: controllo del filtro di esportazione e dei dati riservati.
 - `python tests/test_site.py`: prova automatica end-to-end con Playwright e Chromium (eseguibile su una macchina in cui Chromium può navigare verso `localhost`). Non è stata eseguita con successo nell'ambiente di preparazione, dove le policy del browser bloccano tutte le navigazioni, incluse quelle locali.
+
+## Archivio aggiornato esclusivamente dalle sessioni (novità)
+
+**Fonte di verità:** registrazione e trascrizione → resoconto → personaggi, Stand e oggetti verificati. Non precaricare automaticamente schede di Foundry, bozze o concept art. Il precedente catalogo preparatorio di 19 schede **non è importato** e non viene pubblicato.
+
+### Configurare il modello AI locale (una volta sola)
+
+Il pulsante audio usa Whisper; per ottenere anche il **resoconto automatico e il riconoscimento delle entità** serve installare [Ollama](https://ollama.com/) sul PC del Master. Poi da un terminale:
+
+```bash
+ollama pull qwen2.5:7b
+```
+
+Ollama deve rimanere avviato mentre usi lo Studio Master. Il modello richiede alcuni gigabyte di RAM e spazio su disco e può essere lento su CPU. Nessuna registrazione o trascrizione viene inviata a servizi AI nel cloud da questa integrazione. Modello predefinito: `qwen2.5:7b`, modificabile nello Studio.
+
+### Flusso operativo
+
+1. Avvia `start-local.bat`; crea o apri una sessione nello Studio Master.
+2. Carica una registrazione con **Trascrivi audio locale**, oppure importa una trascrizione TXT/SRT/VTT. Lo Studio prova automaticamente a generare il recap con Ollama (pulsante **Genera recap dalla trascrizione** per riprovare).
+3. **Rileggi e correggi il recap**, poi premi **Salva sessione**. Lo Studio estrae automaticamente dal recap soltanto i nomi espliciti di **personaggi, Stand e oggetti**.
+4. Per ogni nome serve un riferimento letterale sia nel recap sia nella trascrizione originale. L'AI deve inoltre restituire un estratto esatto del recap che ne giustifichi l'inserimento.
+5. Lo Studio crea o aggiorna la voce **senza duplicati**, inserendo nelle note private il numero e il titolo della sessione, più la frase di riferimento. Non modifica automaticamente informazioni preesistenti non verificate.
+6. **Tutte le nuove schede sono inizialmente riservate.** Dopo la tua verifica, puoi contrassegnare le voci come pubbliche. Vai in **Pubblicazione → Scarica public.json** e sostituisci `docs/data/public.json` su GitHub per aggiornare il sito dei giocatori. La sincronizzazione GitHub non è ancora automatica.
+
+L'AI può confondere nomi o categorie: le verifiche testuali riducono, ma non eliminano, i falsi positivi. Se manca Ollama, puoi usare **Copia prompt per il resoconto** e fare l'analisi con ChatGPT, ma il catalogo non si aggiorna automaticamente senza un motore locale. Per rilanciare l'estrazione di una sessione già salvata, aprila e premi **Aggiorna enciclopedia dal recap**.
+
+**Importante:** i dati rimangono salvati nel browser con IndexedDB; usa **Esporta backup** regolarmente. Una modifica nel Master Studio non viene inviata automaticamente al sito pubblico.
