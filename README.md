@@ -49,7 +49,7 @@ Apri una sessione, incolla la trascrizione nel campo riservato oppure importa un
 
 ### Trascrizione automatica locale (opzionale)
 
-1. Sul computer del Master installa Python 3.10–3.12 e avvia nel progetto: `python -m pip install -r transcription/requirements.txt` (su Windows funziona anche `py -m pip install -r transcription/requirements.txt`).
+1. Sul computer del Master installa Python 3.10–3.12 e fai doppio clic su **`installa-audio.bat`** (una sola volta). Su Linux/Mac esegui `./installa-audio.sh`. In alternativa: `python -m pip install -r transcription/requirements.txt`. L'installazione crea una cartella `.venv` privata che non va caricata su GitHub.
 2. Apri `start-local.bat` (oppure `./start-local.sh` su Linux/Mac) e vai in **Studio → Sessioni → Nuova sessione**.
 3. Premi **Trascrivi audio locale**, seleziona un audio WAV/MP3/M4A/FLAC/OGG/OPUS/WEBM/MP4/AAC o più tracce Craig sincronizzate. Il nome file di ciascuna traccia separata viene usato come etichetta del parlante. Un audio unico e misto **non permette di sapere chi parla**: il trascrittore non attribuisce i parlanti.
 4. Attendi la trascrizione con timestamp e premi **Salva sessione**. Poi usa **Copia prompt per il resoconto** per ottenere il resoconto in ChatGPT, controllarlo e pubblicarlo se opportuno.
