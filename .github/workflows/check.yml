@@ -1,0 +1,35 @@
+name: Verifica JoJo Chronicles
+on:
+  push:
+    branches: [main]
+    paths:
+      - "local_server.py"
+      - "studio/**"
+      - "tests/**"
+      - "transcription/**"
+      - ".github/workflows/check.yml"
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Controlla JavaScript
+        run: |
+          node --check studio/app.js
+          node --check studio/audio.js
+          node --check docs/assets/public.js
+      - name: Verifica esportazione senza spoiler
+        run: node tests/check_public_export.js
+      - name: Test trascrittore locale
+        run: |
+          python -m py_compile local_server.py
+          python -m unittest discover -s tests -p 'test_audio_utils.py'
