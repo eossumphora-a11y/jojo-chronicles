@@ -1,0 +1,13 @@
+# Le copie private del Master NON vanno mai caricate su GitHub
+*.master.json
+*Master_Backup*.json
+/backups/
+/private/
+/trascrizioni/
+/raw-audio/
+*.mp3
+*.wav
+*.m4a
+.DS_Store
+Thumbs.db
+__pycache__/
