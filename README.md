@@ -1,5 +1,14 @@
 # JoJo Chronicles — enciclopedia + resoconti in stile LoreMonkey
 
+## Nuova pagina web — versione archivio interattivo
+
+- **Pagina giocatori:** https://eossumphora-a11y.github.io/jojo-chronicles/ — dashboard, diario narrativo, compendio, cronologia, indizi, ricerca testuale con fonti, collegamenti cliccabili fra schede e sessioni.
+- **Studio Master online:** https://eossumphora-a11y.github.io/jojo-chronicles/master.html — accesso email/password con Supabase Auth e controllo ruolo admin tramite RLS, editor per schede pubbliche e private, cronologia di sessione e importazione di più SRT da unire per timestamp. La registrazione NON assegna automaticamente il ruolo admin; un amministratore deve inserirlo manualmente nella tabella user_roles.
+- La fonte corrente della pagina giocatori è **Supabase**, esclusivamente record con visibilità `players`. Gli eventi della cronologia sono nel campo `public_events` e diventano illeggibili assieme alla sessione se viene ritirata dalla pubblicazione. Il file `docs/data/public.json` è ora vuoto e costituisce un fallback di configurazione, non un secondo database.
+- Lo `studio/` del repository è il **precedente Studio locale IndexedDB**: le modifiche fatte solo lì non si sincronizzano con il database online.
+- La ricerca nella pagina web è **testuale, non generativa**. Non è un servizio AI che risponde con un modello, non registra Discord e non trascrive audio direttamente dal browser. Non promettere funzioni di LoreMonkey che non sono implementate.
+
+
 Un archivio per la campagna JoJo con due interfacce:
 
 - **Master Studio** (`studio/`): enciclopedia completa, schede riservate, cronologia, citazioni, trascrizioni, editor, backup e approvazione delle pubblicazioni. Conserva i dati **nel browser locale** con IndexedDB.
