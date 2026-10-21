@@ -3,7 +3,7 @@
 Un archivio per la campagna JoJo con due interfacce:
 
 - **Master Studio** (`studio/`): enciclopedia completa, schede riservate, cronologia, citazioni, trascrizioni, editor, backup e approvazione delle pubblicazioni. Conserva i dati **nel browser locale** con IndexedDB.
-- **Sito giocatori** (`docs/`): mostra solo quanto è presente nel file `docs/data/public.json`. Legge nomi, sintesi, descrizioni, collegamenti, sessioni e citazioni approvate; non ha accesso al database Master.
+- **Sito giocatori** (`docs/`): mostra i dati approvati in `docs/data/public.json` e legge automaticamente le voci con `visibility='players'` dal database Supabase dell'archivio. La lettura Supabase è limitata da Row Level Security; trascrizioni e note riservate non sono mai richieste dal browser.
 
 Il sito è deliberatamente **vuoto all'inizio**: non vengono inventati fatti della campagna.
 
@@ -35,6 +35,10 @@ git push -u origin main
 Il codice di `studio/` può trovarsi nel repository, **ma non inserirvi backup, audio o trascrizioni**. In un repository pubblico anche i file non esposti su Pages sono visibili come sorgente. La cartella `studio/` contiene soltanto software, non dati sensibili.
 
 ## 3. Aggiornare l'enciclopedia pubblica
+
+**Aggiornamento automatico dal database condiviso:** quando una voce viene approvata nel database Supabase e il campo `visibility` diventa `players`, il sito pubblico la carica senza nuovi commit GitHub. Le voci `master` restano invisibili. Se la connessione Supabase fallisce, rimane disponibile `docs/data/public.json` come fonte statica. **Nota:** Master Studio usa tuttora IndexedDB locale; le modifiche fatte solo nello Studio non vanno automaticamente in Supabase e richiedono il suo normale export `public.json`.
+
+
 
 1. Apri Master Studio e crea le schede o i resoconti.
 2. Se vuoi renderli pubblici, seleziona **Pubblica questa scheda/sessione**. Le note riservate e le trascrizioni NON vengono mai esportate.
