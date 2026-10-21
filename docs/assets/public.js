@@ -18,7 +18,7 @@ function appendLinkedProse(node,value){
  }
  const variants=[...names.keys()].sort((a,b)=>b.length-a.length);
  if(!variants.length){node.textContent=text;return;}
- const escapeRe=s=>s.replace(/[.*+?^\u0024{}()|[\]\\]/g,'\\function openEntry(e){');
+ const escapeRe=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
  const re=new RegExp('(?<![\\p{L}\\p{N}])('+variants.map(escapeRe).join('|')+')(?![\\p{L}\\p{N}])','giu');
  let last=0;
  for(const match of text.matchAll(re)){
