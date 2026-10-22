@@ -119,7 +119,12 @@ function renderSessionSections(root,s){
 let libraryCategory='recaps',libraryQuery='',librarySessionOnly=false;
 const libraryCats={recaps:'Recaps',players:'Players',npcs:'NPCs',items:'Items',locations:'Locations',factions:'Factions',quests:'Quests'};
 function libraryMatches(value){return !libraryQuery||normalize(value).includes(normalize(libraryQuery))}
-function libraryIsRelated(e,s){return !!(s&&((s.related||[]).includes(e.id)||(e.public_history||[]).some(x=>x.session_id===s.id)))}
+function libraryIsRelated(e,s){
+ if(!s)return false;
+ if((s.related||[]).includes(e.id))return true;
+ if((e.public_history||[]).some(x=>x.session_id===s.id))return true;
+ return e.kind==='faction'&&normalize(s.summary).includes(normalize(e.title));
+}
 function downloadLibraryText(name,body){const blob=new Blob([body],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=name.replace(/[^a-zA-Z0-9_-]/g,'_')+'.txt';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
 function libraryTitle(parent,title,downloadContent='',fileName=''){const heading=el('div','library-section-heading');const line=el('span','library-heading-line');heading.append(line,txt('h3',title),el('span','library-heading-line'));const tools=el('div','library-heading-tools');
  const edit=el('a','library-icon-button','✎');edit.href='master.html';edit.title='Apri lo Studio Master';edit.setAttribute('aria-label','Apri lo Studio Master');tools.append(edit);
