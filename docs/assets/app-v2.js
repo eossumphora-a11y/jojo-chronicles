@@ -55,18 +55,85 @@ function linked(node,value){const text=safe(value),lower=text.toLocaleLowerCase(
 function prose(parent,str){const parts=safe(str).split(/\n\s*\n/).filter(Boolean);for(const seg of parts){const at=seg.indexOf('\n');if(at>0&&at<45&&seg.slice(0,at).length<40&&!/[.!?]$/.test(seg.slice(0,at))){const h=txt('h3',seg.slice(0,at));h.id='capitolo-'+(parent.querySelectorAll('h3').length+1);parent.append(h);const p=el('p');linked(p,seg.slice(at+1));parent.append(p)}else{const p=el('p');linked(p,seg);parent.append(p)}}}
 function references(parent,ids){const shown=[...new Set(ids||[])].map(id=>entries.find(x=>x.id===id)).filter(Boolean);if(!shown.length)return;const box=el('div','related-pills');shown.forEach(e=>box.append(btn('button',e.title,'',()=>openEntry(e))));parent.append(box)}
 function openSession(id){const s=sessions.find(s=>s.id===id);if(!s)return;activeSession=id;go('sessioni');}
-function drawSessionReader(){const root=$('session-reader');root.replaceChildren();const s=sessions.find(x=>x.id===activeSession)||sessions[0];if(!s){root.append(el('div','no-results','Nessuna sessione pubblicata.'));return}activeSession=s.id;
- const header=el('div','reader-head');header.append(txt('div',sessionName(s).toUpperCase(),'mini-label'),txt('h2',s.title),txt('div',(s.date?s.date+' · ':'')+'Cronaca della prova','reader-meta'));root.append(header);
- const story=el('div','reader-content');prose(story,s.summary);
-const headings=[...story.querySelectorAll('h3[id^="capitolo-"]')];
-if(headings.length>3){const toc=el('nav','chapter-toc');toc.setAttribute('aria-label','Indice del resoconto');toc.append(txt('div','IN QUESTO CAPITOLO','reader-subtitle'));const grid=el('div','chapter-index');headings.forEach((h,i)=>{const b=btn('button',String(i+1).padStart(2,'0')+'  '+h.textContent,'chapter-index-link',()=>h.scrollIntoView({behavior:'smooth',block:'start'}));grid.append(b)});toc.append(grid);root.append(toc)}
-root.append(story);
- if(s.events&&s.events.length){const timeSection=el('div','section-divider');root.append(timeSection);root.append(txt('div','MOMENTI DELLA SESSIONE','reader-subtitle'));for(const [index,ev] of s.events.entries()){const row=el('div','event-line');row.append(txt('time',String(index+1).padStart(2,'0')));const content=el('div');linked(content,ev.text||'');row.append(content);root.append(row)}}
- if(s.related&&s.related.length){root.append(el('div','section-divider'));root.append(txt('div','PERSONE, STAND E LUOGHI CITATI','reader-subtitle'));references(root,s.related)}
- if(s.quotes?.length){root.append(el('div','section-divider'));root.append(txt('div','CITAZIONI','reader-subtitle'));s.quotes.forEach(q=>{const quote=el('blockquote','');quote.append(txt('p','“'+(q.text||'')+'”'),txt('small',(q.speaker||'')+' · '+(q.time||'')));root.append(quote)})}
- const actions=el('div','session-reader-actions');actions.append(btn('button','Copia il resoconto','action-button',async()=>{try{await navigator.clipboard.writeText(s.title+'\n\n'+s.summary);notice('Resoconto copiato')}catch{notice('Copia non disponibile nel browser')}}));actions.append(btn('button','Cerca riferimenti','action-button',()=>{searchQuery=s.title;go('ricerca')}));root.append(actions);
+
+let recapFormats={},activeRecapTab='standard',activeSessionPanel='recap';
+async function loadRecapFormats(){
+ try{const res=await fetch('data/session-formats.json',{cache:'no-store'});if(res.ok){const d=await res.json();recapFormats=d.sessions||{}}}
+ catch(e){console.warn('Formati del riepilogo non disponibili',e)}
 }
-function renderSessions(){const root=$('session-list');root.replaceChildren();if(!sessions.length){root.append(noResults('Il diario è ancora vuoto','La prima sessione comparirà qui dopo la pubblicazione.'));$('session-reader').replaceChildren();return}sessions.forEach(s=>{const card=btn('button','','journal-item'+(s.id===activeSession?' active':''),()=>{activeSession=s.id;renderSessions();drawSessionReader()});card.append(txt('span',sessionName(s).toUpperCase(),'mini-label'),txt('h3',s.title),txt('p',short(summaryText(s.summary),140)));root.append(card)});drawSessionReader()}
+function sessionInfo(s){return recapFormats[s.id]||{}}
+function renderSessionSections(root,s){
+ const mode=activeSessionPanel;
+ const formats=sessionInfo(s);
+ if(mode==='recap'){
+  const tabs=el('div','sq-format-pills');
+  for(const [key,label,desc] of [['concise','Breve','Per riprendere subito'],['standard','Standard','Per iniziare la serata'],['detailed','Dettagliato','Tutto ciò che è successo'],['combat','Combattimento','Scontri e poteri']]){
+   if(key!=='detailed'&&!formats[key])continue;
+   const b=btn('button','', 'sq-format'+(activeRecapTab===key?' active':''),()=>{activeRecapTab=key;drawSessionReader()});
+   b.append(txt('strong',label),txt('small',desc));tabs.append(b);
+  }
+  root.append(tabs);
+  const panel=el('div','sq-recap-paper');
+  panel.append(txt('div','RIEPILOGO DELLA SCORSA SESSIONE','sq-paper-label'));
+  const story=el('div','reader-content sq-recitation');
+  const text=activeRecapTab==='detailed'?s.summary:(formats[activeRecapTab]||s.summary);
+  if(activeRecapTab==='detailed'&&formats.lead){
+   const opener=el('p','sq-recap-intro');linked(opener,formats.lead);story.append(opener);
+  }
+  prose(story,text);
+  const headings=[...story.querySelectorAll('h3[id^="capitolo-"]')];
+  if(headings.length>3){
+   const toc=el('nav','chapter-toc');toc.setAttribute('aria-label','Capitoli del riepilogo');toc.append(txt('div','I CAPITOLI DI QUESTA SESSIONE','reader-subtitle'));
+   const g=el('div','chapter-index');for(const [i,h] of headings.entries()){g.append(btn('button',String(i+1).padStart(2,'0')+'  '+h.textContent,'chapter-index-link',()=>h.scrollIntoView({behavior:'smooth',block:'start'})))}toc.append(g);panel.append(toc)
+  }
+  panel.append(story);root.append(panel);
+  const actions=el('div','session-reader-actions');
+  actions.append(btn('button','Copia questo riepilogo','action-button',async()=>{try{await navigator.clipboard.writeText(s.title+'\n\n'+(activeRecapTab==='detailed'?(formats.lead+'\n\n'+s.summary):(formats[activeRecapTab]||s.summary)));notice('Riepilogo copiato')}catch{notice('Impossibile copiare dal browser')}}));
+  actions.append(btn('button','Condividi il link','action-button',async()=>{try{await navigator.clipboard.writeText(location.origin+location.pathname+'#/sessioni');notice('Link copiato')}catch{notice('Copia del link non disponibile')}}));
+  root.append(actions);
+ }else if(mode==='outline'){
+  root.append(txt('h3','Scaletta della sessione','sq-panel-title'),txt('p','Le scene che avete attraversato, nell’ordine in cui sono avvenute.','sq-panel-sub'));
+  if(s.events?.length){
+   const list=el('div','sq-outline');
+   s.events.forEach((event,i)=>{const row=el('div','sq-outline-row');row.append(txt('span',String(i+1).padStart(2,'0'),'sq-outline-no'));const p=el('p');linked(p,event.text);row.append(p);list.append(row)});
+   root.append(list);
+  }else root.append(noResults('Nessuna scaletta','La storia di questa sessione non ha ancora una scaletta.'));
+ }else if(mode==='notes'){
+  root.append(txt('h3','Note della sessione','sq-panel-title'),txt('p','I volti, i luoghi, i poteri e gli oggetti incontrati nel corso di questa avventura.','sq-panel-sub'));
+  const related=[...new Set(s.related||[])].map(id=>entries.find(x=>x.id===id)).filter(Boolean);
+  const groups=[['Personaggi giocanti',related.filter(e=>characterRole(e)==='pg')],['Personaggi non giocanti',related.filter(e=>characterRole(e)==='npc')],['Stand e poteri',related.filter(e=>e.kind==='stand')],['Luoghi',related.filter(e=>e.kind==='location')],['Prove e obiettivi',related.filter(e=>e.kind==='other'&&(e.id.startsWith('trial-')||e.tags?.includes('prova')))]];
+  for(const [heading,items] of groups){if(!items.length)continue;const area=el('div','sq-note-section');area.append(txt('h4',heading,'sq-notes-heading'));const list=el('div','sq-notes-grid');
+   for(const e of items){const item=btn('button','','sq-note-card',()=>openEntry(e));item.append(txt('strong',e.title),txt('span',short(e.summary,140)));list.append(item)}
+   area.append(list);root.append(area);
+  }
+  const items=entries.filter(e=>characterRole(e)!=='unspecified').flatMap(e=>(e.public_inventory||[]).filter(x=>x.session_id===s.id).map(x=>({owner:e,item:x})));
+  if(items.length){const area=el('div','sq-note-section');area.append(txt('h4','Oggetti incontrati','sq-notes-heading'));for(const {owner,item} of items){const row=el('div','sq-item-in-session');row.append(txt('strong',item.name),txt('span',item.state||''),txt('small','Visto con '+owner.title));area.append(row)}root.append(area)}
+  if(!groups.some(g=>g[1].length)&&!items.length)root.append(noResults('Nessuna nota ancora disponibile','Le persone, i luoghi e gli oggetti compariranno qui quando saranno collegati a questa sessione.'));
+ }else if(mode==='quotes'){
+  root.append(txt('h3','Frasi memorabili','sq-panel-title'));
+  if(s.quotes?.length){for(const q of s.quotes){const card=el('blockquote','sq-quote');card.append(txt('p','“'+q.text+'”'),txt('small',q.speaker||'Voce sconosciuta'));root.append(card)}}
+  else root.append(noResults('Nessuna citazione inserita','Le battute significative compariranno qui quando saranno riconosciute con certezza.'));
+ }
+}
+function drawSessionReader(){
+ const root=$('session-reader');root.replaceChildren();const s=sessions.find(x=>x.id===activeSession)||sessions[0];
+ if(!s){root.append(noResults('Il diario è vuoto','Non ci sono ancora sessioni da leggere.'));return}
+ activeSession=s.id;
+ const header=el('div','sq-reader-header');header.append(txt('div','LE VOSTRE AVVENTURE  /  '+sessionName(s).toUpperCase(),'sq-kicker'),txt('h2',s.title));
+ header.append(txt('p','Rivivete gli eventi, rivedete i protagonisti e ritrovate tutto ciò che avete scoperto.','sq-reader-subtitle'));
+ root.append(header);
+ const panels=el('div','sq-session-tabs');for(const [key,label,icon] of [['recap','Riepilogo','▤'],['outline','Scaletta','☷'],['notes','Note e wiki','◈'],['quotes','Citazioni','❞']]){
+  const b=btn('button',icon+'  '+label,'sq-session-tab'+(activeSessionPanel===key?' active':''),()=>{activeSessionPanel=key;drawSessionReader()});b.setAttribute('aria-pressed',String(activeSessionPanel===key));panels.append(b)}
+ root.append(panels);
+ const content=el('div','sq-session-content');renderSessionSections(content,s);root.append(content);
+}
+function renderSessions(){
+ const root=$('session-list');root.replaceChildren();
+ if(!sessions.length){root.append(noResults('Nessuna sessione','Le avventure appariranno qui dopo essere state raccontate.'));$('session-reader').replaceChildren();return}
+ sessions.forEach((s,i)=>{const active=activeSession===s.id;const card=btn('button','','journal-item'+(active?' active':''),()=>{activeSession=s.id;activeSessionPanel='recap';activeRecapTab='standard';renderSessions()});
+ card.append(txt('span',i===0?'ULTIMA SESSIONE':sessionName(s).toUpperCase(),'mini-label'),txt('h3',s.title),txt('p',short(sessionInfo(s).lead||summaryText(s.summary),145)));root.append(card)});
+ drawSessionReader();
+}
 function renderFilters(){const root=$('filters');root.replaceChildren();order.forEach(type=>{if(type!=='all'&&type!=='saved'&&!entries.some(e=>e.kind===type))return;const name=type==='all'?'Tutti':type==='saved'?'★ Salvati':labels[type]||type;const b=btn('button',name+' · '+(type==='all'?entries.length:type==='saved'?entries.filter(e=>pinned.has(e.id)).length:entries.filter(e=>e.kind===type).length),'chip'+(filter===type?' active':''),()=>{filter=type;renderFilters();renderEntries()});b.setAttribute('aria-pressed',String(filter===type));root.append(b)})}
 function renderEntries(){const root=$('entry-grid');root.replaceChildren();const shown=entries.filter(e=>(filter==='all'||(filter==='saved'?pinned.has(e.id):e.kind===filter))&&normalize([e.title,e.subtitle,e.summary,e.body,...(e.tags||[])].join(' ')).includes(normalize(entryQuery)));$('entry-count-label').textContent=shown.length+' voci visualizzate';if(!shown.length){root.append(noResults('Nessun risultato','Prova un altro filtro o modifica la ricerca.'));return}
  shown.sort((a,b)=>a.title.localeCompare(b.title,'it'));shown.forEach(e=>{const card=btn('button','','entity-card',()=>openEntry(e));const header=el('div','entity-icon');header.append(txt('span',glyphs[e.kind]||'◈','diamond'),txt('span',labels[e.kind]||'Altro','type'));card.append(header,txt('h3',e.title),txt('p',short(e.summary||e.body,142)));const footer=el('div','entity-card-footer');footer.append(txt('span',sessionCount(e)+' sessione/i'),txt('b',(pinned.has(e.id)?'★ ':'')+'Apri scheda ↗'));card.append(footer);root.append(card)})}
@@ -118,7 +185,7 @@ async function applyNarrativeEdition(){
  }catch(e){console.warn('L’edizione narrativa non è stata caricata',e)}
 }
 function mergeData(local,db){const localEntries=Array.isArray(local.entries)?local.entries.filter(x=>x&&x.public!==false):[];const localSessions=Array.isArray(local.sessions)?local.sessions.filter(x=>x&&x.public!==false):[];const mapE=new Map(localEntries.map(x=>[x.id,x]));db.entries.forEach(x=>mapE.set(x.id,{...mapE.get(x.id),...x,related:[...new Set([...(mapE.get(x.id)?.related||[]),...(x.related||[])])]}));const mapS=new Map(localSessions.map(x=>[x.id,x]));db.sessions.forEach(x=>mapS.set(x.id,{...mapS.get(x.id),...x,events:mapS.get(x.id)?.events||[],quotes:mapS.get(x.id)?.quotes||[],related:[...new Set([...(mapS.get(x.id)?.related||[]),...(x.related||[])])]}));return{entries:[...mapE.values()],sessions:[...mapS.values()]};}
-async function init(){try{const res=await fetch('data/public.json',{cache:'no-store'});if(!res.ok)throw Error('Archivio non disponibile');const data=await res.json();const name=data.campaign?.title||'Un destino bizzarro.';$('campaign-title').replaceChildren();$('campaign-title').append(document.createTextNode(name.replace(/\.+$/,'').replace(/\s+bizzarro$/i,'')));if(/bizzarro/i.test(name))$('campaign-title').append(txt('em','bizzarro.'));if(data.campaign?.subtitle)$('campaign-subtitle').textContent=data.campaign.subtitle;document.title=name+' · JoJo Chronicles';entries=Array.isArray(data.entries)?data.entries.filter(x=>x.public!==false):[];sessions=Array.isArray(data.sessions)?data.sessions.filter(x=>x.public!==false):[];try{const db=await loadPublicDB();entries=db.entries;sessions=db.sessions;await applyNarrativeEdition();}catch(e){console.warn('Archivio remoto non raggiungibile, dati locali utilizzati',e)}
+async function init(){try{const res=await fetch('data/public.json',{cache:'no-store'});if(!res.ok)throw Error('Archivio non disponibile');const data=await res.json();const name=data.campaign?.title||'Un destino bizzarro.';$('campaign-title').replaceChildren();$('campaign-title').append(document.createTextNode(name.replace(/\.+$/,'').replace(/\s+bizzarro$/i,'')));if(/bizzarro/i.test(name))$('campaign-title').append(txt('em','bizzarro.'));if(data.campaign?.subtitle)$('campaign-subtitle').textContent=data.campaign.subtitle;document.title=name+' · JoJo Chronicles';entries=Array.isArray(data.entries)?data.entries.filter(x=>x.public!==false):[];sessions=Array.isArray(data.sessions)?data.sessions.filter(x=>x.public!==false):[];try{const db=await loadPublicDB();entries=db.entries;sessions=db.sessions;await applyNarrativeEdition();await loadRecapFormats();}catch(e){console.warn('Archivio remoto non raggiungibile, dati locali utilizzati',e)}
  sessions.sort((a,b)=>(b.number??0)-(a.number??0));activeSession=sessions[0]?.id||'';renderHome();route();
  }catch(e){$('featured-session').append(noResults('Impossibile caricare l’archivio','La pagina deve essere aperta dal sito GitHub Pages.'));console.error(e)}}
 document.querySelectorAll('[data-nav]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.nav)));document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
