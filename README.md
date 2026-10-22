@@ -131,7 +131,7 @@ L'AI può confondere nomi o categorie: le verifiche testuali riducono, ma non el
 
 Il sito pubblico ha una sezione dedicata **Stand incontrati** (\`#/stand\`), accessibile anche dal menu laterale e dalla panoramica. Non è un catalogo completo degli Stand progettati.
 
-**Regola di visibilità:** uno Stand entra nella sezione solo se esiste una scheda pubblicata (\`category=stand\`, \`visibility=players\`) **e** una sessione pubblica in cui quel nome appare nel recap/eventi, oppure un collegamento esplicito fra la scheda e la sessione. Il sito non deduce abilità dalle schede Foundry, non elenca gli Stand privati e non ricava informazioni da sessioni non pubblicate. I riferimenti ai recap sono cliccabili.
+**Regola di visibilità:** uno Stand entra nella sezione solo se esiste una scheda pubblicata (\`category=stand\`, \`visibility=players\`) **e** una sessione pubblica in cui quel nome appare nel recap o negli eventi approvati. Un collegamento interno fra schede, da solo, non basta. Il sito non deduce abilità dalle schede Foundry, non elenca gli Stand privati e non ricava informazioni da sessioni non pubblicate. I riferimenti ai recap sono cliccabili.
 
 **Contenuti mostrati:** nome approvato, riassunto dei fatti noti e i soli poteri o comportamenti che il Master ha approvato in \`public_details\`. Non vengono mostrati portatore segreto, poteri futuri, caratteristiche numeriche, note riservate o relazioni non approvate. Se non c'è nulla di verificato sui poteri, la sezione dichiara che non ne sono ancora stati identificati.
 

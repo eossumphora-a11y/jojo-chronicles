@@ -28,7 +28,6 @@
   function encounterSources(entry,sessions){
     if(!entry||entry.kind!=="stand"||entry.public===false)return [];
     return (Array.isArray(sessions)?sessions:[]).filter(s=>publicSession(s)&&(
-      (Array.isArray(s.related)&&s.related.includes(entry.id))||
       mentioned(s.summary,entry.title)||
       (Array.isArray(s.events)&&s.events.some(ev=>mentioned(ev.text,entry.title)))
     )).sort((a,b)=>(a.number??9999)-(b.number??9999));

@@ -18,5 +18,5 @@ assert.deepEqual(encounterSources(stands[1],[published,privateRecap]),[]);
 assert.equal(evidenceExcerpt(published,'Rusty Hook'),'Sue vede RUSTY HOOK.');
 assert.equal(evidenceExcerpt(published,'Forest Choir'),'');
 assert.deepEqual(knownStands([{id:'s',kind:'stand',title:'Test',public:true}],[]),[]);
-assert.equal(encounterSources({id:'a',kind:'stand',title:'Rusty Hook',public:true},[{...published,related:['a'],summary:''}]).length,1);
+assert.equal(encounterSources({id:'a',kind:'stand',title:'Rusty Hook',public:true},[{...published,related:['a'],summary:''}]).length,0);
 console.log('PASS: only public Stand witnessed in public sessions; no pre-game Stand leaks.');
