@@ -337,7 +337,7 @@ async function applyNarrativeEdition(){
    // l'intero paragrafo, non soltanto il nome del personaggio.
    chap.summary=chap.summary.split(/\n\n+/).map(paragraph=>{
     if(paragraph.includes("A un certo punto lo Stand armato di fucile emerse dall'acqua.")){
-     return paragraph.replace(/A un certo punto lo Stand armato di fucile emerse dall'acqua\.[\s\S]*$/, "Nel pieno dello scontro Mariah fu colta da un dolore improvviso e si portò una mano alla testa. Sue Nami smise di sorridere.");
+     return paragraph.replace(/A un certo punto lo Stand armato di fucile emerse dall'acqua\.[\s\S]*$/, "Durante lo scontro, Mariah e altri portatori furono colpiti da un improvviso mal di testa causato dalla dissonanza tra Stand. Il dolore interruppe per un momento le loro azioni, e Sue Nami perse il sorriso.");
     }
     if(paragraph.includes("Un attacco rivolto a Sunshine fu intercettato dall'intervento di Emma")){
      return paragraph.replace(/Un attacco rivolto a Sunshine fu intercettato dall'intervento di Emma[\s\S]*$/,edition.story.recapEnding);

@@ -23,10 +23,10 @@
     "personaggio-mariah": {
       "expected": "Aiuta il gruppo a raggiungere le rocce; durante il combattimento viene soccorsa.",
       "summary": "Mariah porta i compagni al riparo sulle rocce, poi viene colpita e ha bisogno dell'aiuto degli altri.",
-      "details": "All'inizio dello scontro Mariah solleva due compagni e li porta in volo fino a un masso. Poco dopo è colta da un dolore improvviso, mentre il suo Stand resta immobile. I colpi si susseguono finché Mariah non perde le forze. Durante la fuga Yekaterina la assiste e la conduce con il gruppo oltre il fiume.",
+      "details": "All'inizio dello scontro Mariah solleva due compagni e li porta in volo fino a un masso. Poco dopo viene colpita da un forte mal di testa dovuto alla dissonanza tra Stand, mentre il suo Stand resta immobile. I colpi si susseguono finché Mariah non perde le forze. Durante la fuga Yekaterina la assiste e la conduce con il gruppo oltre il fiume.",
       "condition": "Dopo essere stata soccorsa sull'altra sponda, riprende lentamente conoscenza.",
       "events": [
-        "Lo Stand di Mariah rimane immobile mentre lei è sopraffatta da un dolore improvviso.",
+        "Mariah subisce un forte mal di testa causato dalla dissonanza, mentre il suo Stand resta immobile.",
         "Yekaterina la assiste dopo lo scontro, sulla sponda opposta del fiume."
       ]
     },
@@ -58,8 +58,8 @@
     },
     "personaggio-somchai": {
       "expected": "Somchai Khanit combatte nella prova del fiume insieme agli altri portatori di Stand.",
-      "summary": "Somchai Khanit affronta i concorrenti nella gola e combatte con il suo Stand, JustIn Time.",
-      "details": "Somchai Khanit interviene nel combattimento del fiume servendosi di JustIn Time. Durante lo scontro scatena un attacco ad area che raggiunge più partecipanti in un solo momento.",
+      "summary": "Somchai Khanit combatte nella prova del fiume con JustIn Time, lo Stand armato di fucile.",
+      "details": "Somchai Khanit interviene nella prova del fiume con JustIn Time, visto all'inizio armato di un grande fucile. Durante lo scontro usa anche un attacco ad area che investe più partecipanti.",
       "events": [
         "Si unisce allo scontro impiegando JustIn Time, con un assalto che investe più bersagli."
       ]
@@ -134,8 +134,8 @@
     },
     "stand-justin-time": {
       "expected": "Lo Stand di Somchai Khanit, incontrato durante il combattimento nella gola del fiume.",
-      "summary": "JustIn Time è lo Stand di Somchai Khanit.",
-      "details": "JustIn Time accompagna Somchai Khanit nel combattimento del fiume. Un suo attacco ad area investe diversi partecipanti."
+      "summary": "JustIn Time è lo Stand di Somchai Khanit. All'inizio della prova è stato visto armato di un grande fucile.",
+      "details": "Durante la prova del fiume, JustIn Time è stato riconosciuto come lo Stand di Somchai Khanit, armato di fucile. Nel combattimento ha inoltre sferrato un attacco ad area che ha coinvolto più partecipanti."
     },
     "stand-poor-souls": {
       "expected": "Lo Stand di Morgan, manifestatosi nello scontro nella forma del suo Atto 2.",
@@ -202,7 +202,7 @@
       ],
       [
         "Più inquietante di tutti, poco distante, c'era uno Stand dotato di un enorme fucile, rivolto verso gli osservatori. Il suo portatore non si vedeva.",
-        ""
+        "All'inizio della prova comparve JustIn Time, lo Stand di Somchai Khanit armato di un grande fucile."
       ],
       [
         "Prima di allontanarsi mise una mano sull'orologio associato allo Stand di Giulia, controllò l'ora e reagì con evidente urgenza.",
@@ -250,7 +250,7 @@
       ],
       [
         "A un certo punto lo Stand armato di fucile emerse dall'acqua. La sua figura non sembrava nemmeno avere i vestiti bagnati. Si sistemò per sparare, ma proprio quando stava per farlo sia il suo portatore, indicato durante la sessione come Sunshine, sia Mariah si portarono una mano alla testa. I due sembrarono subire contemporaneamente un dolore improvviso, e il tentativo di sparare venne interrotto. L'episodio colpì anche Sue Nami: la soddisfazione che aveva mostrato poco prima scomparve dal suo volto.",
-        "Nel mezzo dello scontro Mariah fu colta da un dolore improvviso e si portò una mano alla testa. Sue Nami perse il sorriso che aveva mostrato poco prima."
+        "Durante il combattimento, un improvviso mal di testa colpì Mariah e altri portatori: stavano subendo la dissonanza tra Stand. Il dolore interruppe per un momento le loro azioni, mentre Sue Nami perse il sorriso."
       ]
     ],
     "recapEnding": "Jean era già oltre il traguardo quando cercò di attaccare un componente della squadra avversaria. Soltanto allora arrivarono i Grimm: lo fermarono e impedirono che lo scontro continuasse."

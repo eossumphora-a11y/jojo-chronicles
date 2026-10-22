@@ -35,7 +35,7 @@ async function applyEditorialInMaster(rows){
     if(row.summary===data.story.expectedSummary)row.summary=data.story.newSummary;
     for(const [before,after] of data.story.replacements||[])if((row.public_details||'').includes(before))row.public_details=row.public_details.split(before).join(after);
     row.public_details=(row.public_details||'').split(/\n\n+/).map(paragraph=>{
-     if(paragraph.includes("A un certo punto lo Stand armato di fucile emerse dall'acqua."))return paragraph.replace(/A un certo punto lo Stand armato di fucile emerse dall'acqua\.[\s\S]*$/, "Nel pieno dello scontro Mariah fu colta da un dolore improvviso e si portò una mano alla testa. Sue Nami smise di sorridere.");
+     if(paragraph.includes("A un certo punto lo Stand armato di fucile emerse dall'acqua."))return paragraph.replace(/A un certo punto lo Stand armato di fucile emerse dall'acqua\.[\s\S]*$/, "Durante lo scontro, Mariah e altri portatori furono colpiti da un improvviso mal di testa causato dalla dissonanza tra Stand. Il dolore interruppe per un momento le loro azioni, e Sue Nami perse il sorriso.");
      if(paragraph.includes("Un attacco rivolto a Sunshine fu intercettato dall'intervento di Emma"))return paragraph.replace(/Un attacco rivolto a Sunshine fu intercettato dall'intervento di Emma[\s\S]*$/,data.story.recapEnding);
      return paragraph;
     }).join('\n\n').replace(/\n{3,}/g,'\n\n').trim();

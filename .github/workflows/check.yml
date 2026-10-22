@@ -38,6 +38,7 @@ jobs:
         run: |
           node tests/check_public_export.js
           node tests/test_stand_visibility.js
+          node tests/test_recap_corrections.js
       - name: Test trascrittore locale
         run: |
           python -m py_compile local_server.py recap_engine.py

@@ -144,3 +144,11 @@ Il sito pubblico ha una sezione dedicata **Stand incontrati** (\`#/stand\`), acc
 5. Non è necessario aggiornare GitHub: la sezione Stand carica i record pubblici da Supabase a ogni apertura del sito.
 
 **Limite attuale:** la scheda dello Stand deve essere creata/approvata nell'Area Master. Questa versione non trasforma da sola ogni nuova registrazione in una scheda del database online; il processo di trascrizione/estrazione automatico esistente nel vecchio Studio locale è distinto.
+
+## Correzioni canoniche — La prova del fiume
+
+Confermate dal Master il 22 ottobre 2026: **JustIn Time** è lo Stand armato di grande fucile che compare all'inizio della prova. Il **mal di testa** subito da Mariah e altri portatori durante lo scontro è la manifestazione della **dissonanza** fra Stand. Questi due fatti compaiono nei recap breve, standard e combattimento, nella scaletta e nelle voci pubbliche approvate. Nessun portatore aggiuntivo o potere non osservato viene inventato.
+
+### Accesso all'Area Master online
+
+Apri https://eossumphora-a11y.github.io/jojo-chronicles/master.html, fai **Crea account**, conferma l'email (quando richiesto) e accedi. Se compare **Abilitazione necessaria**, copia l'UID mostrato. Solo chi possiede il progetto Supabase può assegnare a tale UID il ruolo `admin` nella tabella `public.user_roles` attraverso il Table Editor; l'app controlla l'autorizzazione con `is_admin()`. Rientra nel sito dopo l'abilitazione. La registrazione non concede automaticamente ruoli privilegiati; non condividere password o chiavi di servizio.
