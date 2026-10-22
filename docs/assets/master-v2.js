@@ -17,7 +17,29 @@ async function signin(ev){ev.preventDefault();feedback('Verifica delle credenzia
 async function signup(){feedback('Registrazione in corso…');try{const d=await request('/auth/v1/signup',{method:'POST',body:{email:val('email'),password:val('password')}});if(d.access_token){setSession(d);await checkUser()}else feedback('Account creato. Controlla la tua email per confermarlo, poi torna qui e premi Accedi.')}catch(e){feedback(e.message)}}
 function listRenderer(){const root=$('master-list');root.replaceChildren();const needle=val('master-search').toLocaleLowerCase('it').trim(),kind=val('master-filter');const chosen=rows.filter(x=>(kind==='all'||x.category===kind)&&[x.title,x.summary,x.id].join(' ').toLocaleLowerCase('it').includes(needle));if(!chosen.length){root.append(el('p','note','Nessuna voce corrispondente.'));return}
  chosen.forEach(x=>{const b=el('button','master-item'+(current===x.id?' active':''));b.type='button';b.append(el('strong','',name(x)),el('small',x.category+' · '+(x.visibility==='players'?'PUBBLICO':'Solo Master')+' · '+x.status));const small=b.querySelector('small');if(x.visibility==='players')small.classList.add('public');b.onclick=()=>openEditor(x.id);root.append(b)})}
-async function loadRows(){try{rows=await request('/rest/v1/entries?select=*&order=updated_at.desc');$('master-total').textContent=rows.length;$('master-review').textContent=rows.filter(x=>x.status==='Da confermare'||x.status==='In preparazione').length;$('master-public').textContent=rows.filter(x=>x.visibility==='players').length;listRenderer();if(current&&rows.some(x=>x.id===current))await openEditor(current);else if(rows.length)await openEditor(rows[0].id)}catch(e){tell('Impossibile leggere l’archivio: '+e.message)}}
+async function applyEditorialInMaster(rows){
+ try{
+  const response=await fetch('data/editorial-public-v1.json',{cache:'no-store'});
+  if(!response.ok)return;
+  const data=await response.json();
+  for(const row of rows){
+   const update=data.profiles?.[row.id];
+   if(update&&row.summary===update.expected){
+    row.summary=update.summary;
+    row.public_details=update.details;
+    if(Object.prototype.hasOwnProperty.call(update,'condition'))row.public_condition=update.condition;
+    if(Array.isArray(update.events)&&Array.isArray(row.public_history))row.public_history=row.public_history.map((v,i)=>({...v,text:update.events[i]||v.text}));
+    if(Array.isArray(update.inventory))row.public_inventory=update.inventory;
+   }
+   if(row.id==='sessione-fiume-01'&&data.story){
+    if(row.summary===data.story.expectedSummary)row.summary=data.story.newSummary;
+    for(const [before,after] of data.story.replacements||[])if((row.public_details||'').includes(before))row.public_details=row.public_details.replace(before,after);
+    row.public_details=(row.public_details||'').replace(/\n{3,}/g,'\n\n').trim();
+   }
+  }
+ }catch(e){console.warn('Non è stato possibile applicare l’edizione narrativa all’editor',e)}
+}
+async function loadRows(){try{rows=await request('/rest/v1/entries?select=*&order=updated_at.desc');await applyEditorialInMaster(rows);$('master-total').textContent=rows.length;$('master-review').textContent=rows.filter(x=>x.status==='Da confermare'||x.status==='In preparazione').length;$('master-public').textContent=rows.filter(x=>x.visibility==='players').length;listRenderer();if(current&&rows.some(x=>x.id===current))await openEditor(current);else if(rows.length)await openEditor(rows[0].id)}catch(e){tell('Impossibile leggere l’archivio: '+e.message)}}
 function showCharacterFields(){const isCharacter=val('f-category')==='personaggi';$('character-profile-fields').classList.toggle('hidden',!isCharacter)}
 function parseRecords(raw,expected){return String(raw||'').split('\n').map(x=>x.trim()).filter(Boolean).map((line,index)=>{const parts=line.split('|').map(p=>p.trim());if(parts.length<expected)throw Error('Riga '+(index+1)+': mancano alcuni campi. Usa il carattere | come separatore.');return parts})}
 function historyFromForm(){return parseRecords(val('f-history'),4).map(parts=>({session_id:parts[0],session_title:rows.find(x=>x.id===parts[0])?.title||'',time:parts[1],type:parts[2]||'evento',text:parts.slice(3).join(' | '),verified:'da verificare'}))}
