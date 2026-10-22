@@ -1,0 +1,24 @@
+/* Sezione Stand incontrati: sola conoscenza documentata e approvata */
+.stand-intro{max-width:830px;margin:0 0 25px;padding:16px 18px;border:1px solid var(--line2);border-left:3px solid var(--accent);border-radius:10px;background:linear-gradient(95deg,rgba(154,122,182,.10),rgba(24,25,34,.65));color:var(--muted);line-height:1.75}
+.stand-intro strong{color:var(--text)}
+.stand-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;margin:0 0 22px}
+.stand-toolbar label{flex:1;max-width:380px}.stand-toolbar input{width:100%}
+.stand-counter{color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.03em}
+.stand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:16px}
+.stand-card{color:var(--text);text-align:left;display:flex;flex-direction:column;min-height:255px;padding:24px;border:1px solid #403747;border-radius:14px;background:radial-gradient(circle at 95% 0%,rgba(151,103,174,.16),transparent 58%),linear-gradient(155deg,#20202c,#171820);transition:transform .16s,border-color .16s,box-shadow .16s}
+.stand-card:hover{transform:translateY(-3px);border-color:#ac8eae;box-shadow:0 16px 30px #0003}
+.stand-card .stand-flag{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--accent);font-size:10px;letter-spacing:.16em;font-weight:800}
+.stand-card .stand-sigil{font-size:29px;font-weight:400;letter-spacing:0;line-height:1}
+.stand-card h3{font-family:Georgia,serif;font-weight:500;font-size:26px;line-height:1.2;letter-spacing:-.02em;margin:24px 0 12px}
+.stand-card p{color:#bcb8c6;margin:0 0 20px;line-height:1.65;flex:1;font-size:13px}
+.stand-card .stand-foot{border-top:1px solid #3b3541;padding-top:13px;display:flex;justify-content:space-between;align-items:center;gap:10px;color:#b7afbd;font-size:11px}
+.stand-card .stand-foot b{color:var(--accent);font-size:12px}
+.stand-known{color:#e3dfeb;white-space:pre-wrap;line-height:1.75}
+.stand-observation{padding:12px 0;border-bottom:1px solid var(--line);line-height:1.65}
+.stand-observation:last-child{border-bottom:0}
+.stand-observation small{display:block;color:var(--muted);margin-bottom:3px}
+.stand-source-card{width:100%;border:1px solid var(--line2);background:#211e2a;color:var(--text);border-radius:8px;margin:5px 0;padding:11px 13px;display:block;text-align:left}
+.stand-source-card:hover{border-color:var(--accent)}
+.stand-source-card strong{display:block;color:var(--accent);font-size:12px}
+.stand-source-card span{display:block;color:var(--muted);font-size:12px;line-height:1.55;margin-top:3px}
+@media(max-width:600px){.stand-grid{grid-template-columns:1fr}.stand-toolbar{align-items:stretch}.stand-toolbar label{max-width:none}.stand-card{min-height:215px}}

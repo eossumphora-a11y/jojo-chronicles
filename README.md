@@ -2,6 +2,8 @@
 
 ## Nuova pagina web — versione archivio interattivo
 
+- **Nuovo:** sezione [Stand incontrati](https://eossumphora-a11y.github.io/jojo-chronicles/#/stand) aggiornata dai recap approvati, con soli dettagli rivelati ai PG.
+
 - **Pagina giocatori:** https://eossumphora-a11y.github.io/jojo-chronicles/ — dashboard, diario narrativo, compendio, cronologia, indizi, ricerca testuale con fonti, collegamenti cliccabili fra schede e sessioni.
 - **Studio Master online:** https://eossumphora-a11y.github.io/jojo-chronicles/master.html — accesso email/password con Supabase Auth e controllo ruolo admin tramite RLS, editor per schede pubbliche e private, cronologia di sessione e importazione di più SRT da unire per timestamp. La registrazione NON assegna automaticamente il ruolo admin; un amministratore deve inserirlo manualmente nella tabella user_roles.
 - La fonte corrente della pagina giocatori è **Supabase**, esclusivamente record con visibilità `players`. Gli eventi della cronologia sono nel campo `public_events` e diventano illeggibili assieme alla sessione se viene ritirata dalla pubblicazione. Il file `docs/data/public.json` è ora vuoto e costituisce un fallback di configurazione, non un secondo database.
@@ -124,3 +126,21 @@ Ollama deve rimanere avviato mentre usi lo Studio Master. Il modello richiede al
 L'AI può confondere nomi o categorie: le verifiche testuali riducono, ma non eliminano, i falsi positivi. Se manca Ollama, puoi usare **Copia prompt per il resoconto** e fare l'analisi con ChatGPT, ma il catalogo non si aggiorna automaticamente senza un motore locale. Per rilanciare l'estrazione di una sessione già salvata, aprila e premi **Aggiorna enciclopedia dal recap**.
 
 **Importante:** i dati rimangono salvati nel browser con IndexedDB; usa **Esporta backup** regolarmente. Una modifica nel Master Studio non viene inviata automaticamente al sito pubblico.
+
+## Stand incontrati — dossier senza spoiler
+
+Il sito pubblico ha una sezione dedicata **Stand incontrati** (\`#/stand\`), accessibile anche dal menu laterale e dalla panoramica. Non è un catalogo completo degli Stand progettati.
+
+**Regola di visibilità:** uno Stand entra nella sezione solo se esiste una scheda pubblicata (\`category=stand\`, \`visibility=players\`) **e** una sessione pubblica in cui quel nome appare nel recap/eventi, oppure un collegamento esplicito fra la scheda e la sessione. Il sito non deduce abilità dalle schede Foundry, non elenca gli Stand privati e non ricava informazioni da sessioni non pubblicate. I riferimenti ai recap sono cliccabili.
+
+**Contenuti mostrati:** nome approvato, riassunto dei fatti noti e i soli poteri o comportamenti che il Master ha approvato in \`public_details\`. Non vengono mostrati portatore segreto, poteri futuri, caratteristiche numeriche, note riservate o relazioni non approvate. Se non c'è nulla di verificato sui poteri, la sezione dichiara che non ne sono ancora stati identificati.
+
+### Come pubblicare uno Stand dallo Studio Master online
+
+1. Pubblica il recap della sessione in cui il nome dello Stand è stato effettivamente rivelato.
+2. Crea o modifica una scheda nella categoria **Stand** nell'[Area Master](https://eossumphora-a11y.github.io/jojo-chronicles/master.html).
+3. Imposta **Accaduto in gioco** e **Giocato-verificato**, scrivi nel riassunto e nei dettagli pubblici **soltanto ciò che i PG hanno visto** e cita la sessione nel campo **Fonte**.
+4. Pubblica ai giocatori: lo Studio rifiuta una scheda Stand se non riesce a trovare il nome nel recap di una sessione pubblica. Esporta contenuti privati **solo** nei campi riservati.
+5. Non è necessario aggiornare GitHub: la sezione Stand carica i record pubblici da Supabase a ogni apertura del sito.
+
+**Limite attuale:** la scheda dello Stand deve essere creata/approvata nell'Area Master. Questa versione non trasforma da sola ogni nuova registrazione in una scheda del database online; il processo di trascrizione/estrazione automatico esistente nel vecchio Studio locale è distinto.

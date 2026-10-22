@@ -3,7 +3,7 @@ const $=id=>document.getElementById(id);
 const labels={character:'Personaggi',stand:'Stand',location:'Luoghi',faction:'Fazioni',artifact:'Oggetti',clue:'Indizi',other:'Altro'};
 const glyphs={character:'♟',stand:'✧',location:'⌖',faction:'♜',artifact:'✦',clue:'◇',other:'◈'};
 const order=['all','character','stand','location','clue','faction','artifact','other','saved'];
-let entries=[],sessions=[],filter='all',entryQuery='',activeSession='',currentView='home',searchQuery='',entryView='grid';
+let entries=[],sessions=[],filter='all',entryQuery='',standQuery='',activeSession='',currentView='home',searchQuery='',entryView='grid';
 let pinned=new Set();
 try{pinned=new Set(JSON.parse(localStorage.getItem('jojo-public-pins')||'[]'))}catch{}
 const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
@@ -40,7 +40,43 @@ function characterDetails(e,body){const role=characterRole(e);const h=historyOf(
  if(!inventory.length)items.append(txt('p',role==='pg'?'Nessun oggetto particolare è ancora entrato nella sua storia.':'Nessun oggetto importante è ancora comparso nel suo racconto.','character-empty'));
  else for(const thing of inventory){const card=el('div','inventory-record');card.append(txt('strong',thing.name));card.append(txt('span',thing.state||'Stato da confermare','inventory-state'));if(thing.notes)card.append(txt('p',thing.notes));const source=sessions.find(x=>x.id===thing.session_id);if(source)card.append(btn('button',(source.title||'Sessione')+' ↗','inventory-source',()=>{$('detail').close();openSession(source.id)}));items.append(card)}
 }
-function openEntry(e){const dialog=$('detail');$('detail-type').textContent=labels[e.kind]||'Archivio';$('detail-title').textContent=e.title;$('detail-subtitle').textContent=e.subtitle||'Scheda del compendio';const body=$('detail-content');body.replaceChildren();if(e.summary){const p=el('p');linked(p,e.summary);body.append(p)}if(e.body){const part=section(body,'Cosa è stato scoperto');const p=el('p');linked(p,e.body);part.append(p)}
+function standSources(e){return window.JoJoStands.encounterSources(e,sessions)}
+function encounteredStands(){return window.JoJoStands.knownStands(entries,sessions)}
+function renderStands(){
+ const root=$('stand-grid');root.replaceChildren();
+ const all=encounteredStands().sort((a,b)=>a.title.localeCompare(b.title,'it'));
+ const needle=normalize(standQuery.trim());
+ const found=all.filter(e=>normalize([e.title,e.summary,e.body].join(' ')).includes(needle));
+ $('stand-count-label').textContent=all.length+' Stand incontrati · '+found.length+' visualizzati';
+ if(!found.length){root.append(noResults(all.length?'Nessuno Stand trovato':'Nessuno Stand ancora documentato',all.length?'Modifica la ricerca.':'Gli Stand compariranno qui soltanto quando emergeranno da una sessione pubblicata e dopo l’approvazione del Master.'));return}
+ for(const e of found){
+  const source=standSources(e);
+  const card=btn('button','','stand-card',()=>openEntry(e));
+  const flag=el('div','stand-flag');flag.append(txt('span','STAND · INCONTRATO'),txt('span','✧','stand-sigil'));
+  card.append(flag,txt('h3',e.title));
+  card.append(txt('p',short(e.summary||'È stato incontrato, ma non sono ancora note altre informazioni.',190)));
+  const foot=el('div','stand-foot');foot.append(txt('span',source.length+(source.length===1?' sessione documentata':' sessioni documentate')),txt('b','Apri dossier ↗'));card.append(foot);
+  root.append(card);
+ }
+}
+function openStand(e){
+ if(!standSources(e).length)return;
+ const dialog=$('detail');$('detail-type').textContent='STAND INCONTRATO';$('detail-title').textContent=e.title;$('detail-subtitle').textContent='Dossier pubblico · soltanto informazioni rivelate';
+ const body=$('detail-content');body.replaceChildren();
+ const known=section(body,'Cosa avete scoperto');const desc=el('div','stand-known');linked(desc,e.summary||'Lo Stand è stato incontrato, ma non ne sono ancora state identificate le capacità.');known.append(desc);
+ const observed=section(body,'Poteri e caratteristiche osservati');if(e.body){const t=el('div','stand-known');linked(t,e.body);observed.append(t)}else observed.append(txt('p','Nessun altro potere confermato nelle cronache pubblicate.'));
+ const appearance=section(body,'Incontri documentati');
+ for(const s of standSources(e)){
+   const excerpt=window.JoJoStands.evidenceExcerpt(s,e.title);
+   const card=btn('button','','stand-source-card',()=>{dialog.close();openSession(s.id)});
+   card.append(txt('strong',(s.number!=null?'Sessione '+s.number+' · ':'')+s.title));
+   if(excerpt)card.append(txt('span',short(excerpt,200)));
+   appearance.append(card);
+ }
+ const footer=el('div','session-reader-actions');footer.append(txt('p','Le identità e le capacità non rivelate restano escluse da questa scheda.','character-empty'));body.append(footer);
+ if(!dialog.open)dialog.showModal();
+}
+function openEntry(e){if(e.kind==='stand'){openStand(e);return}const dialog=$('detail');$('detail-type').textContent=labels[e.kind]||'Archivio';$('detail-title').textContent=e.title;$('detail-subtitle').textContent=e.subtitle||'Scheda del compendio';const body=$('detail-content');body.replaceChildren();if(e.summary){const p=el('p');linked(p,e.summary);body.append(p)}if(e.body){const part=section(body,'Cosa è stato scoperto');const p=el('p');linked(p,e.body);part.append(p)}
  const info=section(body,'Presenza nella campagna');info.append(txt('p','Apparizioni conosciute: '+sessionCount(e)+'.'));
  const related=(e.related||[]).map(id=>entries.find(x=>x.id===id)).filter(Boolean);if(related.length){const part=section(body,'Collegamenti');const pills=el('div','related-pills');related.forEach(x=>pills.append(btn('button',x.title,'',()=>openEntry(x))));part.append(pills)}
  if(e.kind==='character')characterDetails(e,body);
@@ -117,7 +153,7 @@ function renderSessionSections(root,s){
 }
 
 let libraryCategory='recaps',libraryQuery='',librarySessionOnly=false;
-const libraryCats={recaps:'Recaps',players:'Players',npcs:'NPCs',items:'Items',locations:'Locations',factions:'Factions',quests:'Quests'};
+const libraryCats={recaps:'Recaps',players:'Players',npcs:'NPCs',stands:'Stands',items:'Items',locations:'Locations',factions:'Factions',quests:'Quests'};
 function libraryMatches(value){return !libraryQuery||normalize(value).includes(normalize(libraryQuery))}
 function libraryIsRelated(e,s){
  if(!s)return false;
@@ -218,6 +254,7 @@ function renderSessions(){
 function renderLibraryEntityIndex(){
  const root=$('library-entity-list');root.replaceChildren();const current=sessions.find(x=>x.id===activeSession)||sessions[0];const cat=libraryCategory;const rowset=[];
  if(cat==='players'||cat==='npcs'){for(const e of entries){if(characterRole(e)!==(cat==='players'?'pg':'npc'))continue;rowset.push({name:e.title,body:e.body||e.summary,summary:e.summary,ref:e,icon:cat==='players'?'♟':'♙'})}}
+ if(cat==='stands'){for(const e of encounteredStands())rowset.push({name:e.title,body:e.body||e.summary,summary:e.summary,ref:e,icon:'✧'})}
  if(cat==='locations'||cat==='factions'){for(const e of entries){if(cat==='locations'&&e.kind!=='location')continue;if(cat==='factions'&&e.kind!=='faction')continue;rowset.push({name:e.title,body:e.body||e.summary,summary:e.summary,ref:e,icon:cat==='locations'?'⌖':'⚔'})}}
  if(cat==='quests'){for(const e of entries){if(!(e.id.startsWith('trial-')||(e.tags||[]).includes('prova')))continue;rowset.push({name:e.title,body:e.body||e.summary,summary:e.summary,ref:e,icon:'▤'})}}
  if(cat==='items'){const map=new Map();for(const e of entries){if(e.kind==='artifact')map.set(normalize(e.title),{name:e.title,body:e.body||e.summary,ref:e,icon:'⬡'});
@@ -242,7 +279,7 @@ function renderEntries(){const root=$('entry-grid');root.replaceChildren();root.
 function renderHome(){const last=sessions[0];$('featured-session').replaceChildren();if(last){const b=btn('button','','session-feature',()=>openSession(last.id));b.append(txt('span',sessionName(last).toUpperCase(),'mini-label'),txt('h3',last.title),txt('p',short(sessionInfo(last).lead||summaryText(last.summary),350)));const foot=el('div','card-bottom');foot.append(txt('span',(last.related||[]).length+' elementi collegati'),txt('b','Leggi la cronaca →'));b.append(foot);$('featured-session').append(b)}else $('featured-session').append(noResults('Nessuna cronaca','Il diario si riempirà quando verranno pubblicate le sessioni.'));
  $('home-entities').replaceChildren();const featured=[...entries.filter(x=>x.kind==='character'),...entries.filter(x=>x.kind==='stand')].slice(0,3);featured.forEach(e=>{const b=btn('button','','small-entity',()=>openEntry(e));b.append(txt('span',(labels[e.kind]||'COMPENDIO').toUpperCase()),txt('b',e.title),txt('small',e.summary));$('home-entities').append(b)});if(!featured.length)$('home-entities').append(noResults('Compendio vuoto','Nessuna scoperta registrata.'));
  $('home-moments').replaceChildren();const moments=last?.events?.slice(-3)||[];for(const [index,m] of moments.entries()){const d=el('div','moment-preview');d.append(txt('b','✦ '+String(index+1)),txt('p',short(m.text,110)));$('home-moments').append(d)}if(!moments.length)$('home-moments').append(txt('p','I momenti chiave appariranno qui.'));
- $('count-sessions').textContent=String(sessions.length);$('count-entries').textContent=String(entries.length);$('count-stand').textContent=String(entries.filter(e=>e.kind==='stand').length);$('count-events').textContent=String(sessions.reduce((n,s)=>n+(s.events?.length||0),0));$('nav-session-count').textContent=String(sessions.length);$('nav-entry-count').textContent=String(entries.length);$('nav-pg-count').textContent=String(entries.filter(e=>characterRole(e)==='pg').length);$('nav-npc-count').textContent=String(entries.filter(e=>characterRole(e)==='npc').length);
+ $('count-sessions').textContent=String(sessions.length);$('count-entries').textContent=String(entries.length);$('count-stand').textContent=String(encounteredStands().length);$('nav-stand-count').textContent=String(encounteredStands().length);$('count-events').textContent=String(sessions.reduce((n,s)=>n+(s.events?.length||0),0));$('nav-session-count').textContent=String(sessions.length);$('nav-entry-count').textContent=String(entries.length);$('nav-pg-count').textContent=String(entries.filter(e=>characterRole(e)==='pg').length);$('nav-npc-count').textContent=String(entries.filter(e=>characterRole(e)==='npc').length);
  $('sidebar-party').replaceChildren();entries.filter(e=>e.id.startsWith('pg-')).slice(0,7).forEach(e=>{const b=btn('button','','side-person',()=>openEntry(e));b.append(txt('span',e.title.trim()[0]||'?','avatar'),txt('span',e.title));$('sidebar-party').append(b)});}
 function renderItemsIndex(){
  const root=$('items-index');root.replaceChildren();const grouped=new Map();
@@ -267,10 +304,10 @@ function runMemory(q){const root=$('memory-results');root.replaceChildren();q=sa
  root.append(txt('div',ranked.length+' risultati basati sul diario e sulle schede disponibili','memory-hint'));for(const item of ranked){const b=btn('button','','search-result',item.open);b.append(txt('span',item.type.toUpperCase()),txt('h3',item.title),txt('p',short(item.text,310)));root.append(b)}}
 function noResults(title,description){const card=el('div','no-results');card.append(txt('h3',title),txt('p',description));return card}
 function notice(msg){const b=txt('div',msg,'toast');b.style.cssText='position:fixed;right:20px;bottom:20px;background:#302c39;color:#f2d6ab;padding:12px 18px;border:1px solid #7c6274;border-radius:8px;z-index:200';document.body.append(b);setTimeout(()=>b.remove(),2400)}
-function go(view){if(!['home','sessioni','pg','npc','compendio','oggetti','prove','cronologia','misteri','ricerca'].includes(view))view='home';if(location.hash!=='#/'+view){location.hash='/'+view}else route()}
-function route(){const parts=(location.hash||'#/sessioni').replace(/^#\/?/,'').split('/');const view=parts[0]||'home';if(view==='sessioni'&&parts[1]){const id=decodeURIComponent(parts[1]);if(sessions.some(x=>x.id===id)){activeSession=id;libraryCategory='recaps'}}currentView=['home','sessioni','pg','npc','compendio','oggetti','prove','cronologia','misteri','ricerca'].includes(view)?view:'home';
- document.querySelectorAll('.view').forEach(x=>x.classList.toggle('hidden',x.id!=='view-'+currentView));document.querySelectorAll('[data-nav]').forEach(x=>{const a=x.dataset.nav===currentView;x.classList.toggle('active',a);if(a)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current')});const names={home:'Panoramica',sessioni:'Diario delle sessioni',pg:'Personaggi giocanti',npc:'Personaggi non giocanti',compendio:'Compendio',oggetti:'Oggetti incontrati',prove:'Prove e obiettivi',cronologia:'Cronologia',misteri:'Fili aperti',ricerca:'Ricerca'};$('breadcrumb').textContent=names[currentView];
- if(currentView==='home')renderHome();document.body.classList.toggle('library-focused',currentView==='sessioni');if(currentView==='sessioni')renderLibrary();if(currentView==='pg'||currentView==='npc')renderCharacters(currentView);if(currentView==='compendio'){renderFilters();renderEntries()}if(currentView==='oggetti')renderItemsIndex();if(currentView==='prove')renderTrialIndex();if(currentView==='cronologia')renderTimeline();if(currentView==='misteri')renderMysteries();if(currentView==='ricerca'){$('memory-query').value=searchQuery;runMemory(searchQuery)}
+function go(view){if(!['home','sessioni','pg','npc','stand','compendio','oggetti','prove','cronologia','misteri','ricerca'].includes(view))view='home';if(location.hash!=='#/'+view){location.hash='/'+view}else route()}
+function route(){const parts=(location.hash||'#/sessioni').replace(/^#\/?/,'').split('/');const view=parts[0]||'home';if(view==='sessioni'&&parts[1]){const id=decodeURIComponent(parts[1]);if(sessions.some(x=>x.id===id)){activeSession=id;libraryCategory='recaps'}}currentView=['home','sessioni','pg','npc','stand','compendio','oggetti','prove','cronologia','misteri','ricerca'].includes(view)?view:'home';
+ document.querySelectorAll('.view').forEach(x=>x.classList.toggle('hidden',x.id!=='view-'+currentView));document.querySelectorAll('[data-nav]').forEach(x=>{const a=x.dataset.nav===currentView;x.classList.toggle('active',a);if(a)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current')});const names={home:'Panoramica',sessioni:'Diario delle sessioni',pg:'Personaggi giocanti',npc:'Personaggi non giocanti',stand:'Stand incontrati',compendio:'Compendio',oggetti:'Oggetti incontrati',prove:'Prove e obiettivi',cronologia:'Cronologia',misteri:'Fili aperti',ricerca:'Ricerca'};$('breadcrumb').textContent=names[currentView];
+ if(currentView==='home')renderHome();document.body.classList.toggle('library-focused',currentView==='sessioni');if(currentView==='sessioni')renderLibrary();if(currentView==='pg'||currentView==='npc')renderCharacters(currentView);if(currentView==='stand')renderStands();if(currentView==='compendio'){renderFilters();renderEntries()}if(currentView==='oggetti')renderItemsIndex();if(currentView==='prove')renderTrialIndex();if(currentView==='cronologia')renderTimeline();if(currentView==='misteri')renderMysteries();if(currentView==='ricerca'){$('memory-query').value=searchQuery;runMemory(searchQuery)}
  $('sidebar').classList.remove('open');$('mobile-shade').classList.remove('open');window.scrollTo(0,0)}
 const PUBLIC_DB='https://eldluuxqizvrczsnelre.supabase.co/rest/v1';
 const PUBLIC_DB_KEY='sb_publishable_l8p97NQI5ELPiJ0OOoIJww_DJIovv7E';
@@ -313,11 +350,11 @@ async function applyNarrativeEdition(){
 }
 function mergeData(local,db){const localEntries=Array.isArray(local.entries)?local.entries.filter(x=>x&&x.public!==false):[];const localSessions=Array.isArray(local.sessions)?local.sessions.filter(x=>x&&x.public!==false):[];const mapE=new Map(localEntries.map(x=>[x.id,x]));db.entries.forEach(x=>mapE.set(x.id,{...mapE.get(x.id),...x,related:[...new Set([...(mapE.get(x.id)?.related||[]),...(x.related||[])])]}));const mapS=new Map(localSessions.map(x=>[x.id,x]));db.sessions.forEach(x=>mapS.set(x.id,{...mapS.get(x.id),...x,events:mapS.get(x.id)?.events||[],quotes:mapS.get(x.id)?.quotes||[],related:[...new Set([...(mapS.get(x.id)?.related||[]),...(x.related||[])])]}));return{entries:[...mapE.values()],sessions:[...mapS.values()]};}
 async function init(){try{const res=await fetch('data/public.json',{cache:'no-store'});if(!res.ok)throw Error('Archivio non disponibile');const data=await res.json();const name=data.campaign?.title||'Un destino bizzarro.';$('campaign-title').replaceChildren();$('campaign-title').append(document.createTextNode(name.replace(/\.+$/,'').replace(/\s+bizzarro$/i,'')));if(/bizzarro/i.test(name))$('campaign-title').append(txt('em','bizzarro.'));if(data.campaign?.subtitle)$('campaign-subtitle').textContent=data.campaign.subtitle;document.title=name+' · JoJo Chronicles';entries=Array.isArray(data.entries)?data.entries.filter(x=>x.public!==false):[];sessions=Array.isArray(data.sessions)?data.sessions.filter(x=>x.public!==false):[];try{const db=await loadPublicDB();entries=db.entries.filter(e=>!['personaggio-emma','personaggio-emma-stenvibler','personaggio-john'].includes(e.id));sessions=db.sessions;await applyNarrativeEdition();await loadRecapFormats();}catch(e){console.warn('Archivio remoto non raggiungibile, dati locali utilizzati',e)}
- sessions.sort((a,b)=>(b.number??0)-(a.number??0));activeSession=sessions[0]?.id||'';renderHome();route();
+ sessions.sort((a,b)=>(b.number??0)-(a.number??0));entries=entries.filter(e=>e.kind!=='stand'||window.JoJoStands.encounterSources(e,sessions).length>0);activeSession=sessions[0]?.id||'';renderHome();route();
  }catch(e){$('featured-session').append(noResults('Impossibile caricare l’archivio','La pagina deve essere aperta dal sito GitHub Pages.'));console.error(e)}}
 
 document.querySelectorAll('[data-library]').forEach(b=>b.addEventListener('click',()=>{
- libraryCategory=b.dataset.library;if(!['recaps','players','npcs','items','locations','factions','quests'].includes(libraryCategory))libraryCategory='recaps';
+ libraryCategory=b.dataset.library;if(!['recaps','players','npcs','stands','items','locations','factions','quests'].includes(libraryCategory))libraryCategory='recaps';
  if(libraryCategory!=='recaps'&&location.hash.startsWith('#/sessioni/'))location.hash='#/sessioni';
  renderLibrary();
 }));
@@ -329,7 +366,7 @@ document.addEventListener('click',e=>{const wrap=document.querySelector('.librar
 document.querySelectorAll('[data-nav]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.nav)));document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
 $('hero-session').onclick=()=>sessions.length?openSession(sessions[0].id):go('sessioni');
 $('search-jump').onclick=()=>go('ricerca');
-$('entry-search').addEventListener('input',e=>{entryQuery=e.target.value;renderEntries()});$('view-grid').addEventListener('click',()=>{entryView='grid';try{localStorage.setItem('jojo-entry-view',entryView)}catch{};renderEntries()});$('view-list').addEventListener('click',()=>{entryView='list';try{localStorage.setItem('jojo-entry-view',entryView)}catch{};renderEntries()});try{entryView=localStorage.getItem('jojo-entry-view')==='list'?'list':'grid'}catch{};
+$('stand-search').addEventListener('input',e=>{standQuery=e.target.value;renderStands()});$('entry-search').addEventListener('input',e=>{entryQuery=e.target.value;renderEntries()});$('view-grid').addEventListener('click',()=>{entryView='grid';try{localStorage.setItem('jojo-entry-view',entryView)}catch{};renderEntries()});$('view-list').addEventListener('click',()=>{entryView='list';try{localStorage.setItem('jojo-entry-view',entryView)}catch{};renderEntries()});try{entryView=localStorage.getItem('jojo-entry-view')==='list'?'list':'grid'}catch{};
 $('memory-form').addEventListener('submit',e=>{e.preventDefault();searchQuery=$('memory-query').value;runMemory(searchQuery)});
 $('detail-close').onclick=()=>$('detail').close();
 $('detail').addEventListener('click',e=>{if(e.target===$('detail'))$('detail').close()});
