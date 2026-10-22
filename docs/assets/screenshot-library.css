@@ -107,3 +107,12 @@
 @media(max-width:540px){.library-focused .main{padding:14px 11px 60px}.library-headline h1{font-size:22px}.library-headline p{font-size:11px}.library-toolbar{gap:8px}.library-search{width:auto;flex:1;min-height:48px;padding:0 10px}.library-search input{font-size:14px;height:46px}.library-filter-button{min-height:48px;padding:0 11px;font-size:13px}.library-filter-popup{right:0;left:auto;width:270px}.library-recaps-layout .journal-item{min-width:230px;flex-basis:230px}.library-recap-heading h2{font-size:24px}.library-recap-lower{padding:0 14px 25px}.library-heading-tools{gap:4px}.library-icon-button{height:29px;width:29px;font-size:14px}.library-section-heading h3{font-size:19px}.library-quote-card{padding:20px 15px}.library-quote-card blockquote{font-size:16px}.library-note-preview{padding:12px}}
 
 .library-home-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#576273;font-weight:750}.library-home-link:hover{color:#293a53}.library-home-link .small-quill{font-size:18px;color:#66758a}
+
+/* Dossier per-sessione: NPCs | Items | Stands | Locations */
+.library-notes-columns{grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+.library-note-column{min-width:0}
+.library-note-column .library-note-entry>span:nth-child(2){min-width:0;overflow-wrap:anywhere}
+@media(max-width:1100px) and (min-width:781px){
+ .library-notes-columns{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+}
+@media(max-width:780px){.library-notes-columns{grid-template-columns:1fr;gap:22px}}

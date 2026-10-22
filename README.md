@@ -152,3 +152,13 @@ Confermate dal Master il 22 ottobre 2026: **JustIn Time** è lo Stand armato di 
 ### Accesso all'Area Master online
 
 Apri https://eossumphora-a11y.github.io/jojo-chronicles/master.html, fai **Crea account**, conferma l'email (quando richiesto) e accedi. Se compare **Abilitazione necessaria**, copia l'UID mostrato. Solo chi possiede il progetto Supabase può assegnare a tale UID il ruolo `admin` nella tabella `public.user_roles` attraverso il Table Editor; l'app controlla l'autorizzazione con `is_admin()`. Rientra nel sito dopo l'abilitazione. La registrazione non concede automaticamente ruoli privilegiati; non condividere password o chiavi di servizio.
+
+## Stand nella pagina di ogni sessione
+
+La sezione **Notes** di ciascun recap include ora quattro colonne: **NPCs, Items, Stands, Locations**. **Stands** è immediatamente accanto a **Items** e mostra soltanto Stand la cui scheda sia pubblicata e il cui nome compaia nel recap o negli eventi pubblici di quella specifica sessione. Ogni riga permette di consultare il dossier e ogni anteprima usa un brano documentato del recap quando disponibile.
+
+La voce laterale **Stand incontrati** (`#/stand`) è il catalogo cumulativo degli Stand approvati e nominati in almeno una sessione pubblica. Uno Stand nominato solo nella seconda sessione non apparirà nella prima; gli Stand delle bozze Master non appariranno mai. I contenuti mostrati provengono esclusivamente dai dati pubblici approvati, senza abilità o portatori segreti.
+
+### Account Master
+
+L'account Master online richiede **Supabase Auth + ruolo admin** nel progetto. Il solo GitHub non consente di creare utenti Supabase e non si devono salvare password, token o credenziali in questo repository. Per gestire account e autorizzazioni direttamente da ChatGPT occorre collegare l'integrazione Supabase, oppure l'amministratore del progetto deve creare e autorizzare l'account dal dashboard.

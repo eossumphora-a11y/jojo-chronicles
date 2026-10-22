@@ -137,7 +137,8 @@ function renderSessionSections(root,s){
  }else if(mode==='notes'){
   root.append(txt('h3','Note della sessione','sq-panel-title'),txt('p','I volti, i luoghi, i poteri e gli oggetti incontrati nel corso di questa avventura.','sq-panel-sub'));
   const related=[...new Set(s.related||[])].map(id=>entries.find(x=>x.id===id)).filter(Boolean);
-  const groups=[['Personaggi giocanti',related.filter(e=>characterRole(e)==='pg')],['Personaggi non giocanti',related.filter(e=>characterRole(e)==='npc')],['Stand e poteri',related.filter(e=>e.kind==='stand')],['Luoghi',related.filter(e=>e.kind==='location')],['Prove e obiettivi',related.filter(e=>e.kind==='other'&&(e.id.startsWith('trial-')||e.tags?.includes('prova')))]];
+  const stands=window.JoJoStands.sessionStands(entries,sessions,s);
+  const groups=[['Personaggi giocanti',related.filter(e=>characterRole(e)==='pg')],['Personaggi non giocanti',related.filter(e=>characterRole(e)==='npc')],['Stand e poteri',stands],['Luoghi',related.filter(e=>e.kind==='location')],['Prove e obiettivi',related.filter(e=>e.kind==='other'&&(e.id.startsWith('trial-')||e.tags?.includes('prova')))]];
   for(const [heading,items] of groups){if(!items.length)continue;const area=el('div','sq-note-section');area.append(txt('h4',heading,'sq-notes-heading'));const list=el('div','sq-notes-grid');
    for(const e of items){const item=btn('button','','sq-note-card',()=>openEntry(e));item.append(txt('strong',e.title),txt('span',short(e.summary,140)));list.append(item)}
    area.append(list);root.append(area);
@@ -157,6 +158,7 @@ const libraryCats={recaps:'Recaps',players:'Players',npcs:'NPCs',stands:'Stands'
 function libraryMatches(value){return !libraryQuery||normalize(value).includes(normalize(libraryQuery))}
 function libraryIsRelated(e,s){
  if(!s)return false;
+ if(e.kind==='stand')return window.JoJoStands.encounterSources(e,[s]).length>0;
  if((s.related||[]).includes(e.id))return true;
  if((e.public_history||[]).some(x=>x.session_id===s.id))return true;
  return e.kind==='faction'&&normalize(s.summary).includes(normalize(e.title));
@@ -167,16 +169,18 @@ function libraryTitle(parent,title,downloadContent='',fileName=''){const heading
  if(downloadContent){const dl=btn('button','↓','library-icon-button',()=>downloadLibraryText(fileName||title,downloadContent));dl.title='Scarica '+title.toLowerCase();dl.setAttribute('aria-label','Scarica '+title.toLowerCase());tools.append(dl)}
  heading.append(tools);parent.append(heading)}
 function libraryNotesData(s){const related=entries.filter(e=>libraryIsRelated(e,s));
+ const stands=window.JoJoStands.sessionStands(entries,sessions,s);
  const npcs=related.filter(e=>characterRole(e)==='npc');
  const locations=related.filter(e=>e.kind==='location');
  const objects=[];
  for(const entry of entries){if(entry.kind!=='character')continue;for(const thing of entry.public_inventory||[]){if(thing.session_id!==s.id)continue;const key=normalize(thing.name);if(!objects.some(x=>normalize(x.name)===key))objects.push({name:thing.name,text:thing.notes||'',state:thing.state||'',holder:entry.title})}}
  for(const entry of related.filter(e=>e.kind==='artifact')){if(!objects.some(x=>normalize(x.name)===normalize(entry.title)))objects.push({name:entry.title,text:entry.body||entry.summary,state:''})}
- return {npcs,objects,locations}
+ return {npcs,objects,stands,locations}
 }
 function renderLibraryNotes(root,s){const notes=libraryNotesData(s);const download=[
  ...notes.npcs.map(e=>'NPC: '+e.title+' — '+(e.body||e.summary)),
  ...notes.objects.map(o=>'OGGETTO: '+o.name+' — '+o.text),
+ ...notes.stands.map(e=>'STAND: '+e.title+' — '+(window.JoJoStands.evidenceExcerpt(s,e.title)||e.summary)),
  ...notes.locations.map(e=>'LUOGO: '+e.title+' — '+(e.body||e.summary))
  ].join('\n\n');
  libraryTitle(root,'Notes',download,s.title+'_note');
@@ -184,6 +188,7 @@ function renderLibraryNotes(root,s){const notes=libraryNotesData(s);const downlo
  const specs=[
  {title:'NPCs',icon:'♙',items:notes.npcs.map(e=>({name:e.title,description:e.body||e.summary,open:()=>openEntry(e)}))},
  {title:'Items',icon:'⬡',items:notes.objects.map(e=>({name:e.name,description:e.text||(e.state?'Condizione: '+e.state:''),open:()=>{const found=entries.find(x=>x.kind==='character'&&(x.public_inventory||[]).some(item=>item.name===e.name));if(found)openEntry(found)}}))},
+ {title:'Stands',icon:'✧',items:notes.stands.map(e=>({name:e.title,description:window.JoJoStands.evidenceExcerpt(s,e.title)||e.summary||'Stand nominato nella sessione.',open:()=>openEntry(e)}))},
  {title:'Locations',icon:'⌖',items:notes.locations.map(e=>({name:e.title,description:e.body||e.summary,open:()=>openEntry(e)}))}
  ];
  for(const spec of specs){

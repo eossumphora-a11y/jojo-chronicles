@@ -35,10 +35,15 @@
   function knownStands(entries,sessions){
     return (Array.isArray(entries)?entries:[]).filter(e=>e?.kind==="stand"&&e.public!==false&&encounterSources(e,sessions).length>0);
   }
+  function sessionStands(entries,sessions,session){
+    if(!publicSession(session))return [];
+    const registered=knownStands(entries,sessions);
+    return registered.filter(e=>encounterSources(e,[session]).length>0);
+  }
   function evidenceExcerpt(session,name){
     const parts=String(session?.summary||"").split(/(?<=[.!?])\s+|\n+/);
     const found=parts.find(p=>mentioned(p,name));
     return found?found.trim().slice(0,350):"";
   }
-  return Object.freeze({mentioned,encounterSources,knownStands,evidenceExcerpt});
+  return Object.freeze({mentioned,encounterSources,knownStands,sessionStands,evidenceExcerpt});
 });
