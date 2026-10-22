@@ -151,7 +151,9 @@ Confermate dal Master il 22 ottobre 2026: **JustIn Time** è lo Stand armato di 
 
 ### Accesso all'Area Master online
 
-Apri https://eossumphora-a11y.github.io/jojo-chronicles/master.html, fai **Crea account**, conferma l'email (quando richiesto) e accedi. Se compare **Abilitazione necessaria**, copia l'UID mostrato. Solo chi possiede il progetto Supabase può assegnare a tale UID il ruolo `admin` nella tabella `public.user_roles` attraverso il Table Editor; l'app controlla l'autorizzazione con `is_admin()`. Rientra nel sito dopo l'abilitazione. La registrazione non concede automaticamente ruoli privilegiati; non condividere password o chiavi di servizio.
+Apri https://eossumphora-a11y.github.io/jojo-chronicles/master.html e fai **Accedi**. La registrazione pubblica **non è più presente nell'interfaccia**. Un amministratore Supabase deve prima creare o invitare il tuo account da **Authentication → Users → Add user → Send invitation**. Dopo l'accettazione dell'invito, deve associare il tuo UID al ruolo `admin` in `public.user_roles` (controllando quali campi richiede realmente lo schema). L'app verifica il ruolo tramite la RPC `is_admin()`. Se compare **Abilitazione necessaria**, copia l'UID e verifica l'assegnazione. Non condividere password o chiavi di servizio.
+
+**Fondamentale per la sicurezza:** nascondere il pulsante «Crea account» non blocca l'endpoint Supabase Auth. Nel Dashboard Supabase, nelle impostazioni di **Authentication → Providers / Sign In**, disattiva **Allow new users to sign up**. Fino a quando questo intervento server-side non viene eseguito, nuove persone potrebbero ancora creare account Auth direttamente tramite API, anche se non diventerebbero Master senza un ruolo admin autorizzato. È necessario mantenere attive e corrette le policy RLS.
 
 ## Stand nella pagina di ogni sessione
 
@@ -162,3 +164,9 @@ La voce laterale **Stand incontrati** (`#/stand`) è il catalogo cumulativo degl
 ### Account Master
 
 L'account Master online richiede **Supabase Auth + ruolo admin** nel progetto. Il solo GitHub non consente di creare utenti Supabase e non si devono salvare password, token o credenziali in questo repository. Per gestire account e autorizzazioni direttamente da ChatGPT occorre collegare l'integrazione Supabase, oppure l'amministratore del progetto deve creare e autorizzare l'account dal dashboard.
+
+## Stand mancanti dal DB: POOR SOULS
+
+Per **La prova del fiume**, POOR SOULS risulta documentato nella versione narrativa pubblica del recap (`docs/data/session-formats.json`) e nella voce editoriale già pubblica (`docs/data/editorial-public-v1.json`). La pagina ora verifica le menzioni anche nelle versioni pubbliche del recap, non soltanto nel riassunto grezzo Supabase.
+
+In assenza di una riga pubblica per POOR SOULS nel database, usa **solo** la voce editoriale pubblica esistente come dossier limitato (Atto 2, aspetto da canocchia mantide, chele e attacchi esplosivi già raccontati). La scheda compare soltanto se una sessione visibile ai giocatori ne riporta espressamente il nome. Nessun dato nascosto del manuale/Foundry viene importato. Il fallback non crea né modifica record nel database Supabase.

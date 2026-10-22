@@ -29,7 +29,8 @@
     if(!entry||entry.kind!=="stand"||entry.public===false)return [];
     return (Array.isArray(sessions)?sessions:[]).filter(s=>publicSession(s)&&(
       mentioned(s.summary,entry.title)||
-      (Array.isArray(s.events)&&s.events.some(ev=>mentioned(ev.text,entry.title)))
+      (Array.isArray(s.events)&&s.events.some(ev=>mentioned(ev.text,entry.title)))||
+      (Array.isArray(s.recapVariants)&&s.recapVariants.some(text=>mentioned(text,entry.title)))
     )).sort((a,b)=>(a.number??9999)-(b.number??9999));
   }
   function knownStands(entries,sessions){
@@ -41,7 +42,8 @@
     return registered.filter(e=>encounterSources(e,[session]).length>0);
   }
   function evidenceExcerpt(session,name){
-    const parts=String(session?.summary||"").split(/(?<=[.!?])\s+|\n+/);
+    const texts=[String(session?.summary||""),...(Array.isArray(session?.recapVariants)?session.recapVariants:[])];
+    const parts=texts.flatMap(text=>text.split(/(?<=[.!?])\s+|\n+/));
     const found=parts.find(p=>mentioned(p,name));
     return found?found.trim().slice(0,350):"";
   }

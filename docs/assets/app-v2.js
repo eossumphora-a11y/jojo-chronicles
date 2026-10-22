@@ -331,6 +331,17 @@ async function applyNarrativeEdition(){
    if(Array.isArray(patch.events)){const list=historyOf(e);for(let i=0;i<patch.events.length;i++){if(i<list.length)list[i]={...list[i],text:patch.events[i]};else list.push({session_id:'sessione-fiume-01',session_title:'La prova del fiume',time:'',type:'azione',text:patch.events[i]})}e.public_history=list}
    if(Array.isArray(patch.inventory))e.public_inventory=patch.inventory;
   }
+  // POOR SOULS è già descritto nell'archivio narrativo pubblico.
+  // Se manca una scheda pubblica nel DB, ricrea soltanto il dossier
+  // basato su dati editoriali pubblicati; la verifica della menzione
+  // nel recap è comunque obbligatoria prima di mostrarlo.
+  const poor=edition.profiles?.['stand-poor-souls'];
+  if(poor&&!entries.some(e=>e.kind==='stand'&&(e.id==='stand-poor-souls'||normalize(e.title)==='poor souls'))){
+   entries.push({id:'stand-poor-souls',kind:'stand',title:'POOR SOULS',
+    subtitle:'Stand incontrato · Atto 2',
+    summary:poor.summary||'',body:poor.details||'',
+    tags:[],related:[],public:true});
+  }
   const chap=sessions.find(x=>x.id==='sessione-fiume-01');
   if(chap&&edition.story){
    if(chap.summary===edition.story.expectedSummary)chap.summary=edition.story.newSummary;
@@ -355,6 +366,13 @@ async function applyNarrativeEdition(){
 }
 function mergeData(local,db){const localEntries=Array.isArray(local.entries)?local.entries.filter(x=>x&&x.public!==false):[];const localSessions=Array.isArray(local.sessions)?local.sessions.filter(x=>x&&x.public!==false):[];const mapE=new Map(localEntries.map(x=>[x.id,x]));db.entries.forEach(x=>mapE.set(x.id,{...mapE.get(x.id),...x,related:[...new Set([...(mapE.get(x.id)?.related||[]),...(x.related||[])])]}));const mapS=new Map(localSessions.map(x=>[x.id,x]));db.sessions.forEach(x=>mapS.set(x.id,{...mapS.get(x.id),...x,events:mapS.get(x.id)?.events||[],quotes:mapS.get(x.id)?.quotes||[],related:[...new Set([...(mapS.get(x.id)?.related||[]),...(x.related||[])])]}));return{entries:[...mapE.values()],sessions:[...mapS.values()]};}
 async function init(){try{const res=await fetch('data/public.json',{cache:'no-store'});if(!res.ok)throw Error('Archivio non disponibile');const data=await res.json();const name=data.campaign?.title||'Un destino bizzarro.';$('campaign-title').replaceChildren();$('campaign-title').append(document.createTextNode(name.replace(/\.+$/,'').replace(/\s+bizzarro$/i,'')));if(/bizzarro/i.test(name))$('campaign-title').append(txt('em','bizzarro.'));if(data.campaign?.subtitle)$('campaign-subtitle').textContent=data.campaign.subtitle;document.title=name+' · JoJo Chronicles';entries=Array.isArray(data.entries)?data.entries.filter(x=>x.public!==false):[];sessions=Array.isArray(data.sessions)?data.sessions.filter(x=>x.public!==false):[];try{const db=await loadPublicDB();entries=db.entries.filter(e=>!['personaggio-emma','personaggio-emma-stenvibler','personaggio-john'].includes(e.id));sessions=db.sessions;await applyNarrativeEdition();await loadRecapFormats();}catch(e){console.warn('Archivio remoto non raggiungibile, dati locali utilizzati',e)}
+ // Le versioni brevi/standard/combattimento sono recap PUBBLICI:
+ // hanno valore di fonte per riconoscere gli Stand nominati.
+ for(const s of sessions){
+  const f=recapFormats[s.id];
+  if(!f)continue;
+  s.recapVariants=[f.standard,f.concise,f.combat,...(f.outline||[]).flatMap(ch=>ch.events||[])].filter(x=>typeof x==='string');
+ }
  sessions.sort((a,b)=>(b.number??0)-(a.number??0));entries=entries.filter(e=>e.kind!=='stand'||window.JoJoStands.encounterSources(e,sessions).length>0);activeSession=sessions[0]?.id||'';renderHome();route();
  }catch(e){$('featured-session').append(noResults('Impossibile caricare l’archivio','La pagina deve essere aperta dal sito GitHub Pages.'));console.error(e)}}
 

@@ -39,6 +39,7 @@ jobs:
           node tests/check_public_export.js
           node tests/test_stand_visibility.js
           node tests/test_session_stands.js
+          node tests/test_poor_souls_and_master_access.js
           node tests/test_recap_corrections.js
       - name: Test trascrittore locale
         run: |
