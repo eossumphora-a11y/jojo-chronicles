@@ -1,0 +1,170 @@
+{
+  "profiles": {
+    "personaggio-emma": {
+      "expected": "Una figura associata ai Grimm interviene al termine della prova per fermare un'aggressione.",
+      "summary": "Emma è una dei Grimm incaricati di imporre la fine delle ostilità.",
+      "details": "Quando la prova termina, qualcuno tenta ancora di colpire Sunshine. Emma interviene prima che l'attacco raggiunga il bersaglio: la mano dello Stand aggressore esplode e ogni ulteriore violenza viene proibita. Il suo ordine è inequivocabile: il combattimento è finito.",
+      "condition": "",
+      "events": [
+        "Interviene dopo il traguardo e blocca un attacco contro Sunshine, ricordando che nessuno può più uccidere a prova conclusa."
+      ]
+    },
+    "personaggio-giulia-zeppeli": {
+      "expected": "Compare davanti ai partecipanti nella nuova arena, dove riceve un sussurro da una figura misteriosa.",
+      "summary": "Giulia Zeppeli appare isolata nella nuova arena, proprio dove discende una figura dall'aspetto impossibile da ricordare.",
+      "details": "A una trentina di metri dagli altri superstiti, Giulia Zeppeli assiste alla discesa di una figura simile a un angelo. Ognuno ne vede un volto diverso. La sconosciuta si china su Giulia e le parla all'orecchio per quasi un minuto, prima di svanire senza lasciare spiegazioni.",
+      "condition": "Le parole sussurrate all'orecchio di Giulia restano un mistero.",
+      "events": [
+        "Nella nuova arena, una figura mutevole si china e le parla all'orecchio lontano da tutti gli altri."
+      ]
+    },
+    "personaggio-hol-horse": {
+      "expected": "Nome confermato dal Master come presente nella sessione.",
+      "summary": "Hol Horse è tra le figure il cui nome emerge attorno agli eventi della prova.",
+      "details": "Hol Horse rimane una presenza ancora poco conosciuta. Il suo nome è emerso, ma nessuno ha ancora potuto ricostruire fino in fondo il suo ruolo in quanto accaduto.",
+      "condition": ""
+    },
+    "personaggio-john": {
+      "expected": "Travolto dall'ondata, aiuta poi la fuga mantenendo attiva la propulsione della zattera.",
+      "summary": "John viene travolto dalle acque, ma riesce a contribuire alla fuga mantenendo in movimento la zattera.",
+      "details": "L'ondata sollevata da Sue Nami lo getta nel fiume. Quando il gruppo organizza l'attraversamento, John resta impegnato nella propulsione della zattera: è anche grazie alla sua spinta che gli altri raggiungono la sponda opposta."
+    },
+    "personaggio-killian-jones": {
+      "expected": "Combatte con uno Stand che lancia uncini e fili, creando legami fra i bersagli.",
+      "summary": "Killian Jones combatte attraverso uno Stand dalle mani a uncino, capace di intrecciare legami pericolosi fra le sue vittime.",
+      "details": "Il suo Stand ha l'aspetto di un pirata scheletrico, armato di uncini collegati a fili. Chi viene agganciato rischia di subire gli effetti dei colpi inferti ad altri. Quando il metronomo di Raven passa nelle mani di Julian e inizia a ticchettare accanto allo Stand, i fili perdono consistenza e si spezzano. Killian reagisce con rabbia, ma presto controlla l'ora e abbandona lo scontro per raggiungere il traguardo."
+    },
+    "personaggio-mariah": {
+      "expected": "Aiuta il gruppo a raggiungere le rocce; durante il combattimento viene soccorsa.",
+      "summary": "Mariah porta i compagni al riparo sulle rocce, poi viene colpita e ha bisogno dell'aiuto degli altri.",
+      "details": "All'inizio dello scontro Mariah solleva due compagni e li porta in volo fino a un masso. Poco dopo è colta da un dolore improvviso, mentre il suo Stand resta immobile. I colpi si susseguono finché Mariah non perde le forze. Durante la fuga Yekaterina la assiste e la conduce con il gruppo oltre il fiume.",
+      "condition": "Dopo essere stata soccorsa sull'altra sponda, riprende lentamente conoscenza.",
+      "events": [
+        "Lo Stand di Mariah rimane immobile mentre lei è sopraffatta da un dolore improvviso.",
+        "Yekaterina la assiste dopo lo scontro, sulla sponda opposta del fiume."
+      ]
+    },
+    "personaggio-morgan": {
+      "expected": "Interviene durante il combattimento del fiume, accanto a Killian Jones.",
+      "summary": "Morgan prende parte allo scontro insieme a Killian Jones e agli altri combattenti della gola.",
+      "details": "Durante l'ultimatum di Sue Nami, Morgan è sul punto di attaccare una persona impegnata a soccorrere Mariah. Un ordine di Killian Jones lo ferma un attimo prima che il colpo raggiunga il bersaglio. Più tardi il suo Stand svanisce, richiamato lontano dallo scontro.",
+      "events": [
+        "Si prepara a colpire uno dei soccorritori di Mariah, ma Killian Jones gli ordina di fermarsi."
+      ]
+    },
+    "personaggio-raven": {
+      "expected": "Partecipa allo scontro e individua l'utilità di un metronomo contro uno Stand avversario.",
+      "summary": "Raven recupera un metronomo e intuisce come il suo ticchettio possa interrompere il potere di Killian Jones.",
+      "details": "Un metronomo gli cade quasi addosso nel mezzo della battaglia. Raven lo raccoglie e, osservando lo Stand di Killian Jones, pensa di usarne il ritmo contro i fili e gli uncini. Sussurra il piano ai compagni e Julian lo mette in pratica. Più tardi Raven viene colpito violentemente e cade a terra, costringendo gli altri a tentare di soccorrerlo.",
+      "condition": "Raven cade sotto i colpi durante gli ultimi momenti della battaglia; i compagni cercano di soccorrerlo.",
+      "events": [
+        "Raccoglie un metronomo e suggerisce di sfruttarne il ticchettio contro lo Stand di Killian Jones."
+      ],
+      "inventory": [
+        {
+          "name": "Metronomo",
+          "state": "Raccolto e utilizzato durante lo scontro",
+          "session_id": "sessione-fiume-01",
+          "time": "",
+          "notes": "Raven recupera lo strumento e lo fa usare a Julian. Dopo il combattimento non è chiaro chi lo abbia conservato."
+        }
+      ]
+    },
+    "personaggio-somchai": {
+      "expected": "Partecipa allo scontro del fiume; viene descritto un attacco ad area.",
+      "summary": "Somchai è tra i combattenti presenti nella gola, dove diversi Stand si scontrano fra le rocce e la corrente.",
+      "details": "Somchai si trova nel gruppo coinvolto nello scontro del fiume, vicino agli altri portatori di Stand. Nel caos della battaglia si scatena anche un attacco che investe un'intera zona, ma la natura dei suoi poteri resta avvolta nel mistero.",
+      "events": [
+        "Prende parte alla battaglia nel fiume fra le rocce e gli altri portatori di Stand."
+      ]
+    },
+    "personaggio-sue-nami": {
+      "expected": "Combattente della prova del fiume, apparentemente protetta da uno Stand acquatico.",
+      "summary": "Sue Nami domina l'acqua del fiume e si oppone al passaggio del gruppo con una violenza crescente.",
+      "details": "La ragazza è protetta da un potere acquatico che rallenta e assorbe i colpi destinati a raggiungerla. Quando solleva un'enorme ondata, diversi partecipanti vengono trascinati via. Più tardi offre agli avversari una via di fuga: potranno attraversare il fiume, purché abbandonino Mariah e Raven al suo gruppo. La proposta viene respinta, e Sue Nami riprende a combattere.",
+      "condition": "L'ultima volta che viene vista, Sue Nami è ancora impegnata a raggiungere il traguardo.",
+      "events": [
+        "Scatena un'ondata che investe il fiume e trascina diversi combattenti.",
+        "Offre un passaggio sicuro soltanto se gli altri abbandonano Mariah e Raven.",
+        "Rimane intrappolata nei fili di Jean, finché grandi forbici non recidono i legami."
+      ]
+    },
+    "pg-davi": {
+      "expected": "Colpisce a distanza ravvicinata l'avversaria dai poteri acquatici e dirige la zattera durante la fuga.",
+      "summary": "Davì affronta Sue Nami da vicino e guida la zattera negli ultimi istanti della prova.",
+      "details": "Mentre gli attacchi vengono frenati dalle difese liquide di Sue Nami, Davì riesce ad avvicinarsi abbastanza da assestarle diversi colpi. Quando il tempo sta per scadere, abbandona lo scontro con gli altri e contribuisce a mantenere la zattera sulla rotta verso il traguardo."
+    },
+    "pg-elisabeth": {
+      "expected": "Una delle partecipanti alla prova del fiume.",
+      "summary": "Elisabeth supera la prova della campana e prosegue con i compagni verso la gola del fiume.",
+      "details": "Elisabeth era riuscita a suonare la campana della prova precedente con l'aiuto dei piccoli esseri evocati dai compagni. Dopo la stanza bianca e l'annuncio di una nuova sfida, segue il gruppo verso la gola e valuta come utilizzare il proprio teletrasporto per affrontare il terreno insidioso.",
+      "condition": ""
+    },
+    "pg-jean": {
+      "expected": "Usa fili e sfere per trattenere avversari e muoversi nell'ambiente del fiume.",
+      "summary": "Jean usa le sfere e i fili del suo Stand per muoversi fra le rocce, trattenere un'avversaria e aiutare la fuga.",
+      "details": "Jean sfrutta la rotazione delle sfere del proprio Stand per cercare appigli tra i massi e spostarsi sopra il fiume. Durante lo scontro intrappola Sue Nami in una rete di fili, ma grandi forbici finiscono per reciderli. Al momento della fuga le sue sfere tornano decisive per spingere la zattera attraverso la corrente."
+    },
+    "pg-joshwa": {
+      "expected": "Personaggio giocante della campagna.",
+      "summary": "Joshwa è uno dei protagonisti coinvolti nelle prove.",
+      "details": "Joshwa si trova al centro delle stesse prove che mettono alla prova gli altri partecipanti. Il resto del suo percorso personale è ancora tutto da scoprire.",
+      "condition": ""
+    },
+    "pg-julian": {
+      "expected": "Usa un metronomo per interrompere gli uncini di uno Stand nemico; aiuta a stabilizzare la zattera.",
+      "summary": "Julian sopravvive all'ondata, usa un metronomo contro lo Stand di Killian e aiuta il gruppo ad attraversare il fiume.",
+      "details": "Quando l'ondata di Sue Nami travolge le rocce, Julian finisce nell'acqua. Più tardi raccoglie l'idea di Raven: avvicina un metronomo allo Stand di Killian e lascia che il ticchettio ne catturi l'attenzione. I fili tesi verso Mariah e Yekaterina si dissolvono. Durante la fuga Julian contribuisce a stabilizzare la zattera mentre gli altri la guidano verso il traguardo.",
+      "inventory": [
+        {
+          "name": "Metronomo",
+          "state": "Usato durante lo scontro",
+          "session_id": "sessione-fiume-01",
+          "time": "",
+          "notes": "Raven recupera il metronomo; Julian ne sfrutta il ticchettio per distrarre lo Stand di Killian. Dopo la fuga, il possesso dello strumento resta incerto."
+        }
+      ]
+    },
+    "pg-yekaterina": {
+      "expected": "Affronta creature e attacchi sott'acqua, poi assiste Mariah sull'altra sponda.",
+      "summary": "Yekaterina affronta gli Stand nascosti sotto il fiume e, raggiunta la riva opposta, soccorre Mariah.",
+      "details": "Yekaterina si ritrova nelle profondità del fiume, afferrata da mani d'acqua che tentano di impedirle di emergere. Ruotando con il proprio Stand riesce a liberarsi, ma viene attaccata da una creatura dotata di chele capaci di provocare esplosioni. Nonostante i colpi ricevuti, supera il tratto più pericoloso e si occupa di Mariah sull'altra sponda."
+    },
+    "stand-difesa-acquosa": {
+      "expected": "Una difesa d'acqua capace di frapporsi agli attacchi e talvolta solidificarsi.",
+      "summary": "Una massa liquida protegge Sue Nami, rallentando i colpi e assorbendoli al suo posto.",
+      "details": "Attorno a Sue Nami l'acqua si addensa in una barriera viva: piume e proiettili perdono velocità, mentre gli attacchi più potenti colpiscono il liquido invece del suo corpo. La protezione muta consistenza e forma, come se il fiume stesso si fosse posto a difesa della ragazza."
+    },
+    "stand-uncini-killian": {
+      "expected": "Uno Stand scaglia uncini collegati a fili che possono trasmettere il danno.",
+      "summary": "Uno Stand simile a un pirata scheletrico aggancia le vittime con uncini e fili capaci di collegare fra loro i colpi.",
+      "details": "Gli uncini si conficcano nei bersagli e i fili tesi fra loro permettono allo Stand di diffondere il dolore attraverso i collegamenti. Durante la battaglia, il ticchettio di un metronomo ne attira l'attenzione; gli uncini perdono allora la presa e i fili svaniscono."
+    }
+  },
+  "story": {
+    "expectedSummary": "Dopo il fiume e il combattimento, i superstiti riescono a raggiungere il traguardo appena prima dell'eliminazione. Una nuova arena e un'apparizione misteriosa annunciano un'altra prova. Resoconto narrativo esteso, ricostruito dalle sei tracce audio.",
+    "newSummary": "Dopo la campana e la discesa nella gola, il gruppo affronta il fiume, gli Stand avversari e una corsa contro il tempo. Oltre il traguardo li attendono il verdetto della prova e un nuovo, inquietante scenario.",
+    "replacements": [
+      [
+        "Poco prima di riprendere l'azione, il gruppo ricorda come si era conclusa la prova precedente.",
+        "La prova precedente si era conclusa soltanto dopo un ultimo sforzo."
+      ],
+      [
+        "Uno dei primi avversari riconoscibili fu Sue Nami, il cui nome viene spesso reso come «Tsunami» dalle registrazioni.",
+        "Uno dei primi avversari riconoscibili fu Sue Nami."
+      ],
+      [
+        "il suo portatore, indicato durante la sessione come Sunshine,",
+        "il suo portatore, Sunshine,"
+      ],
+      [
+        "Nel caos vennero discussi nuovi interventi di soccorso e tentativi di stabilizzazione, ma le trascrizioni non sono abbastanza coerenti da confermare un suo eventuale decesso: per questo la ricostruzione non considera Raven morto.",
+        "I compagni cercarono di soccorrerlo mentre intorno a loro i colpi continuavano a cadere. Nel tumulto, Raven rimase a terra per alcuni istanti, con gli altri impegnati a impedirgli di soccombere."
+      ],
+      [
+        "Nota di chiusura\nIl resoconto si ferma qui. La natura della figura comparsa davanti a Giulia, il contenuto del sussurro e le regole effettive della nuova prova non sono stati rivelati nella registrazione.",
+        ""
+      ]
+    ]
+  }
+}
