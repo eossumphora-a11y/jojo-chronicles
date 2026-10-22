@@ -1,0 +1,140 @@
+/* JoJo Chronicles / Editorial workspace, inspired by the clean layout of Scrybe Quill.
+   Independent color palette, original assets and branding; no imitation of their logo. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+:root{color-scheme:light;--bg:#f9f8f6;--side:#fff;--panel:#fff;--panel2:#f5f3f1;--line:#e7e3df;--line2:#ddd6da;--text:#28242a;--muted:#706b73;--dim:#827d82;--accent:#7a526f;--purple:#866a88;--button:#f1edf1;--sq-cream:#fff;--sq-ink:#292428;--sq-gold:#ac8a63;--sq-violet:#8c6b90}
+html{scroll-behavior:smooth;scroll-padding-top:85px}body{font-family:'DM Sans',system-ui,sans-serif;background:#f9f8f6;color:#28242a;line-height:1.6}
+::selection{background:#e8dce6;color:#261c27}button,input,textarea,select{font-family:inherit}button{transition:background-color .15s,border-color .15s,box-shadow .15s,transform .15s}button:focus-visible,input:focus-visible{outline:2px solid #8e688f;outline-offset:2px}
+.shell{background:#f9f8f6}.workspace{background:#faf9f7}.main{padding:37px clamp(24px,3.7vw,56px) 85px;max-width:1630px}
+.sidebar{width:251px;flex-basis:251px;background:#fff;border-right:1px solid #e8e4e3;padding:25px 15px 19px;box-shadow:3px 0 16px #26202b04}
+.identity{padding:2px 9px 30px;gap:12px}.sigil{font:29px Georgia,serif;background:#302834;color:#fff;border:0;box-shadow:0 3px 9px #0001;width:43px;height:43px;border-radius:11px}
+.identity-words b{font:700 20px/1.12 'Libre Baskerville',Georgia,serif;letter-spacing:-.09em;color:#272329}.identity em{color:#845f80;font-style:normal}.identity-words small{font-size:9px;letter-spacing:.04em;color:#868087;font-weight:600;margin-top:7px}
+.campaign-chip{background:#f7f5f6;border:1px solid #ece7ea;border-radius:11px;padding:14px 12px;margin:1px 2px 31px;box-shadow:none;font-size:10px;letter-spacing:.01em;text-transform:none;color:#8a858c;font-weight:600}
+.campaign-chip strong{font-weight:800;font-size:12px;display:block;color:#29242a;letter-spacing:0;margin-top:1px}
+.campaign-chip small{font-size:10px;color:#938e95}
+.live-dot{background:#75a78e;box-shadow:0 0 0 3px #75a78e22;margin-top:7px}
+.nav-label{color:#a29ca4;font-size:10px;letter-spacing:.13em;font-weight:750;margin:0 11px 10px}
+.nav{gap:3px}.nav-link{font-size:12px;font-weight:700;letter-spacing:0;color:#645c66;padding:11px 12px;border-radius:9px;gap:12px}
+.nav-link:hover{background:#f4f0f4;color:#46324c}.nav-link.active{background:#f0eaf0;color:#714b70;border:1px solid #eee4ec;box-shadow:inset 3px 0 #8b637d}
+.nav-icon,.nav-link.active .nav-icon{color:#8a7b8b;font-size:17px;width:20px}.nav-link.active .nav-icon{color:#714b70}
+.nav-count,.nav-key{background:#ece7ec;color:#776c77;border-radius:6px;font-size:10px}.nav-link.active .nav-count{background:#e3d8e4;color:#674862}
+.sidebar-party{gap:3px}.side-person{padding:7px 11px;color:#665e68}.side-person:hover{background:#f5f0f3;color:#533951}
+.avatar{color:#755579;background:#f1eaf0;border:1px solid #e6d8e4;border-radius:10px;font:700 13px Georgia,serif}
+.sidebar-bottom{border-top:1px solid #eee9ec;padding:20px 7px 4px}.sidebar-bottom .shield{background:#f4eff4;color:#745379;border-radius:9px}.sidebar-bottom b{color:#544950}.sidebar-bottom small{color:#8f8890}
+.topbar{height:72px;background:#ffffffee;border-bottom:1px solid #e8e4e7;backdrop-filter:blur(14px);padding:0 clamp(24px,3.8vw,58px)}
+.breadcrumbs{color:#918a92;gap:12px;font-size:12px}.breadcrumbs b{color:#514753;font-weight:700}.crumb-slash{color:#aea5ae;font-size:19px;font-weight:300}.small-quill{color:#8a6a88;font-size:19px;margin-right:2px}
+.top-search{background:#faf9fa;border:1px solid #e4dfe5;color:#8a858a;border-radius:9px;box-shadow:none;min-width:255px;font-size:11px;padding:10px 14px}.top-search:hover{border-color:#aa8cab;background:#fff}.top-search kbd{background:#eee9ed;color:#89808c;border:1px solid #e3dce2;border-radius:5px}
+.player-mode{color:#58816a;background:#eff7f2;border:1px solid #dceee2;padding:7px 10px;border-radius:99px;display:flex;gap:7px;align-items:center;font-weight:700;font-size:10px}
+.player-mode .live-dot{margin:0;width:7px;height:7px}.master-top-link{border:1px solid #e5dee4;color:#6d586b;background:#fff;font-size:11px;padding:9px 12px;border-radius:9px}
+.master-top-link:hover{border-color:#947b95;background:#f7f2f7;color:#643f63}
+.eyebrow,.overline,.section-meta{font-size:10px;color:#8f718b;font-weight:800;letter-spacing:.13em}.eyebrow{margin-bottom:14px}.eyebrow-rule{background:#bba8b5}
+.home-hero{min-height:310px;background:#fff;border:1px solid #eae5e7;border-radius:17px;padding:39px 45px;box-shadow:0 11px 32px #45374109;grid-template-columns:minmax(0,1fr) 195px}
+.home-hero:after{display:none}.home-hero h1{font:700 clamp(39px,4.4vw,61px)/1.15 'Libre Baskerville',Georgia,serif;color:#252329;letter-spacing:-.065em;margin:16px 0 13px;max-width:720px}
+.home-hero h1 em{display:block;color:#795476;font-style:italic;font-weight:400}
+.hero-sub{font-size:13px;max-width:510px;color:#746d75;line-height:1.85}.section-meta{color:#816f80;margin-bottom:3px}
+.hero-status-dot{width:7px;height:7px;background:#73a388;border-radius:50%;display:inline-block;margin-right:8px}
+.hero-actions{margin-top:24px}.primary-btn{background:#342b37;border:1px solid #342b37;color:#fff;border-radius:9px;box-shadow:0 4px 9px #1c112014;font-size:12px;padding:12px 18px}
+.primary-btn:hover{background:#60485e;border-color:#60485e;color:#fff}.secondary-btn{border:1px solid #e5dfe4;background:#fff;color:#584d5a;font-size:12px;border-radius:9px;padding:12px 17px}
+.secondary-btn:hover{background:#f6f2f6;border-color:#bea7bd;color:#503954}.secondary-btn.block{background:#fff}
+.hero-mark{border:1px solid #eae1e9;width:168px;height:168px;background:#faf7fa;box-shadow:0 0 0 10px #f8f5f800;border-radius:50%;transform:none}
+.hero-symbol{color:#866185;font:74px Georgia,serif;text-shadow:none}.hero-mark>span{color:#a18aa0;letter-spacing:.16em;font-size:9px;margin-top:-6px}
+.sq-campaign-nav{gap:11px;margin:18px 0}.sq-campaign-nav button{background:#fff;border:1px solid #ebe5e9;border-radius:12px;padding:18px 8px;color:#413b42;box-shadow:0 4px 13px #24192705}
+.sq-campaign-nav button:hover,.sq-campaign-nav button:focus-visible{background:#f9f5f9;border-color:#cdb8c9;transform:translateY(-2px)}
+.sq-campaign-nav .sq-quick-icon{background:#f3eef3;color:#785a77;border-radius:10px;width:43px;height:43px}
+.sq-campaign-nav strong{font-size:12px;color:#3a343b}.sq-campaign-nav small{color:#918992;font-size:10px}
+.stats{gap:12px;margin-top:16px}.stat{background:#fff;border:1px solid #eae6e8;border-radius:12px;padding:20px 23px;box-shadow:0 3px 12px #34283a05}
+.stat span{color:#998e97;letter-spacing:.1em;font-size:9px}.stat strong{color:#312834;font:600 35px 'Libre Baskerville',Georgia,serif;margin:11px 0 5px}.stat small{color:#8c858f}
+.home-columns{gap:25px;margin-top:42px}.section-line{margin-bottom:17px}.section-line h2{font:700 23px 'Libre Baskerville',Georgia,serif;color:#322b34;letter-spacing:-.035em}
+.text-button{color:#70506c;font-weight:700;font-size:11px}.text-button:hover{color:#3b263d}
+.session-feature{background:#fff;border:1px solid #e7e1e6;border-radius:13px;color:#332b34;padding:25px;box-shadow:0 5px 20px #32233309}
+.session-feature:hover{border-color:#b49cad;background:#fdfbfd;box-shadow:0 12px 28px #3423310d}
+.session-feature h3{font:700 25px 'Libre Baskerville',Georgia,serif;color:#312935;letter-spacing:-.035em}
+.session-feature p{color:#746e75;font-size:13px;max-height:100px;line-height:1.85}.mini-label{color:#795c78;font-size:10px;font-weight:800}
+.card-bottom{border-color:#e9e3e8;color:#8e8790}.card-bottom b{color:#72526f}
+.small-entity{background:#fff;border:1px solid #e9e3e7;border-radius:12px;color:#302c32;padding:19px;box-shadow:0 3px 15px #2d253008}
+.small-entity:hover{border-color:#bda5bc;background:#fefcff}
+.small-entity span{color:#8a6d86}.small-entity b{font:700 17px 'Libre Baskerville',Georgia,serif;color:#302931}.small-entity small{color:#86808a}
+.insight,.next-events{background:#fff;border:1px solid #e9e4e7;border-radius:13px;padding:25px;box-shadow:0 4px 15px #392b3906}
+.insight h3{font:700 24px/1.35 'Libre Baskerville',Georgia,serif;color:#332c34}.insight p{color:#77717c;font-size:12px}
+.next-events{margin-top:15px}.moment-preview{border-left-color:#e3d7e0;margin:13px 0}.moment-preview:before{background:#986b95;border-color:#fff}.moment-preview b{color:#8c6a89}.moment-preview p{color:#726c75}
+.page-heading{border-color:#e6e1e5;margin-bottom:24px;padding-bottom:24px}.page-heading h1{font:700 clamp(32px,3.4vw,43px) 'Libre Baskerville',Georgia,serif;color:#2f2931;letter-spacing:-.05em}
+.page-heading p{color:#77717a;font-size:13px;max-width:750px}.journal-list{top:94px;gap:11px}
+.journal-item{background:#fff;color:#37303a;border:1px solid #e9e3e8;border-radius:11px;box-shadow:0 4px 15px #32243a06}
+.journal-item:hover,.journal-item.active{background:#f8f4f8;border-color:#baa2b8;box-shadow:inset 3px 0 #866483}
+.journal-item h3{font:700 17px 'Libre Baskerville',Georgia,serif;color:#39303b}.journal-item p{color:#847b85}
+.reader{background:#fff;border:1px solid #e7e1e6;border-radius:14px;box-shadow:0 11px 32px #37293d10}
+.sq-reader-header{background:#fff;padding:33px 37px;border-bottom:1px solid #ece6e9}
+.sq-reader-header .sq-kicker{color:#997c91;letter-spacing:.1em}
+.sq-reader-header h2{font:700 35px 'Libre Baskerville',Georgia,serif;letter-spacing:-.035em;color:#302a31;margin:13px 0 10px}
+.sq-reader-subtitle{color:#837b86}.sq-session-tabs{background:#faf8fa;border-color:#e7e2e7}
+.sq-session-tab{background:transparent;color:#827783;border-color:#ebe5eb;font-size:12px;border-bottom-width:2px;padding:16px 9px}
+.sq-session-tab:hover{background:#f6f0f6;color:#6d4d6a}
+.sq-session-tab.active{background:#fff;color:#6b4668;border-bottom-color:#8c6284}
+.sq-session-content{padding:28px 32px 35px;background:#fff}
+.sq-format-pills{gap:10px;margin-bottom:22px}.sq-format{background:#fff;border:1px solid #e6dfe5;border-radius:10px;padding:13px 9px;box-shadow:none}
+.sq-format.active{background:#f2ebf1;border-color:#a88fa6;box-shadow:inset 0 0 0 1px #d0bdcc}
+.sq-format:hover{border-color:#b39bb3;background:#faf6fa}.sq-format strong{color:#584659;font-weight:800;font-size:12px}.sq-format small{color:#938994}
+.sq-recap-paper{background:#fff;background-image:none;color:#332c35;border:1px solid #e9e4e7;border-radius:12px;box-shadow:0 3px 12px #38263d05;padding:37px clamp(23px,4vw,59px)}
+.sq-recap-paper .sq-paper-label{font-size:10px;color:#997c97;letter-spacing:.15em;border-color:#eee8ed;padding-bottom:15px;margin-bottom:22px}
+.sq-recap-paper .reader-content p{font:400 15px/1.95 'Libre Baskerville',Georgia,serif;color:#4e444e;max-width:780px}
+.sq-recap-paper .reader-content h3{font:700 23px/1.3 'Libre Baskerville',Georgia,serif;color:#40313e;letter-spacing:-.03em}
+.sq-recap-paper .reader-content .sq-recap-intro{font:400 18px/1.85 'Libre Baskerville',Georgia,serif;background:#faf5fa;border-left:3px solid #977794;color:#5b465c;padding:20px 24px}
+.sq-recap-paper .reader-content .inline-link{color:#784b7a;border-color:#c2a4c0}.sq-recap-paper .chapter-toc{background:#f9f6f9;border:1px solid #eae0e9;border-radius:11px}
+.sq-recap-paper .chapter-index-link{color:#705f72;border-color:#e8e1e8}.sq-recap-paper .chapter-index-link:hover{color:#603e61}
+.sq-recap-paper .reader-subtitle{color:#a28c9d}
+.sq-panel-title{color:#312b33;font:700 25px 'Libre Baskerville',Georgia,serif}
+.sq-panel-sub{color:#78717b}.sq-outline{border-color:#e9e4e7}
+.sq-outline-row,.sq-outline-row:nth-child(even){background:#fff;border-color:#ece8ec}.sq-outline-row:nth-child(even){background:#fbf9fa}
+.sq-outline-no{color:#8a6289}.sq-outline-row p{color:#5d525f}
+.sq-note-section{border-color:#ebe5eb}.sq-notes-heading{color:#5c435b}
+.sq-note-card{background:#fff;border:1px solid #e6dfe6;color:#463c47;border-radius:10px}
+.sq-note-card:hover{background:#faf6fb;border-color:#bca0ba}.sq-note-card strong{color:#453947}.sq-note-card span{color:#847983}
+.sq-item-in-session{border-color:#e8e0e7}.sq-item-in-session strong{color:#6e4d6f}.sq-item-in-session span,.sq-item-in-session small{color:#8b808a}
+.sq-quote{background:#f8f4f7;border-color:#aa8eaa}.sq-quote p{color:#5c455b}.sq-quote small{color:#827583}
+.compendium-toolbar{color:#928791;font-size:12px}.compendium-controls{display:flex;align-items:center;gap:10px}
+.field{background:#fff;color:#342d34;border:1px solid #e5dfe4;border-radius:9px}.field:focus{border-color:#9e7c9b}
+.view-mode{display:flex;gap:2px;padding:4px;background:#f0edf0;border:1px solid #e7e2e7;border-radius:9px}
+.view-mode-btn{background:transparent;color:#948895;border:1px solid transparent;border-radius:6px;padding:3px 9px;font-size:18px}
+.view-mode-btn.active{background:#fff;color:#6c4c6b;border-color:#e8e1e7;box-shadow:0 1px 3px #00000009}
+.filterbar{gap:8px}.chip{background:#fff;color:#7a6e7b;border:1px solid #e8e2e6;border-radius:9px;padding:9px 14px}
+.chip.active,.chip:hover{background:#eee6ee;color:#674365;border-color:#c1a9bc}
+.entity-card,.character-card{background:#fff;border:1px solid #e8e3e7;border-radius:12px;color:#332c34;box-shadow:0 3px 15px #32213307}
+.entity-card:hover,.character-card:hover{background:#fff;border-color:#b89fb5;box-shadow:0 11px 22px #3624390d}
+.entity-card .diamond,.character-portrait{background:#f4edf3;color:#775678;border-color:#e4d8e3}
+.entity-card .type,.character-role{color:#9c8199}.entity-card h3,.character-card h3{color:#342c35;font:700 19px 'Libre Baskerville',Georgia,serif}
+.entity-card p,.character-intro{color:#7b737f}.entity-card-footer,.character-card-foot{color:#9a8f9b;border-color:#eee9ed}
+.entity-card-footer b,.character-card-foot b{color:#72516e}
+.character-recent{background:#faf8fa;border-color:#ede7ec}.character-recent small{color:#8c6d88}.character-recent p{color:#746b77}
+.character-view-toolbar{color:#8c828c}
+.compendium-grid.is-list{display:grid;grid-template-columns:1fr;gap:8px}
+.compendium-grid.is-list .entity-card{min-height:92px;display:grid;grid-template-columns:62px minmax(180px,.33fr) 1fr 120px;column-gap:12px;align-items:center;padding:15px 20px}
+.compendium-grid.is-list .entity-card .entity-icon{justify-content:center}.compendium-grid.is-list .entity-card .entity-icon .type{display:none}
+.compendium-grid.is-list .entity-card h3{margin:0}.compendium-grid.is-list .entity-card p{margin:0;line-height:1.55;flex:initial}
+.compendium-grid.is-list .entity-card-footer{border:0;padding:0;text-align:right;display:block}
+.history-list{border-color:#dfd2df}.history-group-title{color:#39313a}.history-group-title:before{color:#927494}
+.history-event:before{background:#9c7c99}.history-event time{color:#8c6e87}.history-event b{color:#443a44}.history-event p{color:#777078}.history-event button{color:#795578}
+.mystery{background:#fff;border:1px solid #e9e3e8;color:#3f3540;box-shadow:0 4px 16px #3d2a4105}
+.mystery:hover{border-color:#b498b2}.mystery h3{color:#3a313c}.mystery p{color:#827885}.mystery small{color:#93708c}
+.memory-form{background:#fff;border-color:#e7dfe6;box-shadow:0 3px 12px #00000004}
+.memory-form>span{color:#8a6985}.memory-form input{color:#423842}.memory-form button{background:#342b37;color:#fff}
+.memory-hint{color:#99909a}.search-result{background:#fff;border:1px solid #eae4e8;color:#403742}
+.search-result:hover{border-color:#ba9eba}.search-result span{color:#8f6f8b}.search-result h3{color:#372c38}.search-result p{color:#7f7580}
+.sq-item-archive-card{background:#fff;border-color:#e8e0e7;color:#392e3a}.sq-item-archive-card h3{color:#403143}.sq-item-archive-card p{color:#7b717b}
+.no-results,.empty-state{background:#fff;border:1px dashed #ddd3dc;color:#8a808a;border-radius:12px}.no-results h3{color:#463748}.no-results p{color:#8d828e}
+.detail-dialog{color:#3a303a}.detail-dialog::backdrop{background:#1510198f;backdrop-filter:blur(4px)}
+.detail-panel{background:#fff;border:1px solid #ece5eb;box-shadow:0 24px 80px #261a2859;border-radius:15px;padding:31px 36px}
+.detail-panel h2{color:#332a34;font:700 31px 'Libre Baskerville',Georgia,serif}
+.detail-subtitle{color:#827985}.detail-content p{color:#5d515e}.detail-content .detail-label{color:#826181}
+.detail-content .detail-section{border-color:#ece6ec}.detail-content .tag,.tag,.related-pills button{background:#f5f0f5;color:#6d506e;border:1px solid #e8dee7;border-radius:8px}
+.personal-chapter{background:#fdfbfc;border-color:#ece4ec}.personal-chapter-head b{color:#674969}.personal-event{border-color:#eee9ee}
+.personal-event time{color:#8c6c89}.personal-event small{color:#95738e}.personal-event p{color:#655a66}
+.inventory-record{background:#faf7fa;border-color:#e9e0e9}.inventory-record strong{color:#573f57}.inventory-state{background:#ebe0ea;color:#70516c}
+.inventory-record p{color:#746876}.inventory-source,.personal-open-session{color:#825a80}
+.action-button{background:#fff;color:#695869;border:1px solid #e4dce4;border-radius:8px}
+.action-button:hover{border-color:#ac90a9;background:#faf7fa}
+.footer{background:#fff;border-top:1px solid #e8e4e8;color:#948895}.footer span{color:#ac8ca8}
+.icon-btn{background:#fff;border:1px solid #e4dce4;color:#5c4d5c}
+.mobile-shade.open{background:#11101980}
+@media(max-width:1200px){.sidebar{width:231px;flex-basis:231px}.main{padding:28px 24px 65px}.sq-campaign-nav{gap:9px}.journal-layout{grid-template-columns:210px minmax(0,1fr)}}
+@media(max-width:900px){.sidebar{width:270px;flex-basis:270px;box-shadow:12px 0 36px #26192726}.journal-layout{grid-template-columns:1fr}.journal-list{position:static}.home-columns{grid-template-columns:1fr}.home-secondary{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.main{padding:21px 14px 52px}.topbar{height:62px;padding:0 14px}.player-mode{padding:6px}.master-top-link{padding:7px;font-size:10px}.top-actions{gap:7px}.breadcrumbs{gap:7px;font-size:11px}.breadcrumbs>span:nth-child(2){display:none}.home-hero{padding:27px 23px;min-height:245px}.home-hero h1{font-size:36px;letter-spacing:-.04em}.hero-sub{font-size:12px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{padding:15px}.stat strong{font-size:26px}.sq-campaign-nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.sq-campaign-nav button{padding:12px 4px}.sq-campaign-nav strong{font-size:10px}.sq-campaign-nav small{font-size:9px}.home-secondary{display:block}.next-events{margin-top:13px}.featured-entities{grid-template-columns:1fr 1fr}.sq-reader-header{padding:23px 19px}.sq-session-content{padding:15px}.sq-format-pills{grid-template-columns:repeat(2,minmax(0,1fr))}.sq-recap-paper{padding:21px 18px}.sq-recap-paper .reader-content p{font-size:13px;line-height:1.9}.sq-recap-paper .reader-content h3{font-size:20px}.sq-session-tab{font-size:10px;padding:12px 2px}.compendium-grid.is-list .entity-card{grid-template-columns:42px 1fr;grid-template-rows:auto auto auto;column-gap:8px}.compendium-grid.is-list .entity-card p{grid-column:2;margin-top:6px}.compendium-grid.is-list .entity-card-footer{grid-column:2;text-align:left;margin-top:8px}.compendium-toolbar{align-items:flex-start;gap:10px}.compendium-controls{flex-direction:column;align-items:end}.field.compact{min-width:145px}.detail-panel{padding:21px}.sq-note-card{padding:13px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:0.01ms!important;animation-duration:0.01ms!important}}
