@@ -115,24 +115,119 @@ function renderSessionSections(root,s){
   else root.append(noResults('Nessuna citazione inserita','Le battute significative compariranno qui quando saranno riconosciute con certezza.'));
  }
 }
+
+let libraryCategory='recaps',libraryQuery='',librarySessionOnly=false;
+const libraryCats={recaps:'Recaps',players:'Players',npcs:'NPCs',items:'Items',locations:'Locations',factions:'Factions',quests:'Quests'};
+function libraryMatches(value){return !libraryQuery||normalize(value).includes(normalize(libraryQuery))}
+function libraryIsRelated(e,s){return !!(s&&((s.related||[]).includes(e.id)||(e.public_history||[]).some(x=>x.session_id===s.id)))}
+function downloadLibraryText(name,body){const blob=new Blob([body],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=name.replace(/[^a-zA-Z0-9_-]/g,'_')+'.txt';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function libraryTitle(parent,title,downloadContent='',fileName=''){const heading=el('div','library-section-heading');const line=el('span','library-heading-line');heading.append(line,txt('h3',title),el('span','library-heading-line'));const tools=el('div','library-heading-tools');
+ const edit=el('a','library-icon-button','✎');edit.href='master.html';edit.title='Apri lo Studio Master';edit.setAttribute('aria-label','Apri lo Studio Master');tools.append(edit);
+ if(downloadContent){const dl=btn('button','↓','library-icon-button',()=>downloadLibraryText(fileName||title,downloadContent));dl.title='Scarica '+title.toLowerCase();dl.setAttribute('aria-label','Scarica '+title.toLowerCase());tools.append(dl)}
+ heading.append(tools);parent.append(heading)}
+function libraryNotesData(s){const related=entries.filter(e=>libraryIsRelated(e,s));
+ const npcs=related.filter(e=>characterRole(e)==='npc');
+ const locations=related.filter(e=>e.kind==='location');
+ const objects=[];
+ for(const entry of entries){if(entry.kind!=='character')continue;for(const thing of entry.public_inventory||[]){if(thing.session_id!==s.id)continue;const key=normalize(thing.name);if(!objects.some(x=>normalize(x.name)===key))objects.push({name:thing.name,text:thing.notes||'',state:thing.state||'',holder:entry.title})}}
+ for(const entry of related.filter(e=>e.kind==='artifact')){if(!objects.some(x=>normalize(x.name)===normalize(entry.title)))objects.push({name:entry.title,text:entry.body||entry.summary,state:''})}
+ return {npcs,objects,locations}
+}
+function renderLibraryNotes(root,s){const notes=libraryNotesData(s);const download=[
+ ...notes.npcs.map(e=>'NPC: '+e.title+' — '+(e.body||e.summary)),
+ ...notes.objects.map(o=>'OGGETTO: '+o.name+' — '+o.text),
+ ...notes.locations.map(e=>'LUOGO: '+e.title+' — '+(e.body||e.summary))
+ ].join('\n\n');
+ libraryTitle(root,'Notes',download,s.title+'_note');
+ const columns=el('div','library-notes-columns');
+ const specs=[
+ {title:'NPCs',icon:'♙',items:notes.npcs.map(e=>({name:e.title,description:e.body||e.summary,open:()=>openEntry(e)}))},
+ {title:'Items',icon:'⬡',items:notes.objects.map(e=>({name:e.name,description:e.text||(e.state?'Condizione: '+e.state:''),open:()=>{const found=entries.find(x=>x.kind==='character'&&(x.public_inventory||[]).some(item=>item.name===e.name));if(found)openEntry(found)}}))},
+ {title:'Locations',icon:'⌖',items:notes.locations.map(e=>({name:e.title,description:e.body||e.summary,open:()=>openEntry(e)}))}
+ ];
+ for(const spec of specs){
+  const column=el('section','library-note-column');
+  const label=el('div','library-note-label');label.append(txt('span',spec.icon),txt('strong',spec.title));column.append(label);
+  const preview=el('div','library-note-preview');preview.textContent=spec.items.length?spec.items[0].description:'Nessuna informazione emersa finora.';column.append(preview);
+  const list=el('div','library-note-list');let current=null;
+  for(const [i,item] of spec.items.entries()){const b=btn('button','', 'library-note-entry'+(i===0?' active':''),()=>{if(current)current.classList.remove('active');b.classList.add('active');current=b;preview.textContent=item.description;});
+   b.append(txt('span',spec.icon,'library-mini-icon'),txt('span',item.name));
+   const detail=btn('button','↗','library-note-open',ev=>{item.open()});detail.title='Apri la scheda';detail.setAttribute('aria-label','Apri '+item.name);b.append(detail);list.append(b);if(i===0)current=b}
+  if(!spec.items.length)list.append(el('div','library-empty-mini','Nessuna voce'));
+  column.append(list);columns.append(column);
+ }
+ root.append(columns);
+}
+function renderLibraryQuotes(root,s){const quotes=s.quotes||[];const text=quotes.map(q=>'"'+q.text+'"\n'+(q.speaker||'')+(q.context?'\n'+q.context:'')).join('\n\n');
+ libraryTitle(root,'Quotes',text,s.title+'_citazioni');
+ if(!quotes.length){const empty=el('div','library-quotes-empty');empty.append(txt('span','❝','library-quote-symbol'),txt('p','Nessuna citazione autentica è stata ancora inserita per questa sessione.'));root.append(empty);return}
+ const grid=el('div','library-quotes-grid');
+ quotes.forEach(q=>{const card=el('figure','library-quote-card');card.append(txt('blockquote','"'+q.text+'"'));const line=el('div','library-quote-rule');card.append(line);card.append(txt('figcaption',q.context||q.speaker||'','library-quote-context'));if(q.context&&q.speaker)card.append(txt('small',q.speaker,'library-quote-source'));grid.append(card)});root.append(grid);
+}
+function libraryOutlineGroups(s){
+ const ev=s.events||[];if(!ev.length)return[];
+ if(s.id==='sessione-fiume-01'&&ev.length>=8)return [
+ {title:'L’arrivo nella gola',events:ev.slice(0,2)},
+ {title:'L’ultimatum e lo scontro',events:ev.slice(2,4)},
+ {title:'Il metronomo e la fuga',events:ev.slice(4,6)},
+ {title:'Il traguardo e la nuova arena',events:ev.slice(6)}
+ ];
+ const groups=[];for(let i=0;i<ev.length;i+=3)groups.push({title:i===0?'L’inizio della sessione':i+3>=ev.length?'Gli ultimi avvenimenti':'Lo sviluppo della sessione',events:ev.slice(i,i+3)});return groups
+}
+function renderLibraryOutline(root,s){const groups=libraryOutlineGroups(s);
+ const download=groups.map(g=>g.title+'\n'+g.events.map(e=>'• '+e.text).join('\n')).join('\n\n');
+ libraryTitle(root,'Outline',download,s.title+'_scaletta');
+ if(!groups.length){root.append(el('p','library-empty-mini','Non ci sono ancora eventi da mostrare.'));return}
+ const holder=el('div','library-outline');
+ groups.forEach((group,i)=>{const details=el('details','library-outline-group');details.open=i<2;
+  const header=el('summary','library-outline-header');header.append(txt('span',group.title),txt('span','⌄','library-chevron'));details.append(header);
+  const ul=el('ul','library-outline-items');group.events.forEach(event=>{const li=el('li');linked(li,event.text);ul.append(li)});details.append(ul);holder.append(details)});root.append(holder)
+}
+function renderLibraryFullRecap(root,s){
+ const format=sessionInfo(s);
+ const formatTabs=el('div','library-recap-format');
+ for(const [key,label] of [['concise','Breve'],['standard','Standard'],['detailed','Dettagliato'],['combat','Combattimento']]){
+  if(key!=='detailed'&&!format[key])continue;
+  const b=btn('button',label,'library-format-btn'+(activeRecapTab===key?' active':''),()=>{activeRecapTab=key;drawSessionReader()});b.setAttribute('aria-pressed',String(activeRecapTab===key));formatTabs.append(b)}
+ root.append(formatTabs);
+ const text=activeRecapTab==='detailed'?(format.lead?format.lead+'\n\n'+s.summary:s.summary):(format[activeRecapTab]||s.summary);
+ const panel=el('div','library-recap-document');const title=el('div','library-recap-title');title.append(txt('span','RECAP DELLA SCORSA SESSIONE'),btn('button','↓ Scarica','library-rec-download',()=>downloadLibraryText(s.title+'_recap',text)));panel.append(title);
+ const story=el('div','reader-content');prose(story,text);panel.append(story);root.append(panel)
+}
 function drawSessionReader(){
- const root=$('session-reader');root.replaceChildren();const s=sessions.find(x=>x.id===activeSession)||sessions[0];
- if(!s){root.append(noResults('Il diario è vuoto','Non ci sono ancora sessioni da leggere.'));return}
- activeSession=s.id;
- const header=el('div','sq-reader-header');header.append(txt('div','LE VOSTRE AVVENTURE  /  '+sessionName(s).toUpperCase(),'sq-kicker'),txt('h2',s.title));
- header.append(txt('p','Rivivete gli eventi, rivedete i protagonisti e ritrovate tutto ciò che avete scoperto.','sq-reader-subtitle'));
- root.append(header);
- const panels=el('div','sq-session-tabs');for(const [key,label,icon] of [['recap','Riepilogo','▤'],['outline','Scaletta','☷'],['notes','Note e wiki','◈'],['quotes','Citazioni','❞']]){
-  const b=btn('button',icon+'  '+label,'sq-session-tab'+(activeSessionPanel===key?' active':''),()=>{activeSessionPanel=key;drawSessionReader()});b.setAttribute('aria-pressed',String(activeSessionPanel===key));panels.append(b)}
- root.append(panels);
- const content=el('div','sq-session-content');renderSessionSections(content,s);root.append(content);
+ const root=$('session-reader');root.replaceChildren();const s=sessions.find(x=>x.id===activeSession)||sessions[0];if(!s)return;activeSession=s.id;
+ const heading=el('header','library-recap-heading');heading.append(txt('span','RECAP · '+sessionName(s).toUpperCase(),'library-recap-eyebrow'),txt('h2',s.title));
+ heading.append(txt('p',sessionInfo(s).lead||'Rivivete quello che è accaduto durante la vostra avventura.'));root.append(heading);
+ renderLibraryFullRecap(root,s);
+ const lower=el('div','library-recap-lower');renderLibraryQuotes(lower,s);renderLibraryOutline(lower,s);renderLibraryNotes(lower,s);root.append(lower);
 }
 function renderSessions(){
- const root=$('session-list');root.replaceChildren();
- if(!sessions.length){root.append(noResults('Nessuna sessione','Le avventure appariranno qui dopo essere state raccontate.'));$('session-reader').replaceChildren();return}
- sessions.forEach((s,i)=>{const active=activeSession===s.id;const card=btn('button','','journal-item'+(active?' active':''),()=>openSession(s.id));
- card.append(txt('span',i===0?'ULTIMA SESSIONE':sessionName(s).toUpperCase(),'mini-label'),txt('h3',s.title),txt('p',short(sessionInfo(s).lead||summaryText(s.summary),145)));root.append(card)});
- drawSessionReader();
+ const root=$('session-list');root.replaceChildren();const found=sessions.filter(s=>libraryMatches(s.title+' '+(sessionInfo(s).lead||'')+' '+s.summary));
+ if(!found.length){root.append(noResults('Nessun recap trovato','Cambia la ricerca per visualizzare altre sessioni.'));$('session-reader').replaceChildren();return}
+ if(!found.some(s=>s.id===activeSession))activeSession=found[0].id;
+ found.forEach((s,i)=>{const b=btn('button','','journal-item'+(s.id===activeSession?' active':''),()=>{activeSession=s.id;activeRecapTab='standard';if(location.hash!=='#/sessioni/'+s.id)location.hash='#/sessioni/'+s.id;else renderLibrary()});
+ b.append(txt('span',i===0?'ULTIMA SESSIONE':sessionName(s).toUpperCase(),'mini-label'),txt('h3',s.title),txt('p',short(sessionInfo(s).lead||summaryText(s.summary),145)));root.append(b)});drawSessionReader()
+}
+function renderLibraryEntityIndex(){
+ const root=$('library-entity-list');root.replaceChildren();const current=sessions.find(x=>x.id===activeSession)||sessions[0];const cat=libraryCategory;const rowset=[];
+ if(cat==='players'||cat==='npcs'){for(const e of entries){if(characterRole(e)!==(cat==='players'?'pg':'npc'))continue;rowset.push({name:e.title,body:e.body||e.summary,summary:e.summary,ref:e,icon:cat==='players'?'♟':'♙'})}}
+ if(cat==='locations'||cat==='factions'){for(const e of entries){if(cat==='locations'&&e.kind!=='location')continue;if(cat==='factions'&&e.kind!=='faction')continue;rowset.push({name:e.title,body:e.body||e.summary,summary:e.summary,ref:e,icon:cat==='locations'?'⌖':'⚔'})}}
+ if(cat==='quests'){for(const e of entries){if(!(e.id.startsWith('trial-')||(e.tags||[]).includes('prova')))continue;rowset.push({name:e.title,body:e.body||e.summary,summary:e.summary,ref:e,icon:'▤'})}}
+ if(cat==='items'){const map=new Map();for(const e of entries){if(e.kind==='artifact')map.set(normalize(e.title),{name:e.title,body:e.body||e.summary,ref:e,icon:'⬡'});
+ for(const thing of (e.public_inventory||[])){const k=normalize(thing.name);if(!map.has(k))map.set(k,{name:thing.name,body:(thing.notes||'')+(thing.state?' · '+thing.state:''),ref:e,icon:'⬡'})}}
+ rowset.push(...map.values())}
+ const matches=rowset.filter(e=>libraryMatches(e.name+' '+e.summary+' '+e.body)&&(!librarySessionOnly||!current||libraryIsRelated(e.ref,current)||(cat==='items'&&e.ref?.public_inventory?.some(x=>x.session_id===current.id&&normalize(x.name)===normalize(e.name)))));
+ $('library-count-label').textContent=matches.length+' '+(matches.length===1?'voce':'voci');
+ if(!matches.length){root.append(noResults('Nessuna voce in '+libraryCats[cat],'Qui appariranno soltanto i contenuti conosciuti durante la campagna.'));return}
+ for(const e of matches.sort((a,b)=>a.name.localeCompare(b.name,'it'))){const button=btn('button','','library-entry-row',()=>openEntry(e.ref));button.append(txt('span',e.icon,'library-entry-icon'));const content=el('span','library-entry-text');content.append(txt('strong',e.name),txt('span',short(e.summary||e.body,170)));button.append(content);button.append(txt('span','›','library-entry-arrow'));root.append(button)}
+}
+function renderLibrary(){
+ const recap=libraryCategory==='recaps';
+ $('library-recap-pane').classList.toggle('hidden',!recap);$('library-entity-pane').classList.toggle('hidden',recap);
+ document.querySelectorAll('[data-library]').forEach(b=>{const selected=b.dataset.library===libraryCategory;b.classList.toggle('active',selected);b.setAttribute('aria-selected',String(selected))});
+ $('library-filter-indicator').textContent=librarySessionOnly?'•':'';
+ $('library-count-label').textContent='';
+ if(recap){renderSessions();$('library-count-label').textContent=sessions.filter(s=>libraryMatches(s.title+' '+s.summary)).length+' '+(sessions.length===1?'recap':'recap')}else renderLibraryEntityIndex()
 }
 function renderFilters(){const root=$('filters');root.replaceChildren();order.forEach(type=>{if(type!=='all'&&type!=='saved'&&!entries.some(e=>e.kind===type))return;const name=type==='all'?'Tutti':type==='saved'?'★ Salvati':labels[type]||type;const b=btn('button',name+' · '+(type==='all'?entries.length:type==='saved'?entries.filter(e=>pinned.has(e.id)).length:entries.filter(e=>e.kind===type).length),'chip'+(filter===type?' active':''),()=>{filter=type;renderFilters();renderEntries()});b.setAttribute('aria-pressed',String(filter===type));root.append(b)})}
 function renderEntries(){const root=$('entry-grid');root.replaceChildren();root.classList.toggle('is-list',entryView==='list');$('view-grid').classList.toggle('active',entryView==='grid');$('view-list').classList.toggle('active',entryView==='list');$('view-grid').setAttribute('aria-pressed',String(entryView==='grid'));$('view-list').setAttribute('aria-pressed',String(entryView==='list'));const shown=entries.filter(e=>(filter==='all'||(filter==='saved'?pinned.has(e.id):e.kind===filter))&&normalize([e.title,e.subtitle,e.summary,e.body,...(e.tags||[])].join(' ')).includes(normalize(entryQuery)));$('entry-count-label').textContent=shown.length+' voci visualizzate';if(!shown.length){root.append(noResults('Nessun risultato','Prova un altro filtro o modifica la ricerca.'));return}
