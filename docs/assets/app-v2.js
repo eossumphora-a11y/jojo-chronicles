@@ -165,6 +165,8 @@ function renderLibraryQuotes(root,s){const quotes=s.quotes||[];const text=quotes
  quotes.forEach(q=>{const card=el('figure','library-quote-card');card.append(txt('blockquote','"'+q.text+'"'));const line=el('div','library-quote-rule');card.append(line);card.append(txt('figcaption',q.context||q.speaker||'','library-quote-context'));if(q.context&&q.speaker)card.append(txt('small',q.speaker,'library-quote-source'));grid.append(card)});root.append(grid);
 }
 function libraryOutlineGroups(s){
+ const authored=sessionInfo(s).outline;
+ if(Array.isArray(authored)&&authored.length)return authored.map(g=>({title:g.title,events:(g.events||[]).map(text=>({text}))}));
  const ev=s.events||[];if(!ev.length)return[];
  if(s.id==='sessione-fiume-01'&&ev.length>=8)return [
  {title:'L’arrivo nella gola',events:ev.slice(0,2)},
