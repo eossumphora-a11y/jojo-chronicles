@@ -19,3 +19,37 @@
 .chapter-index-link:hover{color:#f4d2a1;border-color:#b99c7c}
 .reader-content h3[id]{scroll-margin-top:100px}
 @media(max-width:580px){.chapter-index{grid-template-columns:1fr}.chapter-toc{padding:16px}}
+
+/* Dossier PG e NPC: cronache personali, oggetti e apparizioni */
+.character-view-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:19px;font-size:12px;color:#a9a5b4}
+.character-view-toolbar .secondary-btn{font-size:11px}
+.character-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.character-card{background:linear-gradient(150deg,#21202b,#191a23);border:1px solid #37323f;border-radius:12px;padding:22px;text-align:left;color:var(--text);min-height:295px;display:flex;flex-direction:column;gap:11px}
+.character-card:hover,.character-card:focus-visible{border-color:#b38b9c;box-shadow:0 12px 30px #0003;transform:translateY(-1px)}
+.character-card-head{display:flex;align-items:center;gap:13px}
+.character-portrait{display:grid;place-items:center;background:linear-gradient(130deg,#49314b,#2a2434);border:1px solid #765a73;border-radius:10px;width:51px;height:51px;color:#f1cead;font:600 27px Georgia,serif}
+.character-role{font-size:9px;letter-spacing:.13em;color:#d4b28e;font-weight:800}
+.character-card h3{font:500 25px Georgia,serif;margin:0}
+.character-intro{font-size:12px;color:#bcb6c0;line-height:1.65;margin:0;min-height:54px}
+.character-recent{padding:13px 14px;background:#11141b99;border:1px solid #34313d;border-radius:8px;flex:1}
+.character-recent small{color:#b9a17e;font-size:10px;letter-spacing:.09em;font-weight:800}
+.character-recent p{font-size:11px;line-height:1.6;color:#cfc8d0;margin:7px 0 0}
+.character-card-foot{border-top:1px solid #ffffff17;padding-top:12px;display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#a49aac}
+.character-card-foot b{color:#e2b989}
+.personal-chapter{border:1px solid #3a3341;border-radius:9px;padding:14px 15px;margin:12px 0;background:#1d1c28}
+.personal-chapter-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.personal-chapter-head b{font:500 19px Georgia,serif;color:#e5c69b}
+.personal-open-session,.inventory-source{border:0;background:none;color:#cfaa7a;font-size:11px;text-decoration:underline;padding:3px}
+.personal-events{display:grid;gap:12px}
+.personal-event{display:grid;grid-template-columns:51px minmax(0,1fr);gap:10px;padding:10px 0;border-top:1px solid #ffffff13}
+.personal-event time{font-size:11px;color:#d8b17a;white-space:nowrap}
+.personal-event small{font-size:9px;color:#b79abe;letter-spacing:.09em;font-weight:800}
+.personal-event p{margin:4px 0 0;line-height:1.7;color:#ccc6d0}
+.soft-review{display:inline-block;color:#a89ca9;font-size:10px;margin-top:5px}
+.inventory-record{margin:9px 0;padding:13px 15px;background:#282431;border:1px solid #514457;border-radius:8px}
+.inventory-record strong{font:500 18px Georgia,serif;color:#e9d5b7}
+.inventory-state{display:inline-block;background:#39313d;color:#e4b992;margin-left:10px;padding:2px 7px;border-radius:5px;font-size:10px}
+.inventory-record p{font-size:12px;margin:7px 0;color:#c7bdca}
+.character-empty{color:#9b95a4!important;font-size:12px;font-style:italic}
+@media(max-width:1150px){.character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.character-grid{grid-template-columns:1fr}.character-view-toolbar{align-items:start;flex-direction:column}.character-card{min-height:0}}
