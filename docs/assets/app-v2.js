@@ -286,7 +286,7 @@ async function applyNarrativeEdition(){
    e.summary=patch.summary;
    e.body=patch.details;
    if(Object.prototype.hasOwnProperty.call(patch,'condition'))e.public_condition=patch.condition;
-   if(Array.isArray(patch.events)){const list=historyOf(e);for(let i=0;i<patch.events.length&&i<list.length;i++)list[i]={...list[i],text:patch.events[i]};e.public_history=list}
+   if(Array.isArray(patch.events)){const list=historyOf(e);for(let i=0;i<patch.events.length;i++){if(i<list.length)list[i]={...list[i],text:patch.events[i]};else list.push({session_id:'sessione-fiume-01',session_title:'La prova del fiume',time:'',type:'azione',text:patch.events[i]})}e.public_history=list}
    if(Array.isArray(patch.inventory))e.public_inventory=patch.inventory;
   }
   const chap=sessions.find(x=>x.id==='sessione-fiume-01');
@@ -295,6 +295,18 @@ async function applyNarrativeEdition(){
    for(const [original,replacement] of (edition.story.replacements||[])){
     if(chap.summary.includes(original))chap.summary=chap.summary.split(original).join(replacement);
    }
+   // I Grimm entrano in scena soltanto dopo il traguardo, per fermare Jean.
+   // Le vecchie battute audio contenevano attribuzioni errate: si corregge
+   // l'intero paragrafo, non soltanto il nome del personaggio.
+   chap.summary=chap.summary.split(/\n\n+/).map(paragraph=>{
+    if(paragraph.includes("A un certo punto lo Stand armato di fucile emerse dall'acqua.")){
+     return paragraph.replace(/A un certo punto lo Stand armato di fucile emerse dall'acqua\.[\s\S]*$/, "Nel pieno dello scontro Mariah fu colta da un dolore improvviso e si portò una mano alla testa. Sue Nami smise di sorridere.");
+    }
+    if(paragraph.includes("Un attacco rivolto a Sunshine fu intercettato dall'intervento di Emma")){
+     return paragraph.replace(/Un attacco rivolto a Sunshine fu intercettato dall'intervento di Emma[\s\S]*$/,edition.story.recapEnding);
+    }
+    return paragraph;
+   }).join('\n\n');
    chap.summary=chap.summary.replace(/\n{3,}/g,'\n\n').trim();
   }
  }catch(e){console.warn('L’edizione narrativa non è stata caricata',e)}
