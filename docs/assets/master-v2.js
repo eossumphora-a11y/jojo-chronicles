@@ -33,13 +33,13 @@ async function applyEditorialInMaster(rows){
    }
    if(row.id==='sessione-fiume-01'&&data.story){
     if(row.summary===data.story.expectedSummary)row.summary=data.story.newSummary;
-    for(const [before,after] of data.story.replacements||[])if((row.public_details||'').includes(before))row.public_details=row.public_details.replace(before,after);
+    for(const [before,after] of data.story.replacements||[])if((row.public_details||'').includes(before))row.public_details=row.public_details.split(before).join(after);
     row.public_details=(row.public_details||'').replace(/\n{3,}/g,'\n\n').trim();
    }
   }
  }catch(e){console.warn('Non è stato possibile applicare l’edizione narrativa all’editor',e)}
 }
-async function loadRows(){try{rows=await request('/rest/v1/entries?select=*&order=updated_at.desc');await applyEditorialInMaster(rows);$('master-total').textContent=rows.length;$('master-review').textContent=rows.filter(x=>x.status==='Da confermare'||x.status==='In preparazione').length;$('master-public').textContent=rows.filter(x=>x.visibility==='players').length;listRenderer();if(current&&rows.some(x=>x.id===current))await openEditor(current);else if(rows.length)await openEditor(rows[0].id)}catch(e){tell('Impossibile leggere l’archivio: '+e.message)}}
+async function loadRows(){try{rows=await request('/rest/v1/entries?select=*&order=updated_at.desc');rows=rows.filter(r=>!['personaggio-emma','personaggio-emma-stenvibler','personaggio-john'].includes(r.id));await applyEditorialInMaster(rows);$('master-total').textContent=rows.length;$('master-review').textContent=rows.filter(x=>x.status==='Da confermare'||x.status==='In preparazione').length;$('master-public').textContent=rows.filter(x=>x.visibility==='players').length;listRenderer();if(current&&rows.some(x=>x.id===current))await openEditor(current);else if(rows.length)await openEditor(rows[0].id)}catch(e){tell('Impossibile leggere l’archivio: '+e.message)}}
 function showCharacterFields(){const isCharacter=val('f-category')==='personaggi';$('character-profile-fields').classList.toggle('hidden',!isCharacter)}
 function parseRecords(raw,expected){return String(raw||'').split('\n').map(x=>x.trim()).filter(Boolean).map((line,index)=>{const parts=line.split('|').map(p=>p.trim());if(parts.length<expected)throw Error('Riga '+(index+1)+': mancano alcuni campi. Usa il carattere | come separatore.');return parts})}
 function historyFromForm(){return parseRecords(val('f-history'),4).map(parts=>({session_id:parts[0],session_title:rows.find(x=>x.id===parts[0])?.title||'',time:parts[1],type:parts[2]||'evento',text:parts.slice(3).join(' | '),verified:'da verificare'}))}
