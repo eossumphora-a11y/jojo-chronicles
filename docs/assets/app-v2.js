@@ -152,7 +152,7 @@ function renderLibraryNotes(root,s){const notes=libraryNotesData(s);const downlo
   const list=el('div','library-note-list');let current=null;
   for(const [i,item] of spec.items.entries()){const b=btn('button','', 'library-note-entry'+(i===0?' active':''),()=>{if(current)current.classList.remove('active');b.classList.add('active');current=b;preview.textContent=item.description;});
    b.append(txt('span',spec.icon,'library-mini-icon'),txt('span',item.name));
-   const detail=btn('button','↗','library-note-open',ev=>{item.open()});detail.title='Apri la scheda';detail.setAttribute('aria-label','Apri '+item.name);b.append(detail);list.append(b);if(i===0)current=b}
+   const detail=el('span','library-note-open','↗');detail.setAttribute('aria-hidden','true');b.append(detail);b.ondblclick=item.open;list.append(b);if(i===0)current=b}
   if(!spec.items.length)list.append(el('div','library-empty-mini','Nessuna voce'));
   column.append(list);columns.append(column);
  }
@@ -261,7 +261,7 @@ function runMemory(q){const root=$('memory-results');root.replaceChildren();q=sa
 function noResults(title,description){const card=el('div','no-results');card.append(txt('h3',title),txt('p',description));return card}
 function notice(msg){const b=txt('div',msg,'toast');b.style.cssText='position:fixed;right:20px;bottom:20px;background:#302c39;color:#f2d6ab;padding:12px 18px;border:1px solid #7c6274;border-radius:8px;z-index:200';document.body.append(b);setTimeout(()=>b.remove(),2400)}
 function go(view){if(!['home','sessioni','pg','npc','compendio','oggetti','prove','cronologia','misteri','ricerca'].includes(view))view='home';if(location.hash!=='#/'+view){location.hash='/'+view}else route()}
-function route(){const parts=(location.hash||'#/home').replace(/^#\/?/,'').split('/');const view=parts[0]||'home';if(view==='sessioni'&&parts[1]){const id=decodeURIComponent(parts[1]);if(sessions.some(x=>x.id===id)){activeSession=id;libraryCategory='recaps'}}currentView=['home','sessioni','pg','npc','compendio','oggetti','prove','cronologia','misteri','ricerca'].includes(view)?view:'home';
+function route(){const parts=(location.hash||'#/sessioni').replace(/^#\/?/,'').split('/');const view=parts[0]||'home';if(view==='sessioni'&&parts[1]){const id=decodeURIComponent(parts[1]);if(sessions.some(x=>x.id===id)){activeSession=id;libraryCategory='recaps'}}currentView=['home','sessioni','pg','npc','compendio','oggetti','prove','cronologia','misteri','ricerca'].includes(view)?view:'home';
  document.querySelectorAll('.view').forEach(x=>x.classList.toggle('hidden',x.id!=='view-'+currentView));document.querySelectorAll('[data-nav]').forEach(x=>{const a=x.dataset.nav===currentView;x.classList.toggle('active',a);if(a)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current')});const names={home:'Panoramica',sessioni:'Diario delle sessioni',pg:'Personaggi giocanti',npc:'Personaggi non giocanti',compendio:'Compendio',oggetti:'Oggetti incontrati',prove:'Prove e obiettivi',cronologia:'Cronologia',misteri:'Fili aperti',ricerca:'Ricerca'};$('breadcrumb').textContent=names[currentView];
  if(currentView==='home')renderHome();document.body.classList.toggle('library-focused',currentView==='sessioni');if(currentView==='sessioni')renderLibrary();if(currentView==='pg'||currentView==='npc')renderCharacters(currentView);if(currentView==='compendio'){renderFilters();renderEntries()}if(currentView==='oggetti')renderItemsIndex();if(currentView==='prove')renderTrialIndex();if(currentView==='cronologia')renderTimeline();if(currentView==='misteri')renderMysteries();if(currentView==='ricerca'){$('memory-query').value=searchQuery;runMemory(searchQuery)}
  $('sidebar').classList.remove('open');$('mobile-shade').classList.remove('open');window.scrollTo(0,0)}
@@ -299,7 +299,7 @@ async function init(){try{const res=await fetch('data/public.json',{cache:'no-st
 
 document.querySelectorAll('[data-library]').forEach(b=>b.addEventListener('click',()=>{
  libraryCategory=b.dataset.library;if(!['recaps','players','npcs','items','locations','factions','quests'].includes(libraryCategory))libraryCategory='recaps';
- if(libraryCategory!=='recaps'&&location.hash.startsWith('#/sessioni/'))history.replaceState(null,'','#/sessioni');
+ if(libraryCategory!=='recaps'&&location.hash.startsWith('#/sessioni/'))location.hash='#/sessioni';
  renderLibrary();
 }));
 $('library-search-input').addEventListener('input',e=>{libraryQuery=e.target.value;renderLibrary()});
