@@ -29,6 +29,12 @@ async function save(ev){ev.preventDefault();const id=val('f-id').trim();if(!/^[a
  const row={id,category:val('f-category'),title:val('f-title').trim(),status:val('f-status'),visibility:val('f-visibility'),nature:val('f-nature'),confidence:val('f-confidence'),summary:val('f-summary'),public_details:val('f-public-details'),source:val('f-source'),session_number:val('f-number')?Number(val('f-number')):null,event_date:val('f-date')||null,tags:val('f-tags').split(',').map(x=>x.trim()).filter(Boolean),public_events:val('f-events').split('\n').map(t=>t.trim()).filter(Boolean).map(t=>{const at=t.indexOf('|');return at<0?{time:'',text:t}:{time:t.slice(0,at).trim(),text:t.slice(at+1).trim()}}),character_role:val('f-character-role'),public_history:[],public_inventory:[],public_condition:val('f-condition')};
  if(row.category==='personaggi'){try{row.public_history=historyFromForm();row.public_inventory=inventoryFromForm()}catch(e){tell('Dati del personaggio non validi: '+e.message);return}}
  if(!row.title){tell('Il titolo è obbligatorio.');return}
+ if(row.visibility==='players'){
+ const publicParts=[row.title,row.summary,row.public_details,row.public_condition,...(row.public_history||[]).map(x=>x.text||''),...(row.public_inventory||[]).flatMap(x=>[x.name||'',x.state||'',x.notes||''])];
+ const outOfWorld=/\b(?:registrazion\w*|trascrizion\w*|ricostruzion\w*|master|giocator\w*|srt|whisper|chatgpt|buzz|bozza|da verificare|da confermare|non confermat\w*|note editoriali|timestamp)\b/i;
+ const bad=publicParts.find(x=>outOfWorld.test(x));
+ if(bad){tell('Riferimento fuori narrazione nel testo pubblico: '+bad.slice(0,110)+'. Spostalo nelle note riservate oppure riscrivilo come evento della storia.');return}
+}
  if(row.visibility==='players'&&!window.confirm('Confermi la pubblicazione? Chiunque vedrà titolo, riassunto, dettagli pubblici, fonte e tag della scheda. Le note riservate non sono comprese.'))return;
  $('save-entry').disabled=true;
  try{if(newRecord)await request('/rest/v1/entries',{method:'POST',headers:{Prefer:'return=minimal'},body:row});else await request('/rest/v1/entries?id=eq.'+encodeURIComponent(id),{method:'PATCH',headers:{Prefer:'return=minimal'},body:row});
