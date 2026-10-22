@@ -89,11 +89,12 @@
     "pg-jean": {
       "expected": "Jean sfrutta sfere e fili dello Stand per difendere il gruppo, finisce in acqua durante l’ondata e aiuta la fuga sulla zattera.",
       "summary": "Jean usa i fili e le sfere del proprio Stand per affrontare Sue Nami e salvare il gruppo. Durante l’ondata viene trascinato nel fiume, ma riesce a tornare all’attraversamento.",
-      "details": "Jean utilizza la rotazione delle proprie sfere per muoversi fra gli scogli. Nello scontro intrappola Sue Nami nei fili del suo Stand, prima che le grandi forbici di POOR SOULS li taglino. Viene investito dall’ondata, ma poi aiuta a spingere e governare la zattera verso l’altra sponda.",
+      "details": "Jean utilizza la rotazione delle proprie sfere per muoversi fra gli scogli. Nello scontro intrappola Sue Nami nei fili del suo Stand, prima che le grandi forbici di POOR SOULS li taglino. Viene investito dall’ondata, ma poi aiuta a spingere e governare la zattera verso l’altra sponda. Dopo il traguardo Jean tenta di attaccare un membro della squadra avversaria, ma i Grimm compaiono e lo fermano.",
       "events": [
-        "L’ondata di FATHOMS BELOW lo scaraventa nell’acqua.",
+        "L'ondata di FATHOMS BELOW lo scaraventa nell'acqua.",
         "Intrappola Sue Nami nei fili, recisi durante il contrattacco.",
-        "Con le sfere del suo Stand partecipa alla propulsione della zattera."
+        "Con le sfere del suo Stand partecipa alla propulsione della zattera.",
+        "Oltrepassato il traguardo tenta di attaccare un membro della squadra avversaria, ma i Grimm arrivano e lo fermano."
       ]
     },
     "pg-joshwa": {
@@ -143,8 +144,8 @@
     },
     "fazione-grimm": {
       "expected": "I Grimm sorvegliano le prove e fanno rispettare le regole.",
-      "summary": "I Grimm sono il corpo armato che controlla le prove e impone il rispetto delle regole.",
-      "details": "Durante lo scontro nel fiume, i Grimm tengono i concorrenti sotto tiro. Al termine della prova impediscono che gli scontri proseguano."
+      "summary": "I Grimm compaiono dopo la conclusione della prova del fiume per imporre la fine del combattimento.",
+      "details": "Jean ha già superato il traguardo quando tenta di attaccare un membro della squadra avversaria. È a questo punto, e non prima, che arrivano i Grimm: lo fermano e impediscono che lo scontro continui."
     }
   },
   "story": {
@@ -201,7 +202,7 @@
       ],
       [
         "Più inquietante di tutti, poco distante, c'era uno Stand dotato di un enorme fucile, rivolto verso gli osservatori. Il suo portatore non si vedeva.",
-        "Poco distante, i Grimm sorvegliavano l’area con i loro fucili puntati verso i concorrenti."
+        ""
       ],
       [
         "Prima di allontanarsi mise una mano sull'orologio associato allo Stand di Giulia, controllò l'ora e reagì con evidente urgenza.",
@@ -213,7 +214,7 @@
       ],
       [
         "Un attacco rivolto a Sunshine fu intercettato dall'intervento di Emma, una dei Grimm. Il suo gesto fu così rapido che non tutti riuscirono a seguirlo: la mano dello Stand che avrebbe dovuto colpire esplose prima di raggiungere il bersaglio. Emma si",
-        "Un tentativo di attaccare ancora venne fermato dai Grimm. La mano dello Stand che stava per colpire esplose prima di raggiungere il bersaglio. I Grimm si"
+        "Dopo il traguardo Jean tentò di attaccare un membro della squadra avversaria. Soltanto allora comparvero i Grimm, che lo fermarono e imposero la fine degli scontri."
       ],
       [
         "Lo Stand di Killian Jones",
@@ -250,7 +251,12 @@
       [
         "Emma",
         "i Grimm"
+      ],
+      [
+        "A un certo punto lo Stand armato di fucile emerse dall'acqua. La sua figura non sembrava nemmeno avere i vestiti bagnati. Si sistemò per sparare, ma proprio quando stava per farlo sia il suo portatore, indicato durante la sessione come Sunshine, sia Mariah si portarono una mano alla testa. I due sembrarono subire contemporaneamente un dolore improvviso, e il tentativo di sparare venne interrotto. L'episodio colpì anche Sue Nami: la soddisfazione che aveva mostrato poco prima scomparve dal suo volto.",
+        "Nel mezzo dello scontro Mariah fu colta da un dolore improvviso e si portò una mano alla testa. Sue Nami perse il sorriso che aveva mostrato poco prima."
       ]
-    ]
+    ],
+    "recapEnding": "Jean era già oltre il traguardo quando cercò di attaccare un componente della squadra avversaria. Soltanto allora arrivarono i Grimm: lo fermarono e impedirono che lo scontro continuasse."
   }
 }
