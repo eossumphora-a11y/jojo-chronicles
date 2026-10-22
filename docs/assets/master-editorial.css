@@ -1,0 +1,34 @@
+/* Studio Master follows the same neutral, light editorial design. */
+.master-body{background:#f9f8f6;color:#342b34}
+.master-header{background:#fff;border-bottom:1px solid #e8e2e8;box-shadow:0 4px 17px #4a304604}
+.back-link{color:#765c74;font-weight:700}.back-link:hover{color:#423242}
+.master-header .overline,.master-header .overline strong{color:#725475}
+.master-main{max-width:1430px}
+.master-login{background:#fff;border:1px solid #e8e0e8;box-shadow:0 22px 55px #32253616;border-radius:16px}
+.master-login h1,.master-topline h1{color:#332833;font-family:'Libre Baskerville',Georgia,serif;letter-spacing:-.05em}
+.master-login h1 em{color:#795477}.master-login p{color:#7a707a}
+.master-login-form label{color:#645364}
+.master-login-form input,.master-form-grid .field,.master-list-panel .field{background:#fff;color:#3f313f;border:1px solid #e4dbe4;border-radius:8px}
+.master-login-form input:focus,.master-form-grid .field:focus,.master-list-panel .field:focus{border-color:#9b7c99}
+.auth-buttons .secondary-btn{background:#fff;color:#6d536a;border-color:#e3dce3}
+.note{border-color:#eae4e9;color:#827882!important}
+.uid{background:#faf6fa;color:#67496a;border-color:#eadfea}
+.feedback{color:#795475}
+.master-topline p{color:#766b76}.master-stats{gap:12px}
+.master-stats>div{background:#fff;border:1px solid #e9e2e8;border-radius:11px;color:#8a7f8a;box-shadow:0 4px 15px #28202c08}
+.master-stats strong{color:#5c455d;font-family:'Libre Baskerville',Georgia,serif}
+.master-list-panel,.master-editor-panel{background:#fff;border:1px solid #e9e2e8;box-shadow:0 8px 25px #291b2d0a;border-radius:13px}
+.master-list-title{color:#7d5e7a}.master-item{border-bottom:1px solid #eee8ed;color:#544454}
+.master-item strong{font-size:13px}.master-item small{color:#8b7d8b}.master-item .public{color:#508166}
+.master-item:hover,.master-item.active{border-color:#c5b1c4;background:#f8f3f8}
+.master-form-grid label{color:#5c4d5d}
+.master-form-grid select option{background:#fff;color:#342b34}
+.private-title{background:#f8f1f6;color:#7b536f;border:1px solid #e9dbe5}
+.publish-note{background:#f9f6ef;color:#74604e;border-color:#eadfcc}
+.master-toast{background:#fff;color:#5e495d;border:1px solid #c9b4c7;box-shadow:0 10px 40px #24132b25}
+.character-profile-fields{background:#fcfafc;border-color:#e7dce7}
+.character-profile-fields .private-title{background:#f3ebf2;color:#684b65;border-color:#e2d1df}
+.character-help{color:#8a7b88}
+.import-box{background:#faf6fa;border-color:#cbb6c9}.import-box label{color:#765775}.import-box input{color:#675667}
+.import-box p{color:#867986}
+@media(max-width:700px){.master-header{padding:0 15px}.master-main{padding:22px 14px 60px}}
