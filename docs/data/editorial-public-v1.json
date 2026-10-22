@@ -1,19 +1,10 @@
 {
   "profiles": {
-    "personaggio-emma": {
-      "expected": "Una figura associata ai Grimm interviene al termine della prova per fermare un'aggressione.",
-      "summary": "Emma è una dei Grimm incaricati di imporre la fine delle ostilità.",
-      "details": "Quando la prova termina, qualcuno tenta ancora di colpire Sunshine. Emma interviene prima che l'attacco raggiunga il bersaglio: la mano dello Stand aggressore esplode e ogni ulteriore violenza viene proibita. Il suo ordine è inequivocabile: il combattimento è finito.",
-      "condition": "",
-      "events": [
-        "Interviene dopo il traguardo e blocca un attacco contro Sunshine, ricordando che nessuno può più uccidere a prova conclusa."
-      ]
-    },
     "personaggio-giulia-zeppeli": {
       "expected": "Compare davanti ai partecipanti nella nuova arena, dove riceve un sussurro da una figura misteriosa.",
-      "summary": "Giulia Zeppeli appare isolata nella nuova arena, proprio dove discende una figura dall'aspetto impossibile da ricordare.",
-      "details": "A una trentina di metri dagli altri superstiti, Giulia Zeppeli assiste alla discesa di una figura simile a un angelo. Ognuno ne vede un volto diverso. La sconosciuta si china su Giulia e le parla all'orecchio per quasi un minuto, prima di svanire senza lasciare spiegazioni.",
-      "condition": "Le parole sussurrate all'orecchio di Giulia restano un mistero.",
+      "summary": "Julia Zeppeli appare isolata nella nuova arena, proprio dove discende una figura dall'aspetto impossibile da ricordare.",
+      "details": "A una trentina di metri dagli altri superstiti, Julia Zeppeli assiste alla discesa di una figura simile a un angelo. Ognuno ne vede un volto diverso. La sconosciuta si china su Julia e le parla all'orecchio per quasi un minuto, prima di svanire senza lasciare spiegazioni.",
+      "condition": "Le parole sussurrate all'orecchio di Julia restano un mistero.",
       "events": [
         "Nella nuova arena, una figura mutevole si china e le parla all'orecchio lontano da tutti gli altri."
       ]
@@ -24,15 +15,10 @@
       "details": "Hol Horse rimane una presenza ancora poco conosciuta. Il suo nome è emerso, ma nessuno ha ancora potuto ricostruire fino in fondo il suo ruolo in quanto accaduto.",
       "condition": ""
     },
-    "personaggio-john": {
-      "expected": "Travolto dall'ondata, aiuta poi la fuga mantenendo attiva la propulsione della zattera.",
-      "summary": "John viene travolto dalle acque, ma riesce a contribuire alla fuga mantenendo in movimento la zattera.",
-      "details": "L'ondata sollevata da Sue Nami lo getta nel fiume. Quando il gruppo organizza l'attraversamento, John resta impegnato nella propulsione della zattera: è anche grazie alla sua spinta che gli altri raggiungono la sponda opposta."
-    },
     "personaggio-killian-jones": {
       "expected": "Combatte con uno Stand che lancia uncini e fili, creando legami fra i bersagli.",
-      "summary": "Killian Jones combatte attraverso uno Stand dalle mani a uncino, capace di intrecciare legami pericolosi fra le sue vittime.",
-      "details": "Il suo Stand ha l'aspetto di un pirata scheletrico, armato di uncini collegati a fili. Chi viene agganciato rischia di subire gli effetti dei colpi inferti ad altri. Quando il metronomo di Raven passa nelle mani di Julian e inizia a ticchettare accanto allo Stand, i fili perdono consistenza e si spezzano. Killian reagisce con rabbia, ma presto controlla l'ora e abbandona lo scontro per raggiungere il traguardo."
+      "summary": "Killian Jones combatte con RUSTY HOOK, lo Stand scheletrico munito di uncini e fili che legano fra loro le vittime.",
+      "details": "RUSTY HOOK può agganciare i bersagli con uncini e fili e trasmettere gli effetti dei colpi lungo i collegamenti. Il metronomo recuperato da Raven e impiegato da Julian riesce a distrarne l’azione. Killian infine lascia lo scontro prima che scada il tempo."
     },
     "personaggio-mariah": {
       "expected": "Aiuta il gruppo a raggiungere le rocce; durante il combattimento viene soccorsa.",
@@ -46,8 +32,8 @@
     },
     "personaggio-morgan": {
       "expected": "Interviene durante il combattimento del fiume, accanto a Killian Jones.",
-      "summary": "Morgan prende parte allo scontro insieme a Killian Jones e agli altri combattenti della gola.",
-      "details": "Durante l'ultimatum di Sue Nami, Morgan è sul punto di attaccare una persona impegnata a soccorrere Mariah. Un ordine di Killian Jones lo ferma un attimo prima che il colpo raggiunga il bersaglio. Più tardi il suo Stand svanisce, richiamato lontano dallo scontro.",
+      "summary": "Morgan prende parte allo scontro con POOR SOULS, Atto 2, uno Stand dall’aspetto di una canocchia mantide.",
+      "details": "Morgan utilizza soltanto l’Atto 2 di POOR SOULS durante la prova del fiume. La creatura dai colpi di chele esplosivi combatte nelle acque della gola. Morgan tenta anche di colpire chi sta soccorrendo Mariah, ma Killian Jones lo ferma.",
       "events": [
         "Si prepara a colpire uno dei soccorritori di Mariah, ma Killian Jones gli ordina di fermarsi."
       ]
@@ -71,17 +57,17 @@
       ]
     },
     "personaggio-somchai": {
-      "expected": "Partecipa allo scontro del fiume; viene descritto un attacco ad area.",
-      "summary": "Somchai è tra i combattenti presenti nella gola, dove diversi Stand si scontrano fra le rocce e la corrente.",
-      "details": "Somchai si trova nel gruppo coinvolto nello scontro del fiume, vicino agli altri portatori di Stand. Nel caos della battaglia si scatena anche un attacco che investe un'intera zona, ma la natura dei suoi poteri resta avvolta nel mistero.",
+      "expected": "Somchai Khanit combatte nella prova del fiume insieme agli altri portatori di Stand.",
+      "summary": "Somchai Khanit affronta i concorrenti nella gola e combatte con il suo Stand, JustIn Time.",
+      "details": "Somchai Khanit interviene nel combattimento del fiume servendosi di JustIn Time. Durante lo scontro scatena un attacco ad area che raggiunge più partecipanti in un solo momento.",
       "events": [
-        "Prende parte alla battaglia nel fiume fra le rocce e gli altri portatori di Stand."
+        "Si unisce allo scontro impiegando JustIn Time, con un assalto che investe più bersagli."
       ]
     },
     "personaggio-sue-nami": {
       "expected": "Combattente della prova del fiume, apparentemente protetta da uno Stand acquatico.",
-      "summary": "Sue Nami domina l'acqua del fiume e si oppone al passaggio del gruppo con una violenza crescente.",
-      "details": "La ragazza è protetta da un potere acquatico che rallenta e assorbe i colpi destinati a raggiungerla. Quando solleva un'enorme ondata, diversi partecipanti vengono trascinati via. Più tardi offre agli avversari una via di fuga: potranno attraversare il fiume, purché abbandonino Mariah e Raven al suo gruppo. La proposta viene respinta, e Sue Nami riprende a combattere.",
+      "summary": "Sue Nami controlla l’acqua con FATHOMS BELOW, cercando di impedire al gruppo di attraversare il fiume.",
+      "details": "Con FATHOMS BELOW, Sue Nami intercetta gli attacchi usando barriere d’acqua e solleva un’immensa ondata sulla gola. Offre agli avversari di lasciarli passare se abbandonano Mariah e Raven: quando l’ultimatum viene respinto, continua lo scontro.",
       "condition": "L'ultima volta che viene vista, Sue Nami è ancora impegnata a raggiungere il traguardo.",
       "events": [
         "Scatena un'ondata che investe il fiume e trascina diversi combattenti.",
@@ -101,9 +87,14 @@
       "condition": ""
     },
     "pg-jean": {
-      "expected": "Usa fili e sfere per trattenere avversari e muoversi nell'ambiente del fiume.",
-      "summary": "Jean usa le sfere e i fili del suo Stand per muoversi fra le rocce, trattenere un'avversaria e aiutare la fuga.",
-      "details": "Jean sfrutta la rotazione delle sfere del proprio Stand per cercare appigli tra i massi e spostarsi sopra il fiume. Durante lo scontro intrappola Sue Nami in una rete di fili, ma grandi forbici finiscono per reciderli. Al momento della fuga le sue sfere tornano decisive per spingere la zattera attraverso la corrente."
+      "expected": "Jean sfrutta sfere e fili dello Stand per difendere il gruppo, finisce in acqua durante l’ondata e aiuta la fuga sulla zattera.",
+      "summary": "Jean usa i fili e le sfere del proprio Stand per affrontare Sue Nami e salvare il gruppo. Durante l’ondata viene trascinato nel fiume, ma riesce a tornare all’attraversamento.",
+      "details": "Jean utilizza la rotazione delle proprie sfere per muoversi fra gli scogli. Nello scontro intrappola Sue Nami nei fili del suo Stand, prima che le grandi forbici di POOR SOULS li taglino. Viene investito dall’ondata, ma poi aiuta a spingere e governare la zattera verso l’altra sponda.",
+      "events": [
+        "L’ondata di FATHOMS BELOW lo scaraventa nell’acqua.",
+        "Intrappola Sue Nami nei fili, recisi durante il contrattacco.",
+        "Con le sfere del suo Stand partecipa alla propulsione della zattera."
+      ]
     },
     "pg-joshwa": {
       "expected": "Personaggio giocante della campagna.",
@@ -131,14 +122,29 @@
       "details": "Yekaterina si ritrova nelle profondità del fiume, afferrata da mani d'acqua che tentano di impedirle di emergere. Ruotando con il proprio Stand riesce a liberarsi, ma viene attaccata da una creatura dotata di chele capaci di provocare esplosioni. Nonostante i colpi ricevuti, supera il tratto più pericoloso e si occupa di Mariah sull'altra sponda."
     },
     "stand-difesa-acquosa": {
-      "expected": "Una difesa d'acqua capace di frapporsi agli attacchi e talvolta solidificarsi.",
-      "summary": "Una massa liquida protegge Sue Nami, rallentando i colpi e assorbendoli al suo posto.",
-      "details": "Attorno a Sue Nami l'acqua si addensa in una barriera viva: piume e proiettili perdono velocità, mentre gli attacchi più potenti colpiscono il liquido invece del suo corpo. La protezione muta consistenza e forma, come se il fiume stesso si fosse posto a difesa della ragazza."
+      "expected": "Lo Stand acquatico di Sue Nami controlla grandi masse d’acqua e le usa come protezione e arma.",
+      "summary": "FATHOMS BELOW è lo Stand acquatico di Sue Nami.",
+      "details": "FATHOMS BELOW forma difese d’acqua capaci di assorbire o rallentare gli attacchi e solleva ondate che travolgono la zona di combattimento."
     },
     "stand-uncini-killian": {
-      "expected": "Uno Stand scaglia uncini collegati a fili che possono trasmettere il danno.",
-      "summary": "Uno Stand simile a un pirata scheletrico aggancia le vittime con uncini e fili capaci di collegare fra loro i colpi.",
-      "details": "Gli uncini si conficcano nei bersagli e i fili tesi fra loro permettono allo Stand di diffondere il dolore attraverso i collegamenti. Durante la battaglia, il ticchettio di un metronomo ne attira l'attenzione; gli uncini perdono allora la presa e i fili svaniscono."
+      "expected": "Lo Stand di Killian Jones scaglia uncini e tende fili fra i bersagli.",
+      "summary": "RUSTY HOOK è lo Stand di Killian Jones, dalle sembianze di un pirata scheletrico.",
+      "details": "RUSTY HOOK aggancia i bersagli con uncini e fili, mettendoli in relazione attraverso gli effetti dei colpi. Durante lo scontro, il ticchettio di un metronomo interrompe alcuni legami."
+    },
+    "stand-justin-time": {
+      "expected": "Lo Stand di Somchai Khanit, incontrato durante il combattimento nella gola del fiume.",
+      "summary": "JustIn Time è lo Stand di Somchai Khanit.",
+      "details": "JustIn Time accompagna Somchai Khanit nel combattimento del fiume. Un suo attacco ad area investe diversi partecipanti."
+    },
+    "stand-poor-souls": {
+      "expected": "Lo Stand di Morgan, manifestatosi nello scontro nella forma del suo Atto 2.",
+      "summary": "POOR SOULS, lo Stand di Morgan, si manifesta durante la prova nella forma dell’Atto 2.",
+      "details": "Il secondo Atto di POOR SOULS ha l’aspetto di una canocchia mantide dalle chele potentissime, capace di assalti che provocano violente esplosioni nell’acqua."
+    },
+    "fazione-grimm": {
+      "expected": "I Grimm sorvegliano le prove e fanno rispettare le regole.",
+      "summary": "I Grimm sono il corpo armato che controlla le prove e impone il rispetto delle regole.",
+      "details": "Durante lo scontro nel fiume, i Grimm tengono i concorrenti sotto tiro. Al termine della prova impediscono che gli scontri proseguano."
     }
   },
   "story": {
@@ -162,7 +168,7 @@
         "I compagni cercarono di soccorrerlo mentre intorno a loro i colpi continuavano a cadere. Nel tumulto, Raven rimase a terra per alcuni istanti, con gli altri impegnati a impedirgli di soccombere."
       ],
       [
-        "Nota di chiusura\nIl resoconto si ferma qui. La natura della figura comparsa davanti a Giulia, il contenuto del sussurro e le regole effettive della nuova prova non sono stati rivelati nella registrazione.",
+        "Nota di chiusura\nIl resoconto si ferma qui. La natura della figura comparsa davanti a Julia, il contenuto del sussurro e le regole effettive della nuova prova non sono stati rivelati nella registrazione.",
         ""
       ],
       [
@@ -188,6 +194,50 @@
       [
         "I personaggi non si fermarono a chiarire chi fosse",
         "Nessuno si fermò a chiarire chi fosse"
+      ],
+      [
+        "Giulia",
+        "Julia"
+      ],
+      [
+        "un'altra creatura simile a un crostaceo antropomorfo",
+        "POOR SOULS, lo Stand di Morgan nell’Atto 2, dall’aspetto di una canocchia mantide"
+      ],
+      [
+        "Più inquietante di tutti, poco distante, c'era uno Stand dotato di un enorme fucile, rivolto verso gli osservatori. Il suo portatore non si vedeva.",
+        "Poco distante, i Grimm sorvegliavano l’area con i loro fucili puntati verso i concorrenti."
+      ],
+      [
+        "A un certo punto lo Stand armato di fucile emerse dall'acqua. La sua figura non sembrava nemmeno avere i vestiti bagnati. Si sistemò per sparare, ma proprio quando stava per farlo sia il suo portatore, indicato durante la sessione come Sunshine, sia Mariah si portarono una mano alla testa. I due sembrarono subire contemporaneamente un dolore improvviso, e il tentativo di sparare venne interrotto. L'episodio colpì anche Sue Nami: la soddisfazione che aveva mostrato poco prima scomparve dal suo volto.",
+        "I Grimm continuavano a tenere sotto tiro i partecipanti. Nel frattempo Mariah fu colta da un dolore improvviso e si portò una mano alla testa. Il combattimento subì una breve esitazione; Sue Nami perse il sorriso che aveva mostrato poco prima."
+      ],
+      [
+        "Prima di allontanarsi mise una mano sull'orologio associato allo Stand di Giulia, controllò l'ora e reagì con evidente urgenza.",
+        "Prima di allontanarsi controllò l’ora e reagì con evidente urgenza."
+      ],
+      [
+        "Prima di allontanarsi mise una mano sull'orologio associato allo Stand di Julia, controllò l'ora e reagì con evidente urgenza.",
+        "Prima di allontanarsi controllò l’ora e reagì con evidente urgenza."
+      ],
+      [
+        "Un attacco rivolto a Sunshine fu intercettato dall'intervento di Emma, una dei Grimm. Il suo gesto fu così rapido che non tutti riuscirono a seguirlo: la mano dello Stand che avrebbe dovuto colpire esplose prima di raggiungere il bersaglio. Emma si",
+        "Un tentativo di attaccare ancora venne fermato dai Grimm. La mano dello Stand che stava per colpire esplose prima di raggiungere il bersaglio. I Grimm si"
+      ],
+      [
+        "Lo Stand di Killian Jones",
+        "RUSTY HOOK, lo Stand di Killian Jones"
+      ],
+      [
+        "Neppure Somchai rimase inattivo.",
+        "Neppure Somchai Khanit rimase inattivo: con JustIn Time attaccò il gruppo."
+      ],
+      [
+        "A un certo punto lo Stand di Morgan svanì",
+        "A un certo punto POOR SOULS, lo Stand di Morgan, svanì"
+      ],
+      [
+        "Sue Nami dimostrò allora che il suo controllo sull'acqua",
+        "Sue Nami dimostrò allora che FATHOMS BELOW poteva controllare l’acqua"
       ]
     ]
   }
