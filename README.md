@@ -6,7 +6,7 @@
 
 - **Pagina giocatori:** https://eossumphora-a11y.github.io/jojo-chronicles/ — dashboard, diario narrativo, compendio, cronologia, indizi, ricerca testuale con fonti, collegamenti cliccabili fra schede e sessioni.
 - **Studio Master online:** https://eossumphora-a11y.github.io/jojo-chronicles/master.html — accesso email/password con Supabase Auth e controllo ruolo admin tramite RLS, editor per schede pubbliche e private, cronologia di sessione e importazione di più SRT da unire per timestamp. La registrazione NON assegna automaticamente il ruolo admin; un amministratore deve inserirlo manualmente nella tabella user_roles.
-- La fonte corrente della pagina giocatori è **Supabase**, esclusivamente record con visibilità `players`. Gli eventi della cronologia sono nel campo `public_events` e diventano illeggibili assieme alla sessione se viene ritirata dalla pubblicazione. Il file `docs/data/public.json` è ora vuoto e costituisce un fallback di configurazione, non un secondo database.
+- La fonte principale della pagina giocatori è **Supabase**, esclusivamente record con visibilità `players`. Gli eventi della cronologia sono nel campo `public_events`. Dal 28 ottobre 2026, `docs/data/public.json` contiene anche una **copia pubblica di emergenza** del recap verificato della prova del fiume e delle voci corrispondenti, per evitare che un'interruzione temporanea del database faccia apparire il sito vuoto. I dati di riserva sono usati solo quando la richiesta remota fallisce; un database raggiungibile senza voci pubbliche rimane vuoto per rispettare le revoche del Master. La copia pubblica deve essere aggiornata o rimossa quando si revocano contenuti dall'archivio.
 - Lo `studio/` del repository è il **precedente Studio locale IndexedDB**: le modifiche fatte solo lì non si sincronizzano con il database online.
 - La ricerca nella pagina web è **testuale, non generativa**. Non è un servizio AI che risponde con un modello, non registra Discord e non trascrive audio direttamente dal browser. Non promettere funzioni di LoreMonkey che non sono implementate.
 
@@ -16,7 +16,7 @@ Un archivio per la campagna JoJo con due interfacce:
 - **Master Studio** (`studio/`): enciclopedia completa, schede riservate, cronologia, citazioni, trascrizioni, editor, backup e approvazione delle pubblicazioni. Conserva i dati **nel browser locale** con IndexedDB.
 - **Sito giocatori** (`docs/`): mostra i dati approvati in `docs/data/public.json` e legge automaticamente le voci con `visibility='players'` dal database Supabase dell'archivio. La lettura Supabase è limitata da Row Level Security; trascrizioni e note riservate non sono mai richieste dal browser.
 
-Il sito è deliberatamente **vuoto all'inizio**: non vengono inventati fatti della campagna.
+La copia statica di emergenza contiene **solo eventi della prova del fiume già pubblicati e corretti**, non schede preparatorie, trascrizioni integrali o segreti Master. Le versioni breve, standard, combattimento e la scaletta rimangono in `docs/data/session-formats.json`.
 
 ## 1. Avvio (Windows)
 
@@ -170,3 +170,10 @@ L'account Master online richiede **Supabase Auth + ruolo admin** nel progetto. I
 Per **La prova del fiume**, POOR SOULS risulta documentato nella versione narrativa pubblica del recap (`docs/data/session-formats.json`) e nella voce editoriale già pubblica (`docs/data/editorial-public-v1.json`). La pagina ora verifica le menzioni anche nelle versioni pubbliche del recap, non soltanto nel riassunto grezzo Supabase.
 
 In assenza di una riga pubblica per POOR SOULS nel database, usa **solo** la voce editoriale pubblica esistente come dossier limitato (Atto 2, aspetto da canocchia mantide, chele e attacchi esplosivi già raccontati). La scheda compare soltanto se una sessione visibile ai giocatori ne riporta espressamente il nome. Nessun dato nascosto del manuale/Foundry viene importato. Il fallback non crea né modifica record nel database Supabase.
+
+## Recupero del contenuto pubblico del 22 ottobre 2026
+
+- Conservato un fallback verificato per la prova del fiume: resoconto standard e 29 punti cronologici, 21 voci pubbliche fra PG, NPC, Stand, oggetti, luoghi e fazioni. I 4 Stand nominati e visibili sono FATHOMS BELOW, RUSTY HOOK, JustIn Time e POOR SOULS (Atto 2).
+- Rimossi dall'archivio di emergenza i vecchi riferimenti errati a John ed Emma; corretto Julia Zeppeli e l'intervento dei Grimm dopo il traguardo. I dati pubblicati rimangono solo conoscenze dei giocatori.
+- In caso di disconnessione da Supabase il sito mostra l'ultima copia pubblica valida. **Il resoconto narrativo lunghissimo eventualmente conservato solo in Supabase non è garantito dal fallback**: serve un export del database per salvarne una copia integrale separata.
+- Se la pubblicazione di una voce viene revocata, aggiorna anche il fallback: in caso di interruzione della rete può ricomparire il contenuto pubblico della precedente copia. Non aggiungere dati riservati al JSON.
