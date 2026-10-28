@@ -2,8 +2,683 @@
   "version": 1,
   "campaign": {
     "title": "Un destino bizzarro.",
-    "subtitle": "Le vicende dei sopravvissuti, gli Stand incontrati, i nomi emersi fra le prove e le domande rimaste senza risposta."
+    "subtitle": "Le storie, i luoghi e i personaggi che avete incontrato. Nessun segreto del Master."
   },
-  "entries": [],
-  "sessions": []
+  "entries": [
+    {
+      "id": "pg-jean",
+      "kind": "character",
+      "title": "Jean",
+      "subtitle": "",
+      "summary": "Jean usa i fili e le sfere del proprio Stand per affrontare Sue Nami e salvare il gruppo. Durante l’ondata viene trascinato nel fiume, ma riesce a tornare all’attraversamento.",
+      "body": "Jean utilizza la rotazione delle proprie sfere per muoversi fra gli scogli. Nello scontro intrappola Sue Nami nei fili del suo Stand, prima che le grandi forbici di POOR SOULS li taglino. Viene investito dall’ondata, ma poi aiuta a spingere e governare la zattera verso l’altra sponda. Dopo il traguardo Jean tenta di attaccare un membro della squadra avversaria, ma i Grimm compaiono e lo fermano.",
+      "related": [
+        "luogo-fiume-01"
+      ],
+      "tags": [
+        "partecipante",
+        "fili"
+      ],
+      "public": true,
+      "character_role": "pg",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "L'ondata di FATHOMS BELOW lo scaraventa nell'acqua."
+        },
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Intrappola Sue Nami nei fili, recisi durante il contrattacco."
+        },
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Con le sfere del suo Stand partecipa alla propulsione della zattera."
+        },
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Oltrepassato il traguardo tenta di attaccare un membro della squadra avversaria, ma i Grimm arrivano e lo fermano."
+        }
+      ]
+    },
+    {
+      "id": "pg-julian",
+      "kind": "character",
+      "title": "Julian",
+      "subtitle": "",
+      "summary": "Julian sopravvive all'ondata, usa un metronomo contro lo Stand di Killian e aiuta il gruppo ad attraversare il fiume.",
+      "body": "Quando l'ondata di Sue Nami travolge le rocce, Julian finisce nell'acqua. Più tardi raccoglie l'idea di Raven: avvicina un metronomo allo Stand di Killian e lascia che il ticchettio ne catturi l'attenzione. I fili tesi verso Mariah e Yekaterina si dissolvono. Durante la fuga Julian contribuisce a stabilizzare la zattera mentre gli altri la guidano verso il traguardo.",
+      "related": [
+        "personaggio-killian-jones",
+        "stand-uncini-killian",
+        "oggetto-metronomo"
+      ],
+      "tags": [
+        "partecipante",
+        "metronomo"
+      ],
+      "public": true,
+      "character_role": "pg",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "incontro",
+          "text": "Julian sopravvive all'ondata, usa un metronomo contro lo Stand di Killian e aiuta il gruppo ad attraversare il fiume."
+        }
+      ],
+      "public_inventory": [
+        {
+          "name": "Metronomo",
+          "state": "Usato durante lo scontro",
+          "session_id": "sessione-fiume-01",
+          "time": "",
+          "notes": "Raven recupera il metronomo; Julian ne sfrutta il ticchettio per distrarre lo Stand di Killian. Dopo la fuga, il possesso dello strumento resta incerto."
+        }
+      ]
+    },
+    {
+      "id": "pg-yekaterina",
+      "kind": "character",
+      "title": "Yekaterina",
+      "subtitle": "",
+      "summary": "Yekaterina affronta gli Stand nascosti sotto il fiume e, raggiunta la riva opposta, soccorre Mariah.",
+      "body": "Yekaterina si ritrova nelle profondità del fiume, afferrata da mani d'acqua che tentano di impedirle di emergere. Ruotando con il proprio Stand riesce a liberarsi, ma viene attaccata da una creatura dotata di chele capaci di provocare esplosioni. Nonostante i colpi ricevuti, supera il tratto più pericoloso e si occupa di Mariah sull'altra sponda.",
+      "related": [
+        "personaggio-mariah",
+        "luogo-fiume-01"
+      ],
+      "tags": [
+        "partecipante",
+        "fiume"
+      ],
+      "public": true,
+      "character_role": "pg",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "incontro",
+          "text": "Yekaterina affronta gli Stand nascosti sotto il fiume e, raggiunta la riva opposta, soccorre Mariah."
+        }
+      ]
+    },
+    {
+      "id": "pg-davi",
+      "kind": "character",
+      "title": "Davì",
+      "subtitle": "",
+      "summary": "Davì affronta Sue Nami da vicino e guida la zattera negli ultimi istanti della prova.",
+      "body": "Mentre gli attacchi vengono frenati dalle difese liquide di Sue Nami, Davì riesce ad avvicinarsi abbastanza da assestarle diversi colpi. Quando il tempo sta per scadere, abbandona lo scontro con gli altri e contribuisce a mantenere la zattera sulla rotta verso il traguardo.",
+      "related": [
+        "personaggio-sue-nami",
+        "luogo-fiume-01"
+      ],
+      "tags": [
+        "partecipante",
+        "fiume"
+      ],
+      "public": true,
+      "character_role": "pg",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "incontro",
+          "text": "Davì affronta Sue Nami da vicino e guida la zattera negli ultimi istanti della prova."
+        }
+      ]
+    },
+    {
+      "id": "pg-elisabeth",
+      "kind": "character",
+      "title": "Elisabeth",
+      "subtitle": "",
+      "summary": "Elisabeth supera la prova della campana e prosegue con i compagni verso la gola del fiume.",
+      "body": "Elisabeth era riuscita a suonare la campana della prova precedente con l'aiuto dei piccoli esseri evocati dai compagni. Dopo la stanza bianca e l'annuncio di una nuova sfida, segue il gruppo verso la gola e valuta come utilizzare il proprio teletrasporto per affrontare il terreno insidioso.",
+      "related": [],
+      "tags": [
+        "partecipante"
+      ],
+      "public": true,
+      "character_role": "pg",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "incontro",
+          "text": "Elisabeth supera la prova della campana e prosegue con i compagni verso la gola del fiume."
+        }
+      ]
+    },
+    {
+      "id": "personaggio-mariah",
+      "kind": "character",
+      "title": "Mariah",
+      "subtitle": "",
+      "summary": "Mariah porta i compagni al riparo sulle rocce, poi viene colpita e ha bisogno dell'aiuto degli altri.",
+      "body": "All'inizio dello scontro Mariah solleva due compagni e li porta in volo fino a un masso. Poco dopo viene colpita da un forte mal di testa dovuto alla dissonanza tra Stand, mentre il suo Stand resta immobile. I colpi si susseguono finché Mariah non perde le forze. Durante la fuga Yekaterina la assiste e la conduce con il gruppo oltre il fiume.",
+      "related": [
+        "personaggio-raven"
+      ],
+      "tags": [
+        "partecipante"
+      ],
+      "public": true,
+      "public_condition": "Dopo essere stata soccorsa sull'altra sponda, riprende lentamente conoscenza.",
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Mariah subisce un forte mal di testa causato dalla dissonanza, mentre il suo Stand resta immobile."
+        },
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Yekaterina la assiste dopo lo scontro, sulla sponda opposta del fiume."
+        }
+      ]
+    },
+    {
+      "id": "personaggio-raven",
+      "kind": "character",
+      "title": "Raven",
+      "subtitle": "",
+      "summary": "Raven recupera un metronomo e intuisce come il suo ticchettio possa interrompere il potere di Killian Jones.",
+      "body": "Un metronomo gli cade quasi addosso nel mezzo della battaglia. Raven lo raccoglie e, osservando lo Stand di Killian Jones, pensa di usarne il ritmo contro i fili e gli uncini. Sussurra il piano ai compagni e Julian lo mette in pratica. Più tardi Raven viene colpito violentemente e cade a terra, costringendo gli altri a tentare di soccorrerlo.",
+      "related": [
+        "pg-julian",
+        "personaggio-killian-jones",
+        "oggetto-metronomo"
+      ],
+      "tags": [
+        "partecipante",
+        "metronomo"
+      ],
+      "public": true,
+      "public_condition": "Raven cade sotto i colpi durante gli ultimi momenti della battaglia; i compagni cercano di soccorrerlo.",
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Raccoglie un metronomo e suggerisce di sfruttarne il ticchettio contro lo Stand di Killian Jones."
+        }
+      ],
+      "public_inventory": [
+        {
+          "name": "Metronomo",
+          "state": "Raccolto e utilizzato durante lo scontro",
+          "session_id": "sessione-fiume-01",
+          "time": "",
+          "notes": "Raven recupera lo strumento e lo fa usare a Julian. Dopo il combattimento non è chiaro chi lo abbia conservato."
+        }
+      ]
+    },
+    {
+      "id": "personaggio-sue-nami",
+      "kind": "character",
+      "title": "Sue Nami",
+      "subtitle": "",
+      "summary": "Sue Nami controlla l’acqua con FATHOMS BELOW, cercando di impedire al gruppo di attraversare il fiume.",
+      "body": "Con FATHOMS BELOW, Sue Nami intercetta gli attacchi usando barriere d’acqua e solleva un’immensa ondata sulla gola. Offre agli avversari di lasciarli passare se abbandonano Mariah e Raven: quando l’ultimatum viene respinto, continua lo scontro.",
+      "related": [
+        "stand-difesa-acquosa",
+        "luogo-fiume-01"
+      ],
+      "tags": [
+        "avversaria",
+        "nome da verificare"
+      ],
+      "public": true,
+      "public_condition": "L'ultima volta che viene vista, Sue Nami è ancora impegnata a raggiungere il traguardo.",
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Scatena un'ondata che investe il fiume e trascina diversi combattenti."
+        },
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Offre un passaggio sicuro soltanto se gli altri abbandonano Mariah e Raven."
+        },
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Rimane intrappolata nei fili di Jean, finché grandi forbici non recidono i legami."
+        }
+      ]
+    },
+    {
+      "id": "personaggio-killian-jones",
+      "kind": "character",
+      "title": "Killian Jones",
+      "subtitle": "",
+      "summary": "Killian Jones combatte con RUSTY HOOK, lo Stand scheletrico munito di uncini e fili che legano fra loro le vittime.",
+      "body": "RUSTY HOOK può agganciare i bersagli con uncini e fili e trasmettere gli effetti dei colpi lungo i collegamenti. Il metronomo recuperato da Raven e impiegato da Julian riesce a distrarne l’azione. Killian infine lascia lo scontro prima che scada il tempo.",
+      "related": [
+        "stand-uncini-killian"
+      ],
+      "tags": [
+        "avversario",
+        "uncini"
+      ],
+      "public": true,
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "incontro",
+          "text": "Killian Jones combatte con RUSTY HOOK, lo Stand scheletrico munito di uncini e fili che legano fra loro le vittime."
+        }
+      ]
+    },
+    {
+      "id": "personaggio-morgan",
+      "kind": "character",
+      "title": "Morgan",
+      "subtitle": "",
+      "summary": "Morgan prende parte allo scontro con POOR SOULS, Atto 2, uno Stand dall’aspetto di una canocchia mantide.",
+      "body": "Morgan utilizza soltanto l’Atto 2 di POOR SOULS durante la prova del fiume. La creatura dai colpi di chele esplosivi combatte nelle acque della gola. Morgan tenta anche di colpire chi sta soccorrendo Mariah, ma Killian Jones lo ferma.",
+      "related": [
+        "personaggio-killian-jones",
+        "stand-poor-souls"
+      ],
+      "tags": [
+        "partecipante"
+      ],
+      "public": true,
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Si prepara a colpire uno dei soccorritori di Mariah, ma Killian Jones gli ordina di fermarsi."
+        }
+      ]
+    },
+    {
+      "id": "personaggio-somchai",
+      "kind": "character",
+      "title": "Somchai Khanit",
+      "subtitle": "",
+      "summary": "Somchai Khanit combatte nella prova del fiume con JustIn Time, lo Stand armato di fucile.",
+      "body": "Somchai Khanit interviene nella prova del fiume con JustIn Time, visto all'inizio armato di un grande fucile. Durante lo scontro usa anche un attacco ad area che investe più partecipanti.",
+      "related": [
+        "luogo-fiume-01",
+        "stand-justin-time"
+      ],
+      "tags": [
+        "partecipante"
+      ],
+      "public": true,
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Si unisce allo scontro impiegando JustIn Time, con un assalto che investe più bersagli."
+        }
+      ]
+    },
+    {
+      "id": "personaggio-giulia-zeppeli",
+      "kind": "character",
+      "title": "Julia Zeppeli",
+      "subtitle": "",
+      "summary": "Julia Zeppeli appare isolata nella nuova arena, proprio dove discende una figura dall'aspetto impossibile da ricordare.",
+      "body": "A una trentina di metri dagli altri superstiti, Julia Zeppeli assiste alla discesa di una figura simile a un angelo. Ognuno ne vede un volto diverso. La sconosciuta si china su Julia e le parla all'orecchio per quasi un minuto, prima di svanire senza lasciare spiegazioni.",
+      "related": [
+        "luogo-arena-01"
+      ],
+      "tags": [
+        "arena",
+        "mistero"
+      ],
+      "public": true,
+      "public_condition": "Le parole sussurrate all'orecchio di Julia restano un mistero.",
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-fiume-01",
+          "session_title": "La prova del fiume",
+          "time": "",
+          "type": "azione",
+          "text": "Nella nuova arena, una figura mutevole si china e le parla all'orecchio lontano da tutti gli altri."
+        }
+      ]
+    },
+    {
+      "id": "luogo-fiume-01",
+      "kind": "location",
+      "title": "Il fiume della prova",
+      "subtitle": "",
+      "summary": "Acqua vorticosa, rocce sparse e un attraversamento da completare prima dello scadere del tempo.",
+      "body": "Il traguardo si trova oltre il corso d'acqua e un dislivello finale. Allo scadere, un laser percorre l'area fino alla linea d'arrivo.",
+      "related": [
+        "trial-fiume-giocato"
+      ],
+      "tags": [
+        "fiume",
+        "traguardo"
+      ],
+      "public": true
+    },
+    {
+      "id": "luogo-arena-01",
+      "kind": "location",
+      "title": "La nuova arena",
+      "subtitle": "",
+      "summary": "Una vasta area che ricorda un campo di guerra, con strutture metalliche e bandiere coreane.",
+      "body": "Qui i superstiti vengono trasferiti dopo la prova del fiume. In lontananza compare Giulia Zeppeli e si manifesta una figura il cui aspetto sembra variare per ciascun osservatore.",
+      "related": [
+        "personaggio-giulia-zeppeli"
+      ],
+      "tags": [
+        "arena",
+        "mistero"
+      ],
+      "public": true
+    },
+    {
+      "id": "trial-fiume-giocato",
+      "kind": "other",
+      "title": "La prova del fiume",
+      "subtitle": "",
+      "summary": "Attraversare il fiume e raggiungere il traguardo prima che scada il tempo.",
+      "body": "I partecipanti affrontano acqua impetuosa, rocce, avversari e un ultimo dislivello. Un laser percorre il tracciato dopo lo scadere del tempo ed elimina chi è ancora nel percorso.",
+      "related": [
+        "luogo-fiume-01"
+      ],
+      "tags": [
+        "prova",
+        "fiume"
+      ],
+      "public": true
+    },
+    {
+      "id": "stand-difesa-acquosa",
+      "kind": "stand",
+      "title": "FATHOMS BELOW",
+      "subtitle": "Stand incontrato nella prova del fiume",
+      "summary": "FATHOMS BELOW è lo Stand acquatico di Sue Nami.",
+      "body": "FATHOMS BELOW forma difese d’acqua capaci di assorbire o rallentare gli attacchi e solleva ondate che travolgono la zona di combattimento.",
+      "tags": [
+        "stand",
+        "prova del fiume"
+      ],
+      "related": [
+        "personaggio-sue-nami"
+      ],
+      "public": true
+    },
+    {
+      "id": "stand-uncini-killian",
+      "kind": "stand",
+      "title": "RUSTY HOOK",
+      "subtitle": "Stand incontrato nella prova del fiume",
+      "summary": "RUSTY HOOK è lo Stand di Killian Jones, dalle sembianze di un pirata scheletrico.",
+      "body": "RUSTY HOOK aggancia i bersagli con uncini e fili, mettendoli in relazione attraverso gli effetti dei colpi. Durante lo scontro, il ticchettio di un metronomo interrompe alcuni legami.",
+      "tags": [
+        "stand",
+        "prova del fiume"
+      ],
+      "related": [
+        "personaggio-killian-jones"
+      ],
+      "public": true
+    },
+    {
+      "id": "stand-justin-time",
+      "kind": "stand",
+      "title": "JustIn Time",
+      "subtitle": "Stand incontrato nella prova del fiume",
+      "summary": "JustIn Time è lo Stand di Somchai Khanit. All'inizio della prova è stato visto armato di un grande fucile.",
+      "body": "Durante la prova del fiume, JustIn Time è stato riconosciuto come lo Stand di Somchai Khanit, armato di fucile. Nel combattimento ha inoltre sferrato un attacco ad area che ha coinvolto più partecipanti.",
+      "tags": [
+        "stand",
+        "prova del fiume"
+      ],
+      "related": [
+        "personaggio-somchai"
+      ],
+      "public": true
+    },
+    {
+      "id": "stand-poor-souls",
+      "kind": "stand",
+      "title": "POOR SOULS",
+      "subtitle": "Stand incontrato nella prova del fiume",
+      "summary": "POOR SOULS, lo Stand di Morgan, si manifesta durante la prova nella forma dell’Atto 2.",
+      "body": "Il secondo Atto di POOR SOULS ha l’aspetto di una canocchia mantide dalle chele potentissime, capace di assalti che provocano violente esplosioni nell’acqua.",
+      "tags": [
+        "stand",
+        "prova del fiume"
+      ],
+      "related": [
+        "personaggio-morgan"
+      ],
+      "public": true
+    },
+    {
+      "id": "fazione-grimm",
+      "kind": "faction",
+      "title": "Grimm",
+      "subtitle": "Organizzazione incontrata dopo il traguardo",
+      "summary": "I Grimm compaiono dopo la conclusione della prova del fiume per imporre la fine del combattimento.",
+      "body": "Jean ha già superato il traguardo quando tenta di attaccare un membro della squadra avversaria. È a questo punto, e non prima, che arrivano i Grimm: lo fermano e impediscono che lo scontro continui.",
+      "tags": [
+        "fazione",
+        "prova del fiume"
+      ],
+      "related": [],
+      "public": true
+    },
+    {
+      "id": "oggetto-metronomo",
+      "kind": "artifact",
+      "title": "Metronomo",
+      "subtitle": "Oggetto usato durante la prova del fiume",
+      "summary": "Raven recupera un metronomo e Julian lo utilizza contro RUSTY HOOK.",
+      "body": "Il ticchettio del metronomo riesce a distrarre lo Stand di Killian Jones e a interrompere alcuni collegamenti creati dagli uncini. Chi lo conservi al termine dello scontro non è specificato.",
+      "tags": [
+        "oggetto",
+        "prova del fiume"
+      ],
+      "related": [
+        "personaggio-raven",
+        "pg-julian",
+        "stand-uncini-killian"
+      ],
+      "public": true
+    }
+  ],
+  "sessions": [
+    {
+      "id": "sessione-fiume-01",
+      "number": null,
+      "date": "",
+      "title": "La prova del fiume",
+      "summary": "Nella scorsa sessione avete ripreso il vostro cammino dalla conclusione della prova della campana. Elisabeth era riuscita a suonarla grazie anche ai piccoli aiutanti evocati dal gruppo, ma subito dopo vi siete ritrovati in una stanza bianca, dove uno schermo ha elencato le infrazioni commesse. Superare la prova non aveva cancellato le regole violate.\n\nQuando siete stati trasferiti alla sfida successiva, davanti a voi si apriva una gola attraversata da un fiume impetuoso. Tra gli avversari, fin dall'inizio, era comparso JustIn Time, lo Stand di Somchai Khanit armato di un grande fucile. Avreste potuto costruire un ponte con il legname vicino alla foresta, tentare il passaggio dall'alto oppure attraversare direttamente l'acqua. Avete preferito prepararvi una zattera e sfruttare gli Stand per superare gli ostacoli.\n\nYekaterina è stata tra i primi a finire in acqua. Sotto la superficie, mani formate dallo stesso fiume hanno cercato di trattenerla, impedendole di riemergere. Grazie alla rotazione del proprio Stand è riuscita a liberarsi e a respirare di nuovo, ma un altro nemico la aspettava nelle profondità: una creatura dalle grandi chele, capace di colpirla e provocare violente esplosioni sott'acqua.\n\nNel frattempo avete scoperto che Sue Nami non era sola: controllava FATHOMS BELOW, mentre Morgan combatteva con POOR SOULS (Atto 2), Somchai Khanit con JustIn Time e Killian Jones con RUSTY HOOK. L'acqua sembrava proteggere la ragazza dai vostri attacchi, rallentando proiettili e piume affilate prima che potessero raggiungerla. Attorno a lei agivano diversi avversari: uno Stand scheletrico con uncini al posto delle mani, POOR SOULS, Atto 2 dello Stand di Morgan, dall’aspetto di una canocchia mantide, e altri combattenti. Fra le rocce avete tentato di mantenere una posizione sicura, mentre Mariah trasportava in volo alcuni compagni su un masso.\n\nPoi Sue Nami ha sollevato un'ondata che si è abbattuta su tutta l'area. Julian e Jean sono stati trascinati nell'acqua, la zattera è stata investita dalla corrente e Yekaterina ha dovuto resistere a nuovi colpi esplosivi.\n\nSue Nami vi ha quindi offerto un accordo: vi avrebbe permesso di attraversare il fiume senza ulteriori ostacoli, ma soltanto se aveste abbandonato Mariah e Raven, che il suo gruppo voleva uccidere. Non avete accettato quella condizione. Il combattimento è ripreso. Jean è riuscito a trattenere Sue Nami con i fili del proprio Stand; Davì l'ha raggiunta e colpita da vicino, ma uno Stand dalle grandi forbici ha reciso i fili. Nel corso dello scontro, Mariah e altri portatori sono stati colpiti da un improvviso mal di testa: era l'effetto della dissonanza tra Stand. Lo Stand di Mariah è rimasto temporaneamente immobile e lei è stata colpita fino a perdere le forze.\n\nA rendere le cose ancora più difficili c'era RUSTY HOOK, lo Stand di Killian Jones: gli uncini agganciavano i bersagli attraverso fili capaci di trasferire gli effetti dei colpi. Quando Raven ha recuperato un metronomo comparso nel mezzo dello scontro, ha intuito che il suo ticchettio avrebbe potuto distrarre quello Stand. Julian ha messo in pratica l'idea e, per qualche istante, i collegamenti degli uncini sono svaniti.\n\nIl tempo, però, continuava a scorrere. Killian ha controllato l'orario e si è allontanato; anche gli altri partecipanti cercavano ormai il traguardo. Avete rimesso in movimento la zattera, sfruttando la rotazione delle sfere di Jean. Julian ne ha mantenuto la stabilità, Davì ha corretto la rotta e Jean ha mantenuto la propulsione. Sull'altra riva Yekaterina aspettava con Mariah, finalmente fuori dall'acqua ma ancora provata dallo scontro.\n\nRaggiunta la sponda, vi rimaneva un ultimo dislivello. Avete trasformato la stessa zattera in una piattaforma mobile e, con salti coordinati, avete superato l'ostacolo fino ad attraversare la linea d'arrivo.\n\nPochi minuti dopo, una gigantesca barriera luminosa ha percorso la prova da un'estremità all'altra. I concorrenti rimasti indietro sono stati raggiunti e vaporizzati, persino a pochi passi dal traguardo. Il laser si è fermato esattamente sulla linea finale. Subito dopo sono caduti coriandoli, accompagnati da un suono di festa. Dopo aver raggiunto il traguardo, Jean tenta di attaccare un componente della squadra avversaria oltre la linea d’arrivo. È soltanto allora che compaiono i Grimm: intervengono e fermano Jean, imponendo la fine delle ostilità.\n\nInfine siete stati trasferiti in una nuova arena, simile a un campo di guerra, fra metallo, pietre e bandiere coreane. Davanti a voi, a una certa distanza, si trovava Julia Zeppeli. Una figura discesa dal cielo si è chinata per sussurrarle qualcosa, ma ognuno di voi l'ha vista con tratti differenti e nessuno è riuscito a udire le sue parole. Dopo la sua scomparsa, un annuncio ha introdotto la prova successiva con un solo ordine: «Sopravvivete».",
+      "events": [
+        {
+          "time": "",
+          "text": "Elisabeth riesce a suonare la campana, portando a termine la prova precedente."
+        },
+        {
+          "time": "",
+          "text": "Nella stanza bianca uno schermo ricorda le infrazioni commesse durante la sfida."
+        },
+        {
+          "time": "",
+          "text": "I superstiti raggiungono una gola attraversata da un fiume impetuoso e discutono come superarla."
+        },
+        {
+          "time": "",
+          "text": "Fin dall'inizio della prova compare JustIn Time, lo Stand di Somchai Khanit armato di un grande fucile."
+        },
+        {
+          "time": "",
+          "text": "Il gruppo prepara una zattera e tenta di sfruttare gli Stand per attraversare."
+        },
+        {
+          "time": "",
+          "text": "Yekaterina viene trattenuta sott'acqua da mani liquide e si libera grazie alla rotazione dello Stand."
+        },
+        {
+          "time": "",
+          "text": "Una creatura dalle grandi chele la attacca, provocando esplosioni nell'acqua."
+        },
+        {
+          "time": "",
+          "text": "Mariah trasporta alcuni compagni in volo fino a un masso sopra la corrente."
+        },
+        {
+          "time": "",
+          "text": "Con FATHOMS BELOW, Sue Nami intercetta i colpi con difese acquatiche e solleva una gigantesca ondata."
+        },
+        {
+          "time": "",
+          "text": "Julian e Jean vengono trascinati nell'acqua."
+        },
+        {
+          "time": "",
+          "text": "Sue Nami promette di lasciar passare il gruppo soltanto se Mariah e Raven vengono abbandonati."
+        },
+        {
+          "time": "",
+          "text": "Il gruppo rifiuta l'accordo e lo scontro continua."
+        },
+        {
+          "time": "",
+          "text": "Jean immobilizza Sue Nami con i fili del proprio Stand."
+        },
+        {
+          "time": "",
+          "text": "Davì riesce a raggiungerla e colpirla da vicino, ma uno Stand dotato di grandi forbici recide i legami."
+        },
+        {
+          "time": "",
+          "text": "Mariah e altri portatori sono colpiti da un forte mal di testa dovuto alla dissonanza fra Stand; lo Stand di Mariah resta temporaneamente immobile."
+        },
+        {
+          "time": "",
+          "text": "RUSTY HOOK, lo Stand di Killian Jones, scaglia uncini collegati da fili che mettono in relazione le vittime."
+        },
+        {
+          "time": "",
+          "text": "Raven recupera un metronomo e intuisce che il ticchettio può attirare l'attenzione dello Stand avversario."
+        },
+        {
+          "time": "",
+          "text": "Julian avvicina lo strumento e interrompe alcuni legami creati dagli uncini."
+        },
+        {
+          "time": "",
+          "text": "Con il tempo ormai agli sgoccioli, Killian controlla l'orario e si allontana."
+        },
+        {
+          "time": "",
+          "text": "Jean usa le sfere del suo Stand per contribuire a spingere la zattera."
+        },
+        {
+          "time": "",
+          "text": "Julian la stabilizza, Davì ne guida il movimento e Jean mantiene la propulsione."
+        },
+        {
+          "time": "",
+          "text": "Sull'altra sponda Yekaterina assiste Mariah, provata dai colpi ricevuti."
+        },
+        {
+          "time": "",
+          "text": "Il gruppo supera un ultimo dislivello e attraversa la linea del traguardo."
+        },
+        {
+          "time": "",
+          "text": "Un laser percorre il tracciato eliminando i concorrenti rimasti indietro; si ferma alla linea d'arrivo."
+        },
+        {
+          "time": "",
+          "text": "Dopo il passaggio del laser cadono coriandoli e risuona un segnale di festeggiamento."
+        },
+        {
+          "time": "",
+          "text": "Oltre la linea del traguardo, Jean cerca di attaccare un membro della squadra avversaria. Soltanto allora arrivano i Grimm e lo fermano."
+        },
+        {
+          "time": "",
+          "text": "I superstiti vengono trasferiti in un'arena simile a un campo di guerra."
+        },
+        {
+          "time": "",
+          "text": "Una figura dall'aspetto mutevole scende davanti a Julia Zeppeli e le sussurra parole che gli altri non sentono."
+        },
+        {
+          "time": "",
+          "text": "Un nuovo annuncio presenta la prova seguente: «Sopravvivete»."
+        }
+      ],
+      "quotes": [],
+      "related": [
+        "pg-jean",
+        "pg-julian",
+        "pg-yekaterina",
+        "pg-davi",
+        "pg-elisabeth",
+        "personaggio-mariah",
+        "personaggio-raven",
+        "personaggio-sue-nami",
+        "personaggio-killian-jones",
+        "personaggio-morgan",
+        "personaggio-somchai",
+        "personaggio-giulia-zeppeli",
+        "luogo-fiume-01",
+        "luogo-arena-01",
+        "trial-fiume-giocato",
+        "stand-difesa-acquosa",
+        "stand-uncini-killian",
+        "stand-justin-time",
+        "stand-poor-souls",
+        "fazione-grimm",
+        "oggetto-metronomo"
+      ],
+      "public": true
+    }
+  ]
 }
