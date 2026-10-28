@@ -1,0 +1,21 @@
+name: Verifica condivisione Halloween
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/halloween-cloud-smoke.yml'
+      - 'docs/halloween/cloud.js'
+      - 'docs/halloween/test-broker.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node docs/halloween/test-broker.mjs
