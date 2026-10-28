@@ -180,7 +180,7 @@ function tierCard(r) {
 }
 function renderTiers() {
   return `${sectionHeader('IL GRANDE VERDETTO','La tier list','Trascina le ricette nella fascia che meritano. Tutti vedranno la stessa classifica.')}
-  <div class="tier-helper"><strong>Come funziona:<\/strong> trascina le card usando ⠿ per votarle, oppure scegli la fascia dal menù della card. Tocca ☆ per aggiungerle al menù definitivo: la posizione nella tier list non le seleziona automaticamente.<\/div>
+  <div class="tier-helper"><strong>Come funziona:<\/strong> trascina le schede con mouse o dito per classificarle, oppure scegli la fascia dal menù della card. Tocca ☆ per aggiungerle al menù definitivo: la posizione nella tier list non le seleziona automaticamente.<\/div>
   <div class="tier-board">${tiers.map(t=>{const items=sortedTier(t.id);return `<div class="tier-row" data-tier-drop="${t.id}" style="--tier-bg:${t.color};--tier-ink:${t.ink}"><div class="tier-label"><span class="tier-letter">${t.id==='unranked'?'?':t.id}<\/span><small>${escapeHtml(t.name)}<\/small><\/div><div class="tier-cards">${items.length?items.map(tierCard).join(''):`<span class="tier-hint">${t.id==='unranked'?'Le ricette da classificare appariranno qui.':'Trascina una ricetta qui…'}<\/span>`}<\/div><\/div>`}).join('')}<\/div>`;
 }
 function miniRecipe(r) {
@@ -397,5 +397,5 @@ content.addEventListener('change',e=>{
 installDnD();
 refresh().then(connect);
 </script>
-<script src="./dnd-fix.js?v=20261028-2"></script>
+<script src="./dnd-fix.js?v=20261028-4"></script>
 </body></html>
