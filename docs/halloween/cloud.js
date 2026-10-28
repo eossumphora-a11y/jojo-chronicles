@@ -125,6 +125,27 @@
         return updated;
       }catch(e){board=previous;newestRevision=previous.revision;persist(board);throw e;}
     },
+    // Replace the entire room with a validated JSON snapshot, in one publish.
+    async replaceAll(snapshot){
+      if(!online || !mqtt)throw Error('Connessione assente: ripristino non pubblicato');
+      if(!snapshot || !Array.isArray(snapshot.recipes) || !Array.isArray(snapshot.people))throw Error('Backup non valido');
+      const previous=structuredClone(board);
+      const next=structuredClone(snapshot);
+      next.revision=Math.max(Date.now()*1000,newestRevision+1,(board?.revision||0)+1);
+      try{
+        await send(next);
+        announce(structuredClone(next));
+        return structuredClone(next);
+      }catch(e){board=previous;newestRevision=previous.revision;persist(board);throw e;}
+    },
+    // Ask MQTT for the latest retained snapshot without replacing local changes.
+    async syncNow(){
+      if(!online || !mqtt)throw Error('Stanza offline: sincronizzazione non disponibile');
+      mqtt.subscribe(topic);
+      await new Promise(resolve=>setTimeout(resolve,1200));
+      if(!online)throw Error('Connessione interrotta durante la sincronizzazione');
+      return structuredClone(board);
+    },
     getLink:()=>location.origin+location.pathname+location.search+'#room='+token,
     status:()=>online,
     key:storageKey
