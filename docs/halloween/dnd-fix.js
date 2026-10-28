@@ -12,6 +12,11 @@
     '.drag-ghost{pointer-events:none!important;z-index:2000!important;transition:none!important}'
   ].join('\n');
   document.head.appendChild(styles);
+  // Le card vengono ricreate dopo ogni modifica: disattiva sempre l'HTML5 DnD.
+  const disableNativeDrag=()=>document.querySelectorAll('[data-drag-kind][draggable="true"]').forEach(el=>el.draggable=false);
+  disableNativeDrag();
+  const main=document.querySelector('#main-content');
+  if(main)new MutationObserver(disableNativeDrag).observe(main,{subtree:true,childList:true});
   const interactive='button,select,input,textarea,a,[contenteditable="true"]';
   const targetAt=()=>getDropAt(active.x,active.y,active.kind,active.id);
   function cancelScroll(){if(scrollFrame){cancelAnimationFrame(scrollFrame);scrollFrame=0;}}
