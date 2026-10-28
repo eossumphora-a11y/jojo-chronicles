@@ -27,7 +27,7 @@
   const startPromise=new Promise(resolve=>{startResolve=resolve;});
   let initialTimer;
   let reconnectTimer;
-  const endpoints=['wss://mqtt.eclipseprojects.io/mqtt','wss://broker.emqx.io:8084/mqtt','wss://test.mosquitto.org:8081'];
+  const endpoints=['wss://broker.emqx.io:8084/mqtt'];
   let endpointIndex=0;
   const randomId=()=>base64(crypto.getRandomValues(new Uint8Array(12)));
   const savedBoard=()=>{try{const v=JSON.parse(localStorage.getItem(storageKey)||'null');return Array.isArray(v?.recipes)&&Array.isArray(v?.people)?v:null;}catch{return null;}};
