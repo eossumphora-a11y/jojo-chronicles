@@ -120,16 +120,34 @@ function offlineApply(op) {
 async function applyOp(op,successMessage) {
   try {
     let result;
-    if(cloudMode) result=await window.HALLOWEEN_CLOUD.apply(op,()=>offlineApply(op));
-    else if(previewOnly)result=offlineApply(op);
+    if(cloudMode) {
+      result=await window.HALLOWEEN_CLOUD.apply(op,()=>{
+        // Cloud.apply mutates this same board object through offlineApply.
+        // Render immediately: acceptState ignores an equal revision, so without
+        // this the change remains invisible until a full page reload.
+        const updated=offlineApply(op);
+        render();
+        return updated;
+      });
+    } else if(previewOnly) result=offlineApply(op);
     else {
       const response=await fetch('/api/op',{method:'POST',headers:{...apiHeaders,'content-type':'application/json'},body:JSON.stringify(op)});
       result=await response.json();if(!response.ok)throw new Error(result.error||'Salvataggio non riuscito');
     }
-    if(previewOnly){render();}else acceptState(result);
+    if(previewOnly)render();
+    else acceptState(result);
     if(successMessage)toast(successMessage);
     return true;
-  } catch(e) {if(cloudMode){hasLoaded=false;await refresh();}toast(e.message || 'Errore di rete',true);return false;}
+  } catch(e) {
+    if(cloudMode){
+      // On a failed publish the transport rolls back its own state. Make sure
+      // the visible optimistic change also rolls back, even with a lower revision.
+      try{board=await window.HALLOWEEN_CLOUD.getBoard();hasLoaded=true;render();}
+      catch{status('offline','Connessione assente');}
+    }
+    toast(e.message || 'Errore di rete',true);
+    return false;
+  }
 }
 function acceptState(next) {
   if(!next || typeof next.revision !== 'number' || (hasLoaded && next.revision <= board.revision))return;
