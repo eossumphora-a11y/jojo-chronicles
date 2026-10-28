@@ -364,8 +364,32 @@ async function applyNarrativeEdition(){
   }
  }catch(e){console.warn('L’edizione narrativa non è stata caricata',e)}
 }
-function mergeData(local,db){const localEntries=Array.isArray(local.entries)?local.entries.filter(x=>x&&x.public!==false):[];const localSessions=Array.isArray(local.sessions)?local.sessions.filter(x=>x&&x.public!==false):[];const mapE=new Map(localEntries.map(x=>[x.id,x]));db.entries.forEach(x=>mapE.set(x.id,{...mapE.get(x.id),...x,related:[...new Set([...(mapE.get(x.id)?.related||[]),...(x.related||[])])]}));const mapS=new Map(localSessions.map(x=>[x.id,x]));db.sessions.forEach(x=>mapS.set(x.id,{...mapS.get(x.id),...x,events:mapS.get(x.id)?.events||[],quotes:mapS.get(x.id)?.quotes||[],related:[...new Set([...(mapS.get(x.id)?.related||[]),...(x.related||[])])]}));return{entries:[...mapE.values()],sessions:[...mapS.values()]};}
-async function init(){try{const res=await fetch('data/public.json',{cache:'no-store'});if(!res.ok)throw Error('Archivio non disponibile');const data=await res.json();const name=data.campaign?.title||'Un destino bizzarro.';$('campaign-title').replaceChildren();$('campaign-title').append(document.createTextNode(name.replace(/\.+$/,'').replace(/\s+bizzarro$/i,'')));if(/bizzarro/i.test(name))$('campaign-title').append(txt('em','bizzarro.'));if(data.campaign?.subtitle)$('campaign-subtitle').textContent=data.campaign.subtitle;document.title=name+' · JoJo Chronicles';entries=Array.isArray(data.entries)?data.entries.filter(x=>x.public!==false):[];sessions=Array.isArray(data.sessions)?data.sessions.filter(x=>x.public!==false):[];try{const db=await loadPublicDB();if(db.entries.length||db.sessions.length){entries=db.entries.filter(e=>!['personaggio-emma','personaggio-emma-stenvibler','personaggio-john'].includes(e.id));sessions=db.sessions;await applyNarrativeEdition();}else{console.warn('Database raggiungibile, ma nessun contenuto pubblico restituito.');entries=[];sessions=[];}}catch(e){console.warn('Archivio remoto non raggiungibile, dati locali utilizzati',e)}
+function mergeData(local,db){
+ // Il file docs/data/public.json è l'archivio approvato dal Master.
+ // Il database può aggiungere nuove voci pubbliche, ma non cancellare o
+ // sostituire un resoconto, la sua cronologia o una scheda già pubblicata.
+ const localEntries=Array.isArray(local?.entries)?local.entries.filter(x=>x&&x.public!==false):[];
+ const localSessions=Array.isArray(local?.sessions)?local.sessions.filter(x=>x&&x.public!==false):[];
+ const mapE=new Map(localEntries.map(x=>[x.id,x]));
+ const mapS=new Map(localSessions.map(x=>[x.id,x]));
+ for(const x of (Array.isArray(db?.entries)?db.entries:[])){
+  if(!x||!x.id||x.public===false||!['character','stand','location','faction','artifact','clue','other'].includes(x.kind))continue;
+  if(!mapE.has(x.id))mapE.set(x.id,x);
+ }
+ for(const x of (Array.isArray(db?.sessions)?db.sessions:[])){
+  if(!x||!x.id||x.public===false)continue;
+  if(!mapS.has(x.id))mapS.set(x.id,x);
+ }
+ return{entries:[...mapE.values()],sessions:[...mapS.values()]};
+}
+async function init(){try{const res=await fetch('data/public.json',{cache:'no-store'});if(!res.ok)throw Error('Archivio non disponibile');const data=await res.json();const name=data.campaign?.title||'Un destino bizzarro.';$('campaign-title').replaceChildren();$('campaign-title').append(document.createTextNode(name.replace(/\.+$/,'').replace(/\s+bizzarro$/i,'')));if(/bizzarro/i.test(name))$('campaign-title').append(txt('em','bizzarro.'));if(data.campaign?.subtitle)$('campaign-subtitle').textContent=data.campaign.subtitle;document.title=name+' · JoJo Chronicles';entries=Array.isArray(data.entries)?data.entries.filter(x=>x.public!==false):[];sessions=Array.isArray(data.sessions)?data.sessions.filter(x=>x.public!==false):[];try{
+  const db=await loadPublicDB();
+  const combined=mergeData({entries,sessions},db);
+  entries=combined.entries;
+  sessions=combined.sessions;
+  console.info('JoJo Chronicles: archivio pubblico caricato', {voci:entries.length,sessioni:sessions.length});
+ }catch(e){console.warn('Database online non raggiungibile: archivio pubblico GitHub conservato.',e)}
+ await applyNarrativeEdition();
  await loadRecapFormats();
  // Le versioni brevi/standard/combattimento sono recap PUBBLICI:
  // hanno valore di fonte per riconoscere gli Stand nominati.
