@@ -149,7 +149,7 @@ function renderSessionSections(root,s){
   if(!groups.some(g=>g[1].length)&&!items.length)root.append(noResults('Nessuna nota ancora disponibile','Le persone, i luoghi e gli oggetti compariranno qui quando saranno collegati a questa sessione.'));
  }else if(mode==='quotes'){
   root.append(txt('h3','Frasi memorabili','sq-panel-title'));
-  if(s.quotes?.length){for(const q of s.quotes){const card=el('blockquote','sq-quote');card.append(txt('p','“'+q.text+'”'),txt('small',q.speaker||'Voce sconosciuta'));root.append(card)}}
+  if(s.quotes?.length){for(const q of s.quotes){const card=el('blockquote','sq-quote');const tag=q.type==='funny'?'Divertente':q.type==='important'?'Importante':'';const by=[tag,q.time||'',q.speaker||'Voce sconosciuta'].filter(Boolean).join(' · ');card.append(txt('p','“'+q.text+'”'),txt('small',by));root.append(card)}}
   else root.append(noResults('Nessuna citazione inserita','Le battute significative compariranno qui quando saranno riconosciute con certezza.'));
  }
 }
@@ -205,11 +205,26 @@ function renderLibraryNotes(root,s){const notes=libraryNotesData(s);const downlo
  }
  root.append(columns);
 }
-function renderLibraryQuotes(root,s){const quotes=s.quotes||[];const text=quotes.map(q=>'"'+q.text+'"\n'+(q.speaker||'')+(q.context?'\n'+q.context:'')).join('\n\n');
- libraryTitle(root,'Quotes',text,s.title+'_citazioni');
+function renderLibraryQuotes(root,s){
+ const quotes=s.quotes||[];
+ const exported=quotes.map(q=>'"'+q.text+'"\n'+(q.speaker||'')+(q.context?'\n'+q.context:'')).join('\n\n');
+ libraryTitle(root,'Quotes',exported,s.title+'_citazioni');
  if(!quotes.length){const empty=el('div','library-quotes-empty');empty.append(txt('span','❝','library-quote-symbol'),txt('p','Nessuna citazione autentica è stata ancora inserita per questa sessione.'));root.append(empty);return}
- const grid=el('div','library-quotes-grid');
- quotes.forEach(q=>{const card=el('figure','library-quote-card');card.append(txt('blockquote','"'+q.text+'"'));const line=el('div','library-quote-rule');card.append(line);card.append(txt('figcaption',q.context||q.speaker||'','library-quote-context'));if(q.context&&q.speaker)card.append(txt('small',q.speaker,'library-quote-source'));grid.append(card)});root.append(grid);
+ const clusters=[['funny','Frasi divertenti'],['important','Frasi importanti'],['other','Altre citazioni']];
+ for(const [type,label] of clusters){
+  const current=quotes.filter(q=>(q.type||'other')===type);
+  if(!current.length)continue;
+  root.append(txt('h4',label,'library-quote-group-title'));
+  const grid=el('div','library-quotes-grid');
+  for(const q of current){
+   const card=el('figure','library-quote-card');
+   card.append(txt('blockquote','"'+q.text+'"'),el('div','library-quote-rule'));
+   card.append(txt('figcaption',q.context||q.speaker||'','library-quote-context'));
+   if(q.speaker)card.append(txt('small',q.speaker,'library-quote-source'));
+   grid.append(card);
+  }
+  root.append(grid);
+ }
 }
 function libraryOutlineGroups(s){
  const authored=sessionInfo(s).outline;

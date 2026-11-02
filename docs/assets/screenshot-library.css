@@ -116,3 +116,9 @@
  .library-notes-columns{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 }
 @media(max-width:780px){.library-notes-columns{grid-template-columns:1fr;gap:22px}}
+
+/* Distinguish the two kinds of faithfully transcribed session quotes. */
+.library-quote-group-title{font:700 17px/1.4 'Libre Baskerville',Georgia,serif;color:#27344b;margin:26px 0 14px}
+.library-quote-group-title:first-of-type{margin-top:8px}
+.library-quotes-grid+.library-quote-group-title{margin-top:32px}
+@media(max-width:720px){.library-quote-group-title{font-size:16px}}

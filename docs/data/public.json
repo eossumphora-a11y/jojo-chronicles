@@ -1079,7 +1079,106 @@
           "text": "Mariah mostra un medaglione raffigurante Camille, già conosciuto dal gruppo, a lei molto legato e ucciso da Hol Horse."
         }
       ],
-      "quotes": [],
+      "quotes": [
+        {
+          "speaker": "Davì",
+          "time": "00:10:20",
+          "text": "Che figata! Andiamo e ci teletrasportiamo chissà dove. E così andiamo e picchiamo gente.",
+          "type": "funny",
+          "context": "Divertente · 00:10 · Davì si prepara alla nuova prova con entusiasmo."
+        },
+        {
+          "speaker": "Davì",
+          "time": "00:27:17",
+          "text": "Una scusa per picchiare qualcuno ci deve essere.",
+          "type": "funny",
+          "context": "Divertente · 00:27 · L'attesa comincia ad annoiarlo."
+        },
+        {
+          "speaker": "Elisabeth",
+          "time": "00:33:57",
+          "text": "Cioè, voglio capire se stringiamo questo patto, cosa altro ci sarà sotto?",
+          "type": "important",
+          "context": "Importante · 00:33 · Elisabeth mette in discussione la proposta di Betty."
+        },
+        {
+          "speaker": "Jean",
+          "time": "00:36:01",
+          "text": "Ignoro del tutto quello che mi hai detto.",
+          "type": "funny",
+          "context": "Divertente · 00:36 · Una battuta durante il confronto con Betty."
+        },
+        {
+          "speaker": "Betty Darby",
+          "time": "00:36:19",
+          "text": "Quindi perché dovrei odiarvi?",
+          "type": "important",
+          "context": "Importante · 00:36 · Betty risponde con leggerezza alle diffidenze del gruppo."
+        },
+        {
+          "speaker": "Yekaterina",
+          "time": "00:39:19",
+          "text": "Eh, sì, va bene. E quando iniziamo a collaborare?",
+          "type": "funny",
+          "context": "Divertente · 00:39 · La tregua viene finalmente discussa."
+        },
+        {
+          "speaker": "Davì",
+          "time": "00:46:28",
+          "text": "Io non ci entro in 35 centimetri. Hai ragione, io ci entro in 35 centimetri.",
+          "type": "funny",
+          "context": "Divertente · 00:46 · Il progetto del rifugio e la possibilità di rimpicciolirsi."
+        },
+        {
+          "speaker": "Jean",
+          "time": "01:09:47",
+          "text": "Se dobbiamo collaborare, collaboriamo, gentilmente.",
+          "type": "important",
+          "context": "Importante · 01:09 · Jean chiede ai nuovi alleati di fare la loro parte."
+        },
+        {
+          "speaker": "Julian",
+          "time": "01:11:21",
+          "type": "important",
+          "text": "Ma se facessimo una cosa in cui ci dobbiamo coprire da stesi?",
+          "context": "Importante · 01:11 · Julian propone un riparo più basso per opporsi al vento."
+        },
+        {
+          "speaker": "Davì",
+          "time": "01:54:30",
+          "text": "Non abbiamo fatto una porta, abbiamo chiuso tutto.",
+          "type": "funny",
+          "context": "Divertente · 01:54 · Il problema di uscire dalla fortificazione."
+        },
+        {
+          "speaker": "Elisabeth",
+          "time": "02:42:06",
+          "text": "Io penso che dopo una prova così difficile, se ci siamo qualificati tutti al primo posto, è perché è stato meritato.",
+          "type": "important",
+          "context": "Importante · 02:42 · Elisabeth difende il primo posto condiviso."
+        },
+        {
+          "speaker": "Davì",
+          "time": "02:44:19",
+          "text": "Tanto ci saranno altre occasioni per ucciderci a vicenda.",
+          "type": "funny",
+          "context": "Divertente · 02:44 · La discussione tra i concorrenti sulla classifica."
+        },
+        {
+          "speaker": "Sue Nami",
+          "time": "02:47:24",
+          "text": "Sì sì, fategli condividere i punti, va benissimo così.",
+          "type": "important",
+          "context": "Importante · 02:47 · Sue Nami interviene sulla distribuzione dei punti."
+        },
+        {
+          "speaker": "Davì",
+          "time": "02:58:24",
+          "text": "Allora ragà, regola per il team in generale: niente più patti con sta stronza, chiaro?",
+          "type": "funny",
+          "context": "Divertente · 02:58 · La reazione agli accordi di Betty dopo la prova."
+        }
+      ],
       "related": [
         "pg-jean",
         "pg-julian",
