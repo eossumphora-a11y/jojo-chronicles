@@ -42,6 +42,7 @@ jobs:
           node tests/test_narrative_only.js
           node tests/test_approved_preview.js
           node tests/test_quotes.js
+          node tests/test_ranking_integration.js
           node tests/test_craig_speakers.js
           node tests/test_public_fallback.js
           node tests/test_stand_visibility.js

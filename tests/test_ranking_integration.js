@@ -1,0 +1,14 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const home=fs.readFileSync('docs/index.html','utf8');
+const page=fs.readFileSync('docs/classifica/index.html','utf8');
+assert(home.includes('href="classifica/"'),'JoJo Chronicles must link to the ranking');
+assert(page.includes('href="../"'),'Ranking must provide a return path to Chronicles');
+for(const id of ['panoramica','terza-prova','generale','evoluzione','squadre','archivio','admin'])assert(page.includes('id="'+id+'"'),'Missing ranking view '+id);
+for(const key of ['Julia Zeppeli','Hol Horse','Raven Moros','Betty Darby','Catrice','Ship Happens'])assert(page.includes(key),'Ranking name not found: '+key);
+assert(page.includes('classifica-generale.csv'),'Ranking CSV export must be available');
+assert(page.includes('jojo-board-backup.json'),'Ranking JSON export must be available');
+assert(page.includes('Archivio in sola lettura'),'Do not pretend admin online saving works');
+assert(!page.includes('Joao was here'),'Private stone inscription must not leak');
+assert(!/<script\b/i.test(page),'Original offline self-contained ranking should remain script-free');
+console.log('PASS: Original ranking imported intact, linked both ways, safe and read-only.');
