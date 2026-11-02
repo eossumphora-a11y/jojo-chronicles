@@ -36,7 +36,7 @@ assert(mariah.related.includes(medal.id));
 assert(medal.related.includes(mariah.id));
 assert(camille.related.includes(mariah.id));
 assert(mariah.public_inventory.some(i=>i.name===medal.title&&i.session_id===s.id));
-assert(mariah.public_history.some(i=>i.session_id===s.id&&i.text.includes('Mariah mostra')));
+assert(mariah.public_history.some(i=>i.session_id===s.id&&i.text.includes('medaglione')&&i.text.includes('Camille')));
 assert(medal.body.includes('Mariah lo mostra'));
 assert(doc.sessions.find(x=>x.id==='sessione-fiume-01').summary.length>1000,'Preserve first session');
 const engine=fs.readFileSync('recap_engine.py','utf8');
