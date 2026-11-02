@@ -13,7 +13,9 @@
       "summary": "Jean usa i fili e le sfere del proprio Stand per affrontare Sue Nami e salvare il gruppo. Durante l’ondata viene trascinato nel fiume, ma riesce a tornare all’attraversamento.",
       "body": "Jean utilizza la rotazione delle proprie sfere per muoversi fra gli scogli. Nello scontro intrappola Sue Nami nei fili del suo Stand, prima che le grandi forbici di POOR SOULS li taglino. Viene investito dall’ondata, ma poi aiuta a spingere e governare la zattera verso l’altra sponda. Dopo il traguardo Jean tenta di attaccare un membro della squadra avversaria, ma i Grimm compaiono e lo fermano.",
       "related": [
-        "luogo-fiume-01"
+        "luogo-fiume-01",
+        "oggetto-pietra-scritta-rossa",
+        "personaggio-betty"
       ],
       "tags": [
         "partecipante",
@@ -49,6 +51,20 @@
           "time": "",
           "type": "azione",
           "text": "Oltrepassato il traguardo tenta di attaccare un membro della squadra avversaria, ma i Grimm arrivano e lo fermano."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "02:20",
+          "type": "azione",
+          "text": "Una pietra con una vecchia scritta rossa colpisce il suo piede; l'iscrizione resta illeggibile."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "02:55",
+          "type": "dialogo",
+          "text": "Betty dichiara che Jean sarebbe già libero dal vincolo sulle anime. Si tratta di una sua dichiarazione."
         }
       ]
     },
@@ -98,7 +114,8 @@
       "body": "Yekaterina si ritrova nelle profondità del fiume, afferrata da mani d'acqua che tentano di impedirle di emergere. Ruotando con il proprio Stand riesce a liberarsi, ma viene attaccata da una creatura dotata di chele capaci di provocare esplosioni. Nonostante i colpi ricevuti, supera il tratto più pericoloso e si occupa di Mariah sull'altra sponda.",
       "related": [
         "personaggio-mariah",
-        "luogo-fiume-01"
+        "luogo-fiume-01",
+        "personaggio-betty"
       ],
       "tags": [
         "partecipante",
@@ -113,6 +130,13 @@
           "time": "",
           "type": "incontro",
           "text": "Yekaterina affronta gli Stand nascosti sotto il fiume e, raggiunta la riva opposta, soccorre Mariah."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "02:54",
+          "type": "dialogo",
+          "text": "Betty sostiene di avere stretto con Yekaterina un nuovo accordo: secondo Betty, la liberazione delle anime dipenderebbe dalla morte di Somchai."
         }
       ]
     },
@@ -150,7 +174,9 @@
       "subtitle": "",
       "summary": "Elisabeth supera la prova della campana e prosegue con i compagni verso la gola del fiume.",
       "body": "Elisabeth era riuscita a suonare la campana della prova precedente con l'aiuto dei piccoli esseri evocati dai compagni. Dopo la stanza bianca e l'annuncio di una nuova sfida, segue il gruppo verso la gola e valuta come utilizzare il proprio teletrasporto per affrontare il terreno insidioso.",
-      "related": [],
+      "related": [
+        "personaggio-betty"
+      ],
       "tags": [
         "partecipante"
       ],
@@ -163,6 +189,13 @@
           "time": "",
           "type": "incontro",
           "text": "Elisabeth supera la prova della campana e prosegue con i compagni verso la gola del fiume."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "00:31",
+          "type": "incontro",
+          "text": "Betty le rivolge in particolare la proposta di collaborazione e tregua; il gruppo ne discute."
         }
       ]
     },
@@ -174,7 +207,8 @@
       "summary": "Mariah porta i compagni al riparo sulle rocce, poi viene colpita e ha bisogno dell'aiuto degli altri.",
       "body": "All'inizio dello scontro Mariah solleva due compagni e li porta in volo fino a un masso. Poco dopo viene colpita da un forte mal di testa dovuto alla dissonanza tra Stand, mentre il suo Stand resta immobile. I colpi si susseguono finché Mariah non perde le forze. Durante la fuga Yekaterina la assiste e la conduce con il gruppo oltre il fiume.",
       "related": [
-        "personaggio-raven"
+        "personaggio-raven",
+        "trial-sopravvivenza"
       ],
       "tags": [
         "partecipante"
@@ -196,6 +230,13 @@
           "time": "",
           "type": "azione",
           "text": "Yekaterina la assiste dopo lo scontro, sulla sponda opposta del fiume."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "01:37",
+          "type": "azione",
+          "text": "Contribuisce alla fortificazione trasportando basalto in volo."
         }
       ]
     },
@@ -209,7 +250,8 @@
       "related": [
         "pg-julian",
         "personaggio-killian-jones",
-        "oggetto-metronomo"
+        "oggetto-metronomo",
+        "trial-sopravvivenza"
       ],
       "tags": [
         "partecipante",
@@ -225,6 +267,20 @@
           "time": "",
           "type": "azione",
           "text": "Raccoglie un metronomo e suggerisce di sfruttarne il ticchettio contro lo Stand di Killian Jones."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "00:19",
+          "type": "azione",
+          "text": "Avverte una familiarità inquietante con l'arena e si tocca il collo, senza chiarirne il motivo."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "01:16",
+          "type": "azione",
+          "text": "Usa forme d'ombra e animali evocati per raccogliere pietre e acqua e contribuire alla costruzione."
         }
       ],
       "public_inventory": [
@@ -246,7 +302,8 @@
       "body": "Con FATHOMS BELOW, Sue Nami intercetta gli attacchi usando barriere d’acqua e solleva un’immensa ondata sulla gola. Offre agli avversari di lasciarli passare se abbandonano Mariah e Raven: quando l’ultimatum viene respinto, continua lo scontro.",
       "related": [
         "stand-difesa-acquosa",
-        "luogo-fiume-01"
+        "luogo-fiume-01",
+        "trial-sopravvivenza"
       ],
       "tags": [
         "avversaria",
@@ -276,6 +333,13 @@
           "time": "",
           "type": "azione",
           "text": "Rimane intrappolata nei fili di Jean, finché grandi forbici non recidono i legami."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "02:47",
+          "type": "dialogo",
+          "text": "La sua squadra compare al secondo posto; Sue Nami si dichiara favorevole alla condivisione dei punti."
         }
       ]
     },
@@ -340,7 +404,8 @@
       "body": "Somchai Khanit interviene nella prova del fiume con JustIn Time, visto all'inizio armato di un grande fucile. Durante lo scontro usa anche un attacco ad area che investe più partecipanti.",
       "related": [
         "luogo-fiume-01",
-        "stand-justin-time"
+        "stand-justin-time",
+        "personaggio-betty"
       ],
       "tags": [
         "partecipante"
@@ -354,6 +419,13 @@
           "time": "",
           "type": "azione",
           "text": "Si unisce allo scontro impiegando JustIn Time, con un assalto che investe più bersagli."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "02:54",
+          "type": "menzione",
+          "text": "Viene nominato nella condizione del patto raccontata da Betty, non dimostrata indipendentemente."
         }
       ]
     },
@@ -406,9 +478,11 @@
       "title": "La nuova arena",
       "subtitle": "",
       "summary": "Una vasta area che ricorda un campo di guerra, con strutture metalliche e bandiere coreane.",
-      "body": "Qui i superstiti vengono trasferiti dopo la prova del fiume. In lontananza compare Giulia Zeppeli e si manifesta una figura il cui aspetto sembra variare per ciascun osservatore.",
+      "body": "Qui i superstiti vengono trasferiti dopo la prova del fiume. In lontananza compare Giulia Zeppeli e si manifesta una figura il cui aspetto sembra variare per ciascun osservatore.\n\nNella terza prova l'arena contiene materiali da costruzione e un lago con acqua capace di far recuperare forze. Il vento investe le fortificazioni e dal lago emerge un gigantesco automa meccanico attirato dai rumori. Alla conclusione i presenti riconoscono quest'area come il luogo di una festa precedente, ora privo del castello gonfiabile.",
       "related": [
-        "personaggio-giulia-zeppeli"
+        "personaggio-giulia-zeppeli",
+        "luogo-lago-arena",
+        "trial-sopravvivenza"
       ],
       "tags": [
         "arena",
@@ -525,6 +599,181 @@
         "personaggio-raven",
         "pg-julian",
         "stand-uncini-killian"
+      ],
+      "public": true
+    },
+    {
+      "id": "personaggio-betty",
+      "kind": "character",
+      "title": "Betty",
+      "subtitle": "Partecipante incontrata nell'arena",
+      "summary": "Propone una collaborazione durante la prova della sopravvivenza. Dopo la vittoria dichiara di aver stipulato un nuovo patto con Yekaterina.",
+      "body": "Betty si presenta con il proprio gruppo e propone una tregua; afferma di non voler usare il potere del suo Stand per sancirla. Le sue compagne mostrano progetti blu dell'arena. Dopo la prova Betty sostiene che un accordo successivo con Yekaterina abbia sostituito un patto precedente: secondo la sua versione, le anime degli altri saranno liberate quando Yekaterina ucciderà Somchai, mentre Jean sarebbe già libero dal vincolo. In seguito a un controllo il narratore riferisce che Betty sembra sincera, ma ciò non verifica in modo indipendente i meccanismi del patto.",
+      "tags": [
+        "npc",
+        "tregua",
+        "patti",
+        "dichiarazioni da verificare"
+      ],
+      "related": [
+        "pg-yekaterina",
+        "personaggio-somchai",
+        "pg-jean",
+        "oggetto-progetti-arena"
+      ],
+      "public": true,
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "00:31",
+          "type": "incontro",
+          "text": "Propone una tregua al gruppo e fa mostrare i progetti dell'arena."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "02:54",
+          "type": "dialogo",
+          "text": "Dichiara un patto con Yekaterina che legherebbe la liberazione delle anime alla morte di Somchai. Non è una conferma indipendente."
+        }
+      ]
+    },
+    {
+      "id": "personaggio-camille",
+      "kind": "character",
+      "title": "Camille",
+      "subtitle": "Persona citata in un dialogo",
+      "summary": "Durante la conversazione finale viene mostrato un medaglione con la sua immagine. Una persona racconta che Camille era molto forte e che sarebbe stata uccisa.",
+      "body": "Camille viene nominata nella parte finale della sessione. Qualcuno mostra un medaglione che la raffigura e sostiene che fosse molto forte e che sia stata uccisa. Non sono chiari né il nome di chi parla né le circostanze di quanto raccontato. Non viene documentata una sua apparizione diretta.",
+      "tags": [
+        "citata",
+        "medaglione",
+        "testimonianza non verificata"
+      ],
+      "related": [
+        "oggetto-medaglione-camille"
+      ],
+      "public": true,
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "03:03",
+          "type": "menzione",
+          "text": "Viene nominata e appare ritratta su un medaglione; la sua presunta morte è riferita da un personaggio."
+        }
+      ]
+    },
+    {
+      "id": "oggetto-progetti-arena",
+      "kind": "artifact",
+      "title": "Progetti blu dell'arena",
+      "subtitle": "Documenti mostrati dal gruppo di Betty",
+      "summary": "Tavole progettuali blu con scritte in tedesco, mostrate prima della prova della sopravvivenza.",
+      "body": "Betty afferma che il suo gruppo ha raggiunto un'area dello staff. Una compagna dai capelli viola estrae i progetti da uno spazio dimensionale. Le tavole descrivono raffiche di vento e un automa molto sensibile ai rumori. La loro origine viene riferita dal gruppo di Betty, non verificata dal resto dei partecipanti.",
+      "tags": [
+        "documenti",
+        "arena",
+        "tedesco"
+      ],
+      "related": [
+        "personaggio-betty",
+        "trial-sopravvivenza"
+      ],
+      "public": true
+    },
+    {
+      "id": "oggetto-pietra-scritta-rossa",
+      "kind": "artifact",
+      "title": "Pietra con scritta rossa",
+      "subtitle": "Indizio rinvenuto durante la prova",
+      "summary": "Un frammento di pietra colpisce il piede di Jean. Porta una vecchia iscrizione rossa, il cui testo non è stato ricostruito.",
+      "body": "Il frammento compare mentre il gruppo cerca di sopravvivere alle raffiche e all'automa. La scritta rossa è visibile, ma il suo contenuto rimane sconosciuto. È un oggetto distinto dal sasso usato più tardi per attirare l'automa con il rumore; non è confermato chi l'abbia conservato.",
+      "tags": [
+        "indizio",
+        "scritta indecifrata"
+      ],
+      "related": [
+        "pg-jean",
+        "trial-sopravvivenza"
+      ],
+      "public": true
+    },
+    {
+      "id": "oggetto-medaglione-camille",
+      "kind": "artifact",
+      "title": "Medaglione con Camille",
+      "subtitle": "Oggetto mostrato in un dialogo",
+      "summary": "Durante la conversazione finale, una persona mostra un medaglione con l'immagine di Camille.",
+      "body": "L'immagine sul medaglione è associata al nome Camille. Chi lo mostra racconta che fosse molto forte e che sarebbe stata uccisa. L'identità del possessore e la verità delle circostanze raccontate non sono state stabilite.",
+      "tags": [
+        "medaglione",
+        "ritratto",
+        "testimonianza"
+      ],
+      "related": [
+        "personaggio-camille"
+      ],
+      "public": true
+    },
+    {
+      "id": "luogo-lago-arena",
+      "kind": "location",
+      "title": "Il lago dell'arena",
+      "subtitle": "Area della prova della sopravvivenza",
+      "summary": "Dal lago proviene acqua che permette ai partecipanti di recuperare forze. Dalle sue profondità emerge anche l'automa meccanico.",
+      "body": "L'acqua viene raccolta e bevuta, anche con l'aiuto di creature evocate; il suo effetto si osserva anche sull'erba, che appare più rigogliosa quando viene bagnata. Durante la prova dal lago emerge un gigantesco automa a forma di tornado.",
+      "tags": [
+        "acqua",
+        "arena",
+        "sopravvivenza"
+      ],
+      "related": [
+        "luogo-arena-01",
+        "minaccia-automa-tornado"
+      ],
+      "public": true
+    },
+    {
+      "id": "minaccia-automa-tornado",
+      "kind": "other",
+      "title": "Automa a forma di tornado",
+      "subtitle": "Minaccia della terza prova, non identificata come Stand",
+      "summary": "Enorme macchinario di tubi e ingranaggi emerso dal lago, capace di generare vento e colpire con una palla demolitrice.",
+      "body": "La creatura sembra localizzare i partecipanti seguendo soprattutto i rumori. Gli scoppi che la circondano la disorientano, mentre un sasso fatto risuonare altrove la fa girare senza spostarsi. Alla fine della prova si spegne e si disgrega. Nella fonte non viene chiamata Stand.",
+      "tags": [
+        "automa",
+        "pericolo",
+        "prova",
+        "non classificato come Stand"
+      ],
+      "related": [
+        "luogo-lago-arena",
+        "trial-sopravvivenza"
+      ],
+      "public": true
+    },
+    {
+      "id": "trial-sopravvivenza",
+      "kind": "other",
+      "title": "La prova della sopravvivenza",
+      "subtitle": "Terza prova: «Sopravvivete»",
+      "summary": "I partecipanti costruiscono ripari contro raffiche violente e resistono a un enorme automa che insegue i suoni. Il gruppo supera la prova.",
+      "body": "Nella nuova arena vengono raccolti materiali di resistenza diversa per costruire fortificazioni. Il vento, annunciato dal suono di un flauto di Pan, investe i ripari; il narratore dichiara raffiche da 24, 13 e 11 danni in momenti diversi. Un automa meccanico emerge dal lago e segue i rumori. Il gruppo si ripara, recupera acqua, usa diversivi e sopravvive fino allo spegnimento del macchinario. Piovono coriandoli e compare una classifica: il gruppo è tra i primi classificati, mentre quello di Sue Nami è secondo. Il punteggio numerico e tutti i nomi dei pari merito non sono verificabili.",
+      "tags": [
+        "prova",
+        "sopravvivenza",
+        "terza prova",
+        "vittoria"
+      ],
+      "related": [
+        "luogo-arena-01",
+        "luogo-lago-arena",
+        "minaccia-automa-tornado",
+        "oggetto-progetti-arena"
       ],
       "public": true
     }
@@ -677,6 +926,134 @@
         "stand-poor-souls",
         "fazione-grimm",
         "oggetto-metronomo"
+      ],
+      "public": true
+    },
+    {
+      "id": "sessione-sopravvivenza-01",
+      "number": null,
+      "sortOrder": 2,
+      "date": "",
+      "title": "La prova della sopravvivenza",
+      "summary": "Dopo la prova del fiume, vi ritrovate davanti a una nuova arena. L'unica istruzione è «Sopravvivete». Alcune squadre oltrepassano una soglia e scompaiono alla vista; altri movimenti sembrano ricondurre indietro i partecipanti. Cercate di capire il funzionamento dell'accesso. Una partecipante prova a lanciare una pietra verso il centro, senza che la registrazione ne chiarisca l'esito; vengono anche incaricati dei nani di scavare una buca come possibile riparo. Raven osserva che il posto gli sembra familiare, ma non lo associa a bei ricordi, e si tocca il collo. Non spiega il motivo.\n\nBetty arriva con il suo gruppo e propone una tregua per affrontare insieme la prova. Si rivolge in particolare a Elisabeth e afferma di non voler usare il potere del proprio Stand per stipulare l'accordo. La proposta non viene accettata senza discussione: una partecipante chiede cosa ci guadagni Betty e se vi siano condizioni nascoste, poi consulta i compagni. Betty e le sue alleate mostrano progetti blu, che a loro dire provengono da un'area dello staff. Le tavole contengono scritte in tedesco e preannunciano raffiche violente, la necessità di costruire ripari e l'arrivo di un automa che vede poco ma reagisce ai rumori. Le direzioni del vento, spiegano, non sono note in anticipo.\n\nQuando inizia la raccolta dei materiali, l'arena offre basalto, granito, marmo, cemento, mattoni e pietrisco, di resistenza diversa. Non tutti i pezzi sopravvivono al trasporto: alcuni si rompono o si sbriciolano. Progettate un riparo protetto da più lati, valutando anche come accogliere i compagni del gruppo di Betty. Si parla inizialmente di circa ventidue pezzi e della possibilità di usare una trincea, ma non ogni parte dei piani discussi viene realizzata. Animali e piccole creature legate agli Stand aiutano a recuperare i materiali. Raven usa forme d'ombra per portare pietre e acqua; Mariah contribuisce al trasporto del basalto dall'alto. Il numero di pezzi raccolti arriva, secondo il conteggio dichiarato, a circa ventisei.\n\nNei pressi della zona centrale c'è acqua da bere: chi la utilizza recupera forze e, quando viene versata sull'erba, questa appare più rigogliosa. Mentre continuate a costruire, nell'arena si sente un flauto di Pan. La prima raffica travolge chi è ancora scoperto: il narratore annuncia ventiquattro danni per chi non ha protezione. Le squadre che hanno già eretto dei muri riescono ad assorbire parte dell'urto. Più tardi una seconda raffica arriva da sud-ovest: il rifugio perde alcuni frammenti, ma rimane in piedi. Per chi è protetto viene annunciato un danno di tredici.\n\nPoi la superficie del lago si muove. Ne emerge un gigantesco automa, simile a un tornado meccanico fatto di tubi, ingranaggi e cerchi in movimento. Il macchinario genera vento e usa una palla demolitrice per colpire avversari e strutture. Dopo un momento di silenzio, le grida di alcuni concorrenti attirano la sua attenzione: la creatura sembra inseguire i suoni più che vedere chiaramente ciò che la circonda. Il gruppo cerca così di restare silenzioso, consolidare il riparo e recuperare acqua senza farsi individuare.\n\nUna partecipante invia dei nani con piccoli teletrasporti a prendere acqua senza fare rumore; il narratore conferma che tornano senza difficoltà e che il gruppo può servirsi dell'acqua per curarsi. Non è possibile attribuire con certezza questa azione a un personaggio specifico. Una donna dall'aspetto felino, appartenente alla squadra di Betty, accompagna inoltre una persona al lago: i colori del mondo diventano viola e le due attraversano una parete come se fosse intangibile. La persona beve e recupera acqua, poi torna al rifugio. Il nome della donna e i limiti del suo potere non vengono chiariti.\n\nMentre il vento continua a colpire le strutture, una serie di esplosioni simili a petardi disorienta l'automa, che si dirige verso i rumori e urta vari ostacoli. In un altro momento, per distrarlo durante il recupero dell'acqua, viene fatta battere una pietra contro un'altra lontano dal gruppo: il macchinario si gira verso il rumore ma, secondo il narratore, non si muove. I nani rientrano con l'acqua. Intanto un piccolo frammento colpisce il piede di Jean; sulla pietra compare un'antica scritta rossa, che però non si riesce a leggere. Non è la stessa pietra utilizzata per attirare l'automa.\n\nLe ultime raffiche mettono in crisi le altre fortificazioni. Durante la fase finale viene annunciata anche una raffica da undici danni e diversi ripari concorrenti cedono. Il vostro gruppo continua a resistere finché l'automa rallenta, si spegne e si disgrega, lasciando cadere i pezzi meccanici. Sul vostro rifugio piovono coriandoli: avete superato la prova.\n\nTornati all'area di partenza, vedete una classifica nel cielo. La vostra squadra compare al primo posto insieme ad altri partecipanti, i cui nomi non risultano tutti comprensibili nella registrazione. Compaiono microfoni e si apre una discussione sulla condivisione dei punti. Una partecipante sostiene di riconoscere il primo posto condiviso, perché le squadre hanno guadagnato il risultato; non è confermato che quella sia stata la scelta unanime. Il gruppo di Sue Nami appare al secondo posto. Sue Nami si dice favorevole alla condivisione, accolta dall'annunciatrice. Il punteggio numerico esatto non è ricostruibile. Finita la cerimonia, riconoscete nell'area lo stesso spazio di una festa precedente, ora privo del grande castello gonfiabile.\n\nSubito dopo Betty torna a parlare di un patto. Dichiara di aver stretto un nuovo accordo con Yekaterina che avrebbe sostituito quello precedente: secondo Betty, le anime degli altri membri del gruppo verranno liberate soltanto quando Yekaterina ucciderà Somchai. Sostiene anche che Jean sia già libero da quel vincolo. Queste sono le parole di Betty, non una conferma indipendente del funzionamento del patto. Alcuni protestano e discutono del sacco associato all'accordo precedente, che viene detto scomparso. Quando qualcuno cerca di capire se stia mentendo, il narratore riferisce che Betty sembra sincera; questo non dimostra ogni dettaglio della sua versione. Infine viene citata Camille: una persona mostra un medaglione con il suo ritratto e racconta che fosse molto forte e che sia stata uccisa. Le circostanze non vengono chiarite.",
+      "events": [
+        {
+          "time": "00:07",
+          "text": "La terza prova ha inizio con l'ordine di sopravvivere; alcune squadre scompaiono oltre una soglia."
+        },
+        {
+          "time": "00:19",
+          "text": "Raven riconosce qualcosa di familiare nell'arena e si tocca il collo, senza chiarire il motivo."
+        },
+        {
+          "time": "00:27",
+          "text": "Una partecipante prova a testare la soglia con una pietra; alcuni nani ricevono l'ordine di scavare una buca. Esito della pietra incerto."
+        },
+        {
+          "time": "00:31",
+          "text": "Betty propone una tregua. Il gruppo chiede quali siano i suoi interessi e discute le condizioni."
+        },
+        {
+          "time": "00:39",
+          "text": "Il gruppo di Betty mostra progetti blu in tedesco: preannunciano raffiche, ripari e un automa sensibile ai rumori."
+        },
+        {
+          "time": "00:53",
+          "text": "Comincia la raccolta di basalto, granito, marmo, cemento, mattoni e pietrisco per costruire il rifugio."
+        },
+        {
+          "time": "00:58",
+          "text": "L'acqua presente nell'arena viene usata per recuperare energie; l'erba bagnata appare più rigogliosa."
+        },
+        {
+          "time": "01:16",
+          "text": "Raven utilizza forme d'ombra per procurarsi materiali e acqua."
+        },
+        {
+          "time": "01:24",
+          "text": "Un flauto di Pan precede la prima raffica: vengono annunciati 24 danni ai partecipanti esposti."
+        },
+        {
+          "time": "01:36",
+          "text": "Le creature evocate e Mariah, che trasporta basalto dall'alto, contribuiscono a completare il riparo."
+        },
+        {
+          "time": "01:40",
+          "text": "Una raffica da sud-ovest investe il rifugio: vengono annunciati 13 danni ai protetti; la struttura resiste."
+        },
+        {
+          "time": "01:45",
+          "text": "Dal lago emerge un gigantesco automa simile a un tornado meccanico: attacca i rumori e usa una palla demolitrice."
+        },
+        {
+          "time": "01:49",
+          "text": "Dei nani vengono inviati con piccoli teletrasporti a recuperare acqua in silenzio; il rientro viene confermato."
+        },
+        {
+          "time": "01:59",
+          "text": "Una componente dall'aspetto felino della squadra di Betty attraversa una parete come intangibile per accompagnare una persona al lago."
+        },
+        {
+          "time": "02:18",
+          "text": "Rumori ed esplosioni simili a petardi disorientano l'automa. Un frammento con scritta rossa colpisce il piede di Jean."
+        },
+        {
+          "time": "02:24",
+          "text": "Un sasso viene utilizzato per attirare l'automa: la creatura si gira, non si muove, e i nani rientrano con l'acqua."
+        },
+        {
+          "time": "02:30",
+          "text": "Altre fortificazioni cedono sotto il vento; durante l'ultima fase viene annunciata una raffica da 11 danni."
+        },
+        {
+          "time": "02:36",
+          "text": "L'automa si arresta, si disgrega e sul rifugio cadono coriandoli: prova superata."
+        },
+        {
+          "time": "02:37",
+          "text": "La classifica colloca il gruppo al primo posto insieme ad altre squadre; il gruppo di Sue Nami è secondo."
+        },
+        {
+          "time": "02:41",
+          "text": "Una partecipante sostiene la condivisione del primo posto; non è attestato un voto unanime."
+        },
+        {
+          "time": "02:50",
+          "text": "I partecipanti riconoscono l'arena come lo spazio della festa precedente, ora privo del castello gonfiabile."
+        },
+        {
+          "time": "02:54",
+          "text": "Betty dichiara un nuovo patto con Yekaterina e una condizione sulla morte di Somchai per liberare le anime. Jean sarebbe già libero."
+        },
+        {
+          "time": "03:00",
+          "text": "A seguito di un controllo, il narratore dice che Betty sembra sincera: l'effettiva portata dell'accordo resta incerta."
+        },
+        {
+          "time": "03:03",
+          "text": "Viene mostrato un medaglione raffigurante Camille; una persona sostiene che sia stata uccisa."
+        }
+      ],
+      "quotes": [],
+      "related": [
+        "pg-jean",
+        "pg-julian",
+        "pg-yekaterina",
+        "pg-davi",
+        "pg-elisabeth",
+        "personaggio-mariah",
+        "personaggio-raven",
+        "personaggio-sue-nami",
+        "personaggio-somchai",
+        "personaggio-betty",
+        "personaggio-camille",
+        "oggetto-progetti-arena",
+        "oggetto-pietra-scritta-rossa",
+        "oggetto-medaglione-camille",
+        "luogo-arena-01",
+        "luogo-lago-arena",
+        "minaccia-automa-tornado",
+        "trial-sopravvivenza"
       ],
       "public": true
     }
