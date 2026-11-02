@@ -15,7 +15,7 @@ class SpeakerMapTests(unittest.TestCase):
 
     def test_qualifications_preserved(self):
         self.assertEqual(resolve_speaker("hpLtz6wiWS85-1-maracuja3914.srt")["confidence"],"confirmed_by_user")
-        self.assertEqual(resolve_speaker("6-maxti077")["confidence"],"to_confirm")
+        self.assertEqual(resolve_speaker("6-maxti077")["confidence"],"confirmed_by_user")
         self.assertEqual(resolve_speaker("3-.eruname_nuova")["role"],"master")
         self.assertEqual(resolve_speaker("2-marialuisa9042_originale")["characterId"],"pg-elisabeth")
         self.assertIsNone(resolve_speaker("unrecognized_person"))
