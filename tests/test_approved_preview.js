@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const d=JSON.parse(fs.readFileSync('docs/data/public.json','utf8'));
+const f=JSON.parse(fs.readFileSync('docs/data/session-formats.json','utf8')).sessions['sessione-sopravvivenza-01'];
+const s=d.sessions.find(x=>x.id==='sessione-sopravvivenza-01');
+assert(s.summary===f.standard);
+assert(s.summary.split('\n\n').length===9);
+assert(s.summary.includes('Catrice')&&s.summary.includes('Yekaterina'));
+assert(s.summary.includes('Jean crea una sfera che contiene dei petardi'));
+assert(s.summary.includes('Hol Horse')&&s.summary.includes('Mariah'));
+assert(d.entries.some(e=>e.id==='personaggio-catrice'&&e.public));
+assert(!d.entries.some(e=>e.id==='oggetto-pietra-scritta-rossa'));
+const published=JSON.stringify(d)+' '+JSON.stringify(f);
+for(const forbidden of ['joao','ucciderà Somchai','liberazione delle anime','Jean sarebbe già libero','Catris','Holorse'])assert(!published.includes(forbidden),'Private or outdated detail: '+forbidden);
+assert(s.events.some(e=>e.text.includes('Catrice')&&e.text.includes('Yekaterina')));
+assert(s.events.some(e=>e.text.includes('Jean crea una sfera')));
+console.log('PASS: preview published with confirmed narrative and without hidden details.');

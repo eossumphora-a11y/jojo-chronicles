@@ -6,7 +6,7 @@ const formats=JSON.parse(fs.readFileSync('docs/data/session-formats.json','utf8'
 const first=data.sessions.find(x=>x.id==='sessione-fiume-01');
 const current=data.sessions.find(x=>x.id==='sessione-sopravvivenza-01');
 assert(first?.summary.length>1000,'First session unchanged and public');
-assert(current?.public && current.summary.length>4500,'New complete public recap exists');
+assert(current?.public && current.summary.length>3300,'New complete public recap exists');
 assert(current.events.length>=20,'Chronology restored with timestamps');
 assert(current.events.every(x=>/^\d\d:\d\d$/.test(x.time)), 'Every new event has a timestamp');
 assert.equal(current.date,'','Recording date is not assumed to be session date');
@@ -26,8 +26,8 @@ for(const id of ['personaggio-betty','personaggio-camille','oggetto-progetti-are
 }
 assert(!data.entries.some(e=>e.id==='oggetto-pietra-scritta-rossa'),'Private retained item must not be published');
 assert(!data.entries.some(e=>e.kind==='stand'&&e.title.toLowerCase().includes('automa')),'Automa is not an identified Stand');
-assert(current.summary.includes('Betty torna a parlare')&&current.summary.includes('Dichiara di aver stretto'),'A reported claim must be attributed');
-assert(current.summary.includes('Resta da capire quanto ci sia di vero'),'Unconfirmed pact cannot be described as established fact');
+assert(current.summary.includes('Betty torna a parlare')&&current.summary.includes('il loro contenuto rimane oscuro'),'Agreements mentioned without disclosing terms');
+assert(!current.summary.includes('ucciderà Somchai'),'Private agreement terms must not be published');
 assert(!current.summary.includes('Tremotino'),'Out-of-character design ideas are not published');
 const js=fs.readFileSync('docs/assets/app-v2.js','utf8');
 assert(js.includes('b.sortOrder??0'),'New session must appear first without invented episode number');

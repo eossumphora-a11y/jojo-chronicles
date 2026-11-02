@@ -40,6 +40,7 @@ jobs:
           node tests/check_public_archive.js
           node tests/test_second_session.js
           node tests/test_narrative_only.js
+          node tests/test_approved_preview.js
           node tests/test_craig_speakers.js
           node tests/test_public_fallback.js
           node tests/test_stand_visibility.js
