@@ -12,7 +12,7 @@ assert(current.events.every(x=>/^\d\d:\d\d$/.test(x.time)), 'Every new event has
 assert.equal(current.date,'','Recording date is not assumed to be session date');
 assert.equal(current.number,null,'Unverified session number is not invented');
 assert(current.sortOrder>0,'New chapter can sort first without faking session number');
-assert(current.quotes.length===0,'Do not invent memorable quotes');
+assert(current.quotes.length===14,'The new chapter contains fourteen sourced quotes');
 const f=formats[current.id];
 assert(f&&f.concise&&f.standard&&f.combat&&f.outline?.length>=4,'All four recap views work');
 for(const kind of ['character','artifact','other','location']){
