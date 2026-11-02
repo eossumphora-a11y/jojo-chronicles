@@ -18,12 +18,13 @@ assert(f&&f.concise&&f.standard&&f.combat&&f.outline?.length>=4,'All four recap 
 for(const kind of ['character','artifact','other','location']){
  assert(current.related.some(id=>data.entries.some(e=>e.id===id&&e.kind===kind)),kind+' category is connected');
 }
-for(const id of ['personaggio-betty','personaggio-camille','oggetto-progetti-arena','oggetto-pietra-scritta-rossa',
+for(const id of ['personaggio-betty','personaggio-camille','oggetto-progetti-arena',
  'oggetto-medaglione-camille','minaccia-automa-tornado','trial-sopravvivenza']){
  const item=data.entries.find(e=>e.id===id);
  assert(item?.public===true,'Entry must be published: '+id);
  assert(current.related.includes(id),'Entry must link to session: '+id);
 }
+assert(!data.entries.some(e=>e.id==='oggetto-pietra-scritta-rossa'),'Private retained item must not be published');
 assert(!data.entries.some(e=>e.kind==='stand'&&e.title.toLowerCase().includes('automa')),'Automa is not an identified Stand');
 assert(current.summary.includes('Betty torna a parlare')&&current.summary.includes('Dichiara di aver stretto'),'A reported claim must be attributed');
 assert(current.summary.includes('Resta da capire quanto ci sia di vero'),'Unconfirmed pact cannot be described as established fact');
