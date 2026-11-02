@@ -25,7 +25,7 @@ for(const [name,txt] of passages){
  assert(!m,name+' contains a meta reference: '+(m?.[0]));
 }
 assert.equal(f.standard,s.summary);
-assert(s.summary.includes('Elisabeth chiede a Betty'),'In-world player action retained');
+assert(s.summary.includes("Elisabeth le domanda cosa abbia da guadagnare"),'In-world dialogue retained');
 assert(s.summary.includes('Mariah mostra un medaglione'),'Medallion show attributed to Mariah');
 assert(f.concise.includes('Mariah mostra un medaglione'),'Concise medallion attribution');
 assert(s.events.some(e=>e.text.includes('Mariah mostra un medaglione')));
