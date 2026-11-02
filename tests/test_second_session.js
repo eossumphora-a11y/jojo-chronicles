@@ -31,3 +31,21 @@ assert(!current.summary.includes('Tremotino'),'Out-of-character design ideas are
 const js=fs.readFileSync('docs/assets/app-v2.js','utf8');
 assert(js.includes('b.sortOrder??0'),'New session must appear first without invented episode number');
 console.log('PASS: second published recap, timeline and linked wiki entries are complete and spoiler-safe.');
+
+/* All published recounts are in-world narratives, without tabletop references. */
+for (const chapter of data.sessions) {
+ const authored = formats[chapter.id];
+ assert(authored?.standard === chapter.summary,'The canonical recap must match the standard version');
+ const sections=[chapter.summary,authored.lead,authored.concise,authored.combat,
+   ...(chapter.events||[]).map(event=>event.text)];
+ const meta=/\b(?:nella scorsa sessione|giocatrici?|giocatori|il master|il narratore|nella trascrizione|dalla registrazione|il tiro di dado|fuori gioco)\b/i;
+ for (const narrative of sections) assert(!meta.test(narrative),'No metagame text in published recount: '+chapter.id);
+}
+assert(current.summary.includes('Mariah mostra un medaglione con il ritratto di Camille'),
+  'The medallion is shown by Mariah');
+const mariah=data.entries.find(entry=>entry.id==='personaggio-mariah');
+const medallion=data.entries.find(entry=>entry.id==='oggetto-medaglione-camille');
+assert(mariah?.public_inventory?.some(x=>x.name==='Medaglione con Camille'),
+ 'Mariah must have the public medallion inventory record');
+assert(medallion?.body?.includes('Mariah lo mostra'),
+ 'Medallion entry must say Mariah showed it');
