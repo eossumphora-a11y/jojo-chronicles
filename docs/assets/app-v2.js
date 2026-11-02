@@ -5,6 +5,7 @@ const glyphs={character:'♟',stand:'✧',location:'⌖',faction:'♜',artifact:
 const order=['all','character','stand','location','clue','faction','artifact','other','saved'];
 let entries=[],sessions=[],filter='all',entryQuery='',standQuery='',activeSession='',currentView='home',searchQuery='',entryView='grid';
 let pinned=new Set();
+let craigSpeakerCast=null;
 try{pinned=new Set(JSON.parse(localStorage.getItem('jojo-public-pins')||'[]'))}catch{}
 const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
 const txt=(tag,value,cls)=>el(tag,cls,value);
@@ -242,10 +243,45 @@ function renderLibraryFullRecap(root,s){
  const panel=el('div','library-recap-document');const title=el('div','library-recap-title');title.append(txt('span','RECAP DELLA SCORSA SESSIONE'),btn('button','↓ Scarica','library-rec-download',()=>downloadLibraryText(s.title+'_recap',text)));panel.append(title);
  const story=el('div','reader-content');prose(story,text);panel.append(story);root.append(panel)
 }
+function renderCraigSpeakers(root,s){
+ const record=craigSpeakerCast?.sessionRecordings?.find(x=>x.sessionId===s.id);
+ if(!record)return;
+ const tracks=(record.trackAliases||[]).map(alias=>(craigSpeakerCast.tracks||[]).find(t=>t.alias===alias)).filter(Boolean).sort((a,b)=>a.trackNumber-b.trackNumber);
+ const section=el('section','craig-speaker-section');
+ section.append(txt('div','TRACCE CRAIG • ASSOCIAZIONI','craig-speaker-kicker'));
+ section.append(txt('p','I nomi indicano chi è stato registrato, non garantiscono che ogni frase sia pronunciata in personaggio. Le registrazioni audio non sono pubblicate: la fonte sono le trascrizioni SRT.','craig-speaker-description'));
+ const list=el('div','craig-speaker-list');
+ for(const track of tracks){
+  const e=entries.find(x=>x.id===track.characterId);
+  const role=track.role==='master'?'Master / narratore':(e?.title||'Personaggio non identificato');
+  const confidence=track.confidence==='to_confirm'?'Da confermare':'Attribuzione indiretta';
+  const item=e?btn('button','','craig-speaker-row',()=>openEntry(e)):el('div','craig-speaker-row');
+  item.append(txt('span',track.alias,'craig-speaker-alias'));
+  item.append(txt('strong',role,'craig-speaker-character'));
+  item.append(txt('small',track.role==='master'?'Voce del narratore':confidence,'craig-speaker-confidence'));
+  list.append(item);
+ }
+ section.append(list);
+ if(Array.isArray(s.audio_attributions)&&s.audio_attributions.length){
+  const heading=txt('h4','Interventi riconosciuti nella trascrizione','craig-speaker-subtitle');section.append(heading);
+  const ul=el('ul','craig-speaker-evidence');
+  for(const m of s.audio_attributions){
+   if(!tracks.some(x=>x.alias===m.trackAlias))continue;
+   const item=el('li');
+   const who=entries.find(x=>x.id===m.characterId);
+   const label=(who?.title||m.trackAlias)+' (traccia '+m.trackAlias+')';
+   item.append(txt('span',m.time||'','craig-speaker-time'),txt('strong',label),txt('span',m.text||''));
+   ul.append(item);
+  }
+  section.append(ul);
+ }
+ root.append(section);
+}
 function drawSessionReader(){
  const root=$('session-reader');root.replaceChildren();const s=sessions.find(x=>x.id===activeSession)||sessions[0];if(!s)return;activeSession=s.id;
  const heading=el('header','library-recap-heading');heading.append(txt('span','RECAP · '+sessionName(s).toUpperCase(),'library-recap-eyebrow'),txt('h2',s.title));
  heading.append(txt('p',sessionInfo(s).lead||'Rivivete quello che è accaduto durante la vostra avventura.'));root.append(heading);
+ renderCraigSpeakers(root,s);
  renderLibraryFullRecap(root,s);
  const lower=el('div','library-recap-lower');renderLibraryQuotes(lower,s);renderLibraryOutline(lower,s);renderLibraryNotes(lower,s);root.append(lower);
 }
@@ -390,6 +426,10 @@ async function init(){try{const res=await fetch('data/public.json',{cache:'no-st
   console.info('JoJo Chronicles: archivio pubblico caricato', {voci:entries.length,sessioni:sessions.length});
  }catch(e){console.warn('Database online non raggiungibile: archivio pubblico GitHub conservato.',e)}
  await applyNarrativeEdition();
+ try{
+  const voices=await fetch('data/craig-speakers.json',{cache:'no-store'});
+  if(voices.ok)craigSpeakerCast=await voices.json();
+ }catch(e){console.warn('Associazioni delle tracce Craig non disponibili',e)}
  await loadRecapFormats();
  // Le versioni brevi/standard/combattimento sono recap PUBBLICI:
  // hanno valore di fonte per riconoscere gli Stand nominati.

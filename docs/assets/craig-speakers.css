@@ -1,0 +1,19 @@
+/* The recording-to-character roster is evidence, not dialogue attribution. */
+.craig-speaker-section{border:1px solid var(--line,#343044);border-radius:14px;padding:20px;margin:14px 0 22px;background:color-mix(in srgb,var(--panel,#191821) 85%,transparent)}
+.craig-speaker-kicker{font-size:.72rem;font-weight:750;letter-spacing:.15em;color:var(--gold,#dfc58a)}
+.craig-speaker-description{font-size:.84rem;line-height:1.5;margin:9px 0 16px;opacity:.85}
+.craig-speaker-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:9px}
+.craig-speaker-row{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:11px 13px;border:1px solid var(--line,#343044);border-radius:9px;background:var(--panel2,#22202a);text-align:left;color:inherit;max-width:100%;min-height:80px}
+button.craig-speaker-row:hover{border-color:var(--gold,#d6b570)}
+.craig-speaker-alias{font: .75rem ui-monospace,Consolas,monospace;opacity:.75;overflow-wrap:anywhere}
+.craig-speaker-character{font-size:.95rem}
+.craig-speaker-confidence{font-size:.72rem;opacity:.7}
+.craig-speaker-subtitle{margin:18px 0 6px;font-size:.85rem}
+.craig-speaker-evidence{list-style:none;margin:0;padding:0}
+.craig-speaker-evidence li{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap;padding:8px 0;border-bottom:1px solid var(--line,#343044);font-size:.82rem;line-height:1.5}
+.craig-speaker-evidence li:last-child{border:0}
+.craig-speaker-evidence li strong{font-weight:650}
+.craig-speaker-evidence li span:last-child{flex-basis:100%;opacity:.85}
+.craig-speaker-time{font: .78rem ui-monospace,monospace;color:var(--gold,#d6b570)}
+@media(max-width:620px){.craig-speaker-section{padding:14px}.craig-speaker-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:400px){.craig-speaker-list{grid-template-columns:1fr}}

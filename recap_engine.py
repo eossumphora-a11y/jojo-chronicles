@@ -6,6 +6,7 @@ in the recap before they can enter the Master review queue.
 from __future__ import annotations
 import json
 import re
+from speaker_aliases import annotate_transcript_speakers
 import urllib.error
 import urllib.request
 
@@ -133,6 +134,7 @@ def ollama_json(model: str, system: str, prompt: str) -> dict:
 
 RECAP_SYSTEM = """Sei un cronista della campagna JoJo. Scrivi in italiano un recap sobrio e cronologico, senza enfasi epica o battute inventate.
 Usa SOLO gli eventi attestati dalla fonte allegata. Non trasformare supposizioni in fatti.
+Le etichette [ruolo registrazione: ...] identificano il giocatore che parla; NON assumere automaticamente che ogni battuta sia pronunciata dal personaggio. I soprannomi non confermati sono soltanto ipotesi.
 Non inventare identità, nomi, poteri, luoghi, artefatti, morti, conoscenze dei PG.
 Restituisci un OGGETTO JSON:
 {"summary":"4-8 paragrafi brevi di fatti in sequenza","events":[{"time":"MM:SS","text":"fatto osservato"}],"quotes":[{"speaker":"Nome solo se esplicito","time":"MM:SS","text":"citazione esatta"}]}
@@ -146,7 +148,7 @@ def create_recap(transcript: str, title: str, model: str) -> dict:
         raise ValueError("Serve una trascrizione.")
     if len(transcript) > MAX_TRANSCRIPT:
         raise ValueError("Trascrizione troppo lunga (max 175.000 caratteri). Dividila in parti.")
-    chunks = split_transcript(transcript)
+    chunks = split_transcript(annotate_transcript_speakers(transcript))
     notes = []
     for i, chunk in enumerate(chunks, 1):
         if len(chunks) > 1:

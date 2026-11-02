@@ -39,6 +39,7 @@ jobs:
           node tests/check_public_export.js
           node tests/check_public_archive.js
           node tests/test_second_session.js
+          node tests/test_craig_speakers.js
           node tests/test_public_fallback.js
           node tests/test_stand_visibility.js
           node tests/test_session_stands.js
@@ -46,6 +47,7 @@ jobs:
           node tests/test_recap_corrections.js
       - name: Test trascrittore locale
         run: |
-          python -m py_compile local_server.py recap_engine.py
+          python -m py_compile local_server.py recap_engine.py speaker_aliases.py
           python -m unittest discover -s tests -p 'test_audio_utils.py'
           python -m unittest discover -s tests -p 'test_recap_engine.py'
+          python -m unittest discover -s tests -p 'test_craig_speaker_map.py'

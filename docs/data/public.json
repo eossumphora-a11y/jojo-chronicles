@@ -175,7 +175,8 @@
       "summary": "Elisabeth supera la prova della campana e prosegue con i compagni verso la gola del fiume.",
       "body": "Elisabeth era riuscita a suonare la campana della prova precedente con l'aiuto dei piccoli esseri evocati dai compagni. Dopo la stanza bianca e l'annuncio di una nuova sfida, segue il gruppo verso la gola e valuta come utilizzare il proprio teletrasporto per affrontare il terreno insidioso.",
       "related": [
-        "personaggio-betty"
+        "personaggio-betty",
+        "trial-sopravvivenza"
       ],
       "tags": [
         "partecipante"
@@ -196,6 +197,20 @@
           "time": "00:31",
           "type": "incontro",
           "text": "Betty le rivolge in particolare la proposta di collaborazione e tregua; il gruppo ne discute."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "00:32:28",
+          "type": "dialogo",
+          "text": "La sua giocatrice chiede a Betty cosa guadagnerebbe dalla tregua e se l'accordo nasconda ulteriori condizioni (attribuzione della voce dalla traccia Craig marialuisa9042)."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "00:35:26",
+          "type": "azione",
+          "text": "La sua giocatrice descrive Elisabeth mentre raduna il gruppo e richiama Jean prima di decidere se collaborare con Betty."
         }
       ]
     },
@@ -935,7 +950,7 @@
       "sortOrder": 2,
       "date": "",
       "title": "La prova della sopravvivenza",
-      "summary": "Dopo la prova del fiume, vi ritrovate davanti a una nuova arena. L'unica istruzione è «Sopravvivete». Alcune squadre oltrepassano una soglia e scompaiono alla vista; altri movimenti sembrano ricondurre indietro i partecipanti. Cercate di capire il funzionamento dell'accesso. Una partecipante prova a lanciare una pietra verso il centro, senza che la registrazione ne chiarisca l'esito; vengono anche incaricati dei nani di scavare una buca come possibile riparo. Raven osserva che il posto gli sembra familiare, ma non lo associa a bei ricordi, e si tocca il collo. Non spiega il motivo.\n\nBetty arriva con il suo gruppo e propone una tregua per affrontare insieme la prova. Si rivolge in particolare a Elisabeth e afferma di non voler usare il potere del proprio Stand per stipulare l'accordo. La proposta non viene accettata senza discussione: una partecipante chiede cosa ci guadagni Betty e se vi siano condizioni nascoste, poi consulta i compagni. Betty e le sue alleate mostrano progetti blu, che a loro dire provengono da un'area dello staff. Le tavole contengono scritte in tedesco e preannunciano raffiche violente, la necessità di costruire ripari e l'arrivo di un automa che vede poco ma reagisce ai rumori. Le direzioni del vento, spiegano, non sono note in anticipo.\n\nQuando inizia la raccolta dei materiali, l'arena offre basalto, granito, marmo, cemento, mattoni e pietrisco, di resistenza diversa. Non tutti i pezzi sopravvivono al trasporto: alcuni si rompono o si sbriciolano. Progettate un riparo protetto da più lati, valutando anche come accogliere i compagni del gruppo di Betty. Si parla inizialmente di circa ventidue pezzi e della possibilità di usare una trincea, ma non ogni parte dei piani discussi viene realizzata. Animali e piccole creature legate agli Stand aiutano a recuperare i materiali. Raven usa forme d'ombra per portare pietre e acqua; Mariah contribuisce al trasporto del basalto dall'alto. Il numero di pezzi raccolti arriva, secondo il conteggio dichiarato, a circa ventisei.\n\nNei pressi della zona centrale c'è acqua da bere: chi la utilizza recupera forze e, quando viene versata sull'erba, questa appare più rigogliosa. Mentre continuate a costruire, nell'arena si sente un flauto di Pan. La prima raffica travolge chi è ancora scoperto: il narratore annuncia ventiquattro danni per chi non ha protezione. Le squadre che hanno già eretto dei muri riescono ad assorbire parte dell'urto. Più tardi una seconda raffica arriva da sud-ovest: il rifugio perde alcuni frammenti, ma rimane in piedi. Per chi è protetto viene annunciato un danno di tredici.\n\nPoi la superficie del lago si muove. Ne emerge un gigantesco automa, simile a un tornado meccanico fatto di tubi, ingranaggi e cerchi in movimento. Il macchinario genera vento e usa una palla demolitrice per colpire avversari e strutture. Dopo un momento di silenzio, le grida di alcuni concorrenti attirano la sua attenzione: la creatura sembra inseguire i suoni più che vedere chiaramente ciò che la circonda. Il gruppo cerca così di restare silenzioso, consolidare il riparo e recuperare acqua senza farsi individuare.\n\nUna partecipante invia dei nani con piccoli teletrasporti a prendere acqua senza fare rumore; il narratore conferma che tornano senza difficoltà e che il gruppo può servirsi dell'acqua per curarsi. Non è possibile attribuire con certezza questa azione a un personaggio specifico. Una donna dall'aspetto felino, appartenente alla squadra di Betty, accompagna inoltre una persona al lago: i colori del mondo diventano viola e le due attraversano una parete come se fosse intangibile. La persona beve e recupera acqua, poi torna al rifugio. Il nome della donna e i limiti del suo potere non vengono chiariti.\n\nMentre il vento continua a colpire le strutture, una serie di esplosioni simili a petardi disorienta l'automa, che si dirige verso i rumori e urta vari ostacoli. In un altro momento, per distrarlo durante il recupero dell'acqua, viene fatta battere una pietra contro un'altra lontano dal gruppo: il macchinario si gira verso il rumore ma, secondo il narratore, non si muove. I nani rientrano con l'acqua. Intanto un piccolo frammento colpisce il piede di Jean; sulla pietra compare un'antica scritta rossa, che però non si riesce a leggere. Non è la stessa pietra utilizzata per attirare l'automa.\n\nLe ultime raffiche mettono in crisi le altre fortificazioni. Durante la fase finale viene annunciata anche una raffica da undici danni e diversi ripari concorrenti cedono. Il vostro gruppo continua a resistere finché l'automa rallenta, si spegne e si disgrega, lasciando cadere i pezzi meccanici. Sul vostro rifugio piovono coriandoli: avete superato la prova.\n\nTornati all'area di partenza, vedete una classifica nel cielo. La vostra squadra compare al primo posto insieme ad altri partecipanti, i cui nomi non risultano tutti comprensibili nella registrazione. Compaiono microfoni e si apre una discussione sulla condivisione dei punti. Una partecipante sostiene di riconoscere il primo posto condiviso, perché le squadre hanno guadagnato il risultato; non è confermato che quella sia stata la scelta unanime. Il gruppo di Sue Nami appare al secondo posto. Sue Nami si dice favorevole alla condivisione, accolta dall'annunciatrice. Il punteggio numerico esatto non è ricostruibile. Finita la cerimonia, riconoscete nell'area lo stesso spazio di una festa precedente, ora privo del grande castello gonfiabile.\n\nSubito dopo Betty torna a parlare di un patto. Dichiara di aver stretto un nuovo accordo con Yekaterina che avrebbe sostituito quello precedente: secondo Betty, le anime degli altri membri del gruppo verranno liberate soltanto quando Yekaterina ucciderà Somchai. Sostiene anche che Jean sia già libero da quel vincolo. Queste sono le parole di Betty, non una conferma indipendente del funzionamento del patto. Alcuni protestano e discutono del sacco associato all'accordo precedente, che viene detto scomparso. Quando qualcuno cerca di capire se stia mentendo, il narratore riferisce che Betty sembra sincera; questo non dimostra ogni dettaglio della sua versione. Infine viene citata Camille: una persona mostra un medaglione con il suo ritratto e racconta che fosse molto forte e che sia stata uccisa. Le circostanze non vengono chiarite.",
+      "summary": "Dopo la prova del fiume, vi ritrovate davanti a una nuova arena. L'unica istruzione è «Sopravvivete». Alcune squadre oltrepassano una soglia e scompaiono alla vista; altri movimenti sembrano ricondurre indietro i partecipanti. Cercate di capire il funzionamento dell'accesso. Una partecipante prova a lanciare una pietra verso il centro, senza che la registrazione ne chiarisca l'esito; vengono anche incaricati dei nani di scavare una buca come possibile riparo. Raven osserva che il posto gli sembra familiare, ma non lo associa a bei ricordi, e si tocca il collo. Non spiega il motivo.\n\nBetty arriva con il suo gruppo e propone una tregua per affrontare insieme la prova. Si rivolge in particolare a Elisabeth e afferma di non voler usare il potere del proprio Stand per stipulare l'accordo. La proposta non viene accettata senza discussione: la persona che interpreta Elisabeth chiede a Betty cosa guadagni dalla tregua e se vi siano condizioni nascoste, poi richiama Jean e consulta i compagni. Betty e le sue alleate mostrano progetti blu, che a loro dire provengono da un'area dello staff. Le tavole contengono scritte in tedesco e preannunciano raffiche violente, la necessità di costruire ripari e l'arrivo di un automa che vede poco ma reagisce ai rumori. Le direzioni del vento, spiegano, non sono note in anticipo.\n\nQuando inizia la raccolta dei materiali, l'arena offre basalto, granito, marmo, cemento, mattoni e pietrisco, di resistenza diversa. Non tutti i pezzi sopravvivono al trasporto: alcuni si rompono o si sbriciolano. Progettate un riparo protetto da più lati, valutando anche come accogliere i compagni del gruppo di Betty. Si parla inizialmente di circa ventidue pezzi e della possibilità di usare una trincea, ma non ogni parte dei piani discussi viene realizzata. Animali e piccole creature legate agli Stand aiutano a recuperare i materiali. Raven usa forme d'ombra per portare pietre e acqua; Mariah contribuisce al trasporto del basalto dall'alto. Il numero di pezzi raccolti arriva, secondo il conteggio dichiarato, a circa ventisei.\n\nNei pressi della zona centrale c'è acqua da bere: chi la utilizza recupera forze e, quando viene versata sull'erba, questa appare più rigogliosa. Mentre continuate a costruire, nell'arena si sente un flauto di Pan. La prima raffica travolge chi è ancora scoperto: il narratore annuncia ventiquattro danni per chi non ha protezione. Le squadre che hanno già eretto dei muri riescono ad assorbire parte dell'urto. Più tardi una seconda raffica arriva da sud-ovest: il rifugio perde alcuni frammenti, ma rimane in piedi. Per chi è protetto viene annunciato un danno di tredici.\n\nPoi la superficie del lago si muove. Ne emerge un gigantesco automa, simile a un tornado meccanico fatto di tubi, ingranaggi e cerchi in movimento. Il macchinario genera vento e usa una palla demolitrice per colpire avversari e strutture. Dopo un momento di silenzio, le grida di alcuni concorrenti attirano la sua attenzione: la creatura sembra inseguire i suoni più che vedere chiaramente ciò che la circonda. Il gruppo cerca così di restare silenzioso, consolidare il riparo e recuperare acqua senza farsi individuare.\n\nUna partecipante invia dei nani con piccoli teletrasporti a prendere acqua senza fare rumore; il narratore conferma che tornano senza difficoltà e che il gruppo può servirsi dell'acqua per curarsi. Non è possibile attribuire con certezza questa azione a un personaggio specifico. Una donna dall'aspetto felino, appartenente alla squadra di Betty, accompagna inoltre una persona al lago: i colori del mondo diventano viola e le due attraversano una parete come se fosse intangibile. La persona beve e recupera acqua, poi torna al rifugio. Il nome della donna e i limiti del suo potere non vengono chiariti.\n\nMentre il vento continua a colpire le strutture, una serie di esplosioni simili a petardi disorienta l'automa, che si dirige verso i rumori e urta vari ostacoli. In un altro momento, per distrarlo durante il recupero dell'acqua, viene fatta battere una pietra contro un'altra lontano dal gruppo: il macchinario si gira verso il rumore ma, secondo il narratore, non si muove. I nani rientrano con l'acqua. Intanto un piccolo frammento colpisce il piede di Jean; sulla pietra compare un'antica scritta rossa, che però non si riesce a leggere. Non è la stessa pietra utilizzata per attirare l'automa.\n\nLe ultime raffiche mettono in crisi le altre fortificazioni. Durante la fase finale viene annunciata anche una raffica da undici danni e diversi ripari concorrenti cedono. Il vostro gruppo continua a resistere finché l'automa rallenta, si spegne e si disgrega, lasciando cadere i pezzi meccanici. Sul vostro rifugio piovono coriandoli: avete superato la prova.\n\nTornati all'area di partenza, vedete una classifica nel cielo. La vostra squadra compare al primo posto insieme ad altri partecipanti, i cui nomi non risultano tutti comprensibili nella registrazione. Compaiono microfoni e si apre una discussione sulla condivisione dei punti. La giocatrice di Elisabeth si pronuncia a favore dell'opzione che riconosce il primo posto condiviso, perché le squadre hanno guadagnato il risultato; non è confermato che quella sia stata la scelta unanime. Il gruppo di Sue Nami appare al secondo posto. Sue Nami si dice favorevole alla condivisione, accolta dall'annunciatrice. Il punteggio numerico esatto non è ricostruibile. Finita la cerimonia, riconoscete nell'area lo stesso spazio di una festa precedente, ora privo del grande castello gonfiabile.\n\nSubito dopo Betty torna a parlare di un patto. Dichiara di aver stretto un nuovo accordo con Yekaterina che avrebbe sostituito quello precedente: secondo Betty, le anime degli altri membri del gruppo verranno liberate soltanto quando Yekaterina ucciderà Somchai. Sostiene anche che Jean sia già libero da quel vincolo. Queste sono le parole di Betty, non una conferma indipendente del funzionamento del patto. Alcuni protestano e discutono del sacco associato all'accordo precedente, che viene detto scomparso. Quando qualcuno cerca di capire se stia mentendo, il narratore riferisce che Betty sembra sincera; questo non dimostra ogni dettaglio della sua versione. Infine viene citata Camille: una persona mostra un medaglione con il suo ritratto e racconta che fosse molto forte e che sia stata uccisa. Le circostanze non vengono chiarite.",
       "events": [
         {
           "time": "00:07",
@@ -951,7 +966,7 @@
         },
         {
           "time": "00:31",
-          "text": "Betty propone una tregua. Il gruppo chiede quali siano i suoi interessi e discute le condizioni."
+          "text": "Betty propone una tregua. La persona che interpreta Elisabeth le chiede cosa guadagnerebbe dall'accordo e raduna il gruppo per confrontarsi."
         },
         {
           "time": "00:39",
@@ -999,7 +1014,7 @@
         },
         {
           "time": "02:24",
-          "text": "Un sasso viene utilizzato per attirare l'automa: la creatura si gira, non si muove, e i nani rientrano con l'acqua."
+          "text": "La traccia associata a Elisabeth descrive un diversivo con una pietra per fare rumore. L'automa si gira senza spostarsi e i nani tornano con l'acqua."
         },
         {
           "time": "02:30",
@@ -1015,7 +1030,7 @@
         },
         {
           "time": "02:41",
-          "text": "Una partecipante sostiene la condivisione del primo posto; non è attestato un voto unanime."
+          "text": "La giocatrice di Elisabeth si esprime a favore dell'opzione che riconosce il primo posto condiviso; non è attestata una scelta unanime."
         },
         {
           "time": "02:50",
@@ -1055,7 +1070,42 @@
         "minaccia-automa-tornado",
         "trial-sopravvivenza"
       ],
-      "public": true
+      "public": true,
+      "audio_attributions": [
+        {
+          "trackAlias": "marialuisa9042",
+          "characterId": "pg-elisabeth",
+          "time": "00:32:28",
+          "text": "La voce chiede a Betty cosa guadagni dalla tregua e se il patto nasconda condizioni.",
+          "source": "SRT",
+          "confidence": "strong_indirect"
+        },
+        {
+          "trackAlias": "marialuisa9042",
+          "characterId": "pg-elisabeth",
+          "time": "00:35:26",
+          "text": "Comunica a Betty che consulterà gli altri e richiama Jean.",
+          "source": "SRT",
+          "confidence": "strong_indirect"
+        },
+        {
+          "trackAlias": "marialuisa9042",
+          "characterId": "pg-elisabeth",
+          "time": "02:24:56",
+          "text": "Descrive un tentativo di usare una pietra per distrarre l'automa e coprire il recupero d'acqua.",
+          "source": "SRT",
+          "confidence": "strong_indirect"
+        },
+        {
+          "trackAlias": "marialuisa9042",
+          "characterId": "pg-elisabeth",
+          "time": "02:41:24",
+          "text": "Sceglie l'opzione numero uno nella discussione sulla classifica; non risulta un voto unanime.",
+          "source": "SRT",
+          "confidence": "strong_indirect"
+        }
+      ],
+      "craig_recording_id": "hpLtz6wiWS85"
     }
   ]
 }

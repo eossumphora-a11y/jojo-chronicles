@@ -177,3 +177,29 @@ In assenza di una riga pubblica per POOR SOULS nel database, usa **solo** la voc
 - Rimossi dall'archivio di emergenza i vecchi riferimenti errati a John ed Emma; corretto Julia Zeppeli e l'intervento dei Grimm dopo il traguardo. I dati pubblicati rimangono solo conoscenze dei giocatori.
 - In caso di disconnessione da Supabase il sito mostra l'ultima copia pubblica valida. **Il resoconto narrativo lunghissimo eventualmente conservato solo in Supabase non è garantito dal fallback**: serve un export del database per salvarne una copia integrale separata.
 - Se la pubblicazione di una voce viene revocata, aggiorna anche il fallback: in caso di interruzione della rete può ricomparire il contenuto pubblico della precedente copia. Non aggiungere dati riservati al JSON.
+
+## Associazioni persistenti dei parlanti Craig
+
+Per i resoconti della campagna, la fonte dei nomi è `docs/data/craig-speakers.json`. Questa tabella rimane **nel repository** e vale per le sessioni successive, finché il Master non la corregge. La mappatura giocatore → personaggio è stata confermata dall'utente:
+
+- Francesco → Jean
+- Alessandro → Julian
+- Maria Rita → Yekaterina
+- Maria Luisa → Elisabeth
+- Tito → David (chiamato Davì nel sito)
+- Filippo → Joshwa (non identificato nelle sei tracce Craig della sessione dell'arena)
+
+**Tracce dell'archivio Craig `hpLtz6wiWS85`:**
+
+| Nome nel file | Destinazione | Affidabilità |
+| --- | --- | --- |
+| `1-maracuja3914` | Yekaterina | **Da confermare** (deduzione per esclusione) |
+| `2-marialuisa9042` | Elisabeth | Alta, indiretta (nickname, dialoghi, tabella giocatori) |
+| `3-.eruname` | Master/narratore | Alta, indiretta (conduce il gioco) |
+| `4-tito_lo` | David / Davì | Alta, indiretta (nickname e tabella giocatori) |
+| `5-cicciofc` | Jean | Alta, indiretta (viene chiamato Francesco) |
+| `6-maxti077` | Julian | **Da confermare** (deduzione per esclusione) |
+
+Non sono stati forniti file audio da pubblicare: le fonti sono gli SRT. La pagina della sessione mostra i nomi delle tracce e il relativo personaggio. **Non si possono attribuire automaticamente al personaggio tutte le frasi di un giocatore**, perché possono essere commenti fuori gioco. Il sistema locale `speaker_aliases.py` legge la stessa tabella per annotare i parlanti prima della generazione di nuovi recap; conserva le etichette originali e segnala le attribuzioni non confermate. Il Master deve comunque controllare i resoconti prima di pubblicarli.
+
+**Modifiche future:** correggere l'alias in `docs/data/craig-speakers.json`, conservando `alias` e `characterId`. Le associazioni non dipendono dalla memoria temporanea della chat.

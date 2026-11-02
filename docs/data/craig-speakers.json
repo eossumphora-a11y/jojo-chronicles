@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "source": "JoJo Chronicles - associazioni personaggio/giocatore comunicate dall'utente; identificazioni dei nickname Craig ricostruite dai filename e dai dialoghi, non tutte confermate dall'utente",
+  "confirmedPlayerCast": [
+    {
+      "player": "Francesco",
+      "characterId": "pg-jean",
+      "character": "Jean",
+      "confirmed": true
+    },
+    {
+      "player": "Alessandro",
+      "characterId": "pg-julian",
+      "character": "Julian",
+      "confirmed": true
+    },
+    {
+      "player": "Maria Rita",
+      "characterId": "pg-yekaterina",
+      "character": "Yekaterina",
+      "confirmed": true
+    },
+    {
+      "player": "Maria Luisa",
+      "characterId": "pg-elisabeth",
+      "character": "Elisabeth",
+      "confirmed": true
+    },
+    {
+      "player": "Tito",
+      "characterId": "pg-davi",
+      "character": "David / Davì",
+      "confirmed": true
+    },
+    {
+      "player": "Filippo",
+      "characterId": null,
+      "character": "Joshwa",
+      "confirmed": true
+    }
+  ],
+  "tracks": [
+    {
+      "alias": "maracuja3914",
+      "trackNumber": 1,
+      "characterId": "pg-yekaterina",
+      "role": "player",
+      "confidence": "to_confirm",
+      "reason": "Abbinamento per esclusione fra i cinque giocatori registrati; nessuna identificazione esplicita del nickname."
+    },
+    {
+      "alias": "marialuisa9042",
+      "trackNumber": 2,
+      "characterId": "pg-elisabeth",
+      "role": "player",
+      "confidence": "strong_indirect",
+      "reason": "Il nickname coincide con Maria Luisa, che l'utente ha associato a Elisabeth; il parlante interagisce in prima persona con Betty e Jean."
+    },
+    {
+      "alias": ".eruname",
+      "trackNumber": 3,
+      "characterId": null,
+      "role": "master",
+      "confidence": "strong_indirect",
+      "reason": "Il parlante descrive l'arena, scandisce il countdown e richiede ai giocatori le loro azioni come narratore."
+    },
+    {
+      "alias": "tito_lo",
+      "trackNumber": 4,
+      "characterId": "pg-davi",
+      "role": "player",
+      "confidence": "strong_indirect",
+      "reason": "Il nickname contiene Tito, giocatore associato a David / Davì dall'utente."
+    },
+    {
+      "alias": "cicciofc",
+      "trackNumber": 5,
+      "characterId": "pg-jean",
+      "role": "player",
+      "confidence": "strong_indirect",
+      "reason": "Un altro parlante si rivolge a questa voce chiamandola Francesco; Francesco è il giocatore di Jean."
+    },
+    {
+      "alias": "maxti077",
+      "trackNumber": 6,
+      "characterId": "pg-julian",
+      "role": "player",
+      "confidence": "to_confirm",
+      "reason": "Abbinamento per esclusione fra i cinque giocatori registrati; non risulta una corrispondenza esplicita tra nickname e Alessandro."
+    }
+  ],
+  "sessionRecordings": [
+    {
+      "sessionId": "sessione-sopravvivenza-01",
+      "recordingId": "hpLtz6wiWS85",
+      "trackAliases": [
+        "maracuja3914",
+        "marialuisa9042",
+        ".eruname",
+        "tito_lo",
+        "cicciofc",
+        "maxti077"
+      ],
+      "fileFormat": "srt",
+      "recordingAudioPublished": false,
+      "note": "La fonte sono sei trascrizioni SRT, non file audio riproducibili; le battute possono essere fuori personaggio."
+    }
+  ],
+  "policy": "Preservare sempre il nome originale della traccia, non attribuire automaticamente al PG i dialoghi fuori personaggio e non presentare i due abbinamenti da confermare come certi."
+}
