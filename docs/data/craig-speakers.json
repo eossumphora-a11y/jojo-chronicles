@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "source": "JoJo Chronicles - associazioni personaggio/giocatore comunicate dall'utente; identificazioni dei nickname Craig ricostruite dai filename e dai dialoghi, non tutte confermate dall'utente",
+  "source": "JoJo Chronicles - cast giocatore/personaggio e nickname Craig: maracuja3914 e maxti077 esplicitamente confermati dall'utente il 2 novembre 2026; gli altri nickname restano documentati come attribuzioni indirette.",
   "confirmedPlayerCast": [
     {
       "player": "Francesco",
@@ -45,8 +45,8 @@
       "trackNumber": 1,
       "characterId": "pg-yekaterina",
       "role": "player",
-      "confidence": "to_confirm",
-      "reason": "Abbinamento per esclusione fra i cinque giocatori registrati; nessuna identificazione esplicita del nickname."
+      "confidence": "confirmed_by_user",
+      "reason": "Associazione nickname Craig ↔ personaggio confermata direttamente dall'utente il 2 novembre 2026. Giocatore: Maria Rita."
     },
     {
       "alias": "marialuisa9042",
@@ -85,8 +85,8 @@
       "trackNumber": 6,
       "characterId": "pg-julian",
       "role": "player",
-      "confidence": "to_confirm",
-      "reason": "Abbinamento per esclusione fra i cinque giocatori registrati; non risulta una corrispondenza esplicita tra nickname e Alessandro."
+      "confidence": "confirmed_by_user",
+      "reason": "Associazione nickname Craig ↔ personaggio confermata direttamente dall'utente il 2 novembre 2026. Giocatore: Alessandro."
     }
   ],
   "sessionRecordings": [
@@ -106,5 +106,5 @@
       "note": "La fonte sono sei trascrizioni SRT, non file audio riproducibili; le battute possono essere fuori personaggio."
     }
   ],
-  "policy": "Preservare sempre il nome originale della traccia, non attribuire automaticamente al PG i dialoghi fuori personaggio e non presentare i due abbinamenti da confermare come certi."
+  "policy": "Le associazioni maracuja3914/Yekaterina e maxti077/Julian sono esplicitamente confermate dal Master. Conservare sempre il nickname originale della traccia, distinguere il parlato fuori personaggio, ed evitare di presentare come confermate le altre attribuzioni indirette."
 }

@@ -17,7 +17,7 @@ for(const [alias,id] of Object.entries(expected)){
  assert(archive.entries.some(x=>x.id===id),id+' must exist in public archive');
 }
 for(const alias of ['maracuja3914','maxti077'])
- assert.equal(cast.tracks.find(x=>x.alias===alias).confidence,'to_confirm','Do not mark inferred mapping verified');
+ assert.equal(cast.tracks.find(x=>x.alias===alias).confidence,'confirmed_by_user','The user explicitly confirmed the alias');
 const master=cast.tracks.find(x=>x.alias==='.eruname');
 assert.equal(master.role,'master');
 assert.equal(master.characterId,null);

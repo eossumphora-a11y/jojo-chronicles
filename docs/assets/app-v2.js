@@ -254,7 +254,7 @@ function renderCraigSpeakers(root,s){
  for(const track of tracks){
   const e=entries.find(x=>x.id===track.characterId);
   const role=track.role==='master'?'Master / narratore':(e?.title||'Personaggio non identificato');
-  const confidence=track.confidence==='to_confirm'?'Da confermare':'Attribuzione indiretta';
+  const confidence=track.confidence==='confirmed_by_user'?'Confermato dal Master':track.confidence==='to_confirm'?'Da confermare':'Attribuzione indiretta';
   const item=e?btn('button','','craig-speaker-row',()=>openEntry(e)):el('div','craig-speaker-row');
   item.append(txt('span',track.alias,'craig-speaker-alias'));
   item.append(txt('strong',role,'craig-speaker-character'));

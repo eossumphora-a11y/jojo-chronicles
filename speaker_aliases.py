@@ -54,7 +54,7 @@ def annotate_transcript_speakers(transcript: str) -> str:
         elif track.get("characterId"):
             character = next((p["character"] for p in speaker_cast()["confirmedPlayerCast"]
                               if p.get("characterId") == track["characterId"]), track["characterId"])
-            certainty = "abbinamento da confermare" if track.get("confidence") == "to_confirm" else "abbinamento indiretto"
+            certainty = ("confermato dal Master" if track.get("confidence") == "confirmed_by_user" else "abbinamento da confermare" if track.get("confidence") == "to_confirm" else "abbinamento indiretto")
             description = f"ruolo registrazione: voce del giocatore di {character}; {certainty}; potrebbe parlare fuori personaggio"
         else:
             return match.group(0)

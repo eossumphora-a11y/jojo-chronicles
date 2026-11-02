@@ -193,14 +193,14 @@ Per i resoconti della campagna, la fonte dei nomi è `docs/data/craig-speakers.j
 
 | Nome nel file | Destinazione | Affidabilità |
 | --- | --- | --- |
-| `1-maracuja3914` | Yekaterina | **Da confermare** (deduzione per esclusione) |
+| `1-maracuja3914` | Yekaterina | **Confermato dal Master (02/11/2026)** |
 | `2-marialuisa9042` | Elisabeth | Alta, indiretta (nickname, dialoghi, tabella giocatori) |
 | `3-.eruname` | Master/narratore | Alta, indiretta (conduce il gioco) |
 | `4-tito_lo` | David / Davì | Alta, indiretta (nickname e tabella giocatori) |
 | `5-cicciofc` | Jean | Alta, indiretta (viene chiamato Francesco) |
-| `6-maxti077` | Julian | **Da confermare** (deduzione per esclusione) |
+| `6-maxti077` | Julian | **Confermato dal Master (02/11/2026)** |
 
-Non sono stati forniti file audio da pubblicare: le fonti sono gli SRT. La pagina della sessione mostra i nomi delle tracce e il relativo personaggio. **Non si possono attribuire automaticamente al personaggio tutte le frasi di un giocatore**, perché possono essere commenti fuori gioco. Il sistema locale `speaker_aliases.py` legge la stessa tabella per annotare i parlanti prima della generazione di nuovi recap; conserva le etichette originali e segnala le attribuzioni non confermate. Il Master deve comunque controllare i resoconti prima di pubblicarli.
+Non sono stati forniti file audio da pubblicare: le fonti sono gli SRT. La pagina della sessione mostra i nomi delle tracce e il relativo personaggio. **Non si possono attribuire automaticamente al personaggio tutte le frasi di un giocatore**, perché possono essere commenti fuori gioco. Il sistema locale `speaker_aliases.py` legge la stessa tabella per annotare i parlanti prima della generazione di nuovi recap; conserva le etichette originali e distingue le attribuzioni confermate dal Master da quelle indirette. Il Master deve comunque controllare i resoconti prima di pubblicarli.
 
 **Modifiche future:** correggere l'alias in `docs/data/craig-speakers.json`, conservando `alias` e `characterId`. Le associazioni non dipendono dalla memoria temporanea della chat.
 
