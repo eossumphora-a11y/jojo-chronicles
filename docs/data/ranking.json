@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 1,
+  "title": "JoJo · Classifiche",
+  "edition": "Campagna fiabesca",
+  "baseSnapshot": {
+    "id": "snapshot-2025-06-04",
+    "label": "Classifica rettificata",
+    "date": "2025-06-04",
+    "note": "Totali storici disponibili per 10 personaggi. Per gli altri, storico non accertato."
+  },
+  "people": [
+    {
+      "id": "julia-zeppeli",
+      "name": "Julia Zeppeli",
+      "baseline": 800,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": "Classifica rettificata del 4 giugno 2025"
+    },
+    {
+      "id": "hol-horse",
+      "name": "Hol Horse",
+      "baseline": 550,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": "Classifica rettificata del 4 giugno 2025"
+    },
+    {
+      "id": "babette",
+      "name": "Babette",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "joshwa",
+      "name": "Joshwa",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "betty-darby",
+      "name": "Betty Darby",
+      "baseline": 700,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": "Classifica rettificata del 4 giugno 2025"
+    },
+    {
+      "id": "catrice",
+      "name": "Catrice",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "maddison",
+      "name": "Maddison",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "bonnie",
+      "name": "Bonnie",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "aoi-tsubasa",
+      "name": "Aoi Tsubasa",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "julian",
+      "name": "Julian",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "yekaterina",
+      "name": "Yekaterina",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "jean",
+      "name": "Jean",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "davi",
+      "name": "Davi",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "elisabeth",
+      "name": "Elisabeth",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "mariah",
+      "name": "Mariah",
+      "baseline": 925,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": "Classifica rettificata del 4 giugno 2025"
+    },
+    {
+      "id": "raven-moros",
+      "name": "Raven Moros",
+      "baseline": 1025,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": "Classifica rettificata del 4 giugno 2025"
+    },
+    {
+      "id": "aurelia",
+      "name": "Aurelia",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "lilia",
+      "name": "Lilia",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "angela",
+      "name": "Angela",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "sue-nami",
+      "name": "Sue Nami",
+      "baseline": 566.67,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": "Classifica rettificata del 4 giugno 2025"
+    },
+    {
+      "id": "killian-jones",
+      "name": "Killian Jones",
+      "baseline": 1066.67,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": "Classifica rettificata del 4 giugno 2025"
+    },
+    {
+      "id": "morgan",
+      "name": "Morgan",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "somchai-khanit",
+      "name": "Somchai Khanit",
+      "baseline": 742.86,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": "Classifica rettificata del 4 giugno 2025"
+    },
+    {
+      "id": "ananya",
+      "name": "Ananya",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "dino-sauro",
+      "name": "Dino Sauro",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "zoraida",
+      "name": "Zoraida",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "nahele-smoke-horns",
+      "name": "Nahele Smoke Horns",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "stan-jacobs",
+      "name": "Stan Jacobs",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "mal",
+      "name": "Mal",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "sybren",
+      "name": "Sybren",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "yue-ning",
+      "name": "Yue Ning",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "cassian",
+      "name": "Cassian",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "dom-bren",
+      "name": "Dom Bren",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "eldritch",
+      "name": "Eldritch",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "leontius",
+      "name": "Leontius",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "tim-door",
+      "name": "Tim Door",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "silverstel-steel",
+      "name": "Silverstel Steel",
+      "baseline": 1000,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": "Classifica rettificata del 4 giugno 2025"
+    },
+    {
+      "id": "odette-virel",
+      "name": "Odette Virel",
+      "baseline": 0,
+      "role": "png",
+      "joinedAfterSnapshot": true,
+      "source": "Nuovo PNG creato per l’ultima prova"
+    },
+    {
+      "id": "kang-min-jae",
+      "name": "Kang Min-jae",
+      "baseline": 0,
+      "role": "png",
+      "joinedAfterSnapshot": true,
+      "source": "Nuovo PNG creato per l’ultima prova"
+    },
+    {
+      "id": "amos-dayan",
+      "name": "Amos Dayan",
+      "baseline": null,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": ""
+    },
+    {
+      "id": "nikolai-voss",
+      "name": "Nikolai Voss",
+      "baseline": 0,
+      "role": "png",
+      "joinedAfterSnapshot": true,
+      "source": "Nuovo PNG creato per l’ultima prova"
+    },
+    {
+      "id": "hugo-kaida",
+      "name": "Hugo Kaida",
+      "baseline": 700,
+      "role": "non-specificato",
+      "joinedAfterSnapshot": false,
+      "source": "Classifica rettificata del 4 giugno 2025"
+    }
+  ],
+  "events": [
+    {
+      "id": "ultima-prova",
+      "title": "Terza prova",
+      "date": null,
+      "order": 1,
+      "note": "Data non comunicata. Le 5 squadre al primo posto sono a pari merito.",
+      "phases": [
+        {
+          "id": "parte-1",
+          "title": "Prima parte",
+          "type": "individual",
+          "awards": [
+            {
+              "personId": "hol-horse",
+              "points": 100
+            },
+            {
+              "personId": "babette",
+              "points": 100
+            },
+            {
+              "personId": "joshwa",
+              "points": 100
+            }
+          ],
+          "teams": []
+        },
+        {
+          "id": "parte-2",
+          "title": "Seconda parte",
+          "type": "individual",
+          "awards": [
+            {
+              "personId": "julia-zeppeli",
+              "points": 100
+            }
+          ],
+          "teams": []
+        },
+        {
+          "id": "parte-3",
+          "title": "Terza parte",
+          "type": "teams",
+          "awards": [],
+          "teams": [
+            {
+              "id": "team-1",
+              "rank": 1,
+              "label": "Team 1",
+              "members": [
+                "julia-zeppeli"
+              ],
+              "prize": 1000
+            },
+            {
+              "id": "team-2",
+              "rank": 1,
+              "label": "Team 2",
+              "members": [
+                "hol-horse",
+                "babette",
+                "joshwa"
+              ],
+              "prize": 1000
+            },
+            {
+              "id": "team-3",
+              "rank": 1,
+              "label": "Team 3",
+              "members": [
+                "betty-darby",
+                "catrice",
+                "maddison",
+                "bonnie",
+                "aoi-tsubasa"
+              ],
+              "prize": 1000
+            },
+            {
+              "id": "team-4",
+              "rank": 1,
+              "label": "Team 4",
+              "members": [
+                "julian",
+                "yekaterina",
+                "jean",
+                "davi",
+                "elisabeth",
+                "mariah",
+                "raven-moros"
+              ],
+              "prize": 1000
+            },
+            {
+              "id": "team-5",
+              "rank": 1,
+              "label": "Team 5",
+              "members": [
+                "aurelia",
+                "lilia",
+                "angela"
+              ],
+              "prize": 1000
+            },
+            {
+              "id": "ship-happens",
+              "rank": 2,
+              "label": "Ship Happens",
+              "members": [
+                "sue-nami",
+                "killian-jones",
+                "morgan",
+                "somchai-khanit"
+              ],
+              "prize": 900
+            },
+            {
+              "id": "place-3",
+              "rank": 3,
+              "label": "",
+              "members": [
+                "ananya",
+                "dino-sauro",
+                "zoraida"
+              ],
+              "prize": 800
+            },
+            {
+              "id": "place-4",
+              "rank": 4,
+              "label": "",
+              "members": [
+                "nahele-smoke-horns",
+                "stan-jacobs"
+              ],
+              "prize": 700
+            },
+            {
+              "id": "place-5",
+              "rank": 5,
+              "label": "",
+              "members": [
+                "mal"
+              ],
+              "prize": 600
+            },
+            {
+              "id": "place-6",
+              "rank": 6,
+              "label": "",
+              "members": [
+                "sybren",
+                "yue-ning",
+                "cassian"
+              ],
+              "prize": 500
+            },
+            {
+              "id": "place-7",
+              "rank": 7,
+              "label": "",
+              "members": [
+                "dom-bren"
+              ],
+              "prize": 400
+            },
+            {
+              "id": "place-8",
+              "rank": 8,
+              "label": "",
+              "members": [
+                "eldritch",
+                "leontius",
+                "tim-door",
+                "silverstel-steel"
+              ],
+              "prize": 300
+            },
+            {
+              "id": "place-9",
+              "rank": 9,
+              "label": "",
+              "members": [
+                "odette-virel",
+                "kang-min-jae",
+                "amos-dayan"
+              ],
+              "prize": 200
+            },
+            {
+              "id": "place-10",
+              "rank": 10,
+              "label": "",
+              "members": [
+                "nikolai-voss"
+              ],
+              "prize": 100
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "archive": [
+    {
+      "id": "arch-2025-03-15",
+      "title": "Prima prova storica",
+      "date": "2025-03-15",
+      "note": "Premi precedenti alla classifica base del 4 giugno: già compresi nei totali storici, dove disponibili. Non sommati una seconda volta.",
+      "entries": [
+        {
+          "rank": 1,
+          "participants": "Camille Gagnon",
+          "prize": 1000
+        },
+        {
+          "rank": 2,
+          "participants": "Killian Jones",
+          "prize": 900
+        },
+        {
+          "rank": 3,
+          "participants": "Silverstel Steel",
+          "prize": 800
+        },
+        {
+          "rank": 4,
+          "participants": "Raven Moros",
+          "prize": 700
+        },
+        {
+          "rank": 5,
+          "participants": "Mariah",
+          "prize": 600
+        },
+        {
+          "rank": 6,
+          "participants": "Somchai Khanit",
+          "prize": 500
+        },
+        {
+          "rank": 7,
+          "participants": "Sue Nami",
+          "prize": 400
+        },
+        {
+          "rank": 8,
+          "participants": "Betty Darby",
+          "prize": 300
+        },
+        {
+          "rank": 9,
+          "participants": "Leone",
+          "prize": 200
+        },
+        {
+          "rank": 10,
+          "participants": "Julia Zeppeli",
+          "prize": 100
+        }
+      ],
+      "extras": "Hugo Kaida e Aoi Tsubasa: 100 punti ciascuno (premi comunicati separatamente)."
+    },
+    {
+      "id": "arch-2025-04-24",
+      "title": "Seconda prova storica",
+      "date": "2025-04-24",
+      "note": "Assegnazioni storiche delle squadre; non ricostruiscono da sole il totale di tutti i partecipanti.",
+      "entries": [
+        {
+          "rank": 1,
+          "participants": "Jean, Johnny, Elisabeth, Yekaterina, Somchai, Riccardo, Joshua",
+          "prize": 1000
+        },
+        {
+          "rank": 2,
+          "participants": "Raven, Mariah, Camille, Hol Horse",
+          "prize": 900
+        },
+        {
+          "rank": 3,
+          "participants": "Silverstel, Leone Eldroitch, Ken",
+          "prize": 800
+        },
+        {
+          "rank": 4,
+          "participants": "Julia Zeppeli",
+          "prize": 700
+        },
+        {
+          "rank": 5,
+          "participants": "Hugo Kaida",
+          "prize": 600
+        },
+        {
+          "rank": 6,
+          "participants": "Killian, Sue, Morgan",
+          "prize": 500
+        },
+        {
+          "rank": 7,
+          "participants": "Betty Darby",
+          "prize": 400
+        },
+        {
+          "rank": 8,
+          "participants": "Aoi Tsubasa, Catrice Valentine",
+          "prize": 300
+        },
+        {
+          "rank": 9,
+          "participants": "Ava Bennet, Hermes River, Akira Nakamura",
+          "prize": 200
+        },
+        {
+          "rank": 10,
+          "participants": "Dino Sauro",
+          "prize": 100
+        }
+      ],
+      "extras": "Nello storico sono presenti anche premi individuali intermedi da 100 punti, ma non tutti i collegamenti fra nomi/identità sono confermati."
+    }
+  ],
+  "notes": [
+    "La classifica generale include soltanto i personaggi con un totale storico completo noto oppure PNG nuovi con saldo iniziale zero.",
+    "I partecipanti senza punteggio storico completo compaiono nell’elenco, ma non ricevono una posizione generale arbitraria.",
+    "Le prime due prove del 2025 sono archiviate per consultazione: i loro premi non vengono sommati di nuovo alla classifica base del giugno 2025.",
+    "La data dell’ultima prova non è stata comunicata, quindi è rappresentata come evento successivo alla classifica base senza una data fittizia."
+  ]
+}

@@ -1,0 +1,82 @@
+/* Native JoJo Chronicles ranking. Matches the current light editorial layout. */
+#view-classifica{--rk-border:#e9e2e8;--rk-ink:#302a32;--rk-muted:#817782;--rk-violet:#795475;--rk-soft:#f6f2f6}
+#view-classifica .page-heading{margin-bottom:22px}
+.ranking-tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--rk-border);padding:0 0 15px;margin-bottom:24px}
+.ranking-tab{background:#fff;color:#776c78;border:1px solid #e7dfe6;border-radius:9px;padding:10px 14px;font-size:12px;font-weight:750;transition:border-color .15s,background .15s,color .15s}
+.ranking-tab:hover{border-color:#b99eb9;color:#583953;background:#fbf8fb}
+.ranking-tab.active{color:#714b70;background:#f0eaf0;border-color:#e2d5e1;box-shadow:inset 0 -3px #8b637d}
+.ranking-content{display:grid;gap:21px;padding-bottom:24px;min-width:0}
+.ranking-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.ranking-metric{border:1px solid var(--rk-border);background:#fff;border-radius:12px;min-height:123px;padding:18px 19px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 5px 17px #36273508}
+.ranking-metric-label{font-size:10px;letter-spacing:.09em;color:#918492;font-weight:800}
+.ranking-metric-value{display:block;font:700 clamp(23px,3vw,33px)/1.24 'Libre Baskerville',Georgia,serif;color:#352b37;margin:8px 0 6px;overflow-wrap:anywhere}
+.ranking-metric-note{color:#89818b;font-size:11px;line-height:1.5}
+.ranking-overview-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(310px,.95fr);gap:19px;align-items:stretch}
+.ranking-phase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.ranking-panel{background:#fff;border:1px solid var(--rk-border);border-radius:13px;min-width:0;overflow:hidden;padding-bottom:5px;box-shadow:0 5px 19px #3a253809}
+.ranking-panel-heading{padding:22px 23px 15px}
+.ranking-panel-heading h2{font:700 clamp(18px,2.2vw,22px)/1.36 'Libre Baskerville',Georgia,serif;color:var(--rk-ink);margin:0 0 7px;letter-spacing:-.025em}
+.ranking-panel-heading p{font-size:12px;line-height:1.7;color:#857984;margin:0;max-width:900px}
+.ranking-table-scroll{overflow-x:auto;max-width:100%;scrollbar-width:thin;scrollbar-color:#c0afc2 #f8f5f8}
+.ranking-table{border-collapse:collapse;width:100%;font-size:12px;min-width:580px}
+.ranking-table th{text-align:left;color:#978c99;letter-spacing:.1em;font-weight:800;font-size:9px;white-space:nowrap;background:#faf8fa;padding:13px 16px;border-top:1px solid #f0ecf0;border-bottom:1px solid #eae4e9}
+.ranking-table td{text-align:left;color:#544b58;padding:14px 16px;border-bottom:1px solid #f0ecef;vertical-align:middle;line-height:1.55;white-space:nowrap}
+.ranking-table tbody tr:last-child td{border-bottom:none}
+.ranking-table tbody tr:hover{background:#fcf9fc}
+.ranking-table tbody tr[hidden]{display:none}
+.ranking-table td:last-child,.ranking-table th:last-child{padding-right:22px}
+.ranking-table td:last-child .ranking-strong{color:#765277}
+.ranking-strong{color:#302a32;font-weight:800}
+.ranking-place{display:inline-flex;min-width:34px;padding:5px 9px;border-radius:7px;justify-content:center;align-items:center;background:#eff0f3;color:#777e8a;font-size:11px;font-weight:850}
+.ranking-place-1{background:#fcf1d7;color:#9b701f;border:1px solid #f2e1b6}
+.ranking-place-2{background:#eef1f8;color:#647b9d;border:1px solid #dde6f3}
+.ranking-place-3{background:#f7eee7;color:#a97350;border:1px solid #f0dfd0}
+.ranking-chips{display:flex;gap:5px;flex-wrap:wrap;max-width:510px}
+.ranking-chip{font-size:10px;font-weight:650;background:#f5f0f6;color:#70566e;border:1px solid #eadfea;border-radius:6px;padding:5px 8px;white-space:nowrap}
+.ranking-button{background:#fff;border:1px solid #e3d9e3;border-radius:9px;color:#664c66;font-size:12px;font-weight:700;padding:10px 14px;cursor:pointer}
+.ranking-button:hover{background:#f8f3f8;border-color:#b99fbb}
+.ranking-button-primary{background:#342b37;color:#fff;border-color:#342b37}
+.ranking-button-primary:hover{background:#5d475d;border-color:#5d475d}
+.ranking-button-link{margin:16px 23px 18px;border-color:transparent;background:transparent;padding:4px 0;color:#765276;text-align:left}
+.ranking-button-link:hover{color:#40273f;background:transparent;border-color:transparent;text-decoration:underline}
+.ranking-note{font-size:12px;color:#726575;line-height:1.75;margin:0;background:#f7f3f7;border:1px solid #e9e0ea;border-radius:10px;padding:14px 17px}
+.ranking-note-error{color:#9d4545;border-color:#ebc7c7;background:#fff4f4}
+.ranking-panel .ranking-note{margin:12px 18px 18px}
+.ranking-section-heading{display:flex;flex-direction:column;gap:5px;margin:4px 0 0}
+.ranking-section-heading h2{font:700 24px 'Libre Baskerville',Georgia,serif;color:#382d3b;margin:0;letter-spacing:-.03em}
+.ranking-section-heading p{font-size:12px;color:#827887;margin:0}
+.ranking-winner{margin:0 20px 12px;padding:12px 14px 13px;background:#fdfbf9;border:1px solid #eee3de;border-radius:9px}
+.ranking-winner-title{display:flex;align-items:center;gap:9px}
+.ranking-winner-title strong{font-size:13px;color:#483648}
+.ranking-winner-icon{color:#a7814a;font-size:14px}
+.ranking-winner p{margin:6px 0 8px;font-size:11px;color:#8c7d89;line-height:1.6}
+.ranking-winner-points{font-size:11px;color:#9b6e38;font-weight:800}
+.ranking-team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.ranking-team-card{border:1px solid var(--rk-border);border-radius:13px;padding:19px 20px;background:#fff;display:flex;flex-direction:column;gap:17px;box-shadow:0 4px 13px #3a263706}
+.ranking-team-card-winner{background:linear-gradient(145deg,#fffaf3,#fff 52%);border-color:#eee0c5}
+.ranking-team-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ranking-team-head h3{margin:0;font:700 18px 'Libre Baskerville',Georgia,serif;color:#413744;letter-spacing:-.025em}
+.ranking-team-prize{margin-left:auto;color:#976f3f;font-size:12px}
+.ranking-team-foot{font-size:11px;color:#89808b;margin:0}
+.ranking-chart-row{margin:0 22px 21px}
+.ranking-chart-label{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:9px;font-size:12px}
+.ranking-chart-label strong{color:#453b47;font-weight:750}
+.ranking-chart-label span{color:#8d7f8b;font-size:11px;font-variant-numeric:tabular-nums}
+.ranking-chart-bars{display:grid;gap:5px}
+.ranking-chart-track{height:12px;background:#f1ecf1;border-radius:5px;overflow:hidden}
+.ranking-chart-fill{height:100%;display:block;border-radius:5px}
+.ranking-chart-fill-baseline{background:#b8a5ba}
+.ranking-chart-fill-current{background:linear-gradient(90deg,#8c6889,#ad8caa)}
+.ranking-chart-legend{display:flex;gap:16px;margin:4px 23px 23px;flex-wrap:wrap;color:#807784;font-size:11px}
+.ranking-legend-before{color:#a68ba8}
+.ranking-legend-after{color:#785477}
+.ranking-filter{padding:0 18px 15px}
+.ranking-search{background:#fff;color:#312933;border:1px solid #e4dce4;border-radius:9px;max-width:340px;width:100%;height:41px;padding:8px 12px;font-size:12px}
+.ranking-search:focus{border-color:#9f80a3;outline:2px solid #b69eb644;outline-offset:2px}
+.ranking-search::placeholder{color:#a49aa4}
+.ranking-export-actions{display:flex;flex-wrap:wrap;gap:10px;padding:0 22px 22px}
+.ranking-notes{padding:0 28px 19px 40px;margin:0;color:#6c626e;font-size:12px;line-height:1.9}
+.ranking-loading{padding:28px;color:#817783;font-size:13px}
+@media(max-width:1100px){.ranking-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.ranking-overview-layout{grid-template-columns:1fr}.ranking-team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.ranking-tabs{overflow-x:auto;flex-wrap:nowrap;white-space:nowrap;padding-bottom:10px;scrollbar-width:thin}.ranking-tab{padding:9px 12px;flex:0 0 auto}.ranking-team-grid,.ranking-phase-grid{grid-template-columns:1fr}.ranking-panel-heading{padding:18px}.ranking-table td,.ranking-table th{padding:12px}.ranking-metric{min-height:100px;padding:13px}.ranking-chart-row{margin:0 15px 20px}.ranking-team-head h3{font-size:17px}.ranking-chips{max-width:unset}}
+@media(max-width:430px){.ranking-metrics{gap:8px}.ranking-metric-value{font-size:23px}.ranking-metric-label{font-size:9px}.ranking-metric-note{font-size:10px}}
