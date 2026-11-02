@@ -401,15 +401,16 @@ async function applyNarrativeEdition(){
  }catch(e){console.warn('L’edizione narrativa non è stata caricata',e)}
 }
 function mergeData(local,db){
+ const hiddenPrivateRecords=new Set(['oggetto-pietra-scritta-rossa']);
  // Il file docs/data/public.json è l'archivio approvato dal Master.
  // Il database può aggiungere nuove voci pubbliche, ma non cancellare o
  // sostituire un resoconto, la sua cronologia o una scheda già pubblicata.
- const localEntries=Array.isArray(local?.entries)?local.entries.filter(x=>x&&x.public!==false):[];
+ const localEntries=Array.isArray(local?.entries)?local.entries.filter(x=>x&&x.public!==false&&!hiddenPrivateRecords.has(x.id)):[];
  const localSessions=Array.isArray(local?.sessions)?local.sessions.filter(x=>x&&x.public!==false):[];
  const mapE=new Map(localEntries.map(x=>[x.id,x]));
  const mapS=new Map(localSessions.map(x=>[x.id,x]));
  for(const x of (Array.isArray(db?.entries)?db.entries:[])){
-  if(!x||!x.id||x.public===false||!['character','stand','location','faction','artifact','clue','other'].includes(x.kind))continue;
+  if(!x||!x.id||hiddenPrivateRecords.has(x.id)||x.public===false||!['character','stand','location','faction','artifact','clue','other'].includes(x.kind))continue;
   if(!mapE.has(x.id))mapE.set(x.id,x);
  }
  for(const x of (Array.isArray(db?.sessions)?db.sessions:[])){
