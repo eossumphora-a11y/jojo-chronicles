@@ -14,7 +14,6 @@
       "body": "Jean utilizza la rotazione delle proprie sfere per muoversi fra gli scogli. Nello scontro intrappola Sue Nami nei fili del suo Stand, prima che le grandi forbici di POOR SOULS li taglino. Viene investito dall’ondata, ma poi aiuta a spingere e governare la zattera verso l’altra sponda. Dopo il traguardo Jean tenta di attaccare un membro della squadra avversaria, ma i Grimm compaiono e lo fermano.",
       "related": [
         "luogo-fiume-01",
-        "oggetto-pietra-scritta-rossa",
         "personaggio-betty"
       ],
       "tags": [
@@ -51,13 +50,6 @@
           "time": "",
           "type": "azione",
           "text": "Oltrepassato il traguardo tenta di attaccare un membro della squadra avversaria, ma i Grimm arrivano e lo fermano."
-        },
-        {
-          "session_id": "sessione-sopravvivenza-01",
-          "session_title": "La prova della sopravvivenza",
-          "time": "02:20",
-          "type": "azione",
-          "text": "Una pietra con una vecchia scritta rossa colpisce il suo piede; sulla pietra si legge «joao» in rosso."
         },
         {
           "session_id": "sessione-sopravvivenza-01",
@@ -720,23 +712,6 @@
       "public": true
     },
     {
-      "id": "oggetto-pietra-scritta-rossa",
-      "kind": "artifact",
-      "title": "Pietra con scritta rossa",
-      "subtitle": "Indizio rinvenuto durante la prova",
-      "summary": "Un frammento di pietra colpisce il piede di Jean. Sulla pietra si legge in rosso «joao».",
-      "body": "Il frammento compare mentre il gruppo cerca di sopravvivere alle raffiche e all'automa. Sulla pietra si legge la scritta rossa «joao»; il suo significato non è ancora stato chiarito. È un oggetto distinto dal sasso usato più tardi per attirare l'automa con il rumore; dopo la prova non se ne conosce la sorte.",
-      "tags": [
-        "indizio",
-        "joao"
-      ],
-      "related": [
-        "pg-jean",
-        "trial-sopravvivenza"
-      ],
-      "public": true
-    },
-    {
       "id": "oggetto-medaglione-camille",
       "kind": "artifact",
       "title": "Medaglione con Camille",
@@ -970,7 +945,7 @@
       "sortOrder": 2,
       "date": "",
       "title": "La prova della sopravvivenza",
-      "summary": "Dopo la prova del fiume, vi ritrovate davanti a una nuova arena. L'unica istruzione è «Sopravvivete». Alcune squadre oltrepassano una soglia e scompaiono alla vista; altri movimenti sembrano ricondurre indietro i partecipanti. Cercate di capire il funzionamento dell'accesso. Una partecipante prova a lanciare una pietra verso il centro e vengono incaricati dei nani di scavare una buca come possibile riparo. Raven osserva che il posto gli sembra familiare, ma non lo associa a bei ricordi, e si tocca il collo. Non spiega il motivo.\n\nBetty arriva con il suo gruppo e propone una tregua per affrontare insieme la prova. Si rivolge in particolare a Elisabeth e afferma di non voler usare il potere del proprio Stand per stipulare l'accordo. La proposta non viene accettata senza discussione: Elisabeth chiede a Betty cosa guadagni dalla tregua e se vi siano condizioni nascoste, poi richiama Jean e consulta i compagni. Betty e le sue alleate mostrano progetti blu, che a loro dire provengono da un'area dello staff. Le tavole contengono scritte in tedesco e preannunciano raffiche violente, la necessità di costruire ripari e l'arrivo di un automa che vede poco ma reagisce ai rumori. Le direzioni del vento, spiegano, non sono note in anticipo.\n\nQuando inizia la raccolta dei materiali, l'arena offre basalto, granito, marmo, cemento, mattoni e pietrisco, di resistenza diversa. Non tutti i pezzi sopravvivono al trasporto: alcuni si rompono o si sbriciolano. Progettate un riparo protetto da più lati, valutando anche come accogliere i compagni del gruppo di Betty. Si parla inizialmente di circa ventidue pezzi e della possibilità di usare una trincea, ma non ogni parte dei piani discussi viene realizzata. Animali e piccole creature legate agli Stand aiutano a recuperare i materiali. Raven usa forme d'ombra per portare pietre e acqua; Mariah contribuisce al trasporto del basalto dall'alto. Alla fine i materiali raccolti arrivano a circa ventisei pezzi.\n\nNei pressi della zona centrale c'è acqua da bere: chi la utilizza recupera forze e, quando viene versata sull'erba, questa appare più rigogliosa. Mentre continuate a costruire, nell'arena si sente un flauto di Pan. La prima raffica travolge chi è ancora scoperto e si abbatte con violenza sui muri appena costruiti. Le squadre che hanno già eretto dei muri riescono ad assorbire parte dell'urto. Più tardi una seconda raffica arriva da sud-ovest: il rifugio perde alcuni frammenti, ma rimane in piedi. Nemmeno chi si ripara dietro i muri esce completamente indenne dall'urto.\n\nPoi la superficie del lago si muove. Ne emerge un gigantesco automa, simile a un tornado meccanico fatto di tubi, ingranaggi e cerchi in movimento. Il macchinario genera vento e usa una palla demolitrice per colpire avversari e strutture. Dopo un momento di silenzio, le grida di alcuni concorrenti attirano la sua attenzione: la creatura sembra inseguire i suoni più che vedere chiaramente ciò che la circonda. Il gruppo cerca così di restare silenzioso, consolidare il riparo e recuperare acqua senza farsi individuare.\n\nAlcuni nani vengono inviati con piccoli teletrasporti a prendere acqua senza fare rumore. Tornano senza difficoltà, portando ai compagni acqua con cui riprendersi. Una donna dall'aspetto felino, appartenente alla squadra di Betty, accompagna inoltre una persona al lago: i colori del mondo diventano viola e le due attraversano una parete come se fosse intangibile. La persona beve e recupera acqua, poi torna al rifugio. \n\nMentre il vento continua a colpire le strutture, una serie di esplosioni simili a petardi disorienta l'automa, che si dirige verso i rumori e urta vari ostacoli. In un altro momento, per distrarlo durante il recupero dell'acqua, viene fatta battere una pietra contro un'altra lontano dal gruppo: il macchinario si gira verso il rumore, ma non si muove. I nani rientrano con l'acqua. Intanto un piccolo frammento colpisce il piede di Jean; sulla pietra è incisa in rosso la parola «joao». Non è la stessa pietra utilizzata per attirare l'automa.\n\nLe ultime raffiche mettono in crisi le altre fortificazioni. Durante la fase finale una nuova raffica scuote l'arena e diversi ripari concorrenti cedono. Il vostro gruppo continua a resistere finché l'automa rallenta, si spegne e si disgrega, lasciando cadere i pezzi meccanici. Sul vostro rifugio piovono coriandoli: avete superato la prova.\n\nTornati all'area di partenza, vedete una classifica nel cielo. La vostra squadra compare al primo posto insieme ad altri partecipanti. Compaiono microfoni e si apre una discussione sulla condivisione dei punti. Elisabeth si pronuncia a favore del primo posto condiviso: a suo giudizio, le squadre se lo sono guadagnato. La discussione prosegue. Il gruppo di Sue Nami appare al secondo posto. Sue Nami si dice favorevole alla condivisione, accolta dall'annunciatrice. Finita la cerimonia, riconoscete nell'area lo stesso spazio di una festa precedente, ora privo del grande castello gonfiabile.\n\nSubito dopo Betty torna a parlare di un patto. Dichiara di aver stretto un nuovo accordo con Yekaterina che avrebbe sostituito quello precedente: secondo Betty, le anime degli altri membri del gruppo verranno liberate soltanto quando Yekaterina ucciderà Somchai. Sostiene anche che Jean sia già libero da quel vincolo. Resta da capire quanto ci sia di vero nelle sue parole. Alcuni protestano e discutono del sacco associato all'accordo precedente, che viene detto scomparso. Quando viene messa in dubbio, Betty sembra sincera. Il suo comportamento, però, non chiarisce la natura del patto. Infine Mariah mostra un medaglione con il ritratto di Camille. Si racconta che Camille fosse molto forte e che sarebbe stata uccisa, ma restano ignote le circostanze.",
+      "summary": "Dopo la prova del fiume, vi ritrovate davanti a una nuova arena. L'unica istruzione è «Sopravvivete». Alcune squadre oltrepassano una soglia e scompaiono alla vista; altri movimenti sembrano ricondurre indietro i partecipanti. Cercate di capire il funzionamento dell'accesso. Una partecipante prova a lanciare una pietra verso il centro e vengono incaricati dei nani di scavare una buca come possibile riparo. Raven osserva che il posto gli sembra familiare, ma non lo associa a bei ricordi, e si tocca il collo. Non spiega il motivo.\n\nBetty arriva con il suo gruppo e propone una tregua per affrontare insieme la prova. Si rivolge in particolare a Elisabeth e afferma di non voler usare il potere del proprio Stand per stipulare l'accordo. La proposta non viene accettata senza discussione: Elisabeth chiede a Betty cosa guadagni dalla tregua e se vi siano condizioni nascoste, poi richiama Jean e consulta i compagni. Betty e le sue alleate mostrano progetti blu, che a loro dire provengono da un'area dello staff. Le tavole contengono scritte in tedesco e preannunciano raffiche violente, la necessità di costruire ripari e l'arrivo di un automa che vede poco ma reagisce ai rumori. Le direzioni del vento, spiegano, non sono note in anticipo.\n\nQuando inizia la raccolta dei materiali, l'arena offre basalto, granito, marmo, cemento, mattoni e pietrisco, di resistenza diversa. Non tutti i pezzi sopravvivono al trasporto: alcuni si rompono o si sbriciolano. Progettate un riparo protetto da più lati, valutando anche come accogliere i compagni del gruppo di Betty. Si parla inizialmente di circa ventidue pezzi e della possibilità di usare una trincea, ma non ogni parte dei piani discussi viene realizzata. Animali e piccole creature legate agli Stand aiutano a recuperare i materiali. Raven usa forme d'ombra per portare pietre e acqua; Mariah contribuisce al trasporto del basalto dall'alto. Alla fine i materiali raccolti arrivano a circa ventisei pezzi.\n\nNei pressi della zona centrale c'è acqua da bere: chi la utilizza recupera forze e, quando viene versata sull'erba, questa appare più rigogliosa. Mentre continuate a costruire, nell'arena si sente un flauto di Pan. La prima raffica travolge chi è ancora scoperto e si abbatte con violenza sui muri appena costruiti. Le squadre che hanno già eretto dei muri riescono ad assorbire parte dell'urto. Più tardi una seconda raffica arriva da sud-ovest: il rifugio perde alcuni frammenti, ma rimane in piedi. Nemmeno chi si ripara dietro i muri esce completamente indenne dall'urto.\n\nPoi la superficie del lago si muove. Ne emerge un gigantesco automa, simile a un tornado meccanico fatto di tubi, ingranaggi e cerchi in movimento. Il macchinario genera vento e usa una palla demolitrice per colpire avversari e strutture. Dopo un momento di silenzio, le grida di alcuni concorrenti attirano la sua attenzione: la creatura sembra inseguire i suoni più che vedere chiaramente ciò che la circonda. Il gruppo cerca così di restare silenzioso, consolidare il riparo e recuperare acqua senza farsi individuare.\n\nAlcuni nani vengono inviati con piccoli teletrasporti a prendere acqua senza fare rumore. Tornano senza difficoltà, portando ai compagni acqua con cui riprendersi. Una donna dall'aspetto felino, appartenente alla squadra di Betty, accompagna inoltre una persona al lago: i colori del mondo diventano viola e le due attraversano una parete come se fosse intangibile. La persona beve e recupera acqua, poi torna al rifugio. \n\nMentre il vento continua a colpire le strutture, una serie di esplosioni simili a petardi disorienta l'automa, che si dirige verso i rumori e urta vari ostacoli. In un altro momento, per distrarlo durante il recupero dell'acqua, viene fatta battere una pietra contro un'altra lontano dal gruppo: il macchinario si gira verso il rumore, ma non si muove. I nani rientrano con l'acqua. Intanto un piccolo frammento colpisce il piede di Jean.\n\nLe ultime raffiche mettono in crisi le altre fortificazioni. Durante la fase finale una nuova raffica scuote l'arena e diversi ripari concorrenti cedono. Il vostro gruppo continua a resistere finché l'automa rallenta, si spegne e si disgrega, lasciando cadere i pezzi meccanici. Sul vostro rifugio piovono coriandoli: avete superato la prova.\n\nTornati all'area di partenza, vedete una classifica nel cielo. La vostra squadra compare al primo posto insieme ad altri partecipanti. Compaiono microfoni e si apre una discussione sulla condivisione dei punti. Elisabeth si pronuncia a favore del primo posto condiviso: a suo giudizio, le squadre se lo sono guadagnato. La discussione prosegue. Il gruppo di Sue Nami appare al secondo posto. Sue Nami si dice favorevole alla condivisione, accolta dall'annunciatrice. Finita la cerimonia, riconoscete nell'area lo stesso spazio di una festa precedente, ora privo del grande castello gonfiabile.\n\nSubito dopo Betty torna a parlare di un patto. Dichiara di aver stretto un nuovo accordo con Yekaterina che avrebbe sostituito quello precedente: secondo Betty, le anime degli altri membri del gruppo verranno liberate soltanto quando Yekaterina ucciderà Somchai. Sostiene anche che Jean sia già libero da quel vincolo. Resta da capire quanto ci sia di vero nelle sue parole. Alcuni protestano e discutono del sacco associato all'accordo precedente, che viene detto scomparso. Quando viene messa in dubbio, Betty sembra sincera. Il suo comportamento, però, non chiarisce la natura del patto. Infine Mariah mostra un medaglione con il ritratto di Camille. Si racconta che Camille fosse molto forte e che sarebbe stata uccisa, ma restano ignote le circostanze.",
       "events": [
         {
           "time": "00:07",
@@ -1030,7 +1005,7 @@
         },
         {
           "time": "02:18",
-          "text": "Rumori ed esplosioni simili a petardi disorientano l'automa. Un frammento con la scritta rossa «joao» colpisce il piede di Jean."
+          "text": "Rumori ed esplosioni simili a petardi disorientano l'automa. Un frammento colpisce il piede di Jean."
         },
         {
           "time": "02:24",
@@ -1083,7 +1058,6 @@
         "personaggio-betty",
         "personaggio-camille",
         "oggetto-progetti-arena",
-        "oggetto-pietra-scritta-rossa",
         "oggetto-medaglione-camille",
         "luogo-arena-01",
         "luogo-lago-arena",
