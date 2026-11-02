@@ -203,3 +203,11 @@ Per i resoconti della campagna, la fonte dei nomi è `docs/data/craig-speakers.j
 Non sono stati forniti file audio da pubblicare: le fonti sono gli SRT. La pagina della sessione mostra i nomi delle tracce e il relativo personaggio. **Non si possono attribuire automaticamente al personaggio tutte le frasi di un giocatore**, perché possono essere commenti fuori gioco. Il sistema locale `speaker_aliases.py` legge la stessa tabella per annotare i parlanti prima della generazione di nuovi recap; conserva le etichette originali e segnala le attribuzioni non confermate. Il Master deve comunque controllare i resoconti prima di pubblicarli.
 
 **Modifiche future:** correggere l'alias in `docs/data/craig-speakers.json`, conservando `alias` e `characterId`. Le associazioni non dipendono dalla memoria temporanea della chat.
+
+## Regola editoriale: recap narrativi, senza metatesto
+
+**Ogni resoconto destinato ai giocatori deve raccontare esclusivamente gli eventi della storia.** Nei recap breve, standard, dettagliato e combattimento, così come negli eventi di cronologia e nelle schede narrative, non devono comparire riferimenti a: giocatori reali, Master/narratore, dadi, tiri, danni numerici, punti ferita, registrazioni, trascrizioni, file, attribuzioni audio o procedure di verifica. Per le informazioni non accertate si usano formulazioni diegetiche quali «Betty sostiene...» oppure «resta da capire...», senza inventare conferme.
+
+Le **associazioni Craig** sono metadati separati dall'opera narrativa, mostrati soltanto nel riquadro delle tracce della sessione. Aiutano a individuare il personaggio quando parla il giocatore, ma un intervento fuori personaggio non diventa automaticamente un'azione del PG.
+
+Correzione del capitolo della sopravvivenza: **è Mariah a mostrare il medaglione con Camille**. La scena è stata aggiornata nelle quattro versioni del recap, negli eventi, nelle schede e nell'inventario pubblico di Mariah.

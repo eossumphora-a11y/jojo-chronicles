@@ -203,14 +203,14 @@
           "session_title": "La prova della sopravvivenza",
           "time": "00:32:28",
           "type": "dialogo",
-          "text": "La sua giocatrice chiede a Betty cosa guadagnerebbe dalla tregua e se l'accordo nasconda ulteriori condizioni (attribuzione della voce dalla traccia Craig marialuisa9042)."
+          "text": "Elisabeth chiede a Betty che cosa guadagni dalla tregua e se ci siano condizioni nascoste."
         },
         {
           "session_id": "sessione-sopravvivenza-01",
           "session_title": "La prova della sopravvivenza",
           "time": "00:35:26",
           "type": "azione",
-          "text": "La sua giocatrice descrive Elisabeth mentre raduna il gruppo e richiama Jean prima di decidere se collaborare con Betty."
+          "text": "Elisabeth richiama Jean e riunisce i compagni prima di decidere se accettare la tregua."
         }
       ]
     },
@@ -223,7 +223,9 @@
       "body": "All'inizio dello scontro Mariah solleva due compagni e li porta in volo fino a un masso. Poco dopo viene colpita da un forte mal di testa dovuto alla dissonanza tra Stand, mentre il suo Stand resta immobile. I colpi si susseguono finché Mariah non perde le forze. Durante la fuga Yekaterina la assiste e la conduce con il gruppo oltre il fiume.",
       "related": [
         "personaggio-raven",
-        "trial-sopravvivenza"
+        "trial-sopravvivenza",
+        "oggetto-medaglione-camille",
+        "personaggio-camille"
       ],
       "tags": [
         "partecipante"
@@ -252,6 +254,22 @@
           "time": "01:37",
           "type": "azione",
           "text": "Contribuisce alla fortificazione trasportando basalto in volo."
+        },
+        {
+          "session_id": "sessione-sopravvivenza-01",
+          "session_title": "La prova della sopravvivenza",
+          "time": "03:03",
+          "type": "azione",
+          "text": "Mariah mostra un medaglione con il ritratto di Camille; nel corso della conversazione si racconta che Camille fosse molto forte e che sarebbe stata uccisa."
+        }
+      ],
+      "public_inventory": [
+        {
+          "name": "Medaglione con Camille",
+          "state": "Mostrato durante la conversazione finale",
+          "session_id": "sessione-sopravvivenza-01",
+          "time": "03:03",
+          "notes": "Mariah mostra il medaglione con il ritratto di Camille."
         }
       ]
     },
@@ -623,7 +641,7 @@
       "title": "Betty",
       "subtitle": "Partecipante incontrata nell'arena",
       "summary": "Propone una collaborazione durante la prova della sopravvivenza. Dopo la vittoria dichiara di aver stipulato un nuovo patto con Yekaterina.",
-      "body": "Betty si presenta con il proprio gruppo e propone una tregua; afferma di non voler usare il potere del suo Stand per sancirla. Le sue compagne mostrano progetti blu dell'arena. Dopo la prova Betty sostiene che un accordo successivo con Yekaterina abbia sostituito un patto precedente: secondo la sua versione, le anime degli altri saranno liberate quando Yekaterina ucciderà Somchai, mentre Jean sarebbe già libero dal vincolo. In seguito a un controllo il narratore riferisce che Betty sembra sincera, ma ciò non verifica in modo indipendente i meccanismi del patto.",
+      "body": "Betty si presenta con il proprio gruppo e propone una tregua; afferma di non voler usare il potere del suo Stand per sancirla. Le sue compagne mostrano progetti blu dell'arena. Dopo la prova Betty sostiene che un accordo successivo con Yekaterina abbia sostituito un patto precedente: secondo la sua versione, le anime degli altri saranno liberate quando Yekaterina ucciderà Somchai, mentre Jean sarebbe già libero dal vincolo. Betty sembra sincera, ma non spiega come funzioni davvero il nuovo patto.",
       "tags": [
         "npc",
         "tregua",
@@ -651,7 +669,7 @@
           "session_title": "La prova della sopravvivenza",
           "time": "02:54",
           "type": "dialogo",
-          "text": "Dichiara un patto con Yekaterina che legherebbe la liberazione delle anime alla morte di Somchai. Non è una conferma indipendente."
+          "text": "Betty sostiene di aver stretto un nuovo patto con Yekaterina: secondo lei le anime degli altri saranno liberate solo quando Yekaterina ucciderà Somchai."
         }
       ]
     },
@@ -660,15 +678,16 @@
       "kind": "character",
       "title": "Camille",
       "subtitle": "Persona citata in un dialogo",
-      "summary": "Durante la conversazione finale viene mostrato un medaglione con la sua immagine. Una persona racconta che Camille era molto forte e che sarebbe stata uccisa.",
-      "body": "Camille viene nominata nella parte finale della sessione. Qualcuno mostra un medaglione che la raffigura e sostiene che fosse molto forte e che sia stata uccisa. Non sono chiari né il nome di chi parla né le circostanze di quanto raccontato. Non viene documentata una sua apparizione diretta.",
+      "summary": "Mariah mostra un medaglione con il ritratto di Camille. Si racconta che fosse molto forte e che sarebbe stata uccisa.",
+      "body": "Camille viene nominata dopo la prova della sopravvivenza. Mariah mostra un medaglione che la raffigura. Durante la conversazione viene raccontato che Camille era molto forte e che sarebbe stata uccisa, ma nessuno ne chiarisce le circostanze.",
       "tags": [
         "citata",
         "medaglione",
         "testimonianza non verificata"
       ],
       "related": [
-        "oggetto-medaglione-camille"
+        "oggetto-medaglione-camille",
+        "personaggio-mariah"
       ],
       "public": true,
       "character_role": "npc",
@@ -678,7 +697,7 @@
           "session_title": "La prova della sopravvivenza",
           "time": "03:03",
           "type": "menzione",
-          "text": "Viene nominata e appare ritratta su un medaglione; la sua presunta morte è riferita da un personaggio."
+          "text": "Mariah mostra un medaglione con il ritratto di Camille, di cui si raccontano la forza e la presunta morte."
         }
       ]
     },
@@ -722,15 +741,16 @@
       "kind": "artifact",
       "title": "Medaglione con Camille",
       "subtitle": "Oggetto mostrato in un dialogo",
-      "summary": "Durante la conversazione finale, una persona mostra un medaglione con l'immagine di Camille.",
-      "body": "L'immagine sul medaglione è associata al nome Camille. Chi lo mostra racconta che fosse molto forte e che sarebbe stata uccisa. L'identità del possessore e la verità delle circostanze raccontate non sono state stabilite.",
+      "summary": "Mariah mostra un medaglione con il ritratto di Camille durante la conversazione che segue la prova della sopravvivenza.",
+      "body": "Sul medaglione compare il ritratto di Camille. Mariah lo mostra durante la conversazione finale, quando si racconta che Camille era molto forte e che sarebbe stata uccisa. Le circostanze della sua morte restano sconosciute.",
       "tags": [
         "medaglione",
         "ritratto",
         "testimonianza"
       ],
       "related": [
-        "personaggio-camille"
+        "personaggio-camille",
+        "personaggio-mariah"
       ],
       "public": true
     },
@@ -777,7 +797,7 @@
       "title": "La prova della sopravvivenza",
       "subtitle": "Terza prova: «Sopravvivete»",
       "summary": "I partecipanti costruiscono ripari contro raffiche violente e resistono a un enorme automa che insegue i suoni. Il gruppo supera la prova.",
-      "body": "Nella nuova arena vengono raccolti materiali di resistenza diversa per costruire fortificazioni. Il vento, annunciato dal suono di un flauto di Pan, investe i ripari; il narratore dichiara raffiche da 24, 13 e 11 danni in momenti diversi. Un automa meccanico emerge dal lago e segue i rumori. Il gruppo si ripara, recupera acqua, usa diversivi e sopravvive fino allo spegnimento del macchinario. Piovono coriandoli e compare una classifica: il gruppo è tra i primi classificati, mentre quello di Sue Nami è secondo. Il punteggio numerico e tutti i nomi dei pari merito non sono verificabili.",
+      "body": "Nella nuova arena vengono raccolti materiali di resistenza diversa per costruire fortificazioni. Il vento, annunciato dal suono di un flauto di Pan, investe i ripari; le raffiche investono le fortificazioni con violenza crescente. Un automa meccanico emerge dal lago e segue i rumori. Il gruppo si ripara, recupera acqua, usa diversivi e sopravvive fino allo spegnimento del macchinario. Piovono coriandoli e compare una classifica: il gruppo è tra i primi classificati, mentre quello di Sue Nami è secondo.",
       "tags": [
         "prova",
         "sopravvivenza",
@@ -950,7 +970,7 @@
       "sortOrder": 2,
       "date": "",
       "title": "La prova della sopravvivenza",
-      "summary": "Dopo la prova del fiume, vi ritrovate davanti a una nuova arena. L'unica istruzione è «Sopravvivete». Alcune squadre oltrepassano una soglia e scompaiono alla vista; altri movimenti sembrano ricondurre indietro i partecipanti. Cercate di capire il funzionamento dell'accesso. Una partecipante prova a lanciare una pietra verso il centro, senza che la registrazione ne chiarisca l'esito; vengono anche incaricati dei nani di scavare una buca come possibile riparo. Raven osserva che il posto gli sembra familiare, ma non lo associa a bei ricordi, e si tocca il collo. Non spiega il motivo.\n\nBetty arriva con il suo gruppo e propone una tregua per affrontare insieme la prova. Si rivolge in particolare a Elisabeth e afferma di non voler usare il potere del proprio Stand per stipulare l'accordo. La proposta non viene accettata senza discussione: la persona che interpreta Elisabeth chiede a Betty cosa guadagni dalla tregua e se vi siano condizioni nascoste, poi richiama Jean e consulta i compagni. Betty e le sue alleate mostrano progetti blu, che a loro dire provengono da un'area dello staff. Le tavole contengono scritte in tedesco e preannunciano raffiche violente, la necessità di costruire ripari e l'arrivo di un automa che vede poco ma reagisce ai rumori. Le direzioni del vento, spiegano, non sono note in anticipo.\n\nQuando inizia la raccolta dei materiali, l'arena offre basalto, granito, marmo, cemento, mattoni e pietrisco, di resistenza diversa. Non tutti i pezzi sopravvivono al trasporto: alcuni si rompono o si sbriciolano. Progettate un riparo protetto da più lati, valutando anche come accogliere i compagni del gruppo di Betty. Si parla inizialmente di circa ventidue pezzi e della possibilità di usare una trincea, ma non ogni parte dei piani discussi viene realizzata. Animali e piccole creature legate agli Stand aiutano a recuperare i materiali. Raven usa forme d'ombra per portare pietre e acqua; Mariah contribuisce al trasporto del basalto dall'alto. Il numero di pezzi raccolti arriva, secondo il conteggio dichiarato, a circa ventisei.\n\nNei pressi della zona centrale c'è acqua da bere: chi la utilizza recupera forze e, quando viene versata sull'erba, questa appare più rigogliosa. Mentre continuate a costruire, nell'arena si sente un flauto di Pan. La prima raffica travolge chi è ancora scoperto: il narratore annuncia ventiquattro danni per chi non ha protezione. Le squadre che hanno già eretto dei muri riescono ad assorbire parte dell'urto. Più tardi una seconda raffica arriva da sud-ovest: il rifugio perde alcuni frammenti, ma rimane in piedi. Per chi è protetto viene annunciato un danno di tredici.\n\nPoi la superficie del lago si muove. Ne emerge un gigantesco automa, simile a un tornado meccanico fatto di tubi, ingranaggi e cerchi in movimento. Il macchinario genera vento e usa una palla demolitrice per colpire avversari e strutture. Dopo un momento di silenzio, le grida di alcuni concorrenti attirano la sua attenzione: la creatura sembra inseguire i suoni più che vedere chiaramente ciò che la circonda. Il gruppo cerca così di restare silenzioso, consolidare il riparo e recuperare acqua senza farsi individuare.\n\nUna partecipante invia dei nani con piccoli teletrasporti a prendere acqua senza fare rumore; il narratore conferma che tornano senza difficoltà e che il gruppo può servirsi dell'acqua per curarsi. Non è possibile attribuire con certezza questa azione a un personaggio specifico. Una donna dall'aspetto felino, appartenente alla squadra di Betty, accompagna inoltre una persona al lago: i colori del mondo diventano viola e le due attraversano una parete come se fosse intangibile. La persona beve e recupera acqua, poi torna al rifugio. Il nome della donna e i limiti del suo potere non vengono chiariti.\n\nMentre il vento continua a colpire le strutture, una serie di esplosioni simili a petardi disorienta l'automa, che si dirige verso i rumori e urta vari ostacoli. In un altro momento, per distrarlo durante il recupero dell'acqua, viene fatta battere una pietra contro un'altra lontano dal gruppo: il macchinario si gira verso il rumore ma, secondo il narratore, non si muove. I nani rientrano con l'acqua. Intanto un piccolo frammento colpisce il piede di Jean; sulla pietra compare un'antica scritta rossa, che però non si riesce a leggere. Non è la stessa pietra utilizzata per attirare l'automa.\n\nLe ultime raffiche mettono in crisi le altre fortificazioni. Durante la fase finale viene annunciata anche una raffica da undici danni e diversi ripari concorrenti cedono. Il vostro gruppo continua a resistere finché l'automa rallenta, si spegne e si disgrega, lasciando cadere i pezzi meccanici. Sul vostro rifugio piovono coriandoli: avete superato la prova.\n\nTornati all'area di partenza, vedete una classifica nel cielo. La vostra squadra compare al primo posto insieme ad altri partecipanti, i cui nomi non risultano tutti comprensibili nella registrazione. Compaiono microfoni e si apre una discussione sulla condivisione dei punti. La giocatrice di Elisabeth si pronuncia a favore dell'opzione che riconosce il primo posto condiviso, perché le squadre hanno guadagnato il risultato; non è confermato che quella sia stata la scelta unanime. Il gruppo di Sue Nami appare al secondo posto. Sue Nami si dice favorevole alla condivisione, accolta dall'annunciatrice. Il punteggio numerico esatto non è ricostruibile. Finita la cerimonia, riconoscete nell'area lo stesso spazio di una festa precedente, ora privo del grande castello gonfiabile.\n\nSubito dopo Betty torna a parlare di un patto. Dichiara di aver stretto un nuovo accordo con Yekaterina che avrebbe sostituito quello precedente: secondo Betty, le anime degli altri membri del gruppo verranno liberate soltanto quando Yekaterina ucciderà Somchai. Sostiene anche che Jean sia già libero da quel vincolo. Queste sono le parole di Betty, non una conferma indipendente del funzionamento del patto. Alcuni protestano e discutono del sacco associato all'accordo precedente, che viene detto scomparso. Quando qualcuno cerca di capire se stia mentendo, il narratore riferisce che Betty sembra sincera; questo non dimostra ogni dettaglio della sua versione. Infine viene citata Camille: una persona mostra un medaglione con il suo ritratto e racconta che fosse molto forte e che sia stata uccisa. Le circostanze non vengono chiarite.",
+      "summary": "Dopo la prova del fiume, vi ritrovate davanti a una nuova arena. L'unica istruzione è «Sopravvivete». Alcune squadre oltrepassano una soglia e scompaiono alla vista; altri movimenti sembrano ricondurre indietro i partecipanti. Cercate di capire il funzionamento dell'accesso. Una partecipante prova a lanciare una pietra verso il centro e vengono incaricati dei nani di scavare una buca come possibile riparo. Raven osserva che il posto gli sembra familiare, ma non lo associa a bei ricordi, e si tocca il collo. Non spiega il motivo.\n\nBetty arriva con il suo gruppo e propone una tregua per affrontare insieme la prova. Si rivolge in particolare a Elisabeth e afferma di non voler usare il potere del proprio Stand per stipulare l'accordo. La proposta non viene accettata senza discussione: Elisabeth chiede a Betty cosa guadagni dalla tregua e se vi siano condizioni nascoste, poi richiama Jean e consulta i compagni. Betty e le sue alleate mostrano progetti blu, che a loro dire provengono da un'area dello staff. Le tavole contengono scritte in tedesco e preannunciano raffiche violente, la necessità di costruire ripari e l'arrivo di un automa che vede poco ma reagisce ai rumori. Le direzioni del vento, spiegano, non sono note in anticipo.\n\nQuando inizia la raccolta dei materiali, l'arena offre basalto, granito, marmo, cemento, mattoni e pietrisco, di resistenza diversa. Non tutti i pezzi sopravvivono al trasporto: alcuni si rompono o si sbriciolano. Progettate un riparo protetto da più lati, valutando anche come accogliere i compagni del gruppo di Betty. Si parla inizialmente di circa ventidue pezzi e della possibilità di usare una trincea, ma non ogni parte dei piani discussi viene realizzata. Animali e piccole creature legate agli Stand aiutano a recuperare i materiali. Raven usa forme d'ombra per portare pietre e acqua; Mariah contribuisce al trasporto del basalto dall'alto. Alla fine i materiali raccolti arrivano a circa ventisei pezzi.\n\nNei pressi della zona centrale c'è acqua da bere: chi la utilizza recupera forze e, quando viene versata sull'erba, questa appare più rigogliosa. Mentre continuate a costruire, nell'arena si sente un flauto di Pan. La prima raffica travolge chi è ancora scoperto e si abbatte con violenza sui muri appena costruiti. Le squadre che hanno già eretto dei muri riescono ad assorbire parte dell'urto. Più tardi una seconda raffica arriva da sud-ovest: il rifugio perde alcuni frammenti, ma rimane in piedi. Nemmeno chi si ripara dietro i muri esce completamente indenne dall'urto.\n\nPoi la superficie del lago si muove. Ne emerge un gigantesco automa, simile a un tornado meccanico fatto di tubi, ingranaggi e cerchi in movimento. Il macchinario genera vento e usa una palla demolitrice per colpire avversari e strutture. Dopo un momento di silenzio, le grida di alcuni concorrenti attirano la sua attenzione: la creatura sembra inseguire i suoni più che vedere chiaramente ciò che la circonda. Il gruppo cerca così di restare silenzioso, consolidare il riparo e recuperare acqua senza farsi individuare.\n\nAlcuni nani vengono inviati con piccoli teletrasporti a prendere acqua senza fare rumore. Tornano senza difficoltà, portando ai compagni acqua con cui riprendersi. Una donna dall'aspetto felino, appartenente alla squadra di Betty, accompagna inoltre una persona al lago: i colori del mondo diventano viola e le due attraversano una parete come se fosse intangibile. La persona beve e recupera acqua, poi torna al rifugio. \n\nMentre il vento continua a colpire le strutture, una serie di esplosioni simili a petardi disorienta l'automa, che si dirige verso i rumori e urta vari ostacoli. In un altro momento, per distrarlo durante il recupero dell'acqua, viene fatta battere una pietra contro un'altra lontano dal gruppo: il macchinario si gira verso il rumore, ma non si muove. I nani rientrano con l'acqua. Intanto un piccolo frammento colpisce il piede di Jean; sulla pietra compare un'antica scritta rossa, che però non si riesce a leggere. Non è la stessa pietra utilizzata per attirare l'automa.\n\nLe ultime raffiche mettono in crisi le altre fortificazioni. Durante la fase finale una nuova raffica scuote l'arena e diversi ripari concorrenti cedono. Il vostro gruppo continua a resistere finché l'automa rallenta, si spegne e si disgrega, lasciando cadere i pezzi meccanici. Sul vostro rifugio piovono coriandoli: avete superato la prova.\n\nTornati all'area di partenza, vedete una classifica nel cielo. La vostra squadra compare al primo posto insieme ad altri partecipanti. Compaiono microfoni e si apre una discussione sulla condivisione dei punti. Elisabeth si pronuncia a favore del primo posto condiviso: a suo giudizio, le squadre se lo sono guadagnato. La discussione prosegue. Il gruppo di Sue Nami appare al secondo posto. Sue Nami si dice favorevole alla condivisione, accolta dall'annunciatrice. Finita la cerimonia, riconoscete nell'area lo stesso spazio di una festa precedente, ora privo del grande castello gonfiabile.\n\nSubito dopo Betty torna a parlare di un patto. Dichiara di aver stretto un nuovo accordo con Yekaterina che avrebbe sostituito quello precedente: secondo Betty, le anime degli altri membri del gruppo verranno liberate soltanto quando Yekaterina ucciderà Somchai. Sostiene anche che Jean sia già libero da quel vincolo. Resta da capire quanto ci sia di vero nelle sue parole. Alcuni protestano e discutono del sacco associato all'accordo precedente, che viene detto scomparso. Quando viene messa in dubbio, Betty sembra sincera. Il suo comportamento, però, non chiarisce la natura del patto. Infine Mariah mostra un medaglione con il ritratto di Camille. Si racconta che Camille fosse molto forte e che sarebbe stata uccisa, ma restano ignote le circostanze.",
       "events": [
         {
           "time": "00:07",
@@ -962,11 +982,11 @@
         },
         {
           "time": "00:27",
-          "text": "Una partecipante prova a testare la soglia con una pietra; alcuni nani ricevono l'ordine di scavare una buca. Esito della pietra incerto."
+          "text": "Una partecipante prova a lanciare una pietra verso il centro. Alcuni nani ricevono l'ordine di scavare una buca come possibile riparo."
         },
         {
           "time": "00:31",
-          "text": "Betty propone una tregua. La persona che interpreta Elisabeth le chiede cosa guadagnerebbe dall'accordo e raduna il gruppo per confrontarsi."
+          "text": "Betty propone una tregua. Elisabeth le chiede cosa guadagnerebbe dall'accordo e raduna il gruppo per confrontarsi."
         },
         {
           "time": "00:39",
@@ -986,7 +1006,7 @@
         },
         {
           "time": "01:24",
-          "text": "Un flauto di Pan precede la prima raffica: vengono annunciati 24 danni ai partecipanti esposti."
+          "text": "Un flauto di Pan precede una violenta raffica che travolge i partecipanti rimasti scoperti."
         },
         {
           "time": "01:36",
@@ -994,7 +1014,7 @@
         },
         {
           "time": "01:40",
-          "text": "Una raffica da sud-ovest investe il rifugio: vengono annunciati 13 danni ai protetti; la struttura resiste."
+          "text": "Una raffica da sud-ovest investe il rifugio; la struttura perde alcuni frammenti, ma resiste."
         },
         {
           "time": "01:45",
@@ -1002,7 +1022,7 @@
         },
         {
           "time": "01:49",
-          "text": "Dei nani vengono inviati con piccoli teletrasporti a recuperare acqua in silenzio; il rientro viene confermato."
+          "text": "Dei nani vengono inviati con piccoli teletrasporti a recuperare acqua in silenzio e tornano senza difficoltà."
         },
         {
           "time": "01:59",
@@ -1014,11 +1034,11 @@
         },
         {
           "time": "02:24",
-          "text": "La traccia associata a Elisabeth descrive un diversivo con una pietra per fare rumore. L'automa si gira senza spostarsi e i nani tornano con l'acqua."
+          "text": "Elisabeth propone un diversivo facendo risuonare una pietra lontano dal gruppo. L'automa si gira senza spostarsi e i nani tornano con l'acqua."
         },
         {
           "time": "02:30",
-          "text": "Altre fortificazioni cedono sotto il vento; durante l'ultima fase viene annunciata una raffica da 11 danni."
+          "text": "Altre fortificazioni cedono sotto una nuova raffica di vento; il gruppo resta al riparo."
         },
         {
           "time": "02:36",
@@ -1030,7 +1050,7 @@
         },
         {
           "time": "02:41",
-          "text": "La giocatrice di Elisabeth si esprime a favore dell'opzione che riconosce il primo posto condiviso; non è attestata una scelta unanime."
+          "text": "Elisabeth si esprime a favore del primo posto condiviso, ritenendo che le squadre lo abbiano meritato. La discussione prosegue."
         },
         {
           "time": "02:50",
@@ -1042,11 +1062,11 @@
         },
         {
           "time": "03:00",
-          "text": "A seguito di un controllo, il narratore dice che Betty sembra sincera: l'effettiva portata dell'accordo resta incerta."
+          "text": "Betty sembra sincera quando viene messa in dubbio, ma la natura del patto resta oscura."
         },
         {
           "time": "03:03",
-          "text": "Viene mostrato un medaglione raffigurante Camille; una persona sostiene che sia stata uccisa."
+          "text": "Mariah mostra un medaglione con il ritratto di Camille. Si racconta che Camille fosse molto forte e che sarebbe stata uccisa."
         }
       ],
       "quotes": [],

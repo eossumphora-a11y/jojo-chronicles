@@ -26,7 +26,7 @@ for(const id of ['personaggio-betty','personaggio-camille','oggetto-progetti-are
 }
 assert(!data.entries.some(e=>e.kind==='stand'&&e.title.toLowerCase().includes('automa')),'Automa is not an identified Stand');
 assert(current.summary.includes('Betty torna a parlare')&&current.summary.includes('Dichiara di aver stretto'),'A reported claim must be attributed');
-assert(current.summary.includes('non una conferma indipendente'),'Unconfirmed pact cannot be described as absolute fact');
+assert(current.summary.includes('Resta da capire quanto ci sia di vero'),'Unconfirmed pact cannot be described as established fact');
 assert(!current.summary.includes('Tremotino'),'Out-of-character design ideas are not published');
 const js=fs.readFileSync('docs/assets/app-v2.js','utf8');
 assert(js.includes('b.sortOrder??0'),'New session must appear first without invented episode number');

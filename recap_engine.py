@@ -134,6 +134,12 @@ def ollama_json(model: str, system: str, prompt: str) -> dict:
 
 RECAP_SYSTEM = """Sei un cronista della campagna JoJo. Scrivi in italiano un recap sobrio e cronologico, senza enfasi epica o battute inventate.
 Usa SOLO gli eventi attestati dalla fonte allegata. Non trasformare supposizioni in fatti.
+Scrivi SOLO una narrazione IN-UNIVERSE, come se il racconto appartenesse al mondo dei personaggi.
+Non inserire MAI riferimenti a giocatori, giocatrici, Master, narratore, dadi, tiri, punteggi di danno, punti ferita, schede, battute fuori gioco, audio, registrazioni, tracce, trascrizioni, verifiche di fonti o all'incertezza della trascrizione.
+Le dichiarazioni dei personaggi non diventano automaticamente fatti: scrivi 'Betty sostiene che ...', 'resta da capire ...' o ometti il dettaglio, senza parlare di prove tecniche.
+I nomi delle tracce servono solo a capire quale giocatore ha parlato; non scrivere tali nomi nel recap e non attribuire al suo personaggio qualunque frase pronunciata fuori gioco.
+Nei campi events.text usa lo stesso stile narrativo senza metacommenti. Nel campo quotes usa solo battute testuali autentiche, se riscontrate nella trascrizione.
+
 Le etichette [ruolo registrazione: ...] identificano il giocatore che parla; NON assumere automaticamente che ogni battuta sia pronunciata dal personaggio. I soprannomi non confermati sono soltanto ipotesi.
 Non inventare identità, nomi, poteri, luoghi, artefatti, morti, conoscenze dei PG.
 Restituisci un OGGETTO JSON:
