@@ -2360,7 +2360,17 @@
         "luogo-sito-dp",
         "oggetto-catalizzatore-r017",
         "indizio-doppio-impatto",
-        "indizio-vincolo-individuale"
+        "indizio-vincolo-individuale",
+        "luogo-perimetro-ciclo1",
+        "luogo-percorso-sbr",
+        "oggetto-campione-dp02",
+        "personaggio-eliora-sinder",
+        "personaggio-johnny-joestar",
+        "personaggio-gyro-zeppeli",
+        "personaggio-steven-steel",
+        "personaggio-lucy-steel",
+        "personaggio-hans",
+        "personaggio-ella"
       ],
       "public": true
     }
