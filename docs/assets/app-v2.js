@@ -113,7 +113,7 @@ function renderSessionSections(root,s){
   const panel=el('div','sq-recap-paper');
   panel.append(txt('div','RIEPILOGO DELLA SCORSA SESSIONE','sq-paper-label'));
   const story=el('div','reader-content sq-recitation');
-  const text=activeRecapTab==='detailed'?s.summary:(formats[activeRecapTab]||s.summary);
+  const text=activeRecapTab==='detailed'?(formats.detailed||s.summary):(formats[activeRecapTab]||s.summary);
   if(activeRecapTab==='detailed'&&formats.lead){
    const opener=el('p','sq-recap-intro');linked(opener,formats.lead);story.append(opener);
   }
@@ -125,7 +125,7 @@ function renderSessionSections(root,s){
   }
   panel.append(story);root.append(panel);
   const actions=el('div','session-reader-actions');
-  actions.append(btn('button','Copia questo riepilogo','action-button',async()=>{try{await navigator.clipboard.writeText(s.title+'\n\n'+(activeRecapTab==='detailed'?(formats.lead+'\n\n'+s.summary):(formats[activeRecapTab]||s.summary)));notice('Riepilogo copiato')}catch{notice('Impossibile copiare dal browser')}}));
+  actions.append(btn('button','Copia questo riepilogo','action-button',async()=>{try{await navigator.clipboard.writeText(s.title+'\n\n'+(activeRecapTab==='detailed'?(formats.lead+'\n\n'+(formats.detailed||s.summary)):(formats[activeRecapTab]||s.summary)));notice('Riepilogo copiato')}catch{notice('Impossibile copiare dal browser')}}));
   actions.append(btn('button','Condividi il link','action-button',async()=>{try{await navigator.clipboard.writeText(location.origin+location.pathname+'#/sessioni/'+encodeURIComponent(s.id));notice('Link copiato')}catch{notice('Copia del link non disponibile')}}));
   root.append(actions);
  }else if(mode==='outline'){
@@ -254,7 +254,7 @@ function renderLibraryFullRecap(root,s){
   if(key!=='detailed'&&!format[key])continue;
   const b=btn('button',label,'library-format-btn'+(activeRecapTab===key?' active':''),()=>{activeRecapTab=key;drawSessionReader()});b.setAttribute('aria-pressed',String(activeRecapTab===key));formatTabs.append(b)}
  root.append(formatTabs);
- const text=activeRecapTab==='detailed'?(format.lead?format.lead+'\n\n'+s.summary:s.summary):(format[activeRecapTab]||s.summary);
+ const text=activeRecapTab==='detailed'?(format.lead?format.lead+'\n\n'+(format.detailed||s.summary):(format.detailed||s.summary)):(format[activeRecapTab]||s.summary);
  const panel=el('div','library-recap-document');const title=el('div','library-recap-title');title.append(txt('span','RECAP DELLA SCORSA SESSIONE'),btn('button','↓ Scarica','library-rec-download',()=>downloadLibraryText(s.title+'_recap',text)));panel.append(title);
  const story=el('div','reader-content');prose(story,text);panel.append(story);root.append(panel)
 }
