@@ -57,6 +57,34 @@
           "time": "02:18",
           "type": "azione",
           "text": "Crea una sfera piena di petardi per distrarre l'automa sensibile ai rumori."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "03:07",
+          "type": "azione",
+          "text": "Organizza l’esplorazione furtiva e coordina i compagni usando i fili del proprio Stand."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "03:14",
+          "type": "scoperta",
+          "text": "Trova fotografie proprie e di Joshwa con marchi a stella complementari."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "03:44",
+          "type": "scoperta",
+          "text": "Legge il diario custodito nella stanza di João, che parla di James e del Requiem."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "04:31",
+          "type": "azione",
+          "text": "Si finge addormentato sul divano mentre João e un Grimm rientrano nella stanza."
         }
       ]
     },
@@ -130,6 +158,13 @@
           "time": "01:59",
           "type": "azione",
           "text": "Raggiunge il lago insieme a Catrice attraversando un mondo speculare."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "02:18",
+          "type": "dialogo",
+          "text": "Fa presente che Mariah non desidera riavere i sentimenti."
         }
       ]
     },
@@ -157,6 +192,13 @@
           "time": "",
           "type": "incontro",
           "text": "Davì affronta Sue Nami da vicino e guida la zattera negli ultimi istanti della prova."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "02:29",
+          "type": "dialogo",
+          "text": "Invita il gruppo a evitare nuovi patti e promesse."
         }
       ]
     },
@@ -268,6 +310,13 @@
           "time": "03:03",
           "type": "azione",
           "text": "Mostra un medaglione con il ritratto di Camille, con cui aveva un forte legame e che fu ucciso da Hol Horse."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "02:12",
+          "type": "notizia",
+          "text": "Il gruppo discute se aiutarla a recuperare i sentimenti, contro la sua volontà."
         }
       ],
       "public_inventory": [
@@ -486,6 +535,13 @@
           "time": "",
           "type": "azione",
           "text": "Nella nuova arena, una figura mutevole si china e le parla all'orecchio lontano da tutti gli altri."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "03:15",
+          "type": "scoperta",
+          "text": "Una sua fotografia viene trovata durante l’esplorazione."
         }
       ]
     },
@@ -608,13 +664,17 @@
       "kind": "faction",
       "title": "Grimm",
       "subtitle": "Organizzazione incontrata dopo il traguardo",
-      "summary": "I Grimm compaiono dopo la conclusione della prova del fiume per imporre la fine del combattimento.",
-      "body": "Jean ha già superato il traguardo quando tenta di attaccare un membro della squadra avversaria. È a questo punto, e non prima, che arrivano i Grimm: lo fermano e impediscono che lo scontro continui.",
+      "summary": "I Grimm sorvegliano lo svolgimento delle prove. Uno di loro entra nella stanza di João e reagisce all’attività dello Stand di Jean.",
+      "body": "Jean ha già superato il traguardo quando tenta di attaccare un membro della squadra avversaria. È a questo punto, e non prima, che arrivano i Grimm: lo fermano e impediscono che lo scontro continui.\n\nNella stanza segreta, un Grimm inizialmente scherza con João, ma quando nota Jean diventa serio: i suoi occhi diventano completamente neri e percepisce l’attività dello Stand del ragazzo.",
       "tags": [
         "fazione",
         "prova del fiume"
       ],
-      "related": [],
+      "related": [
+        "personaggio-joao",
+        "luogo-stanza-joao",
+        "pg-jean"
+      ],
       "public": true
     },
     {
@@ -697,6 +757,13 @@
           "time": "03:03",
           "type": "menzione",
           "text": "Mariah mostra un medaglione che ritrae Camille, già conosciuto dal gruppo e ucciso da Hol Horse."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "04:22",
+          "type": "scoperta",
+          "text": "Un’immagine in un cassetto ricorda ciò che era rimasto di Camille dopo la morte."
         }
       ]
     },
@@ -821,6 +888,403 @@
           "text": "Accompagna Yekaterina al lago attraverso il mondo speculare del proprio Stand."
         }
       ]
+    },
+    {
+      "id": "personaggio-joao",
+      "kind": "character",
+      "title": "João Pereira",
+      "subtitle": "",
+      "summary": "Proprietario della stanza segreta individuata durante l’esplorazione; custodisce un diario e numerosi fascicoli.",
+      "body": "João rientra nella propria stanza accompagnato da un Grimm, portando un pugnale insanguinato. Il suo diario parla di James, del Requiem e del terzo ciclo: sono affermazioni scritte dall’autore e non verifiche indipendenti.",
+      "related": [
+        "luogo-stanza-joao",
+        "oggetto-diario-joao",
+        "fazione-grimm"
+      ],
+      "tags": [
+        "npc",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "03:27",
+          "type": "scoperta",
+          "text": "I concorrenti entrano nella sua stanza segreta e vi scoprono documenti e reperti."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "04:34",
+          "type": "incontro",
+          "text": "Rientra con un pugnale insanguinato, accompagnato da un Grimm, e nota la reazione dell’accompagnatore verso Jean."
+        }
+      ]
+    },
+    {
+      "id": "pg-joshwa",
+      "kind": "character",
+      "title": "Joshwa",
+      "subtitle": "",
+      "summary": "Gemello di Jean, torna dal gruppo e racconta vicende legate a Hol Horse e Babette.",
+      "body": "Dice di non essere più maledetto. Ha promesso a Tim di cercare un modo per restituire a Mariah la capacità di provare emozioni, nonostante Mariah non desideri quell’intervento. Le fotografie ritrovate mostrano i marchi a stella complementari di Joshwa e Jean.",
+      "related": [
+        "pg-jean",
+        "personaggio-mariah",
+        "personaggio-tim",
+        "indizio-marchi-stella"
+      ],
+      "tags": [
+        "pg"
+      ],
+      "public": true,
+      "character_role": "pg",
+      "public_history": [
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "00:31",
+          "type": "incontro",
+          "text": "Si ricongiunge al gruppo e racconta vicende legate a Hol Horse e Babette."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "00:38",
+          "type": "dialogo",
+          "text": "Dichiara di non essere più maledetto."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "02:12",
+          "type": "promessa",
+          "text": "Racconta la promessa a Tim di aiutare Mariah a ritrovare le emozioni."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "03:14",
+          "type": "scoperta",
+          "text": "Una fotografia mostra i marchi a stella complementari suoi e di Jean."
+        }
+      ]
+    },
+    {
+      "id": "personaggio-tim",
+      "kind": "character",
+      "title": "Tim",
+      "subtitle": "",
+      "summary": "Bambino al quale Joshwa ha promesso di cercare una soluzione per le emozioni di Mariah.",
+      "body": "La promessa è discussa dal gruppo, che si interroga sul rispetto della volontà di Mariah. Non è stata ancora mantenuta.",
+      "related": [
+        "pg-joshwa",
+        "personaggio-mariah"
+      ],
+      "tags": [
+        "npc"
+      ],
+      "public": true,
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "02:12",
+          "type": "promessa",
+          "text": "Joshwa racconta di avergli promesso di aiutare Mariah a recuperare le emozioni."
+        }
+      ]
+    },
+    {
+      "id": "personaggio-james",
+      "kind": "character",
+      "title": "James",
+      "subtitle": "",
+      "summary": "Persona citata nel diario trovato nella stanza di João.",
+      "body": "Il diarista descrive una rivalità con James e il proprio desiderio di prevalere. Il contenuto riflette il punto di vista del diario.",
+      "related": [
+        "oggetto-diario-joao"
+      ],
+      "tags": [
+        "citato"
+      ],
+      "public": true,
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "03:44",
+          "type": "citazione",
+          "text": "Il suo nome compare nel diario di João in un racconto di rivalità."
+        }
+      ]
+    },
+    {
+      "id": "luogo-stanza-joao",
+      "kind": "location",
+      "title": "La stanza segreta di João",
+      "subtitle": "",
+      "summary": "Stanza nascosta dietro una parete vicina al bagno, con un armadio a cuore e una luce rossa pulsante.",
+      "body": "Contiene una scrivania con diario e fascicoli, una mappa antica, genealogie Joestar, Zeppeli e Steel, armadio a due ante e cassetti con metà di cuori cristallini.",
+      "related": [
+        "luogo-passaggio-segreto",
+        "oggetto-cuori-cristallini",
+        "oggetto-diario-joao"
+      ],
+      "tags": [
+        "scoperto"
+      ],
+      "public": true
+    },
+    {
+      "id": "luogo-passaggio-segreto",
+      "kind": "location",
+      "title": "Il passaggio dietro il bagno",
+      "subtitle": "",
+      "summary": "Un tratto di muro anomalo viene aperto usando un frammento di lancia spezzata.",
+      "body": "L’accesso nascosto conduce alla stanza di João. Il frammento metallico reagisce alla fessura della parete.",
+      "related": [
+        "luogo-stanza-joao",
+        "oggetto-punta-lancia"
+      ],
+      "tags": [
+        "scoperto"
+      ],
+      "public": true
+    },
+    {
+      "id": "oggetto-punta-lancia",
+      "kind": "artifact",
+      "title": "Punta di lancia spezzata",
+      "subtitle": "",
+      "summary": "Frammento metallico trovato accanto a libri, con la dedica «al migliore».",
+      "body": "Inserito nella fessura del muro, apre un passaggio segreto. Una piccola creatura evocata, toccandolo, provoca una reazione energetica orientata verso l’armadio e un fascicolo.",
+      "related": [
+        "luogo-passaggio-segreto",
+        "luogo-stanza-joao"
+      ],
+      "tags": [
+        "reperto"
+      ],
+      "public": true
+    },
+    {
+      "id": "oggetto-cuori-cristallini",
+      "kind": "artifact",
+      "title": "Metà di cuori cristallini",
+      "subtitle": "",
+      "summary": "Reperti rossi conservati in cassetti con targhette e immagini.",
+      "body": "Le metà destra e sinistra hanno funzioni differenti: la destra sottrae i sentimenti, la sinistra lo Stand. Il contatto con un reperto provoca freddo e una sensazione legata agli Stand. Non sono descritti come cuori biologici.",
+      "related": [
+        "luogo-stanza-joao",
+        "indizio-codice-307"
+      ],
+      "tags": [
+        "reperto",
+        "Stand"
+      ],
+      "public": true
+    },
+    {
+      "id": "oggetto-diario-joao",
+      "kind": "artifact",
+      "title": "Diario di João",
+      "subtitle": "",
+      "summary": "Diario trovato nella stanza segreta, che parla di James, del Requiem, di una freccia particolare e del terzo ciclo.",
+      "body": "L’autore descrive rivalità, un viaggio in Arizona e il desiderio di entrare nello staff. Le sue affermazioni sono riportate come contenuto del diario, non come verità accertate.",
+      "related": [
+        "personaggio-joao",
+        "personaggio-james",
+        "luogo-stanza-joao"
+      ],
+      "tags": [
+        "documento"
+      ],
+      "public": true
+    },
+    {
+      "id": "oggetto-fascicoli-progetto-r",
+      "kind": "artifact",
+      "title": "Fascicoli del Progetto R",
+      "subtitle": "",
+      "summary": "Documenti rinvenuti nella stanza di João sullo studio delle evoluzioni Requiem e sulla compatibilità dei catalizzatori.",
+      "body": "Le teorie e le ipotesi dei fascicoli sono parte di quanto i concorrenti hanno letto; non costituiscono una spiegazione definitiva delle regole degli Stand.",
+      "related": [
+        "luogo-stanza-joao",
+        "oggetto-diario-joao"
+      ],
+      "tags": [
+        "documento"
+      ],
+      "public": true
+    },
+    {
+      "id": "oggetto-genealogie",
+      "kind": "artifact",
+      "title": "Genealogie Joestar, Zeppeli e Steel",
+      "subtitle": "",
+      "summary": "Tavole genealogiche manoscritte trovate nella stanza nascosta.",
+      "body": "I documenti nominano le famiglie Joestar, Zeppeli e Steel. Non è stato stabilito pubblicamente ogni legame di parentela.",
+      "related": [
+        "luogo-stanza-joao",
+        "indizio-marchi-stella"
+      ],
+      "tags": [
+        "documento"
+      ],
+      "public": true
+    },
+    {
+      "id": "oggetto-foto-gemelli",
+      "kind": "artifact",
+      "title": "Fotografie di Jean e Joshwa",
+      "subtitle": "",
+      "summary": "Fotografie con due metà complementari di un marchio a stella fra la schiena e la spalla.",
+      "body": "Nello stesso gruppo di immagini compare anche Julia. Jean e Joshwa sanno già di essere gemelli; è il significato dei marchi a rimanere sconosciuto.",
+      "related": [
+        "pg-jean",
+        "pg-joshwa",
+        "personaggio-giulia-zeppeli"
+      ],
+      "tags": [
+        "fotografia"
+      ],
+      "public": true
+    },
+    {
+      "id": "oggetto-pugnale-joao",
+      "kind": "artifact",
+      "title": "Pugnale insanguinato",
+      "subtitle": "",
+      "summary": "Pugnale che João porta con sé quando rientra nella stanza segreta con un Grimm.",
+      "body": "L’arma è visibile nella scena conclusiva; non vengono fornite altre proprietà o informazioni sulla sua provenienza.",
+      "related": [
+        "personaggio-joao",
+        "luogo-stanza-joao"
+      ],
+      "tags": [
+        "oggetto"
+      ],
+      "public": true
+    },
+    {
+      "id": "oggetto-bussola-pellegrino",
+      "kind": "artifact",
+      "title": "Bussola del Pellegrino",
+      "subtitle": "",
+      "summary": "Nome di un oggetto menzionato nei fascicoli consultati nella stanza.",
+      "body": "I documenti lo collegano a ricerche nel deserto nordamericano, reperti ossei e fenomeni anomali. Non è stato stabilito che la bussola sia fisicamente in possesso del gruppo.",
+      "related": [
+        "oggetto-fascicoli-progetto-r"
+      ],
+      "tags": [
+        "citato",
+        "documento"
+      ],
+      "public": true
+    },
+    {
+      "id": "indizio-marchi-stella",
+      "kind": "clue",
+      "title": "Le due metà della stella",
+      "subtitle": "",
+      "summary": "Jean e Joshwa compaiono in fotografie con due metà complementari di un marchio a stella.",
+      "body": "La parentela dei due è già conosciuta; resta da scoprire il significato della forma e del collegamento rappresentato dai marchi.",
+      "related": [
+        "oggetto-foto-gemelli",
+        "pg-jean",
+        "pg-joshwa"
+      ],
+      "tags": [
+        "mistero"
+      ],
+      "public": true
+    },
+    {
+      "id": "indizio-cinque-punti",
+      "kind": "clue",
+      "title": "Cinque punti energetici",
+      "subtitle": "",
+      "summary": "Durante l’esplorazione vengono percepiti cinque punti: due luminosi e collegati, tre oscuri.",
+      "body": "La disposizione osservata richiama una figura a cinque punti. Il significato del fenomeno non è stato chiarito.",
+      "related": [
+        "luogo-stanza-joao"
+      ],
+      "tags": [
+        "mistero"
+      ],
+      "public": true
+    },
+    {
+      "id": "indizio-codice-307",
+      "kind": "clue",
+      "title": "307 — Joestar",
+      "subtitle": "",
+      "summary": "Il meccanismo di un cassetto mostra il numero 307 e la parola «Joestar».",
+      "body": "Il codice permette di accedere a un cassetto che custodisce una metà sinistra di cuore cristallino e un’immagine.",
+      "related": [
+        "oggetto-cuori-cristallini",
+        "luogo-stanza-joao"
+      ],
+      "tags": [
+        "codice"
+      ],
+      "public": true
+    },
+    {
+      "id": "indizio-camille-cuore",
+      "kind": "clue",
+      "title": "L’immagine di Camille",
+      "subtitle": "",
+      "summary": "In uno dei cassetti compare un’immagine che ricorda ciò che rimaneva di Camille dopo la morte.",
+      "body": "L’osservazione non stabilisce che Camille sia presente nel reperto o possa essere riportato in vita.",
+      "related": [
+        "personaggio-camille",
+        "oggetto-cuori-cristallini"
+      ],
+      "tags": [
+        "mistero"
+      ],
+      "public": true
+    },
+    {
+      "id": "indizio-freccia-requiem",
+      "kind": "clue",
+      "title": "La freccia descritta nel diario",
+      "subtitle": "",
+      "summary": "Nel diario viene menzionata una freccia particolare in relazione al Requiem.",
+      "body": "La descrizione appartiene al racconto dell’autore. Il gruppo non ne ha verificato indipendentemente le capacità.",
+      "related": [
+        "oggetto-diario-joao"
+      ],
+      "tags": [
+        "mistero",
+        "Requiem"
+      ],
+      "public": true
+    },
+    {
+      "id": "archivio-joao-documenti",
+      "kind": "other",
+      "title": "Archivio di João Pereira",
+      "subtitle": "",
+      "summary": "Nove documenti ritrovati, raccolti in dodici pagine: diario, rapporti di ricerca, registri, cronologie e comunicazioni.",
+      "body": "Il fascicolo integrale è consultabile nella sezione Documenti del sito. Alcune pagine presentano ipotesi dei rispettivi autori, non informazioni accertate.",
+      "related": [
+        "luogo-stanza-joao",
+        "oggetto-diario-joao",
+        "oggetto-fascicoli-progetto-r"
+      ],
+      "tags": [
+        "documenti",
+        "archivio"
+      ],
+      "public": true
     }
   ],
   "sessions": [
@@ -1361,7 +1825,36 @@
           "text": "Il Grimm percepisce l'attività dello Stand di Jean: diventa serio e i suoi occhi si fanno completamente neri. Joao nota il mutamento."
         }
       ],
-      "quotes": [],
+      "quotes": [
+        {
+          "speaker": "Yekaterina",
+          "time": "02:18:28",
+          "text": "No no no no no no, ascolta, ascolta, ascolta, Mariah non vuole.",
+          "type": "important",
+          "context": "Trascrizione SRT · Audio non verificato"
+        },
+        {
+          "speaker": "Davì",
+          "time": "02:29:54",
+          "text": "Non accettate patti e non fate promesse.",
+          "type": "important",
+          "context": "Estratto da trascrizione SRT · Audio non verificato"
+        },
+        {
+          "speaker": "Jean",
+          "time": "03:07:07",
+          "text": "Ma ragazzi, mettete il silenzio sui cellulari, spegneteli, tutti...",
+          "type": "funny",
+          "context": "Trascrizione SRT · Audio non verificato"
+        },
+        {
+          "speaker": "Jean",
+          "time": "04:25:45",
+          "text": "Ragazzi, ci ammazza.",
+          "type": "funny",
+          "context": "Trascrizione SRT · Audio non verificato"
+        }
+      ],
       "related": [
         "pg-jean",
         "pg-julian",
@@ -1373,7 +1866,27 @@
         "personaggio-somchai",
         "personaggio-camille",
         "personaggio-giulia-zeppeli",
-        "fazione-grimm"
+        "fazione-grimm",
+        "pg-joshwa",
+        "personaggio-joao",
+        "personaggio-tim",
+        "personaggio-james",
+        "luogo-stanza-joao",
+        "luogo-passaggio-segreto",
+        "oggetto-punta-lancia",
+        "oggetto-cuori-cristallini",
+        "oggetto-diario-joao",
+        "oggetto-fascicoli-progetto-r",
+        "oggetto-genealogie",
+        "oggetto-foto-gemelli",
+        "oggetto-pugnale-joao",
+        "oggetto-bussola-pellegrino",
+        "indizio-marchi-stella",
+        "indizio-cinque-punti",
+        "indizio-codice-307",
+        "indizio-camille-cuore",
+        "indizio-freccia-requiem",
+        "archivio-joao-documenti"
       ],
       "public": true
     }

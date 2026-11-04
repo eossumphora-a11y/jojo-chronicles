@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="assets/ranking.css?v=1"/>
 <script defer src="assets/stand-visibility.js?v=3"></script>
 <script defer src="assets/ranking.js?v=1"></script>
-<script defer src="assets/app-v2.js?v=30"></script></head>
+<script defer src="assets/app-v2.js?v=31"></script></head>
 <body>
 <div class="shell">
  <aside class="sidebar" id="sidebar" aria-label="Navigazione principale">
@@ -26,6 +26,7 @@
    <button class="nav-link" data-nav="compendio"><span class="nav-icon">▦</span>Wiki della campagna <span class="nav-count" id="nav-entry-count">—</span></button>
    <button class="nav-link" data-nav="stand"><span class="nav-icon">✧</span>Stand incontrati <span class="nav-count" id="nav-stand-count">—</span></button>
    <button class="nav-link" data-nav="oggetti"><span class="nav-icon">⌑</span>Oggetti</button>
+   <a class="nav-link" href="documenti.html"><span class="nav-icon">▣</span>Documenti</a>
    <button class="nav-link" data-nav="prove"><span class="nav-icon">⚑</span>Prove</button>
    <button class="nav-link" data-nav="cronologia"><span class="nav-icon">◇</span>Cronologia</button>
    <button class="nav-link" data-nav="misteri"><span class="nav-icon">❖</span>Misteri</button>
@@ -44,7 +45,7 @@
   <main class="main" id="main" tabindex="-1">
    <section class="view" id="view-home">
     <div class="eyebrow">LA VOSTRA CAMPAGNA <span class="eyebrow-rule"></span> CRONACHE</div>
-    <div class="home-hero"><div class="hero-copy"><p class="section-meta"><span class="hero-status-dot"></span> CAMPAGNA IN CORSO</p><h1 id="campaign-title">Un destino <em>bizzarro.</em></h1><p class="hero-sub" id="campaign-subtitle">Le storie, i luoghi e i personaggi che avete incontrato. Nessun segreto del Master.</p><div class="hero-actions"><button class="primary-btn" id="hero-session">Leggi l'ultima sessione <span>↗</span></button><button class="secondary-btn" data-go="compendio">Esplora il compendio →</button></div></div><div class="hero-mark"><div class="hero-symbol">✒</div><span>CRONACHE DI JOJO</span></div></div>
+    <div class="home-hero"><div class="hero-copy"><p class="section-meta"><span class="hero-status-dot"></span> CAMPAGNA IN CORSO</p><h1 id="campaign-title">Un destino <em>bizzarro.</em></h1><p class="hero-sub" id="campaign-subtitle">Le storie, i luoghi e i personaggi che avete incontrato. Nessun segreto del Master.</p><div class="hero-actions"><button class="primary-btn" id="hero-session">Leggi l'ultima sessione <span>↗</span></button><button class="secondary-btn" data-go="compendio">Esplora il compendio →</button><a class="secondary-btn" href="documenti.html">Leggi i documenti ritrovati ↗</a></div></div><div class="hero-mark"><div class="hero-symbol">✒</div><span>CRONACHE DI JOJO</span></div></div>
     <div class="sq-campaign-nav" aria-label="Sezioni campagna"><button data-go="sessioni"><span class="sq-quick-icon">▤</span><strong>Riepiloghi</strong><small>Le sessioni</small></button><button data-go="classifica"><span class="sq-quick-icon">♛</span><strong>Classifica</strong><small>Il torneo</small></button><button data-go="pg"><span class="sq-quick-icon">♟</span><strong>Personaggi</strong><small>I protagonisti</small></button><button data-go="npc"><span class="sq-quick-icon">♜</span><strong>NPC</strong><small>Incontri e rapporti</small></button><button data-go="stand"><span class="sq-quick-icon">✧</span><strong>Stand</strong><small>Quelli incontrati</small></button><button data-go="oggetti"><span class="sq-quick-icon">♢</span><strong>Oggetti</strong><small>Scoperte e bottino</small></button><button data-go="prove"><span class="sq-quick-icon">⚑</span><strong>Prove</strong><small>Sfide e obiettivi</small></button><button data-go="compendio"><span class="sq-quick-icon">✧</span><strong>Wiki</strong><small>Tutte le voci</small></button></div>
     <div class="stats"><div class="stat"><span>SESSIONI NEL DIARIO</span><strong id="count-sessions">0</strong><small>Resoconti archiviati</small></div><div class="stat"><span>VOCI DEL COMPENDIO</span><strong id="count-entries">0</strong><small>Informazioni conosciute</small></div><div class="stat"><span>STAND CONOSCIUTI</span><strong id="count-stand">0</strong><small>Abilità osservate</small></div><div class="stat"><span>MOMENTI DELLA STORIA</span><strong id="count-events">0</strong><small>Passaggi nella cronologia</small></div></div>
     <div class="home-columns"><div class="home-primary"><div class="section-line"><div><span class="overline">ULTIMA SESSIONE</span><h2>Riprendi la storia</h2></div><button class="text-button" data-go="sessioni">Tutte le sessioni ↗</button></div><div id="featured-session"></div><div class="section-line space-top"><div><span class="overline">APPENA SCOPERTI</span><h2>Dal compendio</h2></div><button class="text-button" data-go="compendio">Esplora ↗</button></div><div class="featured-entities" id="home-entities"></div></div>

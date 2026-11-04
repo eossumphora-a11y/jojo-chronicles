@@ -149,7 +149,7 @@ function renderSessionSections(root,s){
   if(!groups.some(g=>g[1].length)&&!items.length)root.append(noResults('Nessuna nota ancora disponibile','Le persone, i luoghi e gli oggetti compariranno qui quando saranno collegati a questa sessione.'));
  }else if(mode==='quotes'){
   root.append(txt('h3','Frasi memorabili','sq-panel-title'));
-  if(s.quotes?.length){for(const q of s.quotes){const card=el('blockquote','sq-quote');const tag=q.type==='funny'?'Divertente':q.type==='important'?'Importante':'';const by=[tag,q.time||'',q.speaker||'Voce sconosciuta'].filter(Boolean).join(' · ');card.append(txt('p','“'+q.text+'”'),txt('small',by));root.append(card)}}
+  if(s.quotes?.length){for(const q of s.quotes){const card=el('blockquote','sq-quote');const tag=q.type==='funny'?'Divertente':q.type==='important'?'Importante':'';const by=[tag,q.time||'',q.speaker||'Voce sconosciuta'].filter(Boolean).join(' · ');card.append(txt('p','“'+q.text+'”'),txt('small',by));if(q.context)card.append(txt('small',q.context));root.append(card)}}
   else root.append(noResults('Nessuna citazione inserita','Le battute significative compariranno qui quando saranno riconosciute con certezza.'));
  }
 }
