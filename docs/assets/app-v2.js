@@ -80,7 +80,8 @@ function openStand(e){
 function openEntry(e){if(e.kind==='stand'){openStand(e);return}const dialog=$('detail');$('detail-type').textContent=labels[e.kind]||'Archivio';$('detail-title').textContent=e.title;$('detail-subtitle').textContent=e.subtitle||'Scheda del compendio';const body=$('detail-content');body.replaceChildren();if(e.summary){const p=el('p');linked(p,e.summary);body.append(p)}if(e.body){const part=section(body,'Cosa è stato scoperto');const p=el('p');linked(p,e.body);part.append(p)}
  const info=section(body,'Presenza nella campagna');info.append(txt('p','Apparizioni conosciute: '+sessionCount(e)+'.'));
  const related=(e.related||[]).map(id=>entries.find(x=>x.id===id)).filter(Boolean);if(related.length){const part=section(body,'Collegamenti');const pills=el('div','related-pills');related.forEach(x=>pills.append(btn('button',x.title,'',()=>openEntry(x))));part.append(pills)}
- if(e.kind==='character')characterDetails(e,body);
+ if(e.source_document){const src=section(body,'Fonte consultabile');const link=el('a','action-button');link.href=e.source_document;link.target='_blank';link.rel='noopener';link.textContent=(e.source_label||'Apri il documento')+' ↗';src.append(link)}
+  if(e.kind==='character')characterDetails(e,body);
  if(e.tags&&e.tags.length){const part=section(body,'Parole chiave');e.tags.forEach(t=>part.append(el('span','tag',t)))}
  const actions=el('div','session-reader-actions');const pinnedNow=pinned.has(e.id);const b=btn('button',pinnedNow?'★ Rimuovi dai salvati':'☆ Salva questa scheda','action-button',()=>{if(pinned.has(e.id))pinned.delete(e.id);else pinned.add(e.id);try{localStorage.setItem('jojo-public-pins',JSON.stringify([...pinned]))}catch{};openEntry(e);renderEntries()});actions.append(b);body.append(actions);
  if(!dialog.open)dialog.showModal();
@@ -88,7 +89,7 @@ function openEntry(e){if(e.kind==='stand'){openStand(e);return}const dialog=$('d
 function btn(tag,label,cls,fn){const b=el(tag,cls,label);if(tag==='button')b.type='button';b.onclick=fn;return b}
 function section(parent,label){const s=el('div','detail-section');s.append(el('div','detail-label',label));parent.append(s);return s}
 function boundary(s,i,len){const left=i?s[i-1]:'';const right=s[i+len]||'';return !/[a-zA-ZÀ-ž0-9]/.test(left)&&!/[a-zA-ZÀ-ž0-9]/.test(right)}
-function linked(node,value){const text=safe(value),lower=text.toLocaleLowerCase('it');const names=entries.filter(x=>['character','stand','location'].includes(x.kind)&&safe(x.title).length>=4).sort((a,b)=>b.title.length-a.title.length);let i=0,start=0;while(i<text.length){let hit=null;for(const x of names){if(lower.startsWith(x.title.toLocaleLowerCase('it'),i)&&boundary(text,i,x.title.length)){hit=x;break}}if(hit){node.append(document.createTextNode(text.slice(start,i)));node.append(btn('button',text.slice(i,i+hit.title.length),'inline-link',()=>openEntry(hit)));i+=hit.title.length;start=i}else i++}node.append(document.createTextNode(text.slice(start)))}
+function linked(node,value){const text=safe(value),lower=text.toLocaleLowerCase('it');const names=entries.filter(x=>['character','stand','location','faction','artifact','clue','other'].includes(x.kind)&&safe(x.title).length>=5).sort((a,b)=>b.title.length-a.title.length);let i=0,start=0;while(i<text.length){let hit=null;for(const x of names){if(lower.startsWith(x.title.toLocaleLowerCase('it'),i)&&boundary(text,i,x.title.length)){hit=x;break}}if(hit){node.append(document.createTextNode(text.slice(start,i)));node.append(btn('button',text.slice(i,i+hit.title.length),'inline-link',()=>openEntry(hit)));i+=hit.title.length;start=i}else i++}node.append(document.createTextNode(text.slice(start)))}
 function prose(parent,str){const parts=safe(str).split(/\n\s*\n/).filter(Boolean);for(const seg of parts){const at=seg.indexOf('\n');if(at>0&&at<45&&seg.slice(0,at).length<40&&!/[.!?]$/.test(seg.slice(0,at))){const h=txt('h3',seg.slice(0,at));h.id='capitolo-'+(parent.querySelectorAll('h3').length+1);parent.append(h);const p=el('p');linked(p,seg.slice(at+1));parent.append(p)}else{const p=el('p');linked(p,seg);parent.append(p)}}}
 function references(parent,ids){const shown=[...new Set(ids||[])].map(id=>entries.find(x=>x.id===id)).filter(Boolean);if(!shown.length)return;const box=el('div','related-pills');shown.forEach(e=>box.append(btn('button',e.title,'',()=>openEntry(e))));parent.append(box)}
 function openSession(id){const s=sessions.find(s=>s.id===id);if(!s)return;activeSession=id;activeSessionPanel='recap';activeRecapTab='standard';const target='#/sessioni/'+encodeURIComponent(id);if(location.hash!==target)location.hash=target;else route()}
@@ -339,11 +340,50 @@ function renderHome(){const last=sessions[0];$('featured-session').replaceChildr
  $('sidebar-party').replaceChildren();entries.filter(e=>e.id.startsWith('pg-')).slice(0,7).forEach(e=>{const b=btn('button','','side-person',()=>openEntry(e));b.append(txt('span',e.title.trim()[0]||'?','avatar'),txt('span',e.title));$('sidebar-party').append(b)});}
 function renderItemsIndex(){
  const root=$('items-index');root.replaceChildren();const grouped=new Map();
- for(const e of entries){if(e.kind!=='character')continue;for(const item of e.public_inventory||[]){const key=normalize(item.name);if(!key)continue;
- const existing=grouped.get(key)||{name:item.name,users:[],notes:[]};existing.users.push({character:e,item});if(item.notes)existing.notes.push(item.notes);grouped.set(key,existing);
+ // L'archivio degli oggetti comprende sia i reperti della Wiki sia gli inventari.
+ for(const e of entries){if(e.kind!=='artifact')continue;const key=normalize(e.title);if(!key)continue;grouped.set(key,{name:e.title,notes:[e.summary||e.body],users:[],ref:e})}
+ for(const e of entries){if(e.kind!=='character')continue;for(const item of e.public_inventory||[]){
+   const key=normalize(item.name);if(!key)continue;const group=grouped.get(key)||{name:item.name,notes:[],users:[],ref:null};
+   group.users.push({character:e,item});if(item.notes)group.notes.push(item.notes);grouped.set(key,group);
  }}
- if(!grouped.size){root.append(noResults('Nessun oggetto conosciuto','Gli oggetti compariranno qui quando avranno un ruolo nelle vostre vicende.'));return}
- for(const group of [...grouped.values()].sort((a,b)=>a.name.localeCompare(b.name,'it'))){const card=el('article','sq-item-archive-card');card.append(txt('div','OGGETTO INCONTRATO','sq-kicker'),txt('h3',group.name));const p=el('p');p.textContent=group.notes[0]||'Un oggetto comparso nel corso delle vostre avventure.';card.append(p);const refs=el('div','related-pills');for(const u of group.users){refs.append(btn('button',u.character.title+' · '+(u.item.state||'incontrato'),'',()=>openEntry(u.character)))}card.append(refs);root.append(card)}
+ if(!grouped.size){root.append(noResults('Nessun oggetto conosciuto','Non risultano reperti o inventari pubblici.'));return}
+ for(const group of [...grouped.values()].sort((a,b)=>a.name.localeCompare(b.name,'it'))){
+   const card=el('article','sq-item-archive-card');card.append(txt('div',group.ref?'REPERTO DOCUMENTATO':'OGGETTO IN INVENTARIO','sq-kicker'),txt('h3',group.name));
+   card.append(txt('p',group.notes.find(Boolean)||'Un oggetto comparso durante la campagna.'));
+   const refs=el('div','related-pills');
+   if(group.ref)refs.append(btn('button','Apri la scheda del reperto →','',()=>openEntry(group.ref)));
+   for(const u of group.users){refs.append(btn('button',u.character.title+' · '+(u.item.state||'incontrato'),'',()=>openEntry(u.character)))}
+   card.append(refs);root.append(card);
+ }
+}
+const documentsList=[
+ {title:'Il diario di João Pereira',page:'Pagine 1–4',filename:'01-diario-joao.pdf',summary:'James, il Requiem, le rivalità e il terzo ciclo.',ids:['oggetto-diario-joao','personaggio-joao','personaggio-james','personaggio-hans','personaggio-ella']},
+ {title:'La Bussola del Pellegrino',page:'Pagina 5',filename:'02-bussola-pellegrino.pdf',summary:'Bussola anomala che indica la regione DP dell’Arizona.',ids:['oggetto-bussola-pellegrino','luogo-sito-dp']},
+ {title:'Operazione DP',page:'Pagina 6',filename:'03-operazione-dp.pdf',summary:'I due depositi, il sito detto Palmo e le ipotesi geologiche.',ids:['studio-operazione-dp','luogo-sito-dp','indizio-doppio-impatto']},
+ {title:'Progetto R',page:'Pagina 7',filename:'04-progetto-r.pdf',summary:'Le osservazioni sulle manifestazioni evolutive Requiem.',ids:['studio-progetto-r','studio-requiem','personaggio-eliora-sinder']},
+ {title:'Classificazione dei catalizzatori',page:'Pagina 8',filename:'05-classificazione-catalizzatori.pdf',summary:'Le classi S, R-1 e R-2 e le loro differenti proprietà.',ids:['studio-catalizzatori','studio-requiem','indizio-vincolo-individuale']},
+ {title:'Registro sperimentale R-017',page:'Pagina 9',filename:'06-registro-sperimentale.pdf',summary:'L’esperimento associato a João e al catalizzatore R-1.',ids:['oggetto-catalizzatore-r017','studio-requiem','personaggio-joao']},
+ {title:'I tre cicli del programma',page:'Pagina 10',filename:'07-cicli-sperimentali.pdf',summary:'Sperimentazione animale, umana e reclutamento successivo.',ids:['studio-cicli','luogo-perimetro-ciclo1']},
+ {title:'Steel Ball Run — New York Herald',page:'Pagina 11',filename:'08-steel-ball-run.pdf',summary:'Corsa dalla California a New York; Johnny Joestar, Gyro Zeppeli e Steven Steel.',ids:['studio-steel-ball-run','luogo-percorso-sbr','personaggio-johnny-joestar','personaggio-gyro-zeppeli']},
+ {title:'Comunicazione riservata',page:'Pagina 12',filename:'09-comunicazione-riservata.pdf',summary:'Le ricerche sulle famiglie Joestar, Steel e Zeppeli.',ids:['personaggio-lucy-steel','studio-steel-ball-run','oggetto-genealogie']}
+];
+function renderDocuments(){
+ const grid=$('documents-grid'), discovery=$('documents-discoveries');grid.replaceChildren();discovery.replaceChildren();
+ const seen=new Set();
+ for(const [i,d] of documentsList.entries()){
+  const card=el('article','documents-card');
+  const heading=el('div','documents-card-head');heading.append(txt('span',String(i+1).padStart(2,'0'),'documents-number'),txt('span',d.page,'documents-page'));
+  card.append(heading,txt('h3',d.title),txt('p',d.summary));
+  const actions=el('div','documents-card-actions');
+  const link=el('a','documents-file-link');link.href='assets/documenti/'+d.filename;link.target='_blank';link.rel='noopener';link.textContent='Leggi PDF ↗';actions.append(link);
+  card.append(actions);
+  const refs=el('div','documents-card-links');refs.append(txt('span','SCOPERTE COLLEGATE','documents-links-label'));
+  for(const id of d.ids){const e=entries.find(x=>x.id===id);if(!e)continue;seen.add(id);refs.append(btn('button',e.title,'documents-wiki-link',()=>openEntry(e)))}
+  card.append(refs);grid.append(card);
+ }
+ const spotlight=['personaggio-grimm','fazione-grimm','studio-requiem','studio-catalizzatori','luogo-sito-dp','studio-operazione-dp','oggetto-catalizzatore-r017','studio-cicli','studio-steel-ball-run'];
+ for(const id of spotlight){const e=entries.find(x=>x.id===id);if(!e)continue;const card=btn('button','','documents-discovery-card',()=>openEntry(e));card.append(txt('span',(labels[e.kind]||'Archivio').toUpperCase(),'documents-kicker'),txt('strong',e.title),txt('p',short(e.summary,145)),txt('span','Apri scheda →','documents-discovery-action'));discovery.append(card)}
+ $('documents-linked-count').textContent=String(seen.size);
 }
 function renderTrialIndex(){
  const root=$('trials-index');root.replaceChildren();const trials=entries.filter(e=>e.id.startsWith('trial-')||(e.tags||[]).includes('prova'));
@@ -360,10 +400,10 @@ function runMemory(q){const root=$('memory-results');root.replaceChildren();q=sa
  root.append(txt('div',ranked.length+' risultati basati sul diario e sulle schede disponibili','memory-hint'));for(const item of ranked){const b=btn('button','','search-result',item.open);b.append(txt('span',item.type.toUpperCase()),txt('h3',item.title),txt('p',short(item.text,310)));root.append(b)}}
 function noResults(title,description){const card=el('div','no-results');card.append(txt('h3',title),txt('p',description));return card}
 function notice(msg){const b=txt('div',msg,'toast');b.style.cssText='position:fixed;right:20px;bottom:20px;background:#302c39;color:#f2d6ab;padding:12px 18px;border:1px solid #7c6274;border-radius:8px;z-index:200';document.body.append(b);setTimeout(()=>b.remove(),2400)}
-function go(view){if(!['home','sessioni','classifica','pg','npc','stand','compendio','oggetti','prove','cronologia','misteri','ricerca'].includes(view))view='home';if(location.hash!=='#/'+view){location.hash='/'+view}else route()}
-function route(){const parts=(location.hash||'#/sessioni').replace(/^#\/?/,'').split('/');const view=parts[0]||'home';if(view==='sessioni'&&parts[1]){const id=decodeURIComponent(parts[1]);if(sessions.some(x=>x.id===id)){activeSession=id;libraryCategory='recaps'}}currentView=['home','sessioni','classifica','pg','npc','stand','compendio','oggetti','prove','cronologia','misteri','ricerca'].includes(view)?view:'home';
- document.querySelectorAll('.view').forEach(x=>x.classList.toggle('hidden',x.id!=='view-'+currentView));document.querySelectorAll('[data-nav]').forEach(x=>{const a=x.dataset.nav===currentView;x.classList.toggle('active',a);if(a)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current')});const names={home:'Panoramica',sessioni:'Diario delle sessioni',classifica:'Classifiche del torneo',pg:'Personaggi giocanti',npc:'Personaggi non giocanti',stand:'Stand incontrati',compendio:'Compendio',oggetti:'Oggetti incontrati',prove:'Prove e obiettivi',cronologia:'Cronologia',misteri:'Fili aperti',ricerca:'Ricerca'};$('breadcrumb').textContent=names[currentView];
- if(currentView==='home')renderHome();document.body.classList.toggle('library-focused',currentView==='sessioni');if(currentView==='sessioni')renderLibrary();if(currentView==='classifica')window.JoJoRanking?.render($('ranking-root'),parts[1]||'panoramica');if(currentView==='pg'||currentView==='npc')renderCharacters(currentView);if(currentView==='stand')renderStands();if(currentView==='compendio'){renderFilters();renderEntries()}if(currentView==='oggetti')renderItemsIndex();if(currentView==='prove')renderTrialIndex();if(currentView==='cronologia')renderTimeline();if(currentView==='misteri')renderMysteries();if(currentView==='ricerca'){$('memory-query').value=searchQuery;runMemory(searchQuery)}
+function go(view){if(!['home','sessioni','classifica','pg','npc','stand','compendio','oggetti','documenti','prove','cronologia','misteri','ricerca'].includes(view))view='home';if(location.hash!=='#/'+view){location.hash='/'+view}else route()}
+function route(){const parts=(location.hash||'#/sessioni').replace(/^#\/?/,'').split('/');const view=parts[0]||'home';if(view==='sessioni'&&parts[1]){const id=decodeURIComponent(parts[1]);if(sessions.some(x=>x.id===id)){activeSession=id;libraryCategory='recaps'}}currentView=['home','sessioni','classifica','pg','npc','stand','compendio','oggetti','documenti','prove','cronologia','misteri','ricerca'].includes(view)?view:'home';
+ document.querySelectorAll('.view').forEach(x=>x.classList.toggle('hidden',x.id!=='view-'+currentView));document.querySelectorAll('[data-nav]').forEach(x=>{const a=x.dataset.nav===currentView;x.classList.toggle('active',a);if(a)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current')});const names={home:'Panoramica',sessioni:'Diario delle sessioni',classifica:'Classifiche del torneo',pg:'Personaggi giocanti',npc:'Personaggi non giocanti',stand:'Stand incontrati',compendio:'Compendio',oggetti:'Oggetti incontrati',documenti:'Archivio di João',prove:'Prove e obiettivi',cronologia:'Cronologia',misteri:'Fili aperti',ricerca:'Ricerca'};$('breadcrumb').textContent=names[currentView];
+ if(currentView==='home')renderHome();document.body.classList.toggle('library-focused',currentView==='sessioni');if(currentView==='sessioni')renderLibrary();if(currentView==='classifica')window.JoJoRanking?.render($('ranking-root'),parts[1]||'panoramica');if(currentView==='pg'||currentView==='npc')renderCharacters(currentView);if(currentView==='stand')renderStands();if(currentView==='compendio'){renderFilters();renderEntries()}if(currentView==='oggetti')renderItemsIndex();if(currentView==='documenti')renderDocuments();if(currentView==='prove')renderTrialIndex();if(currentView==='cronologia')renderTimeline();if(currentView==='misteri')renderMysteries();if(currentView==='ricerca'){$('memory-query').value=searchQuery;runMemory(searchQuery)}
  $('sidebar').classList.remove('open');$('mobile-shade').classList.remove('open');window.scrollTo(0,0)}
 const PUBLIC_DB='https://eldluuxqizvrczsnelre.supabase.co/rest/v1';
 const PUBLIC_DB_KEY='sb_publishable_l8p97NQI5ELPiJ0OOoIJww_DJIovv7E';
@@ -454,7 +494,7 @@ async function init(){try{const res=await fetch('data/public.json',{cache:'no-st
   if(!f)continue;
   s.recapVariants=[f.standard,f.concise,f.combat,...(f.outline||[]).flatMap(ch=>ch.events||[])].filter(x=>typeof x==='string');
  }
- sessions.sort((a,b)=>(b.number??b.sortOrder??0)-(a.number??a.sortOrder??0));entries=entries.filter(e=>e.kind!=='stand'||window.JoJoStands.encounterSources(e,sessions).length>0);activeSession=sessions[0]?.id||'';renderHome();route();
+ const historicalOrder={'sessione-fiume-01':1,'sessione-sopravvivenza-01':2,'sessione-stanza-dei-cuori-01':3};sessions.sort((a,b)=>(b.number??b.sortOrder??historicalOrder[b.id]??0)-(a.number??a.sortOrder??historicalOrder[a.id]??0));entries=entries.filter(e=>e.kind!=='stand'||window.JoJoStands.encounterSources(e,sessions).length>0);activeSession=sessions[0]?.id||'';renderHome();route();
  }catch(e){$('featured-session').append(noResults('Impossibile caricare l’archivio','La pagina deve essere aperta dal sito GitHub Pages.'));console.error(e)}}
 
 document.querySelectorAll('[data-library]').forEach(b=>b.addEventListener('click',()=>{
@@ -467,6 +507,7 @@ $('library-filter-toggle').addEventListener('click',()=>{const popup=$('library-
 $('library-filter-session').addEventListener('change',e=>{librarySessionOnly=e.target.checked;renderLibrary()});
 $('library-filter-clear').addEventListener('click',()=>{libraryQuery='';librarySessionOnly=false;$('library-search-input').value='';$('library-filter-session').checked=false;$('library-filter-popup').classList.add('hidden');$('library-filter-toggle').setAttribute('aria-expanded','false');renderLibrary()});
 document.addEventListener('click',e=>{const wrap=document.querySelector('.library-filter-wrap');if(wrap&&!wrap.contains(e.target)&&!$('library-filter-popup').classList.contains('hidden')){$('library-filter-popup').classList.add('hidden');$('library-filter-toggle').setAttribute('aria-expanded','false')}});
+document.querySelectorAll('[data-entry-open]').forEach(b=>b.addEventListener('click',()=>{const e=entries.find(x=>x.id===b.dataset.entryOpen);if(e)openEntry(e)}));
 document.querySelectorAll('[data-nav]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.nav)));document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
 $('hero-session').onclick=()=>sessions.length?openSession(sessions[0].id):go('sessioni');
 $('search-jump').onclick=()=>go('ricerca');
