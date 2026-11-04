@@ -663,9 +663,9 @@
       "id": "fazione-grimm",
       "kind": "faction",
       "title": "Grimm",
-      "subtitle": "Organizzazione incontrata dopo il traguardo",
-      "summary": "I Grimm sorvegliano lo svolgimento delle prove. Uno di loro entra nella stanza di João e reagisce all’attività dello Stand di Jean.",
-      "body": "Jean ha già superato il traguardo quando tenta di attaccare un membro della squadra avversaria. È a questo punto, e non prima, che arrivano i Grimm: lo fermano e impediscono che lo scontro continui.\n\nNella stanza segreta, un Grimm inizialmente scherza con João, ma quando nota Jean diventa serio: i suoi occhi diventano completamente neri e percepisce l’attività dello Stand del ragazzo.",
+      "subtitle": "Fazione • sorveglianza delle prove",
+      "summary": "I Grimm intervengono per far rispettare le regole della competizione. Due incontri documentati: il traguardo del fiume e la stanza segreta di João.",
+      "body": "Durante la prova del fiume i Grimm compaiono solo dopo che i concorrenti hanno superato il traguardo: fermano Jean mentre tenta di colpire un avversario oltre la linea d’arrivo.\n\nPiù tardi un Grimm accompagna João Pereira nella stanza segreta. Inizialmente scherza con lui, ma alla vista di Jean diventa serio; i suoi occhi appaiono completamente neri e percepisce l’attività dello Stand del ragazzo.\n\nI loro nomi individuali, l’organizzazione interna, i poteri precisi e le intenzioni non sono stati accertati.",
       "tags": [
         "fazione",
         "prova del fiume"
@@ -673,7 +673,9 @@
       "related": [
         "personaggio-joao",
         "luogo-stanza-joao",
-        "pg-jean"
+        "pg-jean",
+        "personaggio-grimm",
+        "sessione-fiume-01"
       ],
       "public": true
     },
@@ -895,11 +897,16 @@
       "title": "João Pereira",
       "subtitle": "",
       "summary": "Proprietario della stanza segreta individuata durante l’esplorazione; custodisce un diario e numerosi fascicoli.",
-      "body": "João rientra nella propria stanza accompagnato da un Grimm, portando un pugnale insanguinato. Il suo diario parla di James, del Requiem e del terzo ciclo: sono affermazioni scritte dall’autore e non verifiche indipendenti.",
+      "body": "João rientra nella propria stanza accompagnato da un Grimm, portando un pugnale insanguinato. Il suo diario parla di James, del Requiem e del terzo ciclo: sono affermazioni scritte dall’autore e non verifiche indipendenti.\n\nNel diario João scrive di aver ottenuto il Requiem e che il suo Stand torna alla configurazione precedente quando viene rimossa la freccia. Il registro sperimentale R-017 riporta «evoluzione confermata» e un catalizzatore R-1 assegnato in custodia a João. Descrive inoltre la volontà di prendere parte allo staff del terzo ciclo; questi elementi sono conoscibili attraverso le carte ritrovate.",
       "related": [
         "luogo-stanza-joao",
         "oggetto-diario-joao",
-        "fazione-grimm"
+        "fazione-grimm",
+        "studio-requiem",
+        "studio-cicli",
+        "oggetto-catalizzatore-r017",
+        "personaggio-hans",
+        "personaggio-ella"
       ],
       "tags": [
         "npc",
@@ -1005,9 +1012,11 @@
       "title": "James",
       "subtitle": "",
       "summary": "Persona citata nel diario trovato nella stanza di João.",
-      "body": "Il diarista descrive una rivalità con James e il proprio desiderio di prevalere. Il contenuto riflette il punto di vista del diario.",
+      "body": "Il diarista descrive una rivalità con James e il proprio desiderio di prevalere. Il contenuto riflette il punto di vista del diario.\n\nIl diario di João descrive una rivalità competitiva con James e attribuisce a James una precedente evoluzione Requiem. João scrive di essersi liberato di lui, ma il testo da solo non permette di accertarne le circostanze o lo stato attuale.",
       "related": [
-        "oggetto-diario-joao"
+        "oggetto-diario-joao",
+        "studio-requiem",
+        "personaggio-hans"
       ],
       "tags": [
         "citato"
@@ -1100,12 +1109,18 @@
       "related": [
         "personaggio-joao",
         "personaggio-james",
-        "luogo-stanza-joao"
+        "luogo-stanza-joao",
+        "studio-requiem",
+        "studio-cicli",
+        "personaggio-hans",
+        "personaggio-ella"
       ],
       "tags": [
         "documento"
       ],
-      "public": true
+      "public": true,
+      "source_document": "assets/documenti/01-diario-joao.pdf",
+      "source_label": "Archivio di João · documento 01 · pp. 1–4"
     },
     {
       "id": "oggetto-fascicoli-progetto-r",
@@ -1116,12 +1131,17 @@
       "body": "Le teorie e le ipotesi dei fascicoli sono parte di quanto i concorrenti hanno letto; non costituiscono una spiegazione definitiva delle regole degli Stand.",
       "related": [
         "luogo-stanza-joao",
-        "oggetto-diario-joao"
+        "oggetto-diario-joao",
+        "studio-progetto-r",
+        "studio-requiem",
+        "studio-catalizzatori"
       ],
       "tags": [
         "documento"
       ],
-      "public": true
+      "public": true,
+      "source_document": "assets/documenti/04-progetto-r.pdf",
+      "source_label": "Archivio di João · documento 04 · p. 7"
     },
     {
       "id": "oggetto-genealogie",
@@ -1177,16 +1197,20 @@
       "kind": "artifact",
       "title": "Bussola del Pellegrino",
       "subtitle": "",
-      "summary": "Nome di un oggetto menzionato nei fascicoli consultati nella stanza.",
-      "body": "I documenti lo collegano a ricerche nel deserto nordamericano, reperti ossei e fenomeni anomali. Non è stato stabilito che la bussola sia fisicamente in possesso del gruppo.",
+      "summary": "Bussola anomala descritta nel documento DP-1-03: non segue il campo magnetico terrestre e indica una regione dell’Arizona.",
+      "body": "Il rapporto del 14 ottobre 1972 descrive una bussola con un frammento osseo sigillato nell’ago, associato senza identificazione confermata a una reliquia umana. Secondo le osservazioni del rapporto, l’ago non è influenzato da magneti artificiali e indica la zona DP in Arizona; durante l’avvicinamento vibrerebbe sempre più intensamente. I ricercatori ipotizzano un’attrazione non elettromagnetica, eventualmente legata ai portatori di Stand. L’oggetto è stato descritto nei documenti, non ritrovato fisicamente dal gruppo.",
       "related": [
-        "oggetto-fascicoli-progetto-r"
+        "oggetto-fascicoli-progetto-r",
+        "luogo-sito-dp",
+        "studio-operazione-dp"
       ],
       "tags": [
         "citato",
         "documento"
       ],
-      "public": true
+      "public": true,
+      "source_document": "assets/documenti/02-bussola-pellegrino.pdf",
+      "source_label": "Archivio di João · documento 02 · p. 5"
     },
     {
       "id": "indizio-marchi-stella",
@@ -1274,17 +1298,455 @@
       "title": "Archivio di João Pereira",
       "subtitle": "",
       "summary": "Nove documenti ritrovati, raccolti in dodici pagine: diario, rapporti di ricerca, registri, cronologie e comunicazioni.",
-      "body": "Il fascicolo integrale è consultabile nella sezione Documenti del sito. Alcune pagine presentano ipotesi dei rispettivi autori, non informazioni accertate.",
+      "body": "Nove documenti distribuiti su dodici pagine, recuperati nella stanza di João: diario (pp. 1–4), Bussola del Pellegrino (p. 5), Operazione DP (p. 6), Progetto R e Requiem (p. 7), classificazione dei catalizzatori (p. 8), registro R-017 (p. 9), tre cicli del programma (p. 10), Steel Ball Run (p. 11) e comunicazione riservata (p. 12).\n\nLe persone, i siti e i fenomeni menzionati sono ora consultabili come singole schede del compendio. I testi sono fonti interne alla storia: annotazioni, ipotesi e resoconti non sono automaticamente fatti accertati.",
       "related": [
         "luogo-stanza-joao",
         "oggetto-diario-joao",
-        "oggetto-fascicoli-progetto-r"
+        "oggetto-fascicoli-progetto-r",
+        "studio-requiem",
+        "studio-catalizzatori",
+        "luogo-sito-dp",
+        "studio-operazione-dp",
+        "studio-cicli",
+        "studio-steel-ball-run",
+        "fazione-grimm"
       ],
       "tags": [
         "documenti",
         "archivio"
       ],
-      "public": true
+      "public": true,
+      "source_document": "assets/archivio-joao-pereira.pdf",
+      "source_label": "Archivio integrale · 12 pagine"
+    },
+    {
+      "id": "personaggio-grimm",
+      "kind": "character",
+      "title": "Guardiani Grimm",
+      "subtitle": "NPC collettivo • guardiani incontrati",
+      "summary": "Personale di sorveglianza della competizione, già intervenuto direttamente contro Jean.",
+      "body": "Alla fine della prova del fiume i Grimm impediscono a Jean di proseguire l’attacco contro un avversario dopo il traguardo. Nella stanza segreta di João, uno di loro percepisce la manifestazione dello Stand di Jean e manifesta occhi completamente neri.\n\nLa scheda riguarda gli individui incontrati, senza presupporre che si tratti sempre dello stesso Grimm. Non sono noti i loro nomi o i loro Stand.",
+      "related": [
+        "fazione-grimm",
+        "personaggio-joao",
+        "pg-jean",
+        "luogo-stanza-joao"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "character_role": "npc"
+    },
+    {
+      "id": "studio-requiem",
+      "kind": "other",
+      "title": "Requiem",
+      "subtitle": "Fenomeno riportato nei documenti • meccanismo non interamente compreso",
+      "summary": "Il Progetto R denomina Requiem l’evoluzione eccezionale di uno Stand già sviluppato in seguito a un catalizzatore appropriato.",
+      "body": "Il rapporto del Progetto R (documento 04, pagina 7) riferisce tre tratti ricorrenti nei casi studiati: Stand già maturo, necessità estrema percepita come assoluta e risposta positiva del catalizzatore. Aumentare soltanto l’esposizione non avrebbe prodotto risultati riproducibili.\n\nSecondo il rapporto, l’evoluzione non è necessariamente un semplice incremento di potenza: può mutare radicalmente la natura e il funzionamento della manifestazione. La selezione autonoma del catalizzatore è un’ipotesi, non una certezza.\n\nIl registro successivo (documento 06, pagina 9) riporta per João l’esperimento R-017 con esito «evoluzione confermata», precisando che la configurazione torna alla forma precedente quando viene rimosso il catalizzatore.",
+      "related": [
+        "studio-catalizzatori",
+        "oggetto-catalizzatore-r017",
+        "studio-progetto-r",
+        "personaggio-joao",
+        "indizio-freccia-requiem"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/04-progetto-r.pdf",
+      "source_label": "Archivio di João · documento 04"
+    },
+    {
+      "id": "studio-catalizzatori",
+      "kind": "other",
+      "title": "Classificazione dei catalizzatori",
+      "subtitle": "Materiali anomali • classificazione documentale",
+      "summary": "Il documento 05 distingue tre classi: S (risveglio), R-1 (Requiem dissociativo) e R-2 (Requiem integrativo).",
+      "body": "Classe S: materiale per il risveglio iniziale dello Stand, dichiarato riutilizzabile più volte; il successo dipende dalla compatibilità dell’organismo.\n\nClasse R-1: evoluzione Requiem dissociativa. Il catalizzatore resta separabile dallo Stand, che torna alla forma precedente quando viene rimosso; lo stesso catalizzatore non permetterebbe ad altri di riprodurre la medesima evoluzione.\n\nClasse R-2: evoluzione Requiem integrativa. Il catalizzatore viene incorporato nella manifestazione; la separazione e il ritorno alla forma precedente non sono stati osservati.\n\nSi tratta della classificazione adottata nell’archivio dei ricercatori, non di una regola universale confermata.",
+      "related": [
+        "studio-requiem",
+        "oggetto-catalizzatore-r017",
+        "indizio-vincolo-individuale"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/05-classificazione-catalizzatori.pdf",
+      "source_label": "Archivio di João · documento 05"
+    },
+    {
+      "id": "studio-progetto-r",
+      "kind": "other",
+      "title": "Progetto R",
+      "subtitle": "Ricerca sperimentale • documenti 04 e 06",
+      "summary": "Programma di ricerca sulle manifestazioni Stand evolute e sui catalizzatori Requiem.",
+      "body": "Il rapporto del documento 04 definisce il fenomeno Requiem e descrive condizioni ricorrenti e ipotesi sulla selezione del catalizzatore.\n\nIl documento 06 contiene un estratto sperimentale: R-014 senza trasformazione, R-015 senza trasformazione, R-016 senza risposta osservata, R-017 con «evoluzione confermata» per João e R-018 senza risposta in un altro soggetto.\n\nIl programma non documenta una procedura riproducibile per tutti i portatori.",
+      "related": [
+        "studio-requiem",
+        "studio-catalizzatori",
+        "oggetto-catalizzatore-r017",
+        "personaggio-eliora-sinder",
+        "oggetto-fascicoli-progetto-r"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/04-progetto-r.pdf",
+      "source_label": "Archivio di João · documento 04"
+    },
+    {
+      "id": "studio-operazione-dp",
+      "kind": "other",
+      "title": "Operazione DP",
+      "subtitle": "Rapporto geologico • territorio DP",
+      "summary": "Indagine geologica su un sito anomalo in Arizona, descritta nei rapporti come possibile luogo di due impatti distinti.",
+      "body": "Il documento 03, attribuito alla dott.ssa Eliora Sinder, analizza due depositi: uno più antico, anomalo, e uno più recente che avrebbe riattivato manifestazioni già registrate. Campioni biologici presenterebbero tracce di un possibile agente extraterrestre: il rapporto precisa che il nesso con il risveglio degli Stand richiede ulteriori verifiche.\n\nL’annotazione manoscritta firmata João sostiene che il secondo meteorite avrebbe «risvegliato» il Palmo, non creato il sito: è la sua interpretazione, non una conclusione dimostrata.",
+      "related": [
+        "luogo-sito-dp",
+        "indizio-doppio-impatto",
+        "oggetto-bussola-pellegrino",
+        "personaggio-eliora-sinder",
+        "oggetto-campione-dp02"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/03-operazione-dp.pdf",
+      "source_label": "Archivio di João · documento 03"
+    },
+    {
+      "id": "studio-cicli",
+      "kind": "other",
+      "title": "Tre cicli sperimentali",
+      "subtitle": "Direzione del programma • documento operativo",
+      "summary": "La sintesi operativa riporta un ciclo su organismi non umani, uno sui soggetti umani e un terzo in preparazione.",
+      "body": "Ciclo I: sperimentazione preliminare su organismi non umani; il documento registra un risveglio di Stand e indica il perimetro boschivo esterno e strutture del Comando Supremo come destinazioni degli esemplari superstiti.\n\nCiclo II: prima sperimentazione sistematica su soggetti umani, associata a prove di selezione. Una nota menziona l’ammissione volontaria di un partecipante tramite autorizzazione speciale, senza identificarlo.\n\nCiclo III: reclutamento in preparazione e materiale aggiuntivo da approvvigionare; viene autorizzato personale già coinvolto nei cicli precedenti per la supervisione.\n\nJoão scrive nel diario che intende partecipare allo staff del terzo ciclo: questo è un suo proposito riportato.",
+      "related": [
+        "personaggio-joao",
+        "luogo-perimetro-ciclo1",
+        "studio-progetto-r"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/07-cicli-sperimentali.pdf",
+      "source_label": "Archivio di João · documento 07"
+    },
+    {
+      "id": "studio-steel-ball-run",
+      "kind": "other",
+      "title": "Steel Ball Run (1890–1891)",
+      "subtitle": "Evento storico riportato da un ritaglio di giornale",
+      "summary": "Una copia del New York Herald riporta la conclusione di una corsa a cavallo dalla California a New York.",
+      "body": "L’articolo del 20 gennaio 1891 descrive la Steel Ball Run come competizione organizzata da Steven Steel, con arrivo a New York. Cita Johnny Joestar e Gyro Zeppeli tra i concorrenti più discussi e segnala controversie su alcune tappe e sulla sorte di partecipanti.\n\nUna comunicazione successiva collega a questa ricerca anche Lucy Steel e invita a esaminare discendenti Joestar, rami Zeppeli e possibili fenomeni di attrazione tra individui con capacità anomale.\n\nLe annotazioni manoscritte accostano Johnny a Joshwa e Jean e Gyro a Julia; sono annotazioni sul ritaglio, non una genealogia verificata.",
+      "related": [
+        "luogo-percorso-sbr",
+        "personaggio-johnny-joestar",
+        "personaggio-gyro-zeppeli",
+        "personaggio-steven-steel",
+        "personaggio-lucy-steel",
+        "oggetto-genealogie"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/08-steel-ball-run.pdf",
+      "source_label": "Archivio di João · documento 08"
+    },
+    {
+      "id": "luogo-sito-dp",
+      "kind": "location",
+      "title": "Sito DP — il Palmo",
+      "subtitle": "Luogo citato nei documenti • Arizona • non visitato",
+      "summary": "Formazione geologica anomala in Arizona, raffigurata come un gruppo di strutture rocciose simili a dita.",
+      "body": "Nei documenti 02 e 03 il sito DP è una regione dell’Arizona verso cui punta la Bussola del Pellegrino. Una relazione attribuisce al sottosuolo due depositi di impatto e descrive anomalie potenzialmente connesse a reperti di rilievo religioso.\n\nNella nota manoscritta João chiama il luogo «il Palmo» e sostiene che il secondo impatto ne abbia riattivato l’attività. Nessuna visita dei concorrenti al luogo è documentata.",
+      "related": [
+        "studio-operazione-dp",
+        "oggetto-bussola-pellegrino",
+        "indizio-doppio-impatto"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/03-operazione-dp.pdf",
+      "source_label": "Archivio di João · documento 03"
+    },
+    {
+      "id": "luogo-perimetro-ciclo1",
+      "kind": "location",
+      "title": "Perimetro boschivo del Ciclo I",
+      "subtitle": "Luogo menzionato • ubicazione precisa ignota",
+      "summary": "Area esterna indicata nei piani del primo ciclo sperimentale come destinazione di esemplari superstiti.",
+      "body": "La sintesi operativa del documento 07 ordina che gli esemplari non umani sopravvissuti al Ciclo I siano destinati a un «perimetro boschivo esterno», a strutture del Comando Supremo e a ulteriore osservazione sperimentale.\n\nIl documento non specifica coordinate né conferma che i personaggi abbiano visitato il luogo.",
+      "related": [
+        "studio-cicli"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/07-cicli-sperimentali.pdf",
+      "source_label": "Archivio di João · documento 07"
+    },
+    {
+      "id": "luogo-percorso-sbr",
+      "kind": "location",
+      "title": "Percorso della Steel Ball Run",
+      "subtitle": "Luogo storico citato • non visitato",
+      "summary": "Tracciato storico citato nell’articolo: partenza sulle coste della California e arrivo a New York.",
+      "body": "Il ritaglio del New York Herald del 20 gennaio 1891 colloca il percorso della Steel Ball Run lungo il continente americano, dalla California a New York. Le singole tappe e il tracciato completo non sono presenti nell’archivio, e non vanno dedotti dal solo articolo.",
+      "related": [
+        "studio-steel-ball-run"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/08-steel-ball-run.pdf",
+      "source_label": "Archivio di João · documento 08"
+    },
+    {
+      "id": "oggetto-catalizzatore-r017",
+      "kind": "artifact",
+      "title": "Catalizzatore R-017",
+      "subtitle": "Oggetto documentato • possesso attribuito a João",
+      "summary": "Catalizzatore classificato R-1, associato nel registro al Requiem di João.",
+      "body": "Il registro sperimentale del documento 06 indica: esperimento R-017, soggetto João, esito «evoluzione confermata» e custodia individuale permanente assegnata a João. Il campione conserva la propria risposta verso il soggetto originale, ma non la produce su un altro utilizzatore (R-018).\n\nLo schema riferisce reversibilità: togliendo il catalizzatore lo Stand torna alla configurazione precedente. Il gruppo ha letto la registrazione, ma non è stato accertato che abbia materialmente trovato il catalizzatore.",
+      "related": [
+        "personaggio-joao",
+        "studio-requiem",
+        "studio-catalizzatori",
+        "indizio-vincolo-individuale"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/06-registro-sperimentale.pdf",
+      "source_label": "Archivio di João · documento 06"
+    },
+    {
+      "id": "oggetto-campione-dp02",
+      "kind": "artifact",
+      "title": "Campione DP-02",
+      "subtitle": "Reperto illustrato nei fascicoli • non raccolto",
+      "summary": "Campione geologico disegnato nel rapporto sull’Operazione DP, con struttura cristallina anomala.",
+      "body": "Il documento 03 raffigura un campione denominato DP-02 e ne descrive l’anomalia di formazione, collegandolo alle indagini sui depositi del sito DP. Il ritrovamento materiale da parte dei concorrenti non risulta documentato.",
+      "related": [
+        "studio-operazione-dp",
+        "luogo-sito-dp"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/03-operazione-dp.pdf",
+      "source_label": "Archivio di João · documento 03"
+    },
+    {
+      "id": "indizio-doppio-impatto",
+      "kind": "clue",
+      "title": "I due impatti del sito DP",
+      "subtitle": "Questione aperta • rapporto geologico",
+      "summary": "Il rapporto geologico descrive due depositi e ipotizza una riattivazione delle anomalie attraverso un impatto più recente.",
+      "body": "Secondo il documento 03, il materiale del deposito I è più antico e presenta alterazioni non riconducibili ai soli processi geologici ordinari. Il deposito II è più recente; la sua formazione sembrerebbe avere riattivato anomalie già registrate.\n\nIl collegamento con reliquie, agente extraterrestre e risveglio degli Stand è oggetto di ipotesi e ulteriori verifiche nel rapporto.",
+      "related": [
+        "luogo-sito-dp",
+        "studio-operazione-dp"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/03-operazione-dp.pdf",
+      "source_label": "Archivio di João · documento 03"
+    },
+    {
+      "id": "indizio-vincolo-individuale",
+      "kind": "clue",
+      "title": "Vincolo individuale del catalizzatore",
+      "subtitle": "Fenomeno riportato • spiegazione aperta",
+      "summary": "I documenti riferiscono che un catalizzatore Requiem riuscito non ripete la medesima evoluzione con un altro soggetto.",
+      "body": "La classificazione (documento 05) e il registro R-017/R-018 (documento 06) associano una risposta esclusiva del catalizzatore al primo soggetto su cui ha avuto successo. Il documento non chiarisce la causa di questa compatibilità individuale.",
+      "related": [
+        "studio-catalizzatori",
+        "oggetto-catalizzatore-r017",
+        "studio-requiem"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/05-classificazione-catalizzatori.pdf",
+      "source_label": "Archivio di João · documento 05"
+    },
+    {
+      "id": "personaggio-eliora-sinder",
+      "kind": "character",
+      "title": "Eliora Sinder",
+      "subtitle": "Ricercatrice citata nei fascicoli • non incontrata",
+      "summary": "Dottoressa citata come autrice di rapporti sull’Operazione DP e sul Progetto R.",
+      "body": "La firma «Dott.ssa Eliora Sinder» compare sul rapporto geologico del sito DP (documento 03) e sullo studio delle manifestazioni Requiem (documento 04). I concorrenti conoscono il nome attraverso i documenti; non è documentato un incontro diretto.",
+      "related": [
+        "studio-operazione-dp",
+        "studio-progetto-r",
+        "luogo-sito-dp"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/04-progetto-r.pdf",
+      "source_label": "Archivio di João · documento 04",
+      "character_role": "npc"
+    },
+    {
+      "id": "personaggio-johnny-joestar",
+      "kind": "character",
+      "title": "Johnny Joestar",
+      "subtitle": "Figura storica citata • non incontrata",
+      "summary": "Fantino citato fra i concorrenti della Steel Ball Run.",
+      "body": "L’articolo sul New York Herald lo menziona tra i nomi più discussi della competizione. La comunicazione successiva richiede ricerche sui suoi discendenti e sui loro rapporti con il territorio giapponese. Le annotazioni a margine del giornale nominano Joshwa Invis e Jean Val Jan, senza dimostrare una discendenza.",
+      "related": [
+        "studio-steel-ball-run",
+        "oggetto-genealogie"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/08-steel-ball-run.pdf",
+      "source_label": "Archivio di João · documento 08",
+      "character_role": "npc"
+    },
+    {
+      "id": "personaggio-gyro-zeppeli",
+      "kind": "character",
+      "title": "Gyro Zeppeli",
+      "subtitle": "Figura storica citata • non incontrata",
+      "summary": "Concorrente napoletano della Steel Ball Run citato dai documenti storici.",
+      "body": "Il ritaglio del 1891 lo presenta come concorrente napoletano. La comunicazione riservata lega la famiglia Zeppeli a una tecnica di rotazione e raccomanda la ricerca di rami familiari sopravvissuti. Sul ritaglio un’annotazione avvicina il suo nome a Julia Zeppeli.",
+      "related": [
+        "studio-steel-ball-run",
+        "oggetto-genealogie",
+        "personaggio-giulia-zeppeli"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/09-comunicazione-riservata.pdf",
+      "source_label": "Archivio di João · documento 09",
+      "character_role": "npc"
+    },
+    {
+      "id": "personaggio-steven-steel",
+      "kind": "character",
+      "title": "Steven Steel",
+      "subtitle": "Figura storica citata • non incontrata",
+      "summary": "Organizzatore della Steel Ball Run secondo l’articolo del New York Herald.",
+      "body": "L’articolo del 20 gennaio 1891 indica Steven Steel come imprenditore e organizzatore della corsa. Il documento contiene un’annotazione manoscritta che cita «Eldritch Steel» in prossimità del suo nome; il legame fra i nomi non viene dimostrato.",
+      "related": [
+        "studio-steel-ball-run",
+        "personaggio-lucy-steel"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/08-steel-ball-run.pdf",
+      "source_label": "Archivio di João · documento 08",
+      "character_role": "npc"
+    },
+    {
+      "id": "personaggio-lucy-steel",
+      "kind": "character",
+      "title": "Lucy Steel",
+      "subtitle": "Figura storica citata • non incontrata",
+      "summary": "Nata Pendleton; menzionata in una comunicazione riservata sulle indagini successive alla Steel Ball Run.",
+      "body": "Il documento 09 definisce Lucy Steel «nata Pendleton» e la indica come figura di interesse nelle ricerche successive alla corsa, specialmente in ambito naturalistico e geologico. Non fornisce dettagli su un incontro dei concorrenti con lei.",
+      "related": [
+        "studio-steel-ball-run",
+        "personaggio-steven-steel"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/09-comunicazione-riservata.pdf",
+      "source_label": "Archivio di João · documento 09",
+      "character_role": "npc"
+    },
+    {
+      "id": "personaggio-hans",
+      "kind": "character",
+      "title": "Hans",
+      "subtitle": "Citato nel diario • informazioni non verificate",
+      "summary": "Persona citata più volte nel diario di João in relazione alle prove e a James.",
+      "body": "Nel diario (pagine 2–4) João rivolge commenti ostili a Hans e descrive una sua presunta aggressione. Le affermazioni sono soggettive e non dimostrano autonomamente che cosa sia successo. Nessun incontro attuale con Hans è documentato.",
+      "related": [
+        "personaggio-joao",
+        "personaggio-james",
+        "oggetto-diario-joao"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/01-diario-joao.pdf",
+      "source_label": "Archivio di João · documento 01",
+      "character_role": "npc"
+    },
+    {
+      "id": "personaggio-ella",
+      "kind": "character",
+      "title": "Ella",
+      "subtitle": "Citata nel diario • non incontrata",
+      "summary": "Persona citata da João nel diario in riferimento alla compagnia e ai preparativi del terzo ciclo.",
+      "body": "Nella quarta pagina del diario João esprime diffidenza verso Ella e sostiene che stia cercando di ottenere qualcosa. Sospetta una collaborazione con James e Hans, ma non fornisce prove. I concorrenti conoscono il nome soltanto attraverso il diario.",
+      "related": [
+        "personaggio-joao",
+        "personaggio-james",
+        "personaggio-hans",
+        "studio-cicli"
+      ],
+      "tags": [
+        "documento ritrovato",
+        "stanza dei cuori"
+      ],
+      "public": true,
+      "source_document": "assets/documenti/01-diario-joao.pdf",
+      "source_label": "Archivio di João · documento 01",
+      "character_role": "npc"
     }
   ],
   "sessions": [
@@ -1434,7 +1896,8 @@
         "stand-justin-time",
         "stand-poor-souls",
         "fazione-grimm",
-        "oggetto-metronomo"
+        "oggetto-metronomo",
+        "personaggio-grimm"
       ],
       "public": true
     },
@@ -1886,7 +2349,18 @@
         "indizio-codice-307",
         "indizio-camille-cuore",
         "indizio-freccia-requiem",
-        "archivio-joao-documenti"
+        "archivio-joao-documenti",
+        "personaggio-grimm",
+        "studio-requiem",
+        "studio-catalizzatori",
+        "studio-progetto-r",
+        "studio-operazione-dp",
+        "studio-cicli",
+        "studio-steel-ball-run",
+        "luogo-sito-dp",
+        "oggetto-catalizzatore-r017",
+        "indizio-doppio-impatto",
+        "indizio-vincolo-individuale"
       ],
       "public": true
     }
