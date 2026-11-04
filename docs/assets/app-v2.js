@@ -494,7 +494,7 @@ async function init(){try{const res=await fetch('data/public.json',{cache:'no-st
   if(!f)continue;
   s.recapVariants=[f.standard,f.concise,f.combat,...(f.outline||[]).flatMap(ch=>ch.events||[])].filter(x=>typeof x==='string');
  }
- const historicalOrder={'sessione-fiume-01':1,'sessione-sopravvivenza-01':2,'sessione-stanza-dei-cuori-01':3};sessions.sort((a,b)=>(b.number??b.sortOrder??historicalOrder[b.id]??0)-(a.number??a.sortOrder??historicalOrder[a.id]??0));entries=entries.filter(e=>e.kind!=='stand'||window.JoJoStands.encounterSources(e,sessions).length>0);activeSession=sessions[0]?.id||'';renderHome();route();
+ sessions.sort((a,b)=>(b.number??b.sortOrder??0)-(a.number??a.sortOrder??0));entries=entries.filter(e=>e.kind!=='stand'||window.JoJoStands.encounterSources(e,sessions).length>0);activeSession=sessions[0]?.id||'';renderHome();route();
  }catch(e){$('featured-session').append(noResults('Impossibile caricare l’archivio','La pagina deve essere aperta dal sito GitHub Pages.'));console.error(e)}}
 
 document.querySelectorAll('[data-library]').forEach(b=>b.addEventListener('click',()=>{
