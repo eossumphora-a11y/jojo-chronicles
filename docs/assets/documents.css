@@ -1,0 +1,43 @@
+/* Documenti: stessa palette, tipografia e componenti di JoJo Chronicles. */
+.documents-view{max-width:1280px}
+.documents-view .page-heading{margin-bottom:26px}
+.documents-view .page-heading p{max-width:860px}
+.documents-hero{background:linear-gradient(135deg,#221d2b,#181922 64%);border:1px solid var(--line2);border-radius:15px;padding:clamp(22px,3vw,42px);display:grid;grid-template-columns:minmax(0,1.8fr) minmax(180px,.62fr);align-items:center;gap:28px;margin-bottom:46px}
+.documents-kicker{display:block;color:var(--accent);text-transform:uppercase;letter-spacing:.17em;font-size:10px;font-weight:800}
+.documents-hero h2,.documents-section-heading h2,.documents-related-header h2{font-family:Georgia,'Times New Roman',serif;color:var(--text);font-size:clamp(24px,3vw,35px);margin:8px 0 12px;letter-spacing:-.035em}
+.documents-hero p{color:var(--muted);font-size:14px;max-width:680px;line-height:1.75;margin-bottom:23px}
+.documents-actions{display:flex;flex-wrap:wrap;gap:12px}
+.documents-actions .primary-btn,.documents-actions .secondary-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;min-height:42px;padding:11px 17px}
+.documents-hero-facts{display:grid;grid-template-columns:1fr;gap:15px}
+.documents-hero-facts>div{display:flex;align-items:baseline;gap:13px;padding:6px 0 14px;border-bottom:1px solid #484250}
+.documents-hero-facts>div:last-child{border-bottom:0}
+.documents-hero-facts strong{font-family:Georgia,serif;font-size:38px;line-height:1;color:#e6ca9c;font-weight:500}
+.documents-hero-facts span{color:var(--muted);font-size:12px}
+.documents-section-heading,.documents-related-header{margin-bottom:21px}
+.documents-section-heading h2,.documents-related-header h2{margin-bottom:4px}
+.documents-section-heading p,.documents-related-header p{color:var(--muted);font-size:13px}
+.documents-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:49px}
+.documents-card{background:var(--panel);border:1px solid var(--line2);border-radius:13px;padding:23px;display:flex;flex-direction:column;min-width:0;transition:border-color .16s,transform .16s}
+.documents-card:hover{border-color:#72617c;transform:translateY(-2px)}
+.documents-card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.documents-number{font:500 32px/1 Georgia,serif;color:var(--accent)}
+.documents-page{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:800}
+.documents-card h3{font:500 21px/1.2 Georgia,serif;color:var(--text);margin:0 0 9px}
+.documents-card>p{color:var(--muted);font-size:13px;line-height:1.65;margin:0 0 17px;flex:1}
+.documents-card-actions{display:flex;gap:10px;margin-bottom:19px}
+.documents-file-link{display:inline-flex;padding:8px 12px;text-decoration:none;color:#18151b;background:var(--accent);font-size:12px;border-radius:7px;font-weight:800}
+.documents-file-link:hover{background:#edcf9c;color:#171219}
+.documents-card-links{border-top:1px solid var(--line);padding-top:14px;display:flex;gap:7px;flex-wrap:wrap;align-content:flex-start}
+.documents-links-label{width:100%;font-size:10px;color:var(--dim);letter-spacing:.1em;font-weight:800;margin-bottom:3px}
+.documents-wiki-link{background:#272330;color:#d5c4e0;border:1px solid #46394e;border-radius:7px;padding:6px 10px;font-size:11px;text-align:left}
+.documents-wiki-link:hover{border-color:var(--accent);color:var(--text);background:#30283b}
+.documents-related-header{margin-top:12px}
+.documents-discovery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-bottom:36px}
+.documents-discovery-card{background:var(--panel);border:1px solid var(--line2);border-radius:12px;padding:20px;text-align:left;display:flex;flex-direction:column;gap:8px;min-height:154px}
+.documents-discovery-card:hover{border-color:#997ca9;background:#24212d}
+.documents-discovery-card strong{color:var(--text);font:500 19px Georgia,serif}
+.documents-discovery-card p{color:var(--muted);font-size:12px;line-height:1.6;margin:0;flex:1}
+.documents-discovery-action{color:var(--accent);font-size:12px;font-weight:800;margin-top:4px}
+.documents-view .documents-card a:focus-visible,.documents-view .documents-card button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:1000px){.documents-hero{grid-template-columns:1fr}.documents-hero-facts{grid-template-columns:repeat(3,1fr)}.documents-hero-facts>div{flex-direction:column;gap:7px}.documents-discovery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:690px){.documents-grid,.documents-discovery-grid{grid-template-columns:1fr}.documents-hero{padding:23px}.documents-hero-facts strong{font-size:29px}.documents-card{padding:19px}}
