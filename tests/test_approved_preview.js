@@ -10,7 +10,13 @@ assert(s.summary.includes('Jean crea una sfera che contiene dei petardi'));
 assert(s.summary.includes('Hol Horse')&&s.summary.includes('Mariah'));
 assert(d.entries.some(e=>e.id==='personaggio-catrice'&&e.public));
 assert(!d.entries.some(e=>e.id==='oggetto-pietra-scritta-rossa'));
-const published=JSON.stringify(d)+' '+JSON.stringify(f);
+// Protegge l'anteprima della prova precedente: il nome Joao è invece
+// pubblicabile nel capitolo successivo, su autorizzazione del Master.
+const published=JSON.stringify(s)+' '+JSON.stringify(f);
+const newest=d.sessions.find(x=>x.id==='sessione-stanza-dei-cuori-01');
+assert(newest?.public && newest.summary.includes('Joao'), 'Il nuovo capitolo approvato menziona Joao');
+assert(!/joao was here|pietra con la scritta|sasso con la scritta/i.test(JSON.stringify(newest)),
+  'Il dettaglio riservato della pietra non deve apparire nel riepilogo');
 for(const forbidden of ['joao','ucciderà Somchai','liberazione delle anime','Jean sarebbe già libero','Catris','Holorse'])assert(!published.includes(forbidden),'Private or outdated detail: '+forbidden);
 assert(s.events.some(e=>e.text.includes('Catrice')&&e.text.includes('Yekaterina')));
 assert(s.events.some(e=>e.text.includes('Jean crea una sfera')));

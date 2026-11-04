@@ -10,7 +10,7 @@ assert(home.includes('data-nav="classifica"'));
 assert(home.includes('id="view-classifica"'));
 assert(home.includes('id="ranking-root"'));
 assert(home.includes('data-go="classifica"'));
-assert(home.indexOf('ranking.js?v=1')<home.indexOf('app-v2.js?v=29'));
+assert(home.indexOf('ranking.js?v=1')<home.indexOf('app-v2.js?v=30'));
 assert(!home.includes('href="classifica/"'));
 assert(app.includes("classifica:'Classifiche del torneo'"));
 assert(app.includes("JoJoRanking?.render"));
