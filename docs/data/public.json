@@ -63,14 +63,14 @@
           "session_title": "La stanza dei cuori",
           "time": "03:07",
           "type": "azione",
-          "text": "Organizza l’esplorazione furtiva e coordina i compagni usando i fili del proprio Stand."
+          "text": "Jean benda gli occhi ai compagni con i fili dello Stand per non far vedere il percorso segreto verso la stanza di João."
         },
         {
           "session_id": "sessione-stanza-dei-cuori-01",
           "session_title": "La stanza dei cuori",
           "time": "03:14",
           "type": "scoperta",
-          "text": "Trova fotografie proprie e di Joshwa con marchi a stella complementari."
+          "text": "Si osservano fotografie di Jean e Joshwa. I marchi sulla loro schiena esistono già e sono già conosciuti: non compaiono ora."
         },
         {
           "session_id": "sessione-stanza-dei-cuori-01",
@@ -84,7 +84,7 @@
           "session_title": "La stanza dei cuori",
           "time": "04:31",
           "type": "azione",
-          "text": "Si finge addormentato sul divano mentre João e un Grimm rientrano nella stanza."
+          "text": "Jean chiude tutti i compagni nello stanzino segreto e intima loro di fare silenzio. Prepara una scusa sfruttando l'amicizia con João."
         }
       ]
     },
@@ -260,6 +260,20 @@
           "time": "01:49",
           "type": "azione",
           "text": "Invia i propri nani a recuperare acqua dal lago, utile a curare le ferite."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "03:25",
+          "type": "scoperta",
+          "text": "La punta della freccia sembra entrare in risonanza con la sua fiaba, che è anche quella di João."
+        },
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "03:54",
+          "type": "azione",
+          "text": "Una piccola creatura, istanza del suo Stand, si dirige verso l'armadio e interagisce con la punta della freccia."
         }
       ]
     },
@@ -316,7 +330,7 @@
           "session_title": "La stanza dei cuori",
           "time": "02:12",
           "type": "notizia",
-          "text": "Il gruppo discute se aiutarla a recuperare i sentimenti, contro la sua volontà."
+          "text": "Tim chiede a Joshwa di restituire a Mariah i sentimenti. Il gruppo ricorda che Mariah non vuole riaverli."
         }
       ],
       "public_inventory": [
@@ -665,7 +679,7 @@
       "title": "Grimm",
       "subtitle": "Fazione • sorveglianza delle prove",
       "summary": "I Grimm intervengono per far rispettare le regole della competizione. Due incontri documentati: il traguardo del fiume e la stanza segreta di João.",
-      "body": "Durante la prova del fiume i Grimm compaiono solo dopo che i concorrenti hanno superato il traguardo: fermano Jean mentre tenta di colpire un avversario oltre la linea d’arrivo.\n\nPiù tardi un Grimm accompagna João Pereira nella stanza segreta. Inizialmente scherza con lui, ma alla vista di Jean diventa serio; i suoi occhi appaiono completamente neri e percepisce l’attività dello Stand del ragazzo.\n\nI loro nomi individuali, l’organizzazione interna, i poteri precisi e le intenzioni non sono stati accertati.",
+      "body": "I Grimm intervengono per far rispettare le regole della competizione. Dopo la prova del fiume fermano Jean mentre tenta di colpire un avversario oltre il traguardo.\n\nPiù tardi un Grimm entra nella stanza di João con lui. Blocca lo sguardo su Jean e i suoi occhi diventano scuri, segno che lo sta ispezionando.\n\nI nomi individuali, l'organizzazione interna e i poteri precisi dei Grimm non sono stati accertati.",
       "tags": [
         "fazione",
         "prova del fiume"
@@ -741,7 +755,7 @@
       "title": "Camille",
       "subtitle": "Persona già incontrata dal gruppo",
       "summary": "Camille era molto legato a Mariah e fu ucciso da Hol Horse.",
-      "body": "Il gruppo aveva conosciuto Camille molto tempo prima. Aveva un forte legame con Mariah ed era stato ucciso da Hol Horse. Al termine della prova della sopravvivenza Mariah mostra un medaglione con il suo ritratto.",
+      "body": "Il gruppo aveva conosciuto Camille molto tempo prima. Aveva un forte legame con Mariah ed era stato ucciso da Hol Horse. Al termine della prova della sopravvivenza Mariah mostra un medaglione con il suo ritratto.\n\nDurante l'esplorazione nella stanza di João viene trovata un'immagine che richiama il suo Stand dopo la morte.",
       "tags": [
         "citata",
         "medaglione"
@@ -765,7 +779,7 @@
           "session_title": "La stanza dei cuori",
           "time": "04:22",
           "type": "scoperta",
-          "text": "Un’immagine in un cassetto ricorda ciò che era rimasto di Camille dopo la morte."
+          "text": "Fra le immagini dei cassetti compare quella che richiama lo Stand di Camille dopo la sua morte."
         }
       ]
     },
@@ -937,7 +951,7 @@
       "title": "Joshwa",
       "subtitle": "",
       "summary": "Gemello di Jean, torna dal gruppo e racconta vicende legate a Hol Horse e Babette.",
-      "body": "Dice di non essere più maledetto. Ha promesso a Tim di cercare un modo per restituire a Mariah la capacità di provare emozioni, nonostante Mariah non desideri quell’intervento. Le fotografie ritrovate mostrano i marchi a stella complementari di Joshwa e Jean.",
+      "body": "Joshwa racconta di non essere più maledetto. Va a parlare con Tim, al quale promette un favore per rincuorarlo dopo il torto che gli aveva fatto. Tim gli chiede di restituire a Mariah i sentimenti, anche se Mariah non desidera quell'intervento. I marchi che Joshwa e Jean portano sulla schiena erano già presenti e conosciuti prima della ricerca.",
       "related": [
         "pg-jean",
         "personaggio-mariah",
@@ -969,14 +983,14 @@
           "session_title": "La stanza dei cuori",
           "time": "02:12",
           "type": "promessa",
-          "text": "Racconta la promessa a Tim di aiutare Mariah a ritrovare le emozioni."
+          "text": "Joshwa va a parlare con Tim e, per rincuorarlo del torto fatto, gli promette un favore. Tim gli chiede di ridare i sentimenti a Mariah."
         },
         {
           "session_id": "sessione-stanza-dei-cuori-01",
           "session_title": "La stanza dei cuori",
           "time": "03:14",
           "type": "scoperta",
-          "text": "Una fotografia mostra i marchi a stella complementari suoi e di Jean."
+          "text": "Si osservano fotografie di Jean e Joshwa. I marchi sulla loro schiena esistono già e sono già conosciuti: non compaiono ora."
         }
       ]
     },
@@ -985,8 +999,8 @@
       "kind": "character",
       "title": "Tim",
       "subtitle": "",
-      "summary": "Bambino al quale Joshwa ha promesso di cercare una soluzione per le emozioni di Mariah.",
-      "body": "La promessa è discussa dal gruppo, che si interroga sul rispetto della volontà di Mariah. Non è stata ancora mantenuta.",
+      "summary": "Dopo che Joshwa gli promette un favore per rincuorarlo, Tim gli chiede di restituire i sentimenti a Mariah.",
+      "body": "Joshwa va a parlare con Tim dopo il torto che gli aveva fatto e gli promette un favore per rincuorarlo. Tim chiede a Joshwa di restituire i sentimenti a Mariah. La richiesta è discussa dal gruppo, che sa che Mariah non vuole riaverli. La promessa non è ancora stata mantenuta.",
       "related": [
         "pg-joshwa",
         "personaggio-mariah"
@@ -1002,7 +1016,7 @@
           "session_title": "La stanza dei cuori",
           "time": "02:12",
           "type": "promessa",
-          "text": "Joshwa racconta di avergli promesso di aiutare Mariah a recuperare le emozioni."
+          "text": "Joshwa va a parlare con Tim e, per rincuorarlo del torto fatto, gli promette un favore. Tim gli chiede di ridare i sentimenti a Mariah."
         }
       ]
     },
@@ -1039,7 +1053,7 @@
       "title": "La stanza segreta di João",
       "subtitle": "",
       "summary": "Stanza nascosta dietro una parete vicina al bagno, con un armadio a cuore e una luce rossa pulsante.",
-      "body": "Contiene una scrivania con diario e fascicoli, una mappa antica, genealogie Joestar, Zeppeli e Steel, armadio a due ante e cassetti con metà di cuori cristallini.",
+      "body": "Contiene una scrivania con diario e fascicoli, una mappa antica, genealogie Joestar, Zeppeli e Steel, armadio a due ante e cassetti con metà di cuori cristallini.\n\nAll'avvicinarsi di João, Jean chiude i compagni nello stanzino segreto e impone loro il silenzio, preparandosi a giustificare la propria presenza.",
       "related": [
         "luogo-passaggio-segreto",
         "oggetto-cuori-cristallini",
@@ -1055,8 +1069,8 @@
       "kind": "location",
       "title": "Il passaggio dietro il bagno",
       "subtitle": "",
-      "summary": "Un tratto di muro anomalo viene aperto usando un frammento di lancia spezzata.",
-      "body": "L’accesso nascosto conduce alla stanza di João. Il frammento metallico reagisce alla fessura della parete.",
+      "summary": "Un tratto anomalo del muro viene aperto grazie alla punta spezzata di una freccia.",
+      "body": "L'accesso nascosto conduce alla stanza di João. La punta della freccia sembra risuonare con la fiaba di Elisabeth, la stessa di João, e reagisce alla fessura nella parete.",
       "related": [
         "luogo-stanza-joao",
         "oggetto-punta-lancia"
@@ -1069,16 +1083,20 @@
     {
       "id": "oggetto-punta-lancia",
       "kind": "artifact",
-      "title": "Punta di lancia spezzata",
+      "title": "Punta spezzata della freccia",
       "subtitle": "",
-      "summary": "Frammento metallico trovato accanto a libri, con la dedica «al migliore».",
-      "body": "Inserito nella fessura del muro, apre un passaggio segreto. Una piccola creatura evocata, toccandolo, provoca una reazione energetica orientata verso l’armadio e un fascicolo.",
+      "summary": "Punta metallica di una freccia trovata vicino a dei libri, con la dedica «al migliore».",
+      "body": "La punta della freccia sembra entrare in risonanza con la fiaba di Elisabeth, la stessa di João. Inserita nella fessura del muro, apre il passaggio nascosto. Un'istanza dello Stand di Elisabeth, che assume l'aspetto di una piccola creatura e si dirige verso l'armadio, interagisce con la punta e provoca una reazione energetica.",
       "related": [
         "luogo-passaggio-segreto",
-        "luogo-stanza-joao"
+        "luogo-stanza-joao",
+        "pg-elisabeth",
+        "personaggio-joao"
       ],
       "tags": [
-        "reperto"
+        "reperto",
+        "freccia",
+        "fiaba"
       ],
       "public": true
     },
@@ -1164,8 +1182,8 @@
       "kind": "artifact",
       "title": "Fotografie di Jean e Joshwa",
       "subtitle": "",
-      "summary": "Fotografie con due metà complementari di un marchio a stella fra la schiena e la spalla.",
-      "body": "Nello stesso gruppo di immagini compare anche Julia. Jean e Joshwa sanno già di essere gemelli; è il significato dei marchi a rimanere sconosciuto.",
+      "summary": "Fotografie di Jean e Joshwa; i marchi sulla loro schiena erano già presenti e conosciuti.",
+      "body": "Fra le fotografie compare anche Julia. Jean e Joshwa sono gemelli e i marchi sulla loro schiena non appaiono durante questa esplorazione: erano già presenti e conosciuti.",
       "related": [
         "pg-jean",
         "pg-joshwa",
@@ -1217,8 +1235,8 @@
       "kind": "clue",
       "title": "Le due metà della stella",
       "subtitle": "",
-      "summary": "Jean e Joshwa compaiono in fotografie con due metà complementari di un marchio a stella.",
-      "body": "La parentela dei due è già conosciuta; resta da scoprire il significato della forma e del collegamento rappresentato dai marchi.",
+      "summary": "I marchi sulla schiena dei gemelli Jean e Joshwa sono già presenti e già conosciuti.",
+      "body": "I marchi non compaiono nel corso della ricerca nella stanza di João. La loro esistenza è già nota e il ritrovamento delle fotografie non è la prima scoperta di quei segni.",
       "related": [
         "oggetto-foto-gemelli",
         "pg-jean",
@@ -1265,8 +1283,8 @@
       "kind": "clue",
       "title": "L’immagine di Camille",
       "subtitle": "",
-      "summary": "In uno dei cassetti compare un’immagine che ricorda ciò che rimaneva di Camille dopo la morte.",
-      "body": "L’osservazione non stabilisce che Camille sia presente nel reperto o possa essere riportato in vita.",
+      "summary": "In un cassetto compare un'immagine che richiama lo Stand di Camille dopo la sua morte.",
+      "body": "L'immagine richiama lo Stand di Camille dopo la sua morte, non i resti fisici del portatore. Il ritrovamento non chiarisce che cosa ne sia stato.",
       "related": [
         "personaggio-camille",
         "oggetto-cuori-cristallini"
@@ -1324,8 +1342,8 @@
       "kind": "character",
       "title": "Guardiani Grimm",
       "subtitle": "NPC collettivo • guardiani incontrati",
-      "summary": "Personale di sorveglianza della competizione, già intervenuto direttamente contro Jean.",
-      "body": "Alla fine della prova del fiume i Grimm impediscono a Jean di proseguire l’attacco contro un avversario dopo il traguardo. Nella stanza segreta di João, uno di loro percepisce la manifestazione dello Stand di Jean e manifesta occhi completamente neri.\n\nLa scheda riguarda gli individui incontrati, senza presupporre che si tratti sempre dello stesso Grimm. Non sono noti i loro nomi o i loro Stand.",
+      "summary": "Nella stanza di João un Grimm fissa Jean: i suoi occhi diventano scuri, segno che lo sta ispezionando.",
+      "body": "I Grimm fermano Jean dopo il traguardo della prova del fiume. Più tardi, nella stanza segreta di João, uno di loro blocca lo sguardo su Jean e i suoi occhi diventano scuri: è il segno che lo sta ispezionando.\n\nLa scheda riguarda gli individui incontrati, senza presupporre che si tratti sempre dello stesso Grimm. Non sono noti i loro nomi o i loro Stand.",
       "related": [
         "fazione-grimm",
         "personaggio-joao",
@@ -1337,7 +1355,16 @@
         "stanza dei cuori"
       ],
       "public": true,
-      "character_role": "npc"
+      "character_role": "npc",
+      "public_history": [
+        {
+          "session_id": "sessione-stanza-dei-cuori-01",
+          "session_title": "La stanza dei cuori",
+          "time": "04:35",
+          "type": "incontro",
+          "text": "Il Grimm fissa Jean e i suoi occhi diventano scuri, segno che lo sta ispezionando. João nota il cambiamento."
+        }
+      ]
     },
     {
       "id": "studio-requiem",
@@ -2169,7 +2196,7 @@
       "sortOrder": 3,
       "date": "",
       "title": "La stanza dei cuori",
-      "summary": "La prova della sopravvivenza è terminata, ma le domande sulla struttura continuano ad accumularsi. I concorrenti si ritrovano a parlare delle alleanze, di Betty Darby e degli accordi stretti per attraversare le prove. Joshwa si ricongiunge ai compagni e racconta alcune vicende legate a Hol Horse e Babette. Afferma anche di non essere più maledetto, senza che gli altri possano ancora conoscere ogni dettaglio di ciò che gli è accaduto.\n\nDurante le conversazioni riemerge una promessa fatta da Joshwa a Tim, un bambino: trovare un modo per restituire a Mariah il suo «cuore», inteso come capacità di provare emozioni. L'impegno suscita opinioni diverse. Yekaterina ricorda che Mariah non desidera quell'intervento, mentre Jean solleva il problema di agire contro la sua volontà. Fra i compagni si torna a discutere dei patti e del destino dei concorrenti; qualcuno ipotizza perfino che i vincitori possano entrare nello staff, ma rimane soltanto un'ipotesi.\n\nPiù tardi Jean organizza un'esplorazione furtiva. Chiede ai compagni di silenziare i telefoni e utilizza i fili del proprio Stand per coordinare i movimenti del gruppo. La ricerca conduce a fotografie dei gemelli Jean e Joshwa, sui quali compaiono due metà complementari di un marchio a stella nella zona fra la schiena e la spalla. La loro parentela è già nota ai due: è il significato dei marchi a restare misterioso. Fra le fotografie compare anche Julia, mentre accanto ad alcuni libri viene trovata una punta di lancia spezzata con la dedica «al migliore».\n\nDurante la ricerca viene percepita una disposizione di cinque punti energetici, due dei quali luminosi e collegati, mentre gli altri tre appaiono oscuri. Poco dopo il gruppo individua una sezione anomala del muro accanto a un bagno. Il frammento metallico reagisce alla parete e, inserito in una fessura, apre un passaggio segreto.\n\nAl di là del muro si trova una stanza appartenente a Joao. Un grande armadio a due ante, dalla forma di cuore, emette una luce rossa pulsante. Una scrivania custodisce un diario e numerosi fascicoli; sono presenti inoltre una mappa antica, genealogie delle famiglie Joestar, Zeppeli e Steel e mobili provvisti di cassetti. Fra le pagine del diario si parla di una rivalità con James, di un potere Requiem, di una freccia particolare, di un viaggio in Arizona e del desiderio dell'autore di entrare nello staff del terzo ciclo. Sono le affermazioni del diarista, non risposte definitive alle domande del gruppo.\n\nI fascicoli approfondiscono il Progetto R e lo studio delle evoluzioni Requiem, accennando alla compatibilità di speciali catalizzatori. Altri documenti richiamano la Steel Ball Run, Johnny Joestar, Gyro Zeppeli e la famiglia Steel. Tra le carte compare anche il nome di una «Bussola del Pellegrino», associata a ricerche nel deserto nordamericano, reperti ossei e fenomeni anomali. Una piccola creatura evocata, toccando la punta metallica, provoca una reazione energetica che sembra indicare l'armadio e uno dei fascicoli.\n\nLa scoperta più inquietante si trova nei cassetti. Al loro interno sono conservate metà di cuori cristallini rossi, accompagnate da immagini e targhette. Il gruppo riesce ad aprire uno dei cassetti attraverso un meccanismo che mostra il numero 307 e la parola «Joestar». In un'immagine viene riconosciuto qualcosa che richiama ciò che rimaneva di Camille dopo la sua morte. Il contatto con uno dei reperti fa avvertire freddo e una presenza riconducibile a uno Stand. Emerge così la funzione delle due metà: quella destra sottrae i sentimenti di una persona, quella sinistra il suo Stand.\n\nSentendo dei passi in avvicinamento, i compagni tentano di riporre tutto e di nascondersi. Jean rimane nella stanza e si finge addormentato sul divano. Joao rientra accompagnato da un Grimm, portando con sé un pugnale insanguinato. I due inizialmente scherzano, ma il Grimm cambia espressione non appena nota Jean: diventa serio, i suoi occhi si fanno completamente neri e percepisce l'attività dello Stand del ragazzo. Joao nota la reazione e rivolge lo sguardo verso Jean.",
+      "summary": "La prova della sopravvivenza è terminata, ma le domande sulla struttura continuano ad accumularsi. I concorrenti si ritrovano a parlare delle alleanze, di Betty Darby e degli accordi stretti per attraversare le prove. Joshwa si ricongiunge ai compagni e racconta alcune vicende legate a Hol Horse e Babette. Afferma anche di non essere più maledetto, senza che gli altri possano ancora conoscere ogni dettaglio di ciò che gli è accaduto.\n\nJoshwa va a parlare con Tim e, per rincuorarlo del torto che gli aveva fatto, gli promette un favore. Tim gli chiede di restituire a Mariah i sentimenti e Joshwa si impegna a cercare un modo per farlo. L'impegno suscita opinioni diverse. Yekaterina ricorda che Mariah non desidera quell'intervento, mentre Jean solleva il problema di agire contro la sua volontà. Fra i compagni si torna a discutere dei patti e del destino dei concorrenti; qualcuno ipotizza perfino che i vincitori possano entrare nello staff, ma rimane soltanto un'ipotesi.\n\nPiù tardi Jean organizza un'esplorazione furtiva. Chiede ai compagni di silenziare i telefoni e usa i fili del proprio Stand per bendare gli occhi dei compagni, perché la strada che conduce alla stanza di João è segreta e non vuole rivelarla loro. La ricerca conduce a fotografie dei gemelli Jean e Joshwa. I marchi sulla loro schiena esistono già e sono già conosciuti: non compaiono per la prima volta durante l'esplorazione. Fra le fotografie compare anche Julia, mentre accanto ad alcuni libri viene trovata la punta spezzata di una freccia con la dedica «al migliore».\n\nDurante la ricerca viene percepita una disposizione di cinque punti energetici, due dei quali luminosi e collegati, mentre gli altri tre appaiono oscuri. Poco dopo il gruppo individua una sezione anomala del muro accanto a un bagno. La punta della freccia sembra entrare in risonanza con la fiaba di Elisabeth, la stessa di João. Il frammento reagisce alla parete e, inserito in una fessura, apre un passaggio segreto.\n\nAl di là del muro si trova una stanza appartenente a Joao. Un grande armadio a due ante, dalla forma di cuore, emette una luce rossa pulsante. Una scrivania custodisce un diario e numerosi fascicoli; sono presenti inoltre una mappa antica, genealogie delle famiglie Joestar, Zeppeli e Steel e mobili provvisti di cassetti. Fra le pagine del diario si parla di una rivalità con James, di un potere Requiem, di una freccia particolare, di un viaggio in Arizona e del desiderio dell'autore di entrare nello staff del terzo ciclo. Sono le affermazioni del diarista, non risposte definitive alle domande del gruppo.\n\nI fascicoli approfondiscono il Progetto R e lo studio delle evoluzioni Requiem, accennando alla compatibilità di speciali catalizzatori. Altri documenti richiamano la Steel Ball Run, Johnny Joestar, Gyro Zeppeli e la famiglia Steel. Tra le carte compare anche il nome di una «Bussola del Pellegrino», associata a ricerche nel deserto nordamericano, reperti ossei e fenomeni anomali. Una piccola creatura, istanza dello Stand di Elisabeth, si dirige verso l'armadio. Quando interagisce con la punta della freccia provoca una reazione energetica che sembra indicare l'armadio e uno dei fascicoli.\n\nLa scoperta più inquietante si trova nei cassetti. Al loro interno sono conservate metà di cuori cristallini rossi, accompagnate da immagini e targhette. Il gruppo riesce ad aprire uno dei cassetti attraverso un meccanismo che mostra il numero 307 e la parola «Joestar». Fra le immagini dei cassetti compare quella che richiama lo Stand di Camille dopo la sua morte. Il contatto con uno dei reperti fa avvertire freddo e una presenza riconducibile a uno Stand. Emerge così la funzione delle due metà: quella destra sottrae i sentimenti di una persona, quella sinistra il suo Stand.\n\nSentendo dei passi in avvicinamento, i compagni tentano di riporre tutto e di nascondersi. Jean chiude tutti i compagni nello stanzino segreto e intima loro di restare in silenzio. Prepara una scusa per giustificare la propria presenza, contando sull'amicizia con João per non destare sospetti. Joao rientra accompagnato da un Grimm, portando con sé un pugnale insanguinato. I due inizialmente scherzano, ma il Grimm fissa Jean e i suoi occhi diventano scuri: è il segno che lo sta ispezionando. Joao nota la reazione e rivolge lo sguardo verso Jean.",
       "events": [
         {
           "time": "00:31",
@@ -2185,7 +2212,7 @@
         },
         {
           "time": "02:12",
-          "text": "Emerge la promessa fatta da Joshwa a Tim: tentare di restituire a Mariah le emozioni."
+          "text": "Joshwa va a parlare con Tim e, per rincuorarlo del torto fatto, gli promette un favore. Tim gli chiede di ridare i sentimenti a Mariah."
         },
         {
           "time": "02:18",
@@ -2205,15 +2232,15 @@
         },
         {
           "time": "03:07",
-          "text": "Jean organizza un'esplorazione furtiva e coordina i compagni con i fili del proprio Stand."
+          "text": "Jean benda gli occhi ai compagni con i fili dello Stand per non far vedere il percorso segreto verso la stanza di João."
         },
         {
           "time": "03:14",
-          "text": "Vengono osservate fotografie dei gemelli Jean e Joshwa con due metà complementari di un marchio a stella."
+          "text": "Si osservano fotografie di Jean e Joshwa. I marchi sulla loro schiena esistono già e sono già conosciuti: non compaiono ora."
         },
         {
           "time": "03:15",
-          "text": "Fra le immagini compare Julia; viene rinvenuta una punta di lancia spezzata con la dedica «al migliore»."
+          "text": "Fra le immagini compare Julia; viene trovata la punta spezzata di una freccia con la dedica «al migliore»."
         },
         {
           "time": "03:17",
@@ -2225,7 +2252,7 @@
         },
         {
           "time": "03:25",
-          "text": "La punta metallica apre un passaggio nascosto nel muro."
+          "text": "La punta della freccia sembra risuonare con la fiaba di Elisabeth, la stessa di João, e apre il passaggio segreto."
         },
         {
           "time": "03:27",
@@ -2245,7 +2272,7 @@
         },
         {
           "time": "03:54",
-          "text": "Una piccola creatura evoca una reazione energetica toccando la punta di lancia spezzata."
+          "text": "Una piccola creatura, istanza dello Stand di Elisabeth, si dirige verso l'armadio e interagisce con la punta della freccia."
         },
         {
           "time": "03:59",
@@ -2265,7 +2292,7 @@
         },
         {
           "time": "04:22",
-          "text": "In uno dei cassetti viene trovata un'immagine che richiama i resti di Camille dopo la morte."
+          "text": "Fra le immagini dei cassetti compare quella che richiama lo Stand di Camille dopo la sua morte."
         },
         {
           "time": "04:25",
@@ -2277,7 +2304,7 @@
         },
         {
           "time": "04:31",
-          "text": "Si sentono passi e il gruppo tenta di nascondersi; Jean finge di dormire sul divano."
+          "text": "Jean chiude tutti i compagni nello stanzino segreto e intima loro di fare silenzio. Prepara una scusa sfruttando l'amicizia con João."
         },
         {
           "time": "04:34",
@@ -2285,7 +2312,7 @@
         },
         {
           "time": "04:35",
-          "text": "Il Grimm percepisce l'attività dello Stand di Jean: diventa serio e i suoi occhi si fanno completamente neri. Joao nota il mutamento."
+          "text": "Il Grimm fissa Jean e i suoi occhi diventano scuri, segno che lo sta ispezionando. João nota il cambiamento."
         }
       ],
       "quotes": [
